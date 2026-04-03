@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../../public/assets/css/common.css";
-import "../../public/assets/css/home.css";
+import "/src/assets/css/common.css";
+import "/src/assets/css/home.css";
 
 
 const Header = () => {
@@ -54,8 +54,8 @@ const Header = () => {
         <div className="inner-container d-flex">
           <div className="company-logo">
             <a href="javascript:void(0);" className="logo-emqube">
-              <img className="logo-black" src="../assets/img/emqube-logo-black.svg" width="196" height="76" alt="emQube Logo"></img>
-              <img className="logo-white" src="../assets/img/emqube-logo-white.svg" width="196" height="76" alt="emQube Logo"></img>
+              <img className="logo-black" src="/assets/img/emqube-logo-black.svg" width="196" height="76" alt="emQube Logo"></img>
+              <img className="logo-white" src="/assets/img/emqube-logo-white.svg" width="196" height="76" alt="emQube Logo"></img>
             </a>
           </div>
           <nav className="main-nav">
@@ -335,7 +335,7 @@ const Header = () => {
             <ul className="d-flex">
               <li>
                 <div className="icon">
-                  <img src="../assets/img/business-icon.svg" alt="Business First"></img>
+                  <img src="/assets/img/business-icon.svg" alt="Business First"></img>
                 </div>
                 <div className="icon-txt">
                   <h3 className="txt-gradient">Business First</h3>
@@ -345,7 +345,7 @@ const Header = () => {
               </li>
               <li>
                 <div className="icon">
-                  <img src="../assets/img/thought-icon.svg" alt="Thoughtful Interaction"></img>
+                  <img src="/assets/img/thought-icon.svg" alt="Thoughtful Interaction"></img>
                 </div>
                 <div className="icon-txt">
                   <h3 className="txt-gradient">Thoughtful Interaction</h3>
@@ -355,7 +355,7 @@ const Header = () => {
               </li>
               <li>
                 <div className="icon">
-                  <img src="../assets/img/exceed-icon.svg" alt="Exceed Expectations"></img>
+                  <img src="/assets/img/exceed-icon.svg" alt="Exceed Expectations"></img>
                 </div>
                 <div className="icon-txt">
                   <h3 className="txt-gradient">Exceed Expectations</h3>
@@ -374,20 +374,20 @@ const Header = () => {
         <div className="container">
           <h2 className="txt-center txt-gradient">Brands That Trust Us</h2>
           <ul className="brand-list d-flex">
-            <li><a href="#"><img src="../assets/img/logo-difc.jpg" width="148" height="72" alt="DIFC"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-bmw.jpg" width="148" height="72" alt="BMW"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-nespresso-logo.jpg" width="148" height="72" alt="NESPRESSO"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-emovers.jpg" width="148" height="72" alt="E-Movers"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-tld.jpg" width="148" height="72" alt="The Leather Doctor"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-innerspace.jpg" width="148" height="72" alt="Innerspace"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-lighttech.jpg" width="148" height="72" alt="Lighttech"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-Haecker.jpg" width="148" height="72" alt="Haecker"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-nikai.jpg" width="148" height="72" alt="Nikai"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-swisscotec.jpg" width="148" height="72" alt="swisscotec"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-karam.jpg" width="148" height="72" alt="Karam"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-transAsia.jpg" width="148" height="72" alt="transAsia"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-winspire.jpg" width="148" height="72" alt="winspire"></img></a></li>
-            <li><a href="#"><img src="../assets/img/logo-electricway.jpg" width="148" height="72" alt="Electricway"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-difc.jpg" width="148" height="72" alt="DIFC"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-bmw.jpg" width="148" height="72" alt="BMW"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-nespresso-logo.jpg" width="148" height="72" alt="NESPRESSO"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-emovers.jpg" width="148" height="72" alt="E-Movers"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-tld.jpg" width="148" height="72" alt="The Leather Doctor"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-innerspace.jpg" width="148" height="72" alt="Innerspace"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-lighttech.jpg" width="148" height="72" alt="Lighttech"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-Haecker.jpg" width="148" height="72" alt="Haecker"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-nikai.jpg" width="148" height="72" alt="Nikai"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-swisscotec.jpg" width="148" height="72" alt="swisscotec"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-karam.jpg" width="148" height="72" alt="Karam"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-transAsia.jpg" width="148" height="72" alt="transAsia"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-winspire.jpg" width="148" height="72" alt="winspire"></img></a></li>
+            <li><a href="#"><img src="/assets/img/logo-electricway.jpg" width="148" height="72" alt="Electricway"></img></a></li>
           </ul>
         </div>
       </section>
@@ -439,7 +439,7 @@ const Header = () => {
           <div className="f-top">
             <div className="f-left">
               <div className="f-logo">
-                <img src="../assets/img/emqube-logo-black.svg"></img>
+                <img src="/assets/img/emqube-logo-black.svg"></img>
               </div>
             </div>
             <div className="f-right">
@@ -500,10 +500,10 @@ const Header = () => {
           <div className="f-btm">
             <p><a href="#">Privacy Policy</a></p>
             <ul className="f-social-list">
-              <li><a href="javascript:void(0);"><img src="../assets/img/twitter-icon.svg" alt="twitter icon"></img></a></li>
-              <li><a href="javascript:void(0);"><img src="../assets/img/linkedin-icon.svg" alt="linkedin icon"></img></a></li>
-              <li><a href="javascript:void(0);"><img src="../assets/img/instagram-icon.svg" alt="instagram icon"></img></a></li>
-              <li><a href="javascript:void(0);"><img src="../assets/img/facebook-icon.svg" alt="facebook icon"></img></a></li>
+              <li><a href="javascript:void(0);"><img src="/assets/img/twitter-icon.svg" alt="twitter icon"></img></a></li>
+              <li><a href="javascript:void(0);"><img src="/assets/img/linkedin-icon.svg" alt="linkedin icon"></img></a></li>
+              <li><a href="javascript:void(0);"><img src="/assets/img/instagram-icon.svg" alt="instagram icon"></img></a></li>
+              <li><a href="javascript:void(0);"><img src="/assets/img/facebook-icon.svg" alt="facebook icon"></img></a></li>
             </ul>
           </div>
         </div>

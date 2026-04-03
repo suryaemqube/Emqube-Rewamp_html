@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "../../public/assets/css/common.css";
-// import "../../public/assets/css/home.css";
-import "../../public/assets/css/inside.css";
+import "/src/assets/css/common.css";
+// import "/src/assets/css/home.css";
+import "/src/assets/css/inside.css";
 
 
 const Header = () => {
