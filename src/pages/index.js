@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../assets/css/common.css";
-import "../assets/css/home.css";
+import "../../public/assets/css/common.css";
+import "../../public/assets/css/home.css";
 
 
 const Header = () => {
@@ -211,9 +211,9 @@ const Header = () => {
       {/* Home page INtro section - starts */}
       <section className="hero-video-wrapper">
         <div className="container">
-          <video autoplay="" loop="" playsinline="">
-            <source src="/vid/hero-section-desktop.mp4" media="(min-width: 768px)" type="video/mp4" />
-            <source src="/vid/hero-section-mob.mp4" media="(max-width: 767px)" type="video/mp4" />
+          <video autoPlay muted loop playsInline preload="none">
+            <source src="https://wp.emqubeweb.com/emqube-revamp/vid/hero-section-desktop.mp4" media="(min-width: 768px)" type="video/mp4" />
+            <source src="https://wp.emqubeweb.com/emqube-revamp/vid/hero-section-mob.mp4" media="(max-width: 767px)" type="video/mp4" />
           </video>
           <div className="hero-txt">
             <h1>Go Digital<span className="txt-med d-block">We know how.</span></h1>
@@ -274,8 +274,8 @@ const Header = () => {
           <div className="right anim-vid-wrapp">
             <ul className="d-flex">
               <li>
-                <video autoplay>
-                  <source src="/vid/intro-vid1.mp4" type="video/mp4" />
+                <video autoPlay muted loop playsInline preload="none">
+                  <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid1.mp4" type="video/mp4" />
                 </video>
                 <span className="arrow-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
@@ -285,8 +285,8 @@ const Header = () => {
                 <h4>Software Solutions House</h4>
               </li>
               <li>
-                <video autoplay="" loop="" playsinline="">
-                  <source src="/vid/intro-vid2.mp4" type="video/mp4" />
+                <video autoPlay muted loop playsInline preload="none">
+                  <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid2.mp4" type="video/mp4" />
                 </video>
                 <span className="arrow-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
@@ -300,8 +300,8 @@ const Header = () => {
           <div className="intro-vid-wrapp">
             <ul className="d-flex">
               <li>
-                <video autoplay="" loop="" playsinline="">
-                  <source src="../assets/vid/intro-vid1.mp4" type="video/mp4" />
+                <video autoPlay muted loop playsInline preload="none">
+                  <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid1.mp4" type="video/mp4" />
                 </video>
                 <span className="arrow-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
@@ -311,8 +311,8 @@ const Header = () => {
                 <h4>Software Solutions House</h4>
               </li>
               <li>
-                <video autoplay="" loop="" playsinline="">
-                  <source src="../assets/vid/intro-vid2.mp4" type="video/mp4" />
+                <video autoPlay muted loop playsInline preload="none">
+                  <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid2.mp4" type="video/mp4" />
                 </video>
                 <span className="arrow-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
