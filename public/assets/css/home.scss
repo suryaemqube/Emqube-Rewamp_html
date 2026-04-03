@@ -747,6 +747,7 @@
 			column-count: 5;
 			// 1024 - 1920 : 30 70 - 86 166
 			gap: clamp(1.875rem, -2.1250rem + 6.2500vw, 5.375rem) clamp(4.375rem, -2.4821rem + 10.7143vw, 10.375rem);
+			margin-left: auto;
 			@media(max-width: 767px){
 				justify-content: center;
 				grid-template-columns: repeat(2, 1fr) !important;

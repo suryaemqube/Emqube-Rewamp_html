@@ -897,6 +897,7 @@
   -moz-column-count: 5;
        column-count: 5;
   gap: clamp(1.875rem, -2.125rem + 6.25vw, 5.375rem) clamp(4.375rem, -2.4821rem + 10.7143vw, 10.375rem);
+  margin-left: auto;
 }
 @media (max-width: 767px) {
   .brand-wrapper .container .brand-list {
