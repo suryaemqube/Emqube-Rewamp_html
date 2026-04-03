@@ -20,6 +20,7 @@ $light_grey: var(--light_grey);
 		}
 	}
 	header{
+		position: relative;
 		.company-logo{
 			.logo-white{
 				display: none;
@@ -52,6 +53,9 @@ $light_grey: var(--light_grey);
 				}
 			}
 		}
+	}
+	header.scrolled{
+		position: fixed;
 	}
 	h1{
 		font-family: HelvNowDis-medium;
@@ -164,6 +168,7 @@ $light_grey: var(--light_grey);
 						height: 180px;
 					}
 					&.bg-green{
+						box-shadow: 0 4px 25.8px 0 rgba(0, 0, 0, 0.27);
 						background-color: var(--light_green);
 						padding: 30px 25px;
 						border-radius: 4px;

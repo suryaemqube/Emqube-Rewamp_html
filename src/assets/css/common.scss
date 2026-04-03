@@ -507,6 +507,9 @@ p{
   font-weight: 500;
   font-family: HelvNowDis-medium;
 }
+.txt-light{
+  font-family: HelvNowDis-light !important;
+}
 .txt-gradient-mix{
   font-weight: 400;
   .txt-med{
@@ -660,6 +663,9 @@ p{
   }
   @media(max-width: 1500px){
     max-width: 95%;
+  }
+  @media(max-width: 767px){
+    max-width: 90%;
   }
 }
 section{
@@ -1028,10 +1034,10 @@ header.active{
       transition: stroke-dasharray .4s, stroke-dashoffset .4s;
     }
     .top{
-      stroke-dasharray: 40 139;
+      stroke-dasharray: 20 139;
     }
     .bottom{
-      stroke-dasharray: 40 180;
+      stroke-dasharray: 30 180;
     }
   }
   .hamRotate.active {
@@ -1041,9 +1047,11 @@ header.active{
     }
     .top{
       stroke-dashoffset: -98px;
+      stroke-dasharray: 40 139;
     }
     .bottom{
       stroke-dashoffset: -138px;
+      stroke-dasharray: 40 139;
     }
   }
 }
@@ -1064,6 +1072,14 @@ header.active{
   width: 100%;
   transition: max-height .4s ease;
   // padding-top: 80px;
+  > ul{
+    >li{
+      >a{
+        font-family: HelvNowDis-medium;
+        font-size: 16px;
+      }
+    }
+  }
   ul{
     padding: 10px;
     li{
@@ -1079,17 +1095,20 @@ header.active{
           text-decoration: none;
           text-transform: capitalize;
           position: relative;
+          font-family: HelvNowDis-medium;
+          font-size: 16px;
           &:after{
             content: '';
             position: absolute;
             background-image: url(../img/angle-down-black.svg);
             background-repeat: no-repeat;
-            width: 10px;
-            height: 5px;
+            width: 15px;
+            height: 8px;
             background-size: contain;
             right: 10px;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.5s ease-in-out;
           }
         }
         ul{
@@ -1105,6 +1124,28 @@ header.active{
             a{
               font-size: .9rem;
               font-weight: 400;
+            }
+          }
+          > li.menu-item-has-children{
+            a{
+              font-family: HelvNowDis-reg;
+              font-size: 15px;
+            }
+            ul{
+              li{
+                a{
+                  font-size: 14px;
+                  color: #838383;
+                }
+              }
+            }
+          }
+        }
+        &.click{
+          > a{
+            &:after{
+              transform: translateY(-50%) rotate(180deg);
+              transition: transform 0.5s ease-in-out;
             }
           }
         }
@@ -1138,6 +1179,9 @@ footer{
   .inner-container{
     @media(max-width: 1689px){
       max-width: 95%;
+    }
+    @media(max-width: 767px){
+      max-width: 90%;
     }
     .f-top{
       padding-bottom: 60px;
@@ -1254,6 +1298,9 @@ footer{
                 color: #838383;
                 // 375 - 1920 : 113 - 16
                 font-size: clamp(0.813rem, 0.7676rem + 0.1937vw, 1rem);
+                @media(max-width: 767px){
+                  padding-left: 0;
+                }
               }
               &:hover{
                 a{
@@ -1269,6 +1316,9 @@ footer{
                   color: var(--dark_grey);
                   // 375 - 1920 : 14 - 18
                   font-size: clamp(0.875rem, 0.8143rem + 0.2589vw, 1.125rem);
+                  @media(max-width: 767px){
+                    padding-left: 0;
+                  }
                 }
               }
               &:hover{
@@ -1316,10 +1366,13 @@ footer{
 .sticky-buttons {
   position: fixed;
   right: 10px;
-  bottom: 80px;
+  bottom: 140px;
   display: flex;
   flex-direction: column;
   z-index: 99999999;
+  @media(max-width: 767px){
+    bottom: 100px;
+  }
   a {
     display: block;
     margin-bottom: 10px;
@@ -1349,3 +1402,61 @@ footer{
   }
 }
 // sticky button ends
+
+// Scrolltop section starts
+.backtotop {
+  position: fixed;
+  right: 10px;
+  bottom: 70px;
+  cursor: pointer;
+  left: auto;
+  width: 70px;
+  height: 70px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  @media(max-width: 1500px){
+    width: 48px;
+    height: 48px;
+  }
+  @media(max-width: 767px){
+    width: 30px;
+    height: 30px;
+  }
+  svg {
+    transition: all 0.3s;
+    width: 70px;
+    height: 70px;
+    @media(max-width: 1500px){
+      width: 48px;
+      height: 48px;
+    }
+    @media(max-width: 767px){
+      width: 30px;
+      height: 30px;
+    }
+    rect {
+      transition: all 0.3s;
+    }
+    path {
+      transition: all 0.4s;
+    }
+  }
+  &:hover {
+    svg {
+      transform: scale(0.9);
+      rect {
+        fill: var(--light_green);
+      }
+      path {
+        transform: translateY(-3px);
+        fill: var(--white);
+      }
+    }
+  }
+}
+.backtotop.active {
+  opacity: 1;
+  visibility: visible;
+}
+// scrolltop section ends

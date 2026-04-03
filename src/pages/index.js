@@ -10,6 +10,8 @@ const Header = () => {
 
   const [scrolled, setScrolled] = useState(false);
 
+  const [showTop, setShowTop] = useState(false);
+
   const [activeMenus, setActiveMenus] = useState({
     level1: null,
     level2: null,
@@ -29,6 +31,26 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowTop(true);
+      } else {
+        setShowTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -136,10 +158,13 @@ const Header = () => {
           <path className="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"></path><path class="line middle" d="m 30,50 h 40"></path>
           <path className="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"></path>
         </svg>
+        {/* <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21" fill="none">
+          <path d="M0 1.45104C0 0.648958 0.650416 0 1.45104 0H13.1323C13.5171 1.14691e-08 13.8862 0.152877 14.1583 0.425C14.4305 0.697123 14.5833 1.0662 14.5833 1.45104C14.5833 1.83588 14.4305 2.20496 14.1583 2.47708C13.8862 2.74921 13.5171 2.90208 13.1323 2.90208H1.45104C1.0662 2.90208 0.697123 2.74921 0.425 2.47708C0.152877 2.20496 0 1.83588 0 1.45104ZM0 10.2083C0 9.40625 0.650416 8.75729 1.45104 8.75729H27.7156C28.1005 8.75729 28.4695 8.91017 28.7417 9.18229C29.0138 9.45442 29.1667 9.82349 29.1667 10.2083C29.1667 10.5932 29.0138 10.9623 28.7417 11.2344C28.4695 11.5065 28.1005 11.6594 27.7156 11.6594H1.45104C1.0662 11.6594 0.697123 11.5065 0.425 11.2344C0.152877 10.9623 0 10.5932 0 10.2083ZM1.45104 17.5146C1.0662 17.5146 0.697123 17.6675 0.425 17.9396C0.152877 18.2117 0 18.5808 0 18.9656C0 19.3505 0.152877 19.7195 0.425 19.9917C0.697123 20.2638 1.0662 20.4167 1.45104 20.4167H18.9656C19.3505 20.4167 19.7195 20.2638 19.9917 19.9917C20.2638 19.7195 20.4167 19.3505 20.4167 18.9656C20.4167 18.5808 20.2638 18.2117 19.9917 17.9396C19.7195 17.6675 19.3505 17.5146 18.9656 17.5146H1.45104Z" fill="white"/>
+        </svg> */}
       </div>
       <nav className={`main-nav menu-toggle ${menuActive ? "active" : ""}`}>
         <ul className="main-nav-ul d-flex">
-          <li className="menu-item-has-children children-level-2" onClick={toggleMenuItem}>
+          <li className={`menu-item-has-children children-level-2 ${menuItemActive ? "click" : ""}`} onClick={toggleMenuItem}>
             <a href="javascript:void(0);">Software</a>
             <ul className={`sub-menu submenu has-children-inner slide-up ${menuItemActive ? "show" : ""}`}>
               <li className="menu-item-has-children children-level-0">
@@ -300,26 +325,30 @@ const Header = () => {
           <div className="intro-vid-wrapp">
             <ul className="d-flex">
               <li>
-                <video autoPlay muted loop playsInline preload="none">
-                  <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid1.mp4" type="video/mp4" />
-                </video>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <h4>Software Solutions House</h4>
+                <a href="javascript:void(0);">
+                  <video autoPlay muted loop playsInline preload="none">
+                    <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid1.mp4" type="video/mp4" />
+                  </video>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <h4>Software Solutions <span className="txt-light">House</span></h4>
+                </a>
               </li>
               <li>
-                <video autoPlay muted loop playsInline preload="none">
-                  <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid2.mp4" type="video/mp4" />
-                </video>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <h4>Digital Content Studio</h4>
+                <a href="javascript: void(0);">
+                  <video autoPlay muted loop playsInline preload="none">
+                    <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid2.mp4" type="video/mp4" />
+                  </video>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <h4>Digital Content <span className="txt-light">Studio</span></h4>
+                </a>
               </li>
             </ul>
           </div>
@@ -536,6 +565,17 @@ const Header = () => {
         </a>
       </div>
       {/* sticky button ends */}
+
+      {/* scroll to top - starts */}
+      <div id="backtotop" className={`backtotop ${showTop ? "active" : ""}`} onClick={scrollToTop}>
+        <div class="svg-wrap">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="24" fill="#D9D9D9"/>
+            <path d="M25.1037 17.354L25.1037 32.7598C25.1037 32.9723 25.0319 33.1504 24.8882 33.2943C24.7444 33.4379 24.5662 33.5098 24.3535 33.5098C24.141 33.5098 23.9629 33.4379 23.8192 33.2943C23.6757 33.1504 23.604 32.9723 23.604 32.7598L23.604 17.354L19.252 21.6908C19.1152 21.8269 18.9441 21.8982 18.7387 21.9045C18.5334 21.9107 18.3558 21.8394 18.206 21.6908C18.0687 21.5544 18 21.3809 18 21.1703C18 20.9594 18.0692 20.7848 18.2077 20.6465L23.7212 15.133C23.8147 15.0393 23.9139 14.9733 24.0187 14.935C24.1234 14.8965 24.2356 14.8773 24.3552 14.8773C24.4749 14.8773 24.5886 14.8966 24.6962 14.9353C24.8039 14.9741 24.9039 15.04 24.9962 15.133L30.5097 20.6465C30.6481 20.7833 30.7172 20.9544 30.7172 21.1598C30.7172 21.3649 30.6481 21.5419 30.5097 21.6908C30.3609 21.8458 30.1827 21.9217 29.975 21.9185C29.7673 21.9153 29.5892 21.8394 29.4405 21.6908L25.1037 17.354Z" fill="#242424"/>
+          </svg>
+        </div>
+      </div>
+      {/* scroll to top */}
       
     </>
   );

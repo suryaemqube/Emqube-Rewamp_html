@@ -139,6 +139,7 @@
   height: 180px;
 }
 .inside-intro-wrapper .container .inside-intro-count ul li.bg-green {
+  box-shadow: 0 4px 25.8px 0 rgba(0, 0, 0, 0.27);
   background-color: var(--light_green);
   padding: 30px 25px;
   border-radius: 4px;

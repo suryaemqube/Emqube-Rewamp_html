@@ -475,6 +475,10 @@ p:last-child {
   font-family: HelvNowDis-medium;
 }
 
+.txt-light {
+  font-family: HelvNowDis-light !important;
+}
+
 .txt-gradient-mix {
   font-weight: 400;
 }
@@ -654,6 +658,11 @@ p:last-child {
 @media (max-width: 1500px) {
   .inner-container {
     max-width: 95%;
+  }
+}
+@media (max-width: 767px) {
+  .inner-container {
+    max-width: 90%;
   }
 }
 
@@ -974,10 +983,10 @@ header.active .company-logo .logo-white {
   transition: stroke-dasharray 0.4s, stroke-dashoffset 0.4s;
 }
 .mob-menu-click .ham .top {
-  stroke-dasharray: 40 139;
+  stroke-dasharray: 20 139;
 }
 .mob-menu-click .ham .bottom {
-  stroke-dasharray: 40 180;
+  stroke-dasharray: 30 180;
 }
 .mob-menu-click .hamRotate.active {
   transform: rotate(45deg);
@@ -987,9 +996,11 @@ header.active .company-logo .logo-white {
 }
 .mob-menu-click .hamRotate.active .top {
   stroke-dashoffset: -98px;
+  stroke-dasharray: 40 139;
 }
 .mob-menu-click .hamRotate.active .bottom {
   stroke-dashoffset: -138px;
+  stroke-dasharray: 40 139;
 }
 
 .mob-menu-click.scrolled .ham path {
@@ -1005,6 +1016,10 @@ header.active .company-logo .logo-white {
   top: 80px;
   width: 100%;
   transition: max-height 0.4s ease;
+}
+.menu-toggle > ul > li > a {
+  font-family: HelvNowDis-medium;
+  font-size: 16px;
 }
 .menu-toggle ul {
   padding: 10px;
@@ -1024,18 +1039,21 @@ header.active .company-logo .logo-white {
   text-decoration: none;
   text-transform: capitalize;
   position: relative;
+  font-family: HelvNowDis-medium;
+  font-size: 16px;
 }
 .menu-toggle ul li.menu-item-has-children > a:after {
   content: "";
   position: absolute;
   background-image: url(../img/angle-down-black.svg);
   background-repeat: no-repeat;
-  width: 10px;
-  height: 5px;
+  width: 15px;
+  height: 8px;
   background-size: contain;
   right: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.5s ease-in-out;
 }
 .menu-toggle ul li.menu-item-has-children ul {
   display: flex;
@@ -1050,6 +1068,18 @@ header.active .company-logo .logo-white {
 .menu-toggle ul li.menu-item-has-children ul li a {
   font-size: 0.9rem;
   font-weight: 400;
+}
+.menu-toggle ul li.menu-item-has-children ul > li.menu-item-has-children a {
+  font-family: HelvNowDis-reg;
+  font-size: 15px;
+}
+.menu-toggle ul li.menu-item-has-children ul > li.menu-item-has-children ul li a {
+  font-size: 14px;
+  color: #838383;
+}
+.menu-toggle ul li.menu-item-has-children.click > a:after {
+  transform: translateY(-50%) rotate(180deg);
+  transition: transform 0.5s ease-in-out;
 }
 .menu-toggle ul li .has-children-inner.show {
   max-height: inherit;
@@ -1079,6 +1109,11 @@ footer {
 @media (max-width: 1689px) {
   footer .inner-container {
     max-width: 95%;
+  }
+}
+@media (max-width: 767px) {
+  footer .inner-container {
+    max-width: 90%;
   }
 }
 footer .inner-container .f-top {
@@ -1231,12 +1266,22 @@ footer .inner-container .f-top .f-right .footer-link ul li a {
   color: #838383;
   font-size: clamp(0.813rem, 0.7676rem + 0.1937vw, 1rem);
 }
+@media (max-width: 767px) {
+  footer .inner-container .f-top .f-right .footer-link ul li a {
+    padding-left: 0;
+  }
+}
 footer .inner-container .f-top .f-right .footer-link ul li:hover a {
   color: var(--light_green);
 }
 footer .inner-container .f-top .f-right .footer-link ul li.f-main-name > a {
   color: var(--dark_grey);
   font-size: clamp(0.875rem, 0.8143rem + 0.2589vw, 1.125rem);
+}
+@media (max-width: 767px) {
+  footer .inner-container .f-top .f-right .footer-link ul li.f-main-name > a {
+    padding-left: 0;
+  }
 }
 footer .inner-container .f-top .f-right .footer-link ul li:hover a {
   color: var(--light_green);
@@ -1273,10 +1318,15 @@ footer .inner-container .f-btm .f-social-list {
 .sticky-buttons {
   position: fixed;
   right: 10px;
-  bottom: 80px;
+  bottom: 140px;
   display: flex;
   flex-direction: column;
   z-index: 99999999;
+}
+@media (max-width: 767px) {
+  .sticky-buttons {
+    bottom: 100px;
+  }
 }
 .sticky-buttons a {
   display: block;
@@ -1303,4 +1353,67 @@ footer .inner-container .f-btm .f-social-list {
 }
 .sticky-buttons a:hover svg circle {
   fill: black;
+}
+
+.backtotop {
+  position: fixed;
+  right: 10px;
+  bottom: 70px;
+  cursor: pointer;
+  left: auto;
+  width: 70px;
+  height: 70px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+@media (max-width: 1500px) {
+  .backtotop {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media (max-width: 767px) {
+  .backtotop {
+    width: 30px;
+    height: 30px;
+  }
+}
+.backtotop svg {
+  transition: all 0.3s;
+  width: 70px;
+  height: 70px;
+}
+@media (max-width: 1500px) {
+  .backtotop svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media (max-width: 767px) {
+  .backtotop svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.backtotop svg rect {
+  transition: all 0.3s;
+}
+.backtotop svg path {
+  transition: all 0.4s;
+}
+.backtotop:hover svg {
+  transform: scale(0.9);
+}
+.backtotop:hover svg rect {
+  fill: var(--light_green);
+}
+.backtotop:hover svg path {
+  transform: translateY(-3px);
+  fill: var(--white);
+}
+
+.backtotop.active {
+  opacity: 1;
+  visibility: visible;
 }/*# sourceMappingURL=common.css.map */
