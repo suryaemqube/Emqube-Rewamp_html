@@ -115,6 +115,12 @@ $light_grey: var(--light_grey);
 			font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
 			line-height: 1.3em;
 		}
+		@media(max-width: 1000px){
+			width: 80%;
+		}
+		@media(max-width: 767px){
+			width: 100%;
+		}
 	}
 	h1,.inside-sub-txt{
 		text-align: center;
@@ -135,9 +141,17 @@ $light_grey: var(--light_grey);
 		@media(max-width: 1180px){
 			padding-top: 230px;
 		}
+		@media(max-width: 1000px){
+			padding-top: 140px;
+		}
 		.container{
 			@media(max-width: 1100px){
 				max-width: 95%;
+			}
+			@media(max-width: 1000px){
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
 			}
 			@media(max-width: 767px){
 				width: 90%;
@@ -146,6 +160,13 @@ $light_grey: var(--light_grey);
 			.inside-intro-title{
 				// 1024 - 1920 : 20 - 35
 				margin-bottom: clamp(1.25rem, 0.1780rem + 1.6750vw, 2.188rem);
+				@media(max-width: 1000px){
+					width: 80%;
+					order: 1;
+				}
+				@media(max-width: 767px){
+					width: 100%;
+				}
 				h1{
 					background: linear-gradient(180deg, #C4C4C4 -71.43%, #3D3D3D 100%);
 					background-clip: text;
@@ -168,6 +189,10 @@ $light_grey: var(--light_grey);
 				@media(max-width: 1180px){
 					width: 40%;
 				}
+				@media(max-width: 1000px){
+					width: 80%;
+					order: 2;
+				}
 				p{
 					color: #767676;
 					font-size: clamp(0.938rem, 0.5814rem + 0.5571vw, 1.25rem);
@@ -177,6 +202,10 @@ $light_grey: var(--light_grey);
 			}
 			.inside-intro-count{
 				position: absolute;
+				@media(max-width: 1000px){
+					position: relative;
+					width: 50%;
+				}
 				ul{
 					display: flex;
 					flex-direction: column;
@@ -192,6 +221,15 @@ $light_grey: var(--light_grey);
 						box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 						@media(max-width: 1660px){
 							padding: 20px;
+						}
+						@media(max-width: 1000px){
+							background: transparent;
+							backdrop-filter: blur(0);
+							box-shadow: none;	
+							border: none;	
+							border-radius: 0;
+							width: 100%;
+							margin-bottom: 15px;
 						}
 						p{
 							text-align: left;
@@ -228,6 +266,11 @@ $light_grey: var(--light_grey);
 								width: 175px;
         				height: 130px;
 							}
+							@media(max-width: 1000px){
+								width: 100%;
+								height: 100%;
+							}
+							
 						}
 						&.bg-green{
 							box-shadow: 0 4px 25.8px 0 rgba(0, 0, 0, 0.27);
@@ -246,11 +289,23 @@ $light_grey: var(--light_grey);
 							@media(max-width: 1100px){
 								width: 210px;
 							}
+							@media(max-width: 1000px){
+								background-color: transparent;
+								box-shadow: none;	
+								border-radius: 0;
+								width: 100%;
+							}
 							p{
 								color: var(--white);
+								@media(max-width: 1000px){
+									color: #767676;
+								}
 							}
 							.count{
 								color: var(--white);
+								@media(max-width: 1000px){
+									color: var(--light_green);
+								}
 							}
 						}
 					}
@@ -258,11 +313,31 @@ $light_grey: var(--light_grey);
 				&.left{
 					left: 0;
 					top: 95px;
+					@media(max-width: 1000px){
+						top: 0;
+						order: 3;
+					}
 					.bg-green{
 						margin-left: 60px;
+						@media(max-width: 1000px){
+							margin-left: 0;
+						}
 					}
 					ul{
 						li{
+							position: relative;
+							&:after{
+								content: '';
+								@media(max-width: 1000px){
+									width: 1px;
+									height: 80%;
+									background-color: #D2E6D5;
+									right: 0;
+									position: absolute;
+									top: 50%;
+									transform: translateY(-50%);
+								}
+							}
 							&:nth-child(2){
 								position: relative;
 								top: -20px;
@@ -274,8 +349,16 @@ $light_grey: var(--light_grey);
 				&.right{
 					right: 0;
 					top: -65px;
+					@media(max-width: 1000px){
+						top: 0;
+						order: 4;
+					}
 					ul{
 						align-items: flex-end;
+						@media(max-width: 1000px){
+							flex-direction: column-reverse;
+							align-items: flex-start;
+						}
 					}
 					.bg-green{
 						left: -80px;
@@ -292,11 +375,22 @@ $light_grey: var(--light_grey);
 						@media(max-width: 1100px){
 							width: 170px;
 						}
+						@media(max-width: 1000px){
+							top: 0;
+							left: 0;
+							width: 100%;
+						}
 						p{
 							text-align: center;
+							@media(max-width: 1000px){
+								text-align: left;
+							}
 						}
 						.count-txt{
 							text-align: center;
+							@media(max-width: 1000px){
+								text-align: left;
+							}
 						}
 					}
 					.bg-white{
@@ -304,11 +398,20 @@ $light_grey: var(--light_grey);
 						right: 0;
 						z-index: 2;
 						text-align: right;
+						@media(max-width: 1000px){
+							text-align: left;
+						}
 						.count{
 							text-align: right;
+							@media(max-width: 1000px){
+								text-align: left;
+							}
 						}
 						.count-txt{
 							text-align: right;
+							@media(max-width: 1000px){
+								text-align: left;
+							}
 						}
 					}
 				}
