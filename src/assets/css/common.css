@@ -1304,6 +1304,13 @@ footer .inner-container .f-btm {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 50px;
+}
+@media (max-width: 767px) {
+  footer .inner-container .f-btm {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 footer .inner-container .f-btm p a {
   text-decoration: none;
