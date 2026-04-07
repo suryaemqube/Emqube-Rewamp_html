@@ -422,6 +422,7 @@ h4 {
 
 h5 {
   font-size: clamp(1rem, 0.85rem + 0.75vw, 1.75rem);
+  font-size: clamp(1rem, 0.7rem + 0.75vw, 1.75rem);
 }
 
 body, p, a, li {

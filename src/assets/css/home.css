@@ -23,6 +23,11 @@
     height: 70vh;
   }
 }
+@media (max-width: 767px) {
+  .hero-video-wrapper {
+    height: 90vh;
+  }
+}
 .hero-video-wrapper:before {
   content: "";
   position: absolute;
