@@ -8,6 +8,9 @@ const Header = () => {
 
   const [menuItemActive, setMenuItemActive] = useState(false);
 
+  const [activeMenu, setActiveMenu] = useState(null);        // level 1
+  const [activeSubMenu, setActiveSubMenu] = useState(null);  // level 2
+
   const [scrolled, setScrolled] = useState(false);
 
   const [showTop, setShowTop] = useState(false);
@@ -59,6 +62,15 @@ const Header = () => {
   const toggleMenuItem = () => {
     setMenuItemActive(!menuItemActive);
     // setMenuItemActive(prev => (prev === menu ? null : menu));
+  };
+
+  const toggleMainMenu = (menu) => {
+    setActiveMenu(prev => (prev === menu ? null : menu));
+    setActiveSubMenu(null); // reset child when parent closes
+  };
+
+  const toggleSubMenu = (submenu) => {
+    setActiveSubMenu(prev => (prev === submenu ? null : submenu));
   };
 
   const handleMenuClick = (level, id) => {
@@ -164,12 +176,12 @@ const Header = () => {
       </div>
       <nav className={`main-nav menu-toggle ${menuActive ? "active" : ""}`}>
         <ul className="main-nav-ul d-flex">
-          <li className={`menu-item-has-children children-level-2 ${menuItemActive ? "click" : ""}`} onClick={toggleMenuItem}>
+          <li className={`menu-item-has-children children-level-2 ${activeMenu === "software" ? "click" : ""}`} onClick={() => toggleMainMenu("software")}>
             <a href="javascript:void(0);">Software</a>
-            <ul className={`sub-menu submenu has-children-inner slide-up ${menuItemActive ? "show" : ""}`}>
-              <li className="menu-item-has-children children-level-0">
+            <ul className={`sub-menu submenu has-children-inner slide-up ${activeMenu === "software" ? "show" : ""}`}>
+              <li className={`menu-item-has-children children-level-0 ${activeSubMenu === "development" ? "click" : ""}`} onClick={(e) => {e.stopPropagation(); toggleSubMenu("development");}}>
                 <a href="javascript:void(0);">Development</a>
-                <ul className="sub-menu submenu has-children-inner slide-up">
+                <ul className={`sub-menu submenu has-children-inner slide-up ${activeSubMenu === "development" ? "show" : ""}`}>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
