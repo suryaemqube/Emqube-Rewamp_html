@@ -300,7 +300,8 @@ const Header = () => {
                 <div className="tab-pane">
                   <div className="web-swiper-container">
                     <Swiper
-                      effect="coverflow"
+                      // effect="coverflow"
+                      loop={true}
                       // effect="fade"
                       modules={[Navigation]}
                     //  slidesPerView={"auto"}
@@ -320,32 +321,34 @@ const Header = () => {
                         prevEl: ".swiper-prev-btn",
                         nextEl: ".swiper-next-btn",
                       }}
-                      pagination={false}
-                      loop={true}
+                      autoplay={{ delay: 3000 }}
                       breakpoints={{
                         0: {
                           centeredSlides: true,
-                          // slidesOffsetBefore: 20,
-                          spaceBetween: 90,
-                          slidesPerView: 1.2
+                          slidesPerView: 1.4,
+                          spaceBetween: 10,
+                          slidesOffsetBefore: 0,
+                          preventClicks:true,
                         },
                         768: {
                           centeredSlides: true,
-                          spaceBetween: 90,
-                          slidesPerView: 1.2,
-                          // slidesOffsetBefore: 20,
+                          slidesPerView: 1.3,
+                          spaceBetween: 0,
+                          slidesOffsetBefore: 0,
+                          preventClicks:true,
                         },
                         991: {
                           centeredSlides: true,
-                          spaceBetween: 90,
-                          slidesPerView: 2.3,
-                          // slidesOffsetBefore: 145,
+                          slidesPerView: 1.4,
+                          slidesOffsetBefore: 0,
+                          spaceBetween: 0,
+                          preventClicks:true,
                         },
                         1300: {
                           centeredSlides: true,
-                          slidesPerView: 3,
-                          // slidesPerView: 3,
+                          slidesPerView: 1.55,
                           slidesOffsetBefore: 0,
+                          preventClicks:true,
                           spaceBetween: 0,
                         },
                       }}
