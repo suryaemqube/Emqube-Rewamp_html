@@ -910,7 +910,7 @@ header{
         }
         li{
           a{
-            font-family: HelvNowDis-medium;
+            // font-family: HelvNowDis-medium;
             letter-spacing: 0.04em;
             color: var(--white);
             transition: color 0.5s ease-in-out;
@@ -1156,6 +1156,13 @@ header.active{
         transition: all .4s;
       }
     }
+    > li{
+      &:nth-last-child(2){
+        a{
+          padding-bottom: 25px;
+        }
+      }
+    }
   }
   .main-nav-ul{
     flex-direction: column;
@@ -1166,10 +1173,42 @@ header.active{
   max-height: 200vh;
   transition: all .4s ease;
   padding-top: 0px;
-  z-index: 99;
+  z-index: 999;
   transition: max-height .4s ease;
 }
 // Mobile menu ends
+
+// Breadcrumbs Starts
+.breadcrumbs{
+  text-align: center;
+  // 375 - 1920 : 15 - 26
+  margin-bottom: clamp(0.938rem, 0.7713rem + 0.7115vw, 1.625rem);
+  @media(max-width: 1000px){
+    width: 100%;
+  }
+  span{
+    font-family: HelvNowDis-light;
+    a{
+      color: #C7C7C7;
+      // 375 - 1920 : 15 - 18
+      font-size: clamp(0.938rem, 0.8926rem + 0.1937vw, 1.125rem);
+      font-family: HelvNowDis-light;
+      text-decoration: none;
+      &:hover{
+        color: var(--light_green);
+      }
+    }
+    span{
+      color: #C7C7C7;
+      font-size: clamp(0.938rem, 0.8926rem + 0.1937vw, 1.125rem);
+    }
+    span.current-item{
+      color: var(--light_green);
+      font-family: HelvNowDis-light;
+    }
+  }
+}
+// Breadcrumbs Ends
 
 // footer starts
 footer{
@@ -1419,6 +1458,7 @@ footer{
   width: 70px;
   height: 70px;
   opacity: 0;
+  z-index: 99999999;
   visibility: hidden;
   transition: 0.3s ease;
   @media(max-width: 1500px){

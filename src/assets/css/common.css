@@ -884,7 +884,6 @@ header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children:hover
   }
 }
 header .inner-container .main-nav .main-nav-ul li a {
-  font-family: HelvNowDis-medium;
   letter-spacing: 0.04em;
   color: var(--white);
   transition: color 0.5s ease-in-out;
@@ -1086,6 +1085,9 @@ header.active .company-logo .logo-white {
   max-height: inherit;
   transition: all 0.4s;
 }
+.menu-toggle ul > li:nth-last-child(2) a {
+  padding-bottom: 25px;
+}
 .menu-toggle .main-nav-ul {
   flex-direction: column;
 }
@@ -1095,8 +1097,38 @@ header.active .company-logo .logo-white {
   max-height: 200vh;
   transition: all 0.4s ease;
   padding-top: 0px;
-  z-index: 99;
+  z-index: 999;
   transition: max-height 0.4s ease;
+}
+
+.breadcrumbs {
+  text-align: center;
+  margin-bottom: clamp(0.938rem, 0.7713rem + 0.7115vw, 1.625rem);
+}
+@media (max-width: 1000px) {
+  .breadcrumbs {
+    width: 100%;
+  }
+}
+.breadcrumbs span {
+  font-family: HelvNowDis-light;
+}
+.breadcrumbs span a {
+  color: #C7C7C7;
+  font-size: clamp(0.938rem, 0.8926rem + 0.1937vw, 1.125rem);
+  font-family: HelvNowDis-light;
+  text-decoration: none;
+}
+.breadcrumbs span a:hover {
+  color: var(--light_green);
+}
+.breadcrumbs span span {
+  color: #C7C7C7;
+  font-size: clamp(0.938rem, 0.8926rem + 0.1937vw, 1.125rem);
+}
+.breadcrumbs span span.current-item {
+  color: var(--light_green);
+  font-family: HelvNowDis-light;
 }
 
 footer {
@@ -1372,6 +1404,7 @@ footer .inner-container .f-btm .f-social-list {
   width: 70px;
   height: 70px;
   opacity: 0;
+  z-index: 99999999;
   visibility: hidden;
   transition: 0.3s ease;
 }

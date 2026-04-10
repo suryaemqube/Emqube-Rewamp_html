@@ -465,6 +465,7 @@ h4{
 h5{
 	// 320 - 1920 : 16 - 28
 	font-size: clamp(1rem, 0.85rem + 0.75vw, 1.75rem);
+  font-size: clamp(1rem, 0.7rem + 0.75vw, 1.75rem);
 }
 body,p,a,li{
 	// 320 - 1920 : 14 - 22
@@ -1170,6 +1171,38 @@ header.active{
 }
 // Mobile menu ends
 
+// Breadcrumbs Starts
+.breadcrumbs{
+  text-align: center;
+  // 375 - 1920 : 15 - 26
+  margin-bottom: clamp(0.938rem, 0.7713rem + 0.7115vw, 1.625rem);
+  @media(max-width: 1000px){
+    width: 100%;
+  }
+  span{
+    font-family: HelvNowDis-light;
+    a{
+      color: #C7C7C7;
+      // 375 - 1920 : 15 - 18
+      font-size: clamp(0.938rem, 0.8926rem + 0.1937vw, 1.125rem);
+      font-family: HelvNowDis-light;
+      text-decoration: none;
+      &:hover{
+        color: var(--light_green);
+      }
+    }
+    span{
+      color: #C7C7C7;
+      font-size: clamp(0.938rem, 0.8926rem + 0.1937vw, 1.125rem);
+    }
+    span.current-item{
+      color: var(--light_green);
+      font-family: HelvNowDis-light;
+    }
+  }
+}
+// Breadcrumbs Ends
+
 // footer starts
 footer{
   padding: 50px 0;
@@ -1345,6 +1378,11 @@ footer{
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 50px;
+      @media(max-width: 767px){
+        padding-left: 0;
+        padding-right: 0;
+      }
       p{
         a{
           text-decoration: none;
