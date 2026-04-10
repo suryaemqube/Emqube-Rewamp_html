@@ -116,6 +116,7 @@ $light_grey: var(--light_grey);
 		line-height: 1.3em;
 		color: #646464;
 		font-family: HelvNowDis-reg;
+		margin-bottom: 15px;
 		// 1024 - 1920 : 20 - 36
 		font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
 		@media(max-width: 1590px){
@@ -141,6 +142,9 @@ $light_grey: var(--light_grey);
 		@media(max-width: 767px){
 			width: 100%;
 			font-size: clamp(1.375rem, 1.2855rem + 0.4474vw, 1.5rem);
+		}
+		&:last-child{
+			margin-bottom: 0;
 		}
 	}
 	h1,.inside-sub-txt{
@@ -269,6 +273,10 @@ $light_grey: var(--light_grey);
 					font-size: clamp(0.938rem, 0.5814rem + 0.5571vw, 1.25rem);
 					font-family: HelvNowDis-light;
 					line-height: 1.75em;
+					margin-bottom: 15px;
+					&:last-child{
+						margin-bottom: 0;
+					}
 				}
 				&:after{
 					content: '';
@@ -352,10 +360,10 @@ $light_grey: var(--light_grey);
 						}
 						&.bg-white{
 							width: 202px;
-							height: 180px;
+							// height: 180px;
 							@media(max-width: 1660px){
 								width: 200px;
-								height: 160px;
+								// height: 160px;
 							}
 							@media(max-width: 1480px){
 								width: 160px;
@@ -363,11 +371,11 @@ $light_grey: var(--light_grey);
 							}
 							@media(max-width: 1100px){
 								width: 175px;
-        				height: 130px;
+        				// height: 130px;
 							}
 							@media(max-width: 1000px){
 								width: 100%;
-								height: 100%;
+								// height: 100%;
 							}
 							
 						}
@@ -598,7 +606,7 @@ $light_grey: var(--light_grey);
 						// padding-left: 15px;
 						// margin-bottom: 0;
 					}
-					h3{
+					h2{
 						cursor: pointer;
 						position: relative;
 						color: #9D9C9C;
@@ -751,6 +759,7 @@ $light_grey: var(--light_grey);
 													width: 100%;
 													height: 100%;
 													object-fit: cover;
+													object-fit: contain;
 													object-position: center center;
 													@media(max-width: 767px){
 														object-fit: contain;
@@ -768,6 +777,7 @@ $light_grey: var(--light_grey);
 												// 1024 - 1920 : 40 30 40 60 - 100 55 75 125
 												padding: clamp(2.5rem, -1.7857rem + 6.6964vw, 6.25rem) clamp(1.875rem, 0.0887rem + 2.7911vw, 3.438rem) clamp(2.5rem, -0.0006rem + 3.9071vw, 4.688rem) clamp(3.75rem, -1.8934rem + 7.2554vw, 7.813rem);
 												// padding: 20px;
+												padding-right: 20px;
 												@media(max-width: 1480px){
 													width: 55%;
 												}
@@ -783,11 +793,12 @@ $light_grey: var(--light_grey);
 													padding: 20px;
 													padding-right: 0;
 												}
-												h4,p{
+												h3,p{
 													text-align: left;
 												}
-												h4{
+												h3{
 													line-height: 1.5em;
+													line-height: 1.2em;
 													font-family: HelvNowDis-medium;
 													background: linear-gradient(90deg, #6A6A6A 0.3%, #252525 51.74%);
 													background-clip: text;
@@ -797,6 +808,13 @@ $light_grey: var(--light_grey);
 													margin-bottom: 20px;
 													// 1024 - 1920 : 20 - 36
 													font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+													font-size: 30px;
+													@media(max-width: 1500px){
+														font-size: 28px;
+													}
+													@media(max-width: 1400px){
+														font-size: 26px;
+													}
 													@media(max-width: 1023px){
 														// 320 - 1023 : 19 - 20
 														font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
@@ -963,6 +981,8 @@ $light_grey: var(--light_grey);
 								display: flex;
 								justify-content: center;
 								align-items: center;
+								max-width: 95%;
+								flex-wrap: wrap;
 								@media(max-width: 1000px){
 									display: none;
 								}
@@ -972,7 +992,15 @@ $light_grey: var(--light_grey);
 									font-weight: 300;
 									position: relative;
 									padding: 2px 8px;
+									padding: 7px 16px;
 									cursor: pointer;
+									font-size: 18px;
+									@media(max-width: 1500px){
+										font-size: 17px;
+									}
+									@media(max-width: 1380px){
+										font-size: 16px;
+									}
 									&:after{
 										content: '';
 										position: absolute;
@@ -1560,6 +1588,19 @@ $light_grey: var(--light_grey);
 			}
 		}
 	}
+	.engagement-model-wrapp.parent-eng-model{
+    .container{
+      h2{
+        margin-bottom: 0;
+        padding-bottom: 20px;
+        line-height: 1.2em;
+      }
+      p.sub-txt{
+        text-align: center;
+        margin-bottom: 60px;
+      }
+    }
+  }
 	// Engagement Model Section Ends
 
 	// Work Reference Section Starts
@@ -1609,6 +1650,7 @@ $light_grey: var(--light_grey);
 						}
 					}
 					.client-icon{
+						display: none;
 						left: 40px;
 						@media(resolution: 1.25dppx){
 							left: 20px;
@@ -1736,6 +1778,10 @@ $light_grey: var(--light_grey);
 					}
 				}
 			}
+		}
+		.centered-slides{
+			display: flex;
+			gap: 20px;
 		}
 	}
 	// Work Reference Section Ends

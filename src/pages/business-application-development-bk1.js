@@ -655,7 +655,7 @@ const Header = () => {
           <h2 className="txt-center">Select Projects</h2>
         </div>
         {windowWidth > 991 && slides.length <= 3 ? (
-          <div className="centered-slides">
+          <div className="  " style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
             {slides.map((slide) => (
               <div key={slide.key} className="swiper-slide" style={{ flex: '0 0 auto' }}>
                 {slide.content}
@@ -663,9 +663,7 @@ const Header = () => {
             ))}
           </div>
         ) : (
-          <Swiper
-            modules={[Navigation]}
-            className="workSwiper"
+          <Swiper className="workSwiper"
             navigation
             autoplay={{ delay: 3000 }}
             breakpoints={{

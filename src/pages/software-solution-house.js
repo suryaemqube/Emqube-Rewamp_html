@@ -70,30 +70,131 @@ const Header = () => {
   const [webActiveSlide2, setWebActiveSlide2] = useState(0);
 
   const webSlides = [
-    { key: 'ecommerce', img: '/assets/img/Business-application-development-1.jpg', title: 'E-commerce Platform', text: 'Custom-built e-commerce solution with inventory, payment integration, and analytics dashboard.' },
-    { key: 'corporate', img: '/assets/img/Mobile-app-development.jpg', title: 'Corporate Website', text: 'Professional corporate website with modern design, CMS integration, and multi-language support.' },
-    { key: 'webapp', img: '/assets/img/Whatsapp-for-business.jpg', title: 'Web Application', text: 'Complex web application with authentication, real-time data processing, and responsive design.' },
-    { key: 'cms', img: '/assets/img/Digital-transformation.jpg', title: 'Content Management System', text: 'Custom CMS with drag-and-drop editing, SEO features, and schedule publishing.' },
-    { key: 'pwa', img: '/assets/img/CRM.jpg', title: 'Progressive Web App', text: 'PWA with offline mode, push notifications, and native-like experience.' },
-    { key: 'api', img: '/assets/img/Facility-management.jpg', title: 'API Integration', text: 'Seamless API integration with third parties, payment gateways and data sync.' },
+    { key: 'ecommerce', 
+      img: '/assets/img/Business-application-development-1.jpg', 
+      title: 'Custom Business Applications', 
+      text: (
+        <>
+        Build bespoke software applications tailored to your specific operational requirements with <span className="txt-med">zero licensing costs</span>.
+        </>
+      )
+    },
+    { key: 'corporate', 
+      img: '/assets/img/Mobile-app-development.jpg', 
+      title: 'Enterprise Mobile App Development', 
+      text: (
+        <>
+        Create high-performance mobile applications for your business or startup on robust <span className="txt-med">iOS, Android, and Hybrid</span> platforms.
+        </>
+      )
+    },
+    { key: 'webapp', 
+      img: '/assets/img/Whatsapp-for-business.jpg', 
+      title: 'WhatsApp for Business & AI Chatbots', 
+      text: (
+        <>
+        Integrate your business systems with <span className="txt-med">WhatsApp for Business</span> to automate customer acquisition, transactions, and support.
+        </>
+      ) 
+    },
+    { key: 'cms', 
+      img: '/assets/img/ai-development-1x.webp', 
+      title: 'AI & Generative AI Development', 
+      text: (
+        <>
+        Leverage <span className="txt-med">AI Agents</span>, LLMs, and GenAI services to automate complex tasks and execute intelligent workflows across departments.
+        </>
+      )
+    },
+    { key: 'pwa', 
+      img: '/assets/img/business-intelligence-1x.webp', 
+      title: 'Business Intelligence & Analytics', 
+      text: (
+        <>
+        Rely on <span className="txt-med">Intelligent MIS</span> to make data-driven decisions with visual dashboards and insightful reports on <span className="txt-med">PowerBI, Tableau, and QlikSense</span>.
+        </>
+      )
+    },
+    { key: 'api', 
+      img: '/assets/img/e-commerce-application-1x.webp', 
+      title: 'Scalable E-Commerce Solutions', 
+      text: (
+        <>
+        Go online with e-commerce platforms tailored to your business model on robust systems like <span className="txt-med">Magento, WooCommerce, and Shopify</span>.
+        </>
+      ) 
+    },
   ];
 
   const webSlides1 = [
-    { key: 'ecommerce', img: '/assets/img/Business-application-development-1.jpg', title: 'E-commerce Platform', text: 'Custom-built e-commerce solution with inventory, payment integration, and analytics dashboard.' },
-    { key: 'corporate', img: '/assets/img/Mobile-app-development.jpg', title: 'Corporate Website', text: 'Professional corporate website with modern design, CMS integration, and multi-language support.' },
-    { key: 'webapp', img: '/assets/img/Whatsapp-for-business.jpg', title: 'Web Application', text: 'Complex web application with authentication, real-time data processing, and responsive design.' },
-    { key: 'cms', img: '/assets/img/Digital-transformation.jpg', title: 'Content Management System', text: 'Custom CMS with drag-and-drop editing, SEO features, and schedule publishing.' },
-    { key: 'pwa', img: '/assets/img/CRM.jpg', title: 'Progressive Web App', text: 'PWA with offline mode, push notifications, and native-like experience.' },
-    { key: 'api', img: '/assets/img/Facility-management.jpg', title: 'API Integration', text: 'Seamless API integration with third parties, payment gateways and data sync.' },
+    { key: 'ecommerce', 
+      img: '/assets/img/crm-1x.webp', 
+      title: 'CRM Implementation', 
+      text: (
+        <>
+        Configure leading tools such as <span className="txt-med">Zoho CRM</span> and <span className="txt-med">Salesforce</span>, or our fully customizable <span className="txt-med">SalesPro</span> for local sales cycles.
+        </>
+      ) 
+    },
+    { key: 'corporate', 
+      img: '/assets/img/erp-transformation-1x.webp', 
+      title: 'ERP Transformation', 
+      text: (
+        <>
+        Digitally transform your business with versatile ERPs built on <span className="txt-med">Odoo</span> or <span className="txt-med">Zoho One</span> for a unified system.
+        </>
+      ) 
+    },
+    { key: 'webapp', 
+      img: '/assets/img/facility-management-1x.webp', 
+      title: 'Advanced Facility Management', 
+      text: (
+        <>
+        Optimize your FM services with <span className="txt-med">CAFM Pro</span>, our proprietary solution built specifically for the FM industry.
+        </>
+      )
+    },
+    { key: 'cms', 
+      img: '/assets/img/payroll-1x.webp', 
+      title: 'HRMS, Payroll & Attendance', 
+      text: (
+        <>
+        Manage attendance and disburse payroll with overtime calculations via <span className="txt-med">HRMS Pro</span>, built for teams of <span className="txt-med">200+</span>.
+        </>
+      ) 
+    },
+    { key: 'pwa', 
+      img: '/assets/img/productivity-1x.webp', 
+      title: 'Personal Productivity', 
+      text: (
+        <>
+        Enhance daily output with the <span className="txt-med">135 Pro To-Do Planner</span>, featuring managerial overview and priority control.
+        </>
+      )
+    },
   ];
 
   const webSlides2 = [
-    { key: 'ecommerce', img: '/assets/img/Business-application-development-1.jpg', title: 'E-commerce Platform', text: 'Custom-built e-commerce solution with inventory, payment integration, and analytics dashboard.' },
-    { key: 'corporate', img: '/assets/img/Mobile-app-development.jpg', title: 'Corporate Website', text: 'Professional corporate website with modern design, CMS integration, and multi-language support.' },
-    { key: 'webapp', img: '/assets/img/Whatsapp-for-business.jpg', title: 'Web Application', text: 'Complex web application with authentication, real-time data processing, and responsive design.' },
-    { key: 'cms', img: '/assets/img/Digital-transformation.jpg', title: 'Content Management System', text: 'Custom CMS with drag-and-drop editing, SEO features, and schedule publishing.' },
-    { key: 'pwa', img: '/assets/img/CRM.jpg', title: 'Progressive Web App', text: 'PWA with offline mode, push notifications, and native-like experience.' },
-    { key: 'api', img: '/assets/img/Facility-management.jpg', title: 'API Integration', text: 'Seamless API integration with third parties, payment gateways and data sync.' },
+    { key: 'ecommerce', 
+      img: '/assets/img/digital-transformation-1x.webp', 
+      title: 'Digital Transformation Strategy', 
+      text: (
+        <>
+        Achieve your long-term objectives by relying on our deep understanding of <span className="txt-med">business processes</span> and emerging technologies.
+        </>
+      )
+
+    },
+    { key: 'corporate', 
+      img: '/assets/img/MVP-Software-Product-Development.webp', 
+      title: 'MVP & Software Product Development', 
+      text: (
+        <>
+        Launch your Minimum <span className="txt-med">Viable Product (MVP)</span> with expert UI/UX services supplemented by our decades of technical expertise.
+        </>
+      ) 
+
+    },
   ];
 
   useEffect(() => {
@@ -299,23 +400,25 @@ const Header = () => {
                   <span className="num">200</span>
                   <span className="icon">+</span>
                 </p>
-                <p className="count-txt">Projects Successfully Delivered</p>
+                <p className="count-txt">Software & Web Projects</p>
               </li>
               <li className="bg-white">
                 <p className="count">
-                  <span className="num">8</span>
+                  <span className="num">10</span>
                   <span className="icon">+</span>
                 </p>
-                <p className="count-txt">Countries Served</p>
+                <p className="count-txt">Average Customer Relationship</p>
               </li>
             </ul>
           </div>
           <div className="inside-intro-title">
             <h1>Software Solutions House</h1>
-            <p className="inside-sub-txt">Custom Software Development & Digital Transformation Services in Dubai Partnering with UAE Businesses since 2003</p>
+            <p className="inside-sub-txt">Custom Software Development & Digital Transformation Services in Dubai</p>
+            <p className="inside-sub-txt txt-med">Partnering with UAE Businesses since 2003</p>
           </div>
           <div className="inside-intro-txt">
-            <p>emQube fulfills the digital transformation goals of your organization with a complete range of software services. Whether you need a customized software system developed from scratch, the integration of powerful SaaS solutions, or a hybrid of both, we deliver. Our engagement begins with expert software consulting and extends through development, seamless integration, and dedicated ongoing support.</p>
+            <p><span className="txt-med">emQube</span> fulfills the digital transformation goals of your organization with a complete range of software services. Whether you need a <span className="txt-med">customized software system</span> developed from scratch, the integration of powerful <span className="txt-med">SaaS solutions</span>, or a hybrid of both, we deliver. </p>
+            <p>Our engagement begins with expert <span className="txt-med">software consulting</span> and extends through development, seamless integration, and dedicated ongoing support.</p>
           </div>
           <div className="inside-intro-count right">
             <ul className="d-flex">
@@ -331,7 +434,7 @@ const Header = () => {
                   <span className="num">80</span>
                   <span className="icon">+</span>
                 </p>
-                <p className="count-txt">Years of Team Experience</p>
+                <p className="count-txt">Years Team Experience</p>
               </li>
             </ul>
           </div>
@@ -349,7 +452,7 @@ const Header = () => {
         <div className="container">
           <div className="tab-system">
             <div className="tab-buttons">
-              <h3 className={`tab-btn ${activeTab === 'custom' ? 'active' : ''}`} onClick={() => setActiveTab('custom')}>Software Development</h3>
+              <h2 className={`tab-btn ${activeTab === 'custom' ? 'active' : ''}`} onClick={() => setActiveTab('custom')}>Comprehensive Software Development Services</h2>
             </div>
             <div className="tab-content">
               {activeTab === 'custom' && (
@@ -421,7 +524,7 @@ const Header = () => {
                               <img src={slide.img} alt={slide.title} />
                             </div>
                             <div className="slide-text">
-                              <h4>{slide.title}</h4>
+                              <h3>{slide.title}</h3>
                               <p>{slide.text}</p>
                             </div>
                           </div>
@@ -473,7 +576,7 @@ const Header = () => {
         <div className="container">
           <div className="tab-system">
             <div className="tab-buttons">
-              <h3 className={`tab-btn ${activeTab1 === 'enterprise' ? 'active' : ''}`} onClick={() => setActiveTab1('enterprise')}>Software Products</h3>
+              <h2 className={`tab-btn ${activeTab1 === 'enterprise' ? 'active' : ''}`} onClick={() => setActiveTab1('enterprise')}>Specialized Software Products for UAE Enterprises</h2>
             </div>
             <div className="tab-content">
               {activeTab1 === 'enterprise' && (
@@ -544,7 +647,7 @@ const Header = () => {
                               <img src={slide1.img} alt={slide1.title} />
                             </div>
                             <div className="slide-text">
-                              <h4>{slide1.title}</h4>
+                              <h3>{slide1.title}</h3>
                               <p>{slide1.text}</p>
                             </div>
                           </div>
@@ -596,7 +699,7 @@ const Header = () => {
         <div className="container">
           <div className="tab-system">
             <div className="tab-buttons">
-              <h3 className={`tab-btn ${activeTab2 === 'whatsapp' ? 'active' : ''}`} onClick={() => setActiveTab2('whatsapp')}>Software Consulting</h3>
+              <h2 className={`tab-btn ${activeTab2 === 'whatsapp' ? 'active' : ''}`} onClick={() => setActiveTab2('whatsapp')}>Strategic Software Consulting & Product Growth</h2>
             </div>
             <div className="tab-content">
               {activeTab2 === 'whatsapp' && (
@@ -667,7 +770,7 @@ const Header = () => {
                               <img src={slide2.img} alt={slide2.title} />
                             </div>
                             <div className="slide-text">
-                              <h4>{slide2.title}</h4>
+                              <h3>{slide2.title}</h3>
                               <p>{slide2.text}</p>
                             </div>
                           </div>
@@ -695,7 +798,7 @@ const Header = () => {
                       ))}
                     </div>
                     <div className="swiper-pagination-text">
-                      {webSlides.map((slide2, index2) => (
+                      {webSlides2.map((slide2, index2) => (
                         <p
                           key={slide2.key + '-text'}
                           className={`slide-title ${webActiveSlide2 === index2 ? 'active' : ''}`}
@@ -934,9 +1037,10 @@ const Header = () => {
       {/* Home Page Why choose section ends */}
 
       {/* engagement model starts */}
-      <section className="engagement-model-wrapp">
+      <section className="engagement-model-wrapp parent-eng-model">
         <div className="container">
           <h2 className="txt-center">Our Engagement Model</h2>
+          <p className="sub-txt">Refined over hundreds of projects, our model ensures the end-result is aligned with your goals and ready for future scale.</p>
           <div className="eng-model-step">
             <ul>
               <li>
@@ -1086,7 +1190,7 @@ const Header = () => {
             <a href="#">
               <div className="work-wrapp">
                 <div className="client-icon">
-                  <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                  <img src="/assets/img/bmw-logo.png" alt="Emovers logo"></img>
                 </div>
                 <span className="arrow-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
@@ -1094,7 +1198,7 @@ const Header = () => {
                   </svg>
                 </span>
                 <div className="proj-img">
-                  <img src="/assets/img/emovers-proj-img1.jpg" alt="Emovers"></img>
+                  <img src="/assets/img/bmw-project-image.jpg" alt="Emovers"></img>
                 </div>
               </div>
             </a>
@@ -1103,7 +1207,7 @@ const Header = () => {
             <a href="#">
               <div className="work-wrapp">
                 <div className="client-icon">
-                  <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                  <img src="/assets/img/nestle-logo.png" alt="Emovers logo"></img>
                 </div>
                 <span className="arrow-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
@@ -1111,7 +1215,7 @@ const Header = () => {
                   </svg>
                 </span>
                 <div className="proj-img">
-                  <img src="/assets/img/emovers-proj-img1.jpg" alt="Emovers"></img>
+                  <img src="/assets/img/nestle-project-image.jpg" alt="Emovers"></img>
                 </div>
               </div>
             </a>
@@ -1128,44 +1232,10 @@ const Header = () => {
                     </svg>
                   </span>
                   <div className="proj-img">
-                    <img src="/assets/img/emovers-proj-img1.jpg" alt="Emovers"></img>
+                    <img src="/assets/img/insurance-policy-project-img.webp" alt="Emovers"></img>
                   </div>
                 </div>
               </a>
-          </SwiperSlide>
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/emovers-proj-img1.jpg" alt="Emovers"></img>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/emovers-proj-img1.jpg" alt="Emovers"></img>
-                </div>
-              </div>
-            </a>
           </SwiperSlide>
         </Swiper>
       </section>

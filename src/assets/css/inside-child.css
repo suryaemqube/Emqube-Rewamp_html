@@ -1036,9 +1036,24 @@
   font-size: 32px;
   font-style: normal;
 }
+@media (max-width: 1500px) {
+  .inside-child .insudtry-list-wrapp .container .left ul li span.icon i, .inside-child .insudtry-list-wrapp .container .right ul li span.icon i {
+    font-size: 28px;
+  }
+}
+@media (max-width: 1380px) {
+  .inside-child .insudtry-list-wrapp .container .left ul li span.icon i, .inside-child .insudtry-list-wrapp .container .right ul li span.icon i {
+    font-size: 25px;
+  }
+}
 @media (max-width: 767px) {
   .inside-child .insudtry-list-wrapp .container .left ul li span.icon i, .inside-child .insudtry-list-wrapp .container .right ul li span.icon i {
     font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .inside-child .insudtry-list-wrapp .container .left ul li span.icon i, .inside-child .insudtry-list-wrapp .container .right ul li span.icon i {
+    font-size: 15px;
   }
 }
 .inside-child .insudtry-list-wrapp .container .left ul li:before, .inside-child .insudtry-list-wrapp .container .right ul li:before {
@@ -1077,6 +1092,7 @@
   z-index: 99;
 }
 .inside-child .work-ref-wrapper .centered-slides {
+  flex-wrap: nowrap;
   max-width: 1450px;
 }
 @media (max-width: 1600px) {
@@ -1185,7 +1201,7 @@
   padding: clamp(1.25rem, 0.8214rem + 0.6696vw, 1.625rem) clamp(1.563rem, 0.9916rem + 0.8929vw, 2.063rem);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   color: var(--light_grey);
   border: none;
   background: transparent;
@@ -1193,6 +1209,9 @@
   font-family: HelvNowDis-reg;
   font-weight: 400;
   cursor: pointer;
+}
+.inside-child .faq-accordion-wrapper .container .faq-accordion .accordion-list .accordion-item .accordion-trigger span {
+  padding-right: 15px;
 }
 .inside-child .faq-accordion-wrapper .container .faq-accordion .accordion-list .accordion-item .accordion-trigger:hover {
   color: var(--light_green);
@@ -1205,6 +1224,8 @@
   position: relative;
   transform: rotate(0);
   transition: transform 0.5s ease-in-out;
+  margin-top: 8px;
+  padding-right: 0 !important;
 }
 .inside-child .faq-accordion-wrapper .container .faq-accordion .accordion-list .accordion-item .accordion-icon svg {
   width: 100%;

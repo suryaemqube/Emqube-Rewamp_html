@@ -504,9 +504,13 @@ p{
 .txt-green{
 	color: var(--light_green);
 }
+.txt-bold{
+  font-weight: 700;
+  font-family: HelvNowDis-Bold;
+}
 .txt-med{
   font-weight: 500;
-  font-family: HelvNowDis-medium;
+  font-family: HelvNowDis-medium !important;
 }
 .txt-light{
   font-family: HelvNowDis-light !important;

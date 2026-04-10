@@ -627,6 +627,7 @@ content: "\f009";
       }
     }
   }
+  
   // Our Engagement model section ends
 
   // Partner section starts
@@ -897,8 +898,17 @@ content: "\f009";
               i{
                 font-size: 32px;
                 font-style: normal;
+                @media(max-width: 1500px){
+                  font-size: 28px;
+                }
+                @media(max-width: 1380px){
+                  font-size: 25px;
+                }
                 @media(max-width: 767px){
                   font-size: 20px;
+                }
+                @media(max-width: 500px){
+                  font-size: 15px;
                 }
               }
             }
@@ -942,6 +952,7 @@ content: "\f009";
     position: relative;
     z-index: 99;
     .centered-slides{
+      flex-wrap: nowrap;
       max-width: 1450px;
       @media(max-width: 1600px){
         max-width: 85%;
@@ -1038,7 +1049,7 @@ content: "\f009";
               padding: clamp(1.25rem, 0.8214rem + 0.6696vw, 1.625rem) clamp(1.563rem, 0.9916rem + 0.8929vw, 2.063rem);
               display: flex;
               justify-content: space-between;
-              align-items: center;
+              align-items: flex-start;
               color: var(--light_grey);
               border: none;
               background: transparent;
@@ -1047,6 +1058,9 @@ content: "\f009";
               font-family: HelvNowDis-reg;
               font-weight: 400;
               cursor: pointer;
+              span{
+                padding-right: 15px;
+              }
               &:hover{
                 color: var(--light_green);
               }
@@ -1059,6 +1073,8 @@ content: "\f009";
               position: relative;
               transform: rotate(0);
               transition: transform 0.5s ease-in-out;
+              margin-top: 8px;
+              padding-right: 0 !important;
               svg{
                 width: 100%;
                 height: auto;
