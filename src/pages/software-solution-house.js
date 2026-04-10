@@ -299,14 +299,14 @@ const Header = () => {
                   <span className="num">200</span>
                   <span className="icon">+</span>
                 </p>
-                <p className="count-txt">Software & Web Projects</p>
+                <p className="count-txt">Projects Successfully Delivered</p>
               </li>
               <li className="bg-white">
                 <p className="count">
-                  <span className="num">10</span>
+                  <span className="num">8</span>
                   <span className="icon">+</span>
                 </p>
-                <p className="count-txt">Average Customer Relationship</p>
+                <p className="count-txt">Countries Served</p>
               </li>
             </ul>
           </div>
