@@ -88,7 +88,7 @@ content: "\f009";
       background-image: none
     }
     @media(max-width: 600px){
-      top: 100px;
+      top: 0px;
     }
   }
   // intro section starts
@@ -128,6 +128,7 @@ content: "\f009";
           border-radius: 36px;
           border: 1px solid #4E9C5A;
           box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
+          box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
           background: linear-gradient(90deg, #87D292 0%, #4E9C5A 100%);
           background-clip: text;
           -webkit-background-clip: text;
@@ -176,6 +177,10 @@ content: "\f009";
             @media(max-width: 600px){
               display: none;
             }
+          }
+          .txt-regular{
+            font-family: HelvNowDis-reg;
+            font-weight: 400;
           }
         }
         .sub-txt{
@@ -773,6 +778,9 @@ content: "\f009";
               font-family: HelvNowDis-light;
               color: var(--light_grey);
               line-height: 1.6em;
+              @media(max-width: 1500px){
+                font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+              }
               @media(max-width: 850px){
                 line-height: 1.5em;
               }

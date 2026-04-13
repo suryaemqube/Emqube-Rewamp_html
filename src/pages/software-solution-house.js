@@ -520,13 +520,20 @@ const Header = () => {
                       {webSlides.map((slide, index) => (
                         <SwiperSlide key={slide.key}>
                           <div className="swiper-slide-content">
-                            <div className="slide-image">
-                              <img src={slide.img} alt={slide.title} />
-                            </div>
-                            <div className="slide-text">
-                              <h3>{slide.title}</h3>
-                              <p>{slide.text}</p>
-                            </div>
+                            <a href="#">
+                              <div className="slide-image">
+                                <img src={slide.img} alt={slide.title} />
+                              </div>
+                              <div className="slide-text">
+                                <h3>{slide.title}</h3>
+                                <p>{slide.text}</p>
+                              </div>
+                              <span class="arrow-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                                  <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                              </span>
+                            </a>
                           </div>
                         </SwiperSlide>
                       ))}
@@ -1181,6 +1188,7 @@ const Header = () => {
                   <img src="/assets/img/emovers-proj-img1.jpg" alt="Emovers"></img>
                 </div>
                 <div className="proj-txt">
+                  <p className="proj-name">E-Move</p>
                   <p>Region's largest relocation company with services for furniture installation and storage</p>
                 </div>
               </div>
@@ -1261,6 +1269,7 @@ const Header = () => {
             <li><a href="#"><img src="/assets/img/logo-winspire.jpg" width="148" height="72" alt="winspire"></img></a></li>
             <li><a href="#"><img src="/assets/img/logo-electricway.jpg" width="148" height="72" alt="Electricway"></img></a></li>
           </ul>
+          <a href="#" className="view-more-btn">View more</a>
         </div>
       </section>
       {/* Home Page Brand section ends */}

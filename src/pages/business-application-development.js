@@ -165,6 +165,7 @@ const Header = () => {
               <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img>
             </div>
             <div className="proj-txt">
+              <p className="proj-name">E-Move</p>
               <p>Region's largest relocation company with services for furniture installation and storage</p>
             </div>
           </div>
@@ -384,7 +385,7 @@ const Header = () => {
           </div>
           <div className="title-wrapp">
             <p className="parent-page-title">Software Development</p>
-            <h1>Custom Business Application <br />Development in Dubai</h1>
+            <h1><span className="txt-regular">Custom</span> Business Application <br />Development <span className="txt-regular">in Dubai</span></h1>
             <p className="sub-txt">Bespoke Software Solutions Tailored to Your Unique Business Logic</p>
           </div>
           <div className="scroll-down-arrow">

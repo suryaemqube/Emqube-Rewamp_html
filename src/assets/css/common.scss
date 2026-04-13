@@ -533,6 +533,7 @@ p{
 .square-fill-btn,.square-fill-btn-wrapp > a{
 	border-radius: 4px;
 	background-color: var(--light_green);
+  border: 1px solid transparent;
 	color: var(--white);
 	text-align: center;
 	font-size: clamp(1rem, 0.9624rem + 0.188vw, 1.188rem);
@@ -683,6 +684,31 @@ section{
 video{
   width: 100%;
   height: 100%;
+}
+.view-more-btn{
+  border-radius: 41px;
+  background: rgba(217, 217, 217, 0.49);
+  // filter: blur(8.800000190734863px);
+  font-size: 14px;
+  color: #A0A0A0;
+  line-height: 1.2em;
+  font-family: HelvNowDis-reg;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 15px 40px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  display: none;
+  @media(max-width: 767px){
+    display: inline-flex;
+  }
+}
+.view-more-btn.active{
+  filter: blur(1);
 }
 // headar starts
 header{
