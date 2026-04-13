@@ -698,7 +698,7 @@
 @media (max-width: 767px) {
   .inside-page .tab-system-wrapper {
     padding-bottom: 0;
-    padding-bottom: 35px;
+    padding-bottom: 70px;
   }
 }
 .inside-page .tab-system-wrapper .container {
@@ -996,7 +996,7 @@
 }
 @media (max-width: 767px) {
   .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper .swiper-wrapper .swiper-slide .swiper-slide-content .slide-text h3 {
-    padding-right: 20px;
+    padding-right: 40px;
   }
 }
 .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper .swiper-wrapper .swiper-slide .swiper-slide-content .slide-text p {

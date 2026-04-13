@@ -710,6 +710,11 @@ video{
 .view-more-btn.active{
   filter: blur(1);
 }
+.view-more-btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
 // headar starts
 header{
   background: rgba(0, 0, 0, 0.00);
