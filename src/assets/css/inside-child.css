@@ -100,6 +100,8 @@
   }
 }
 .inside-child .inside-child-intro-wrapper {
+  filter: blur(10px);
+  opacity: 0.6; /* optional for nicer effect */
   padding-top: clamp(6.25rem, -6.1786rem + 17.8571vw, 16.25rem);
   position: relative;
   z-index: 9;
@@ -478,7 +480,7 @@
   width: 17px;
   height: 17px;
   border-radius: 100%;
-  background-color: var(--light_green);
+  background-color: #8F8F8F;
   top: 17px;
   left: -8px;
 }
@@ -507,7 +509,7 @@
   width: 2px;
   height: calc(100% - 45px);
   border-radius: 100%;
-  background-color: var(--light_green);
+  background-color: #8F8F8F;
   bottom: 0;
   left: 0;
 }
@@ -518,6 +520,17 @@
     bottom: auto;
     height: 75%;
   }
+}
+.inside-child .strategic-choice-wrapper .container ul li .right .line-fill {
+  position: absolute;
+  width: 2px;
+  height: calc(100% - 45px);
+  background-color: var(--light_green); /* grey */
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  transform: scaleY(0);
+  transform-origin: top;
 }
 .inside-child .strategic-choice-wrapper .container ul li .right p {
   font-family: HelvNowDis-light;
@@ -536,8 +549,19 @@
     margin-bottom: 20px;
   }
 }
+.inside-child .strategic-choice-wrapper .container ul li .right.active:before {
+  background-color: var(--light_green);
+}
+.inside-child .strategic-choice-wrapper .container ul li .right.active .title {
+  color: var(--light_green);
+  transition: color 0.5s ease-in-out;
+}
 .inside-child .strategic-choice-wrapper .container ul li:last-child {
   margin-bottom: 0;
+}
+.inside-child .strategic-choice-wrapper .container ul li.active .left svg path {
+  fill: var(--light_green);
+  transition: fill 0.5s ease-in-out;
 }
 .inside-child .engagement-model-wrapp {
   position: relative;
@@ -1101,6 +1125,23 @@
   position: relative;
   z-index: 99;
 }
+@media (max-width: 767px) {
+  .inside-child .work-ref-wrapper .workSwiper {
+    padding-bottom: 20px;
+  }
+}
+.inside-child .work-ref-wrapper .swiper-pagination {
+  display: none;
+}
+@media (max-width: 767px) {
+  .inside-child .work-ref-wrapper .swiper-pagination {
+    display: block;
+    bottom: 0;
+  }
+}
+.inside-child .work-ref-wrapper .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--light_green);
+}
 .inside-child .work-ref-wrapper .centered-slides {
   flex-wrap: nowrap;
   max-width: 1450px;
@@ -1149,6 +1190,11 @@
     top: -9px;
     background-repeat: no-repeat;
     z-index: -1;
+  }
+}
+@media (max-width: 767px) and (max-width: 767px) {
+  .inside-child .faq-accordion-wrapper:before {
+    top: -29px;
   }
 }
 .inside-child .faq-accordion-wrapper .container {

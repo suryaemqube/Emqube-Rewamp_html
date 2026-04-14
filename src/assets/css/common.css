@@ -1497,4 +1497,38 @@ footer .inner-container .f-btm .f-social-list {
 .backtotop.active {
   opacity: 1;
   visibility: visible;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Slide-up animation */
+.slide-up {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for list items */
+.stagger-li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-li.visible {
+  opacity: 1;
+  transform: translateY(0);
 }/*# sourceMappingURL=common.css.map */

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -214,18 +216,168 @@ const Header = () => {
     }
   ];
 
+    // common script for all animation - starts
+    useEffect(() => {
+      const elements = document.querySelectorAll(
+        ".slide-up, .fade-in, .stagger-li"
+      );
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+
+              if (entry.target.classList.contains("fade-in")) {
+                entry.target.classList.add("visible");
+              }
+
+              if (entry.target.classList.contains("slide-up")) {
+                entry.target.classList.add("visible");
+              }
+
+              if (entry.target.classList.contains("stagger-li")) {
+                setTimeout(() => {
+                  entry.target.classList.add("visible");
+                }, index * 100);
+              }
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+
+      // 🧹 CLEANUP (VERY IMPORTANT in React)
+      return () => {
+        elements.forEach((el) => observer.unobserve(el));
+      };
+
+    }, []);
+    // common script for all animation - ends
+
+  // onload intro section animation - starts
+  useEffect(() => {
+    gsap.fromTo(
+      ".inside-intro-wrapper",
+      {
+        filter: "blur(10px)",
+        opacity: 0.6,
+        scale: 0.6
+      },
+      {
+        filter: "blur(0px)",
+        opacity: 1,
+        scale: 1,
+        duration: 1.5,
+        ease: "power2.out",
+        delay: 0.2,
+      }
+    )
+  }, [])
+  // onload intro section animation - ends
+
+  // onscroll straegic section aniamtion - starts
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger)
+
+  //   const items = gsap.utils.toArray(".strategic-choice-wrapper li")
+
+  //   items.forEach((item) => {
+  //     const line = item.querySelector(".line-fill")
+  //     const content = item.querySelector(".right")
+
+  //     gsap.fromTo(
+  //       line,
+  //       {
+  //         height: "0%",
+  //       },
+  //       {
+  //         height: "calc(100% - 45px)",
+  //         ease: "none",
+  //         scrollTrigger: {
+  //           trigger: item,
+  //           start: "top 70%",
+  //           end: "bottom 30%",
+  //           scrub: true, // 🔥 THIS makes it smooth & reversible
+            
+  //           onEnter: () => content.classList.add("active"),
+  //           onLeaveBack: () => content.classList.remove("active"),
+  //         },
+  //       }
+  //     )
+  //   })
+  // }, [])
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    const items = gsap.utils.toArray(".strategic-choice-wrapper li")
+
+    items.forEach((item) => {
+      const line = item.querySelector(".line-fill")
+      const right = item.querySelector(".right")
+
+      const height = right.offsetHeight - 50 // 👈 exact calc
+
+      // gsap.fromTo(
+      //   line,
+      //   {
+      //     height: 0,
+      //   },
+      //   {
+      //     height: height, // 👈 dynamic px value
+      //     ease: "none",
+      //     scrollTrigger: {
+      //       trigger: item,
+      //       start: "top 70%",
+      //       end: "bottom 30%",
+      //       scrub: true,
+      //     },
+      //   }
+      // )
+      gsap.fromTo(line,
+      { 
+        scaleY: 0 
+      },
+      {
+        scaleY: 1,
+        // scrollTrigger: {
+        //   trigger: item,
+        //   scrub: true,
+        // },
+        scrollTrigger: {
+          trigger: item,
+          start: "top 70%",
+          end: "bottom 30%",
+          scrub: true,
+          toggleClass: {
+            targets: [item, right], // 👈 both li + right
+            className: "active",
+          },
+        },
+      }
+    )
+    })
+  }, [])
+  // onscroll straegic section aniamtion - ends
+
   return (
     <>
     
       <header className={`${menuActive ? "active" : ""} ${scrolled ? "scrolled" : ""}`}>
         <div className="inner-container d-flex">
-          <div className="company-logo">
+          <div className="company-logo stagger-li">
             <a href="javascript:void(0);" className="logo-emqube">
               <img className="logo-black" src="/assets/img/emqube-logo-black.svg" width="196" height="76" alt="emQube Logo"></img>
               <img className="logo-white" src="/assets/img/emqube-logo-white.svg" width="196" height="76" alt="emQube Logo"></img>
             </a>
           </div>
-          <nav className="main-nav">
+          <nav className="main-nav stagger-li">
             <ul className="main-nav-ul d-flex">
               <li className="menu-item-has-children children-level-2">
                 <a href="javascript:void(0);">Software</a>
@@ -398,7 +550,7 @@ const Header = () => {
       {/* Inside intro section ends */}
 
       {/* child page intro highlight section starts */}
-      <section className="intro-highlight-wrapper">
+      <section className="intro-highlight-wrapper slide-up">
         <div className="container">
           <div className="left">
             <p><span className="txt-grey">License Free Applications</span><span className="txt-green">Suited to your exact needs</span></p>
@@ -426,6 +578,7 @@ const Header = () => {
                 </svg>
               </div>
               <div className="right">
+                <span className="line-fill"></span>
                 <p className="title">The Strategic Advantage: Custom-Built vs. Packaged Software</p>
                 <p>While packaged software offers speed, it often forces your organization to conform to rigid, pre-set workflows. A <span className="txt-med">custom-built application</span> is engineered specifically for your business logic, ensuring your technology supports your unique operational needs rather than restricting them.</p>
               </div>
@@ -438,6 +591,7 @@ const Header = () => {
                 </svg>
               </div>
               <div className="right">
+                <span className="line-fill"></span>
                 <p className="title">Protecting Your Innovation and Intellectual Property (IP)</p>
                 <p>Bespoke software is the only way to secure a proprietary, "copyrighted" asset. We help Dubai companies transition from generic platforms to software they truly own, protecting your <span className="txt-med">intellectual property</span> and ensuring your innovative processes cannot be replicated by competitors.</p>
               </div>
@@ -452,6 +606,7 @@ const Header = () => {
                 </svg>
               </div>
               <div className="right">
+                <span className="line-fill"></span>
                 <p className="title">Long-Term Value with Zero Licensing Costs</p>
                 <p>Custom development is a cost-effective long-term asset. By eliminating recurring per-user licenses and expensive "workarounds," bespoke software creates a leaner, more efficient operation that scales organically with your business ambitions.</p>
               </div>
@@ -464,10 +619,10 @@ const Header = () => {
       {/* engagement model starts */}
       <section className="engagement-model-wrapp">
         <div className="container">
-          <h2 className="txt-center">Our Engagement Model</h2>
+          <h2 className="txt-center slide-up">Our Engagement Model</h2>
           <div className="eng-model-step">
             <ul>
-              <li>
+              <li className="stagger-li">
                 <div className="step-count">1</div>
                 <div className="eng-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="79" height="77" viewBox="0 0 79 77" fill="none">
@@ -487,7 +642,7 @@ const Header = () => {
                   <p>Our engagement typically begins with a Request for Proposal (RFP) that outlines the software's scope and technical specifications. Whether developed by your internal team or in collaboration with external consultants, the RFP serves as the roadmap for the project.</p>
                 </div>
               </li>
-              <li>
+              <li className="stagger-li">
                 <div className="step-count">2</div>
                 <div className="eng-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="61" height="80" viewBox="0 0 61 80" fill="none">
@@ -508,7 +663,7 @@ const Header = () => {
                   <p>The foundation of a successful delivery is a comprehensive <span className="txt-med">Requirements Study</span>. We collaborate with stakeholders to translate business needs into a <span className="txt-med">Software Requirements Specification (SRS)</span>, capturing every functional requirement and feature.</p>
                 </div>
               </li>
-              <li>
+              <li className="stagger-li">
                 <div className="step-count">3</div>
                 <div className="eng-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="81" height="76" viewBox="0 0 81 76" fill="none">
@@ -527,7 +682,7 @@ const Header = () => {
                   <p>Our Dubai-based development team establishes the system architecture and a rigorous <span className="txt-med">Quality Assurance (QA) Plan</span>. We build the solution in-house, followed by internal testing before releasing the system for <span className="txt-med">User Acceptance Testing (UAT)</span>.</p>
                 </div>
               </li>
-              <li>
+              <li className="stagger-li">
                 <div className="step-count">4</div>
                 <div className="eng-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="69" height="78" viewBox="0 0 69 78" fill="none">
@@ -550,9 +705,9 @@ const Header = () => {
       {/* partner with emqube section starts */}
       <section className="inside-partner-wrapper">
         <div className="container">
-          <h2><span className="txt-med">Why Partner with emQube</span> for Business Applications?</h2>
+          <h2><span className="txt-med slide-up">Why Partner with emQube</span> for Business Applications?</h2>
           <ul>
-            <li>
+            <li className="stagger-li">
               <div className="part-img">
                 <img src="/assets/img/partner-img.jpg"></img>
                 <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
@@ -562,7 +717,7 @@ const Header = () => {
                 <p>We are the preferred partners for large and medium enterprises seeking robust, <span className="txt-med">scalable software</span>. Our projects power mission-critical operations for clients across the Middle East, Europe, America, and Asia.</p>
               </div>
             </li>
-            <li>
+            <li className="stagger-li">
               <div className="part-img">
                 <img src="/assets/img/local-team-img.jpg"></img>
                 <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
@@ -572,7 +727,7 @@ const Header = () => {
                 <p>Our entire team—including <span className="txt-med">Business Analysts, Software Architects, and Project Managers</span>—is based in Dubai. This provides you with direct access and real-time collaboration.</p>
               </div>
             </li>
-            <li>
+            <li className="stagger-li">
               <div className="part-img">
                 <img src="/assets/img/specialized-img.jpg"></img>
                 <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
@@ -589,57 +744,57 @@ const Header = () => {
 
       {/* industry section starts */}
       <section className="insudtry-list-wrapp">
-        <h2>Work Reference</h2>
+        <h2 className="slide-up">Work Reference</h2>
         <div className="container">
           <div className="left">
-            <h3>Industries</h3>
+            <h3 className="slide-up">Industries</h3>
             <ul>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon icon-fmcg"></i></span>
                 <p>FMCG</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon icon-automative"></i></span>
                 <p>Automotive</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon icon-insurance"></i></span>
                 <p>Insurance</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon icon-Logistics"></i></span>
                 <p>Logistics</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon icon-Facility-Management"></i></span>
                 <p>Facility Management</p>
               </li>
             </ul>
           </div>
           <div className="right">
-            <h3>Applications</h3>
+            <h3 className="slide-up">Applications</h3>
             <ul>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon-Brokerage"></i></span>
                 <p>Brokerage</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon-Operations"></i></span>
                 <p>Operations</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon-Accounting"></i></span>
                 <p>Accounting</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon-Reporting"></i></span>
                 <p>Reporting</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon-Legacy-Integration"></i></span>
                 <p>Legacy Integration</p>
               </li>
-              <li>
+              <li className="stagger-li">
                 <span className="icon"><i className="icon icon-crm"></i></span>
                 <p>CRM</p>
               </li>
@@ -653,10 +808,10 @@ const Header = () => {
       {/* Work Reference Section Starts */}
       <section className="work-ref-wrapper">
         <div className="container">
-          <h2 className="txt-center">Select Projects</h2>
+          <h2 className="txt-center slide-up">Select Projects</h2>
         </div>
         {windowWidth > 991 && slides.length <= 3 ? (
-          <div className="centered-slides">
+          <div className="centered-slides slide-up">
             {slides.map((slide) => (
               <div key={slide.key} className="swiper-slide" style={{ flex: '0 0 auto' }}>
                 {slide.content}
@@ -665,9 +820,10 @@ const Header = () => {
           </div>
         ) : (
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Pagination]}
             className="workSwiper"
             navigation
+            pagination
             autoplay={{ delay: 3000 }}
             breakpoints={{
               0: {
@@ -693,7 +849,7 @@ const Header = () => {
             }}
           >
             {slides.map((slide) => (
-              <SwiperSlide key={slide.key}>
+              <SwiperSlide key={slide.key} className="slide-up">
                 {slide.content}
               </SwiperSlide>
             ))}
@@ -706,10 +862,10 @@ const Header = () => {
       <section className="faq-accordion-wrapper">
         <div className="container">
           <div className="faq-accordion">
-            <h2 className="faq-heading">Frequently Asked Questions</h2>
+            <h2 className="faq-heading slide-up">Frequently Asked Questions</h2>
             <div className="accordion-list">
               {accordionItems.map((item, index) => (
-                <div className={`accordion-item ${activeAccordion === index ? 'active' : ''}`} key={index}>
+                <div className={`accordion-item stagger-li ${activeAccordion === index ? 'active' : ''}`} key={index}>
                   <button type="button" className="accordion-trigger" onClick={() => toggleAccordion(index)}>
                     <span>{item.question}</span>
                     <span className="accordion-icon">
@@ -732,11 +888,11 @@ const Header = () => {
       {/* home cta section starts */}
       <section className="cta-wrapper">
         <div className="container">
-          <p className="cta-title">Ready to build your customized software?</p>
-          <p className="cta-txt">Talk to our Business Applications Team in Dubai</p>
+          <p className="cta-title stagger-li">Ready to build your customized software?</p>
+          <p className="cta-txt stagger-li">Talk to our Business Applications Team in Dubai</p>
           <div className="cta-btn-wrapp d-flex">
             <ul class="lets-talk-wrap">
-              <li class="whatsapp">
+              <li class="whatsapp stagger-li">
                 <a href="#" class="view-all pos-ab-aligh-right ">
                   <span class="text">WhatsApp</span>
                   <span class="circle">
@@ -746,7 +902,7 @@ const Header = () => {
                   </span>
                 </a>
               </li>
-              <li class="contact-us">
+              <li class="contact-us stagger-li">
                 <a href="javascript:void(0);" class="view-all">
                   <span class="text">Contact Us</span>
                   <span class="circle">
@@ -756,7 +912,7 @@ const Header = () => {
                   </span>
                 </a>
               </li>
-              <li class="call-us">
+              <li class="call-us stagger-li">
                 <a href="#" class="view-all pos-ab-aligh-right ">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M22.6 24C19.8222 24 17.0778 23.3944 14.3667 22.1833C11.6556 20.9722 9.18889 19.2556 6.96667 17.0333C4.74444 14.8111 3.02778 12.3444 1.81667 9.63333C0.605556 6.92222 0 4.17778 0 1.4C0 1 0.133333 0.666667 0.4 0.4C0.666667 0.133333 1 0 1.4 0H6.8C7.11111 0 7.38889 0.105556 7.63333 0.316667C7.87778 0.527778 8.02222 0.777778 8.06667 1.06667L8.93333 5.73333C8.97778 6.08889 8.96667 6.38889 8.9 6.63333C8.83333 6.87778 8.71111 7.08889 8.53333 7.26667L5.3 10.5333C5.74444 11.3556 6.27222 12.15 6.88333 12.9167C7.49444 13.6833 8.16667 14.4222 8.9 15.1333C9.58889 15.8222 10.3111 16.4611 11.0667 17.05C11.8222 17.6389 12.6222 18.1778 13.4667 18.6667L16.6 15.5333C16.8 15.3333 17.0611 15.1833 17.3833 15.0833C17.7056 14.9833 18.0222 14.9556 18.3333 15L22.9333 15.9333C23.2444 16.0222 23.5 16.1833 23.7 16.4167C23.9 16.65 24 16.9111 24 17.2V22.6C24 23 23.8667 23.3333 23.6 23.6C23.3333 23.8667 23 24 22.6 24Z" fill="#242424"/>
@@ -772,7 +928,7 @@ const Header = () => {
       {/* footer starts */}
       <footer>
         <div className="inner-container">
-          <div className="f-top">
+          <div className="f-top slide-up">
             <div className="f-left">
               <div className="f-logo">
                 <img src="/assets/img/emqube-logo-black.svg"></img>
