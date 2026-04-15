@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,6 +11,8 @@ import "/src/assets/css/common.css";
 // import "/src/assets/css/home.css";
 import "/src/assets/css/inside.css";
 import "/src/assets/css/inside-child.css";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 
 const Header = () => {
@@ -267,12 +270,12 @@ const Header = () => {
       {
         filter: "blur(10px)",
         opacity: 0.6,
-        scale: 0.6
+        // scale: 0.6
       },
       {
         filter: "blur(0px)",
         opacity: 1,
-        scale: 1,
+        // scale: 1,
         duration: 1.5,
         ease: "power2.out",
         delay: 0.2,
@@ -383,24 +386,21 @@ const Header = () => {
                 <a href="javascript:void(0);">Software</a>
                 <ul className="sub-menu submenu has-children-inner slide-up">
                   <li className="menu-item-has-children children-level-0">
-                    <a href="javascript:void(0);">Development</a>
+                    <a href="/software-solution-house">Development</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="business-application-development">Custom Business Application Development in Dubai</a></li>
+                      <li><a href="javascript:void(0);">Mobile App Development Services in Dubai</a></li>
+                      <li><a href="javascript:void(0);">AI Development & Agentic Solutions in Dubai</a></li>
+                      <li><a href="javascript:void(0);">WhatsApp for Business API Solutions in Dubai</a></li>
+                      <li><a href="javascript:void(0);">Business Intelligence & Data Analytics Services in Dubai</a></li>
+                      <li><a href="javascript:void(0);">E-Commerce Development & Strategy Services in Dubai</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-1">
                     <a href="javascript:void(0);">Products</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="javascript:void(0);">Zoho CRM</a></li>
+                      <li><a href="javascript:void(0);">Custom Business Application Development in Dubai</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-2">
@@ -541,9 +541,24 @@ const Header = () => {
             <p className="sub-txt">Bespoke Software Solutions Tailored to Your Unique Business Logic</p>
           </div>
           <div className="scroll-down-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M8 18L12 22M12 22L16 18M12 22V2" stroke="#4E9C5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <a href="#"
+              onClick={(e) => {
+                e.preventDefault();
+
+                gsap.to(window, {
+                  duration: 1,
+                  scrollTo: {
+                    y: ".intro-highlight-wrapper", // target section class or id
+                    offsetY: 50,       // 👈 your offset
+                  },
+                  ease: "power2.out",
+                });
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M8 18L12 22M12 22L16 18M12 22V2" stroke="#4E9C5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -863,9 +878,9 @@ const Header = () => {
         <div className="container">
           <div className="faq-accordion">
             <h2 className="faq-heading slide-up">Frequently Asked Questions</h2>
-            <div className="accordion-list">
+            <div className="accordion-list slide-up">
               {accordionItems.map((item, index) => (
-                <div className={`accordion-item stagger-li ${activeAccordion === index ? 'active' : ''}`} key={index}>
+                <div className={`accordion-item ${activeAccordion === index ? 'active' : ''}`} key={index}>
                   <button type="button" className="accordion-trigger" onClick={() => toggleAccordion(index)}>
                     <span>{item.question}</span>
                     <span className="accordion-icon">

@@ -91,6 +91,7 @@ const Header = () => {
 
   // homepage video section animation - onscroll - starts
   useEffect(() => {
+    const itemsUl = rightUlRef.current;
     const items = rightUlRef.current?.children;
     const target = introUlRef.current;
     const wrapper = wrapperRef.current;
@@ -167,8 +168,22 @@ const Header = () => {
       willChange: "transform",
     });
 
+    // gsap.to(itemsUl, {
+    //   display: "block",
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: ".home-intro-wrapper",
+    //     start: "top 30%",
+    //     end: "bottom 60%",
+    //     scrub: 1.2,
+    //     invalidateOnRefresh: true,
+    //   }
+    // })
     // 🔥 WRAPPER ANIMATION (RESPONSIVE)
     gsap.to(wrapper, {
+      // left: "35%",
+      // xPercent: -50, // ✅ replaces translateX(-50%)
+      // right: "auto",
       width: () => {
         const w = window.innerWidth;
 
@@ -190,6 +205,9 @@ const Header = () => {
 
     // 🔥 ITEMS ANIMATION
     gsap.to(items, {
+      // position: "absolute",
+      // left: "50%",
+      // top: 0,
       // x: (i) => positions[i].x,
       // x: (i) => {
       //   const baseX = positions[i].x;
@@ -198,7 +216,7 @@ const Header = () => {
       //   if (i === 0) return baseX - GAP / 2;
       //   if (i === 1) return baseX + GAP / 2;
 
-      //   return baseX;
+      //   return baseX;f
       // },
 
       x: (i) => {
@@ -207,6 +225,14 @@ const Header = () => {
 
         // center point
         const center = containerWidth / 2;
+
+        // if (i === 0) {
+        //   return -(itemWidth + GAP / 2);
+        // }
+
+        // if (i === 1) {
+        //   return GAP / 2;
+        // }
 
         if (i === 0) {
           // left item
@@ -256,7 +282,7 @@ const Header = () => {
         return baseY;
       },
 
-      scale: 0.9945,
+      scale: 1,
       rotate: 0.18,
 
       // ✅ WIDTH WITH GAP FIX
@@ -264,6 +290,8 @@ const Header = () => {
         const containerWidth = target.getBoundingClientRect().width;
         // return (containerWidth - GAP) / 2;
         return (containerWidth  / 2) - GAP;
+        // return (containerWidth) / 2;
+
       },
 
       height: () => {
@@ -346,7 +374,7 @@ const Header = () => {
       <header className={`${menuActive ? "active" : ""} ${scrolled ? "scrolled" : ""}`}>
         <div className="inner-container d-flex">
           <div className="company-logo stagger-li">
-            <a href="javascript:void(0);" className="logo-emqube">
+            <a href="index.js" className="logo-emqube">
               <img className="logo-black" src="/assets/img/emqube-logo-black.svg" width="196" height="76" alt="emQube Logo"></img>
               <img className="logo-white" src="/assets/img/emqube-logo-white.svg" width="196" height="76" alt="emQube Logo"></img>
             </a>
@@ -357,24 +385,21 @@ const Header = () => {
                 <a href="javascript:void(0);">Software</a>
                 <ul className="sub-menu submenu has-children-inner slide-up">
                   <li className="menu-item-has-children children-level-0">
-                    <a href="javascript:void(0);">Development</a>
+                    <a href="/software-solution-house">Development</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="business-application-development">Custom Business Application Development in Dubai</a></li>
+                      <li><a href="javascript:void(0);">Mobile App Development Services in Dubai</a></li>
+                      <li><a href="javascript:void(0);">AI Development & Agentic Solutions in Dubai</a></li>
+                      <li><a href="javascript:void(0);">WhatsApp for Business API Solutions in Dubai</a></li>
+                      <li><a href="javascript:void(0);">Business Intelligence & Data Analytics Services in Dubai</a></li>
+                      <li><a href="javascript:void(0);">E-Commerce Development & Strategy Services in Dubai</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-1">
                     <a href="javascript:void(0);">Products</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="javascript:void(0);">Zoho CRM</a></li>
+                      <li><a href="javascript:void(0);">Custom Business Application Development in Dubai</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-2">
@@ -564,13 +589,13 @@ const Header = () => {
             </div>
             <div className="intro-txt">
               <h2 className="head-txt"><span className="txt-grey">Keeping</span> Business First. <span className="txt-grey d-block">Always.</span></h2>
-              <p>Since 2003, we have a single focus on helping businesses succeed by leveraging digital technology. As a <span className="txt-med">software solutions house</span> we assist companies to automate business processes. As a <span className="txt-med">digital content studio</span> we create content that builds your brand value and gets more  business. We are about understanding your 'Business First'</p>
+              <p>Since 2003, we have a single focus on helping businesses succeed by leveraging digital technology. As a <a href="software-solution-house"><span className="txt-med">software solutions house</span></a> we assist companies to automate business processes. As a <a href="#"><span className="txt-med">digital content studio</span></a> we create content that builds your brand value and gets more  business. We are about understanding your 'Business First'</p>
             </div>
           </div>
           <div className="right anim-vid-wrapp" ref={wrapperRef}>
-            <ul className="d-flex"  ref={rightUlRef}>
+            <ul className=""  ref={rightUlRef}>
               <li>
-                <a href="#">
+                <a href="software-solution-house/">
                   <video autoPlay muted loop playsInline preload="none">
                     <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid1.mp4" type="video/mp4" />
                   </video>
@@ -600,7 +625,7 @@ const Header = () => {
           <div className="intro-vid-wrapp">
             <ul className="d-flex"  ref={introUlRef}>
               <li className="d-none">
-                <a href="javascript:void(0);">
+                <a href="software-solution-house/">
                   <video autoPlay muted loop playsInline preload="none">
                     <source src="https://wp.emqubeweb.com/emqube-revamp/vid/intro-vid1.mp4" type="video/mp4" />
                   </video>

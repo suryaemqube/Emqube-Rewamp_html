@@ -567,9 +567,6 @@ $light_grey: var(--light_grey);
 			// margin-top: clamp(3.125rem, -1.8750rem + 7.8125vw, 7.5rem);
 			// 1024 - 1920 : 50 128
 			margin-top: clamp(3.125rem, -2.4464rem + 8.7054vw, 8rem);
-			display: flex;
-			justify-content: center;
-			align-items: center;
 			border-radius: 30px;
 			border: 2px solid #4E9C5A;
 			background: #FBFBFB;
@@ -586,6 +583,13 @@ $light_grey: var(--light_grey);
 			@media(max-width: 767px){
 				display: none;
 			}
+			a{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+			}
 			svg{
 				width: 24px;
 				height: 24px;
@@ -599,13 +603,13 @@ $light_grey: var(--light_grey);
 		}
 		@keyframes bounceArrow {
 		0% {
-			transform: translateY(0);
+			transform: translateY(-5px);
 		}
 		50% {
-			transform: translateY(10px);
+			transform: translateY(8px);
 		}
 		100% {
-			transform: translateY(0);
+			transform: translateY(-5px);
 		}
 	}
 	}
@@ -1943,6 +1947,7 @@ $light_grey: var(--light_grey);
 			gap: 20px;
 		}
 		.swiper-button-next,.swiper-button-prev{
+			display: none;
 			@media(max-width: 767px){
 				width: 13px;
 			}

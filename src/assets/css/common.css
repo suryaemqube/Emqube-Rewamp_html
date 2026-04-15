@@ -348,6 +348,10 @@ ul li a {
   text-decoration: none;
 }
 
+p a:hover {
+  color: var(--light_green);
+}
+
 h1 {
   font-family: HelvNowDis-Bold;
   font-weight: 700;
@@ -540,6 +544,29 @@ p:last-child {
     margin-left: 10px;
   }
 }
+.square-fill-btn-wrapp > a {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.square-fill-btn-wrapp > a:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: var(--white);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.square-fill-btn-wrapp > a:hover {
+  background-color: transparent;
+}
+.square-fill-btn-wrapp > a:hover:after {
+  width: 100%;
+}
 
 .view-all {
   border-radius: 28px;
@@ -722,8 +749,6 @@ video {
 }
 
 header {
-  background: rgba(0, 0, 0, 0);
-  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30.6px 0 rgba(0, 0, 0, 0.03);
   position: absolute;
   top: 0;
@@ -754,6 +779,11 @@ header .sub-menu {
   width: 250px;
   z-index: 9999;
   border-radius: 5px;
+}
+@media (max-width: 1500px) {
+  header .sub-menu {
+    top: 110px;
+  }
 }
 @media (resolution: 1.25dppx) {
   header .sub-menu {
@@ -913,6 +943,11 @@ header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children:hover
   width: 0;
   z-index: 900000;
 }
+@media (max-width: 1500px) {
+  header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children:hover > a:after {
+    top: 110px;
+  }
+}
 @media (resolution: 1.25dppx) {
   header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children:hover > a:after {
     top: 100px;
@@ -973,6 +1008,7 @@ header.scrolled .inner-container .main-nav > .main-nav-ul > li > a {
   padding: 30px 20px;
 }
 header.scrolled .inner-container .main-nav > .main-nav-ul > li.square-fill-btn-wrapp > a {
+  background-color: transparent;
   color: var(--white);
 }
 header.scrolled .inner-container .main-nav > .main-nav-ul > li.square-fill-btn-wrapp:hover > a {
@@ -1429,10 +1465,11 @@ footer .inner-container .f-btm .f-social-list {
   }
 }
 .sticky-buttons a svg circle {
-  transition: all 0.3;
+  transition: all 0.5s ease-in-out;
 }
 .sticky-buttons a:hover svg circle {
   fill: black;
+  transition: fill 0.5s ease-in-out;
 }
 
 .backtotop {

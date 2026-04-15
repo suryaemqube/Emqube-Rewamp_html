@@ -99,6 +99,9 @@
     top: 0px;
   }
 }
+.inside-child header {
+  z-index: 99;
+}
 .inside-child .inside-child-intro-wrapper {
   filter: blur(10px);
   opacity: 0.6; /* optional for nicer effect */
@@ -464,6 +467,10 @@
   width: 100%;
   height: 100%;
 }
+.inside-child .strategic-choice-wrapper .container ul li .left svg path {
+  fill: #8F8F8F;
+  transition: fill 0.5s ease-in-out;
+}
 .inside-child .strategic-choice-wrapper .container ul li .right {
   width: 85%;
   padding-left: clamp(0.938rem, -0.1329rem + 1.6732vw, 1.875rem);
@@ -510,6 +517,7 @@
   height: calc(100% - 45px);
   border-radius: 100%;
   background-color: #8F8F8F;
+  background-color: #cccccc;
   bottom: 0;
   left: 0;
 }

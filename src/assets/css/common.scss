@@ -392,6 +392,13 @@ ul {
     }
   }
 }
+p{
+  a{
+    &:hover{
+      color: var(--light_green);
+    }
+  }
+}
 
 h1{
   font-family: HelvNowDis-Bold;
@@ -562,6 +569,29 @@ p{
   @media(max-width: 950px){
     margin-left: 10px;
   }
+  > a{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background: var(--white);
+      right: 0;
+      top: 0;
+      z-index: -1;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    &:hover{
+      background-color: transparent;
+      &:after{
+        width: 100%;
+      }
+    }
+  }
 }
 .view-all{
 	border-radius: 28px;
@@ -717,8 +747,8 @@ video{
 }
 // headar starts
 header{
-  background: rgba(0, 0, 0, 0.00);
-  background: rgba(255, 255, 255, 0.1);
+  // background: rgba(0, 0, 0, 0.00);
+  // background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30.6px 0 rgba(0, 0, 0, 0.03);
   // padding: 19px 0;
   // 1501 - 1920 : 25 0 21 - 27 0 23
@@ -755,6 +785,9 @@ header{
     width: 250px;
     z-index: 9999;
     border-radius: 5px;
+    @media(max-width: 1500px){
+      top: 110px;
+    }
     @media (resolution: 1.25dppx) {
       top: 100px;
     }
@@ -932,6 +965,9 @@ header{
                   top: 126px;
                   width: 0;
                   z-index: 900000;
+                  @media(max-width: 1500px){
+                    top: 110px;
+                  }
                   @media (resolution: 1.25dppx) {
                     top: 100px;
                   }
@@ -1007,6 +1043,7 @@ header.scrolled{
           }
           &.square-fill-btn-wrapp{
             > a{
+              background-color: transparent;
               color: var(--white);
             }
             &:hover{
@@ -1468,7 +1505,7 @@ footer{
         height: 30px;
       }
       circle {
-        transition: all 0.3;
+        transition: all 0.5s ease-in-out;
       }
     }
 
@@ -1476,6 +1513,7 @@ footer{
       svg {
         circle {
           fill: black;
+          transition: fill 0.5s ease-in-out;
         }
       }
     }

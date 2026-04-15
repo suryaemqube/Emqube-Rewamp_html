@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectCoverflow  } from "swiper/modules";
 import gsap from 'gsap';
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,6 +12,7 @@ import "/src/assets/css/common.css";
 // import "/src/assets/css/home.css";
 import "/src/assets/css/inside.css";
 
+gsap.registerPlugin(ScrollToPlugin);
 
 const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -271,17 +273,17 @@ const Header = () => {
       gsap.fromTo(
         ".inside-intro-wrapper .inside-intro-title,.inside-intro-wrapper .inside-intro-txt",
         {
-          filter: "blur(10px)",
+          filter: "blur(20px)",
           opacity: 0.6,
-          scale: 0.6
+          // scale: 0.6
         },
         {
           filter: "blur(0px)",
           opacity: 1,
-          scale: 1,
+          // scale: 1,
           duration: 1.5,
           ease: "power2.out",
-          delay: 0.2,
+          // delay: 0.2,
         }
       )
       gsap.fromTo(
@@ -296,9 +298,11 @@ const Header = () => {
           x: 0,
           opacity: 1,
           stagger: 0.3,
+          duration: 0.5,
           ease: "power2.out",
-          delay: 0.2,
-        }
+          // delay: 0.2,
+        },
+        "-=0.5"
       )
       gsap.fromTo(
         ".inside-intro-wrapper .inside-intro-count.right ul li",
@@ -313,8 +317,9 @@ const Header = () => {
           opacity: 1,
           stagger: 0.3,
           ease: "power2.out",
-          delay: 0.2,
-        }
+          // delay: 0.2,
+        },
+        "-=0.5"
       )
     }, [])
     // onload intro section animation - ends
@@ -341,7 +346,7 @@ const Header = () => {
             if (entry.target.classList.contains("stagger-li")) {
               setTimeout(() => {
                 entry.target.classList.add("visible");
-              }, index * 100);
+              }, index * 250);
             }
 
             observer.unobserve(entry.target);
@@ -380,24 +385,21 @@ const Header = () => {
                 <a href="javascript:void(0);">Software</a>
                 <ul className="sub-menu submenu has-children-inner slide-up">
                   <li className="menu-item-has-children children-level-0">
-                    <a href="javascript:void(0);">Development</a>
+                    <a href="/software-solution-house">Development</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="business-application-development">Custom Business Application Development in Dubai</a></li>
+                      <li><a href="javascript:void(0);">Mobile App Development Services in Dubai</a></li>
+                      <li><a href="javascript:void(0);">AI Development & Agentic Solutions in Dubai</a></li>
+                      <li><a href="javascript:void(0);">WhatsApp for Business API Solutions in Dubai</a></li>
+                      <li><a href="javascript:void(0);">Business Intelligence & Data Analytics Services in Dubai</a></li>
+                      <li><a href="javascript:void(0);">E-Commerce Development & Strategy Services in Dubai</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-1">
                     <a href="javascript:void(0);">Products</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="javascript:void(0);">Zoho CRM</a></li>
+                      <li><a href="javascript:void(0);">Custom Business Application Development in Dubai</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-2">
@@ -574,15 +576,30 @@ const Header = () => {
           </div>
         </div>
         <div className="scroll-down-arrow">
+          <a href="#"
+            onClick={(e) => {
+              e.preventDefault();
+
+              gsap.to(window, {
+                duration: 1,
+                scrollTo: {
+                  y: ".tab-system-wrapper.tab1", // target section class or id
+                  offsetY: 100,       // 👈 your offset
+                },
+                ease: "power2.out",
+              });
+            }}
+          >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M8 18L12 22M12 22L16 18M12 22V2" stroke="#4E9C5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+          </a>
         </div>
       </section>
       {/* Inside intro section ends */}
 
       {/* tab system starts */}
-      <section className="tab-system-wrapper slide-up">
+      <section className="tab-system-wrapper tab1 slide-up">
         <div className="container">
           <div className="tab-system">
             <div className="tab-buttons">
