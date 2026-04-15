@@ -385,6 +385,25 @@ content: "\f009";
         // 320 - 767 : 40 15 - 50 15
         padding: clamp(2.5rem, 2.0526rem + 2.2371vw, 3.125rem) 15px;
       }
+      h2{
+        margin-bottom: 0;
+      }
+      .sub-txt{
+        color: var(--light_grey);
+        font-family: HelvNowDis-light;
+        width: 80%;
+        margin: 0 auto;
+        // 1024 - 1920 : 60 - 100
+        padding-bottom: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem);
+        @media(max-width: 1500px){
+          width: 90%;
+        }
+        @media(max-width: 767px){
+          width: 100%;
+          // 320 - 767 : 46 - 64
+          padding-bottom: clamp(2.875rem, 2.0696rem + 4.0268vw, 4rem);
+        }
+      }
       ul{
         li{
           display: flex;
@@ -695,6 +714,48 @@ content: "\f009";
       }
     }
   }
+  .engagement-model-wrapp.step-3{
+    .container{
+      .eng-model-step{
+        ul{
+          justify-content: center;
+          li{
+            width: 33.33%;
+            @media(max-width: 1280px){
+              width: 48%;
+            }
+            @media(max-width: 767px){
+              width: 100%;
+            }
+            @media(max-width: 500px){
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
+  .engagement-model-wrapp.step-2{
+    .container{
+      .eng-model-step{
+        ul{
+          justify-content: center;
+          li{
+            width: 50%;
+            @media(max-width: 1280px){
+              width: 45%;
+            }
+            @media(max-width: 767px){
+              width: 100%;
+            }
+            @media(max-width: 500px){
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
   
   // Our Engagement model section ends
 
@@ -847,6 +908,64 @@ content: "\f009";
               @media(max-width: 850px){
                 line-height: 1.5em;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+  // Partner section ends
+
+  // Partner section starts
+  .inside-partner-wrapper.partner-2{
+    .container{
+      ul{
+        gap: 40px;
+        display: flex;
+        justify-content: space-between;
+        @media(max-width: 1200px){
+          gap: 20px;
+        }
+        @media(max-width: 850px){
+          gap: 10px;
+        }
+        @media(max-width: 767px){
+          gap: 20px;
+        }
+        li{
+          width: 50%;
+          @media(max-width: 767px){
+            width: 100%;
+          }
+          .part-img{
+            height: 220px;
+            @media(max-width: 1500px){
+              height: 200px;
+            }
+            @media(max-width: 1380px){
+              height: 180px;
+            }
+            @media(max-width: 1200px){
+              height: 150px;
+            }
+            @media(max-width: 991px){
+              height: 120px;
+            }
+            @media(max-width: 767px){
+              height: auto;
+            }
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .img-angle{
+              display: none;
+            }
+          }
+          .part-txt{
+            h3{
+              height: auto;
             }
           }
         }
@@ -1017,6 +1136,179 @@ content: "\f009";
     }
   }
   // Industry section ends
+
+  // Industry section starts
+  .insudtry-list-wrapp.indus-flex-dir-btm{
+    .container{
+      flex-direction: column;
+      .left,.right{
+        width: 100%;
+        ul{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 7px 40px;
+          @media(max-width: 991px){
+            gap: 7px 40px;
+            justify-content: center;
+          }
+          @media(max-width: 767px){
+            gap: 14px;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+          }
+          li{
+            width: 47%;
+            @media(max-width: 991px){
+              width: 45%;
+            }
+            @media(max-width: 767px){
+              width: 47%;
+              padding: 15px 15px 15px 30px;
+            }
+          }
+          &.flex-dir-row{
+            flex-wrap: nowrap;
+            @media(max-width: 767px){
+              flex-wrap: wrap;
+            }
+            li{
+              width: 30%;
+              @media(max-width: 991px){
+                width: 28%;
+              }
+              @media(max-width: 767px){
+                width: 47%;
+                padding: 15px 15px 15px 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // Industry section ends
+
+  // startup innovation starts
+  .startup-inno-wrapper{
+    position: relative;
+    z-index: 99;
+    .container{
+      max-width: 1490px;
+      border-radius: 8px 46px 46px 8px;
+      background: #FFF;
+      box-shadow: 0 4px 26px 0 rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      position: relative;
+      @media(max-width: 1550px){
+        max-width: 1200px;
+      }
+      @media(max-width: 1380px){
+        max-width: 85%;
+      }
+      @media(max-width: 900px){
+        max-width: 95%;
+      }
+      @media(max-width: 767px){
+        flex-direction: column;
+        max-width: 90%;
+        border-radius: 8px;
+        box-shadow: none;
+      }
+      .arrow-icon{
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        width: 43px;
+        height: 43px;
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      > .left,.right{
+        width: 50%;
+        @media(max-width: 767px){
+          width: 100%;
+        }
+      }
+      .left{
+        border-radius: 8px;
+        // 1024 - 1920 : 20 0 20 20 - 30 0 30 36
+        margin: clamp(1.25rem, 0.5357rem + 1.1161vw, 1.875rem) 0 clamp(1.25rem, 0.5357rem + 1.1161vw, 1.875rem) clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+        @media(max-width: 767px){
+          margin: 0;
+          border-radius: 8px 8px 0 0;
+        }
+        .left-img{
+          height: 230px;
+          @media(max-width: 1500px){
+            height: 200px;
+          }
+          @media(max-width: 1380px){
+            height: auto;
+          }
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .right{
+        position: relative;
+        border-radius: 46px 0 0 46px;
+        background: #FFF;
+        box-shadow: -27px 4px 26px 0 rgba(0, 0, 0, 0.08);
+        left: -77px;
+        // 1024 - 1920 : 22 70 22 40 - 37 130 37 77
+        padding: clamp(1.375rem, 0.3030rem + 1.6750vw, 2.313rem) clamp(3.75rem, -1.2500rem + 7.8125vw, 8.125rem) clamp(1.375rem, 0.3030rem + 1.6750vw, 2.313rem) clamp(2.5rem, -0.1434rem + 4.1304vw, 4.813rem);
+        @media(max-width: 900px){
+          left: -50px;
+          padding: 30px 0 30px 30px;
+        }
+        @media(max-width: 767px){
+          left: 0;
+          top: -30px;
+          border-radius: 0 0 8px 8px;
+          box-shadow: 0 4px 26px 0 rgba(0, 0, 0, 0.06);
+          padding: 20px;
+        }
+        .startup-txt{
+          // width: 515px;
+          position: relative;
+          padding-left: 14px;
+          &:before{
+            content: '';
+            width: 4px;
+            background: linear-gradient(180deg, rgba(78, 156, 90, 0.20) 0%, rgba(78, 156, 90, 0.10) 100%);
+            height: 90%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+          }
+          p{
+            font-family: HelvNowDis-light;
+            font-weight: 300;
+            color: var(--light_grey);
+          }
+          .startup-title{
+            font-family: HelvNowDis-Bold;
+            font-weight: 700;
+            color: var(--light_green);
+            // 1024 - 1920 : 29 - 54
+            font-size: clamp(1.813rem, 0.0279rem + 2.7893vw, 3.375rem);
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+  // startup innovation ends
 
   // project section starts
   .work-ref-wrapper{
