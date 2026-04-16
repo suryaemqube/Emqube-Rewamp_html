@@ -1077,11 +1077,102 @@ const Header = () => {
       </section>
       {/* startup innovation section ends */}
 
+      {/* business intelligence section starts */}
+      <section className="business-inte-wrapper">
+        <div className="container">
+          <h2>Industry-Leading Business Intelligence Platforms</h2>
+          <ul className="business-inte-list">
+            <li>
+              <p className="tech-name">Microsoft Power BI</p>
+              <div className="left">
+                <img src="/assets/img/power-bi-logo.png" alt="Microsoft Power BI"></img>
+              </div>
+              <div className="right">
+                <p>The gold standard for organizations within the Microsoft ecosystem, offering seamless integration with Excel, Azure, and Teams for cost-effective enterprise reporting.</p>
+              </div>
+            </li>
+            <li>
+              <p className="tech-name">Salesforce Tableau</p>
+              <div className="left">
+                <img src="/assets/img/tableau-logo.png" alt="Salesforce Tableau"></img>
+              </div>
+              <div className="right">
+                <p>Renowned for its best-in-class data visualization and artistic flexibility, making it the preferred choice for deep exploratory analysis and high-impact executive storytelling.</p>
+              </div>
+            </li>
+            <li>
+              <p className="tech-name">Qlik Sense</p>
+              <div className="left">
+                <img src="/assets/img/qlik-logo.png" alt="Qlik Sense"></img>
+              </div>
+              <div className="right">
+                <p>Features a unique "associative engine" that allows users to explore hidden patterns across all data points without being restricted by pre-defined query paths.</p>
+              </div>
+            </li>
+            <li>
+              <p className="tech-name">Google Looker</p>
+              <div className="left">
+                <img src="/assets/img/looker-logo.png" alt="Google Looker"></img>
+              </div>
+              <div className="right">
+                <p>A modern, cloud-native platform that uses a centralized modeling language (LookML) to ensure a single, governed version of truth across the entire organization.</p>
+              </div>
+            </li>
+            <li>
+              <p className="tech-name">ThoughtSpot</p>
+              <div className="left">
+                <img src="/assets/img/thoughtspot-logo.png" alt="ThoughtSpot"></img>
+              </div>
+              <div className="right">
+                <p>A pioneer in "search-driven" analytics that leverages AI to allow non-technical users to generate complex reports simply by typing questions in natural language.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      {/* business intelligence section ends */}
+
       {/* e-commerce platform section starts */}
       <section className="e-comm-platform-wrapp">
         <div className="container">
           <h2>Choosing the Right Platform: <br />Shopify vs. Magento vs. WooCommerce</h2>
-          
+          <ul>
+            <li>
+              <div className="platform-logo">
+                <span><img src="/assets/img/magento-logo.png" alt="magento Logo"></img></span>
+                <span><img src="/assets/img/woocommerce-logo.png" alt="Woocommerce logo"></img></span>
+              </div>
+              <div className="platform-name">
+                <p>Adobe Commerce (Magento) & WooCommerce for Enterprise Control</p>
+              </div>
+              <div className="platform-txt">
+                <p>For medium-to-large enterprises seeking full ownership and lower long-term fees, we deploy powerful frameworks like Magento (Adobe Commerce) and WooCommerce. These offer unmatched customization for complex business rules and high-volume traffic.</p>
+              </div>
+            </li>
+            <li>
+              <div className="platform-logo">
+                <span><img src="/assets/img/shopify-logo.png" alt="shopify Logo"></img></span>
+              </div>
+              <div className="platform-name">
+                <p>Shopify & SaaS Solutions for Rapid Market Entry</p>
+              </div>
+              <div className="platform-txt">
+                <p>For businesses prioritizing speed to market and lower initial overhead, we provide expert Shopify setup and customization. We help you navigate the SaaS landscape to ensure your brand remains professional and scalable.</p>
+              </div>
+            </li>
+            <li>
+              <div className="platform-logo">
+                <span><img src="/assets/img/amazon-logo.png" alt="amazon Logo"></img></span>
+                <span><img src="/assets/img/noon-logo.png" alt="noon logo"></img></span>
+              </div>
+              <div className="platform-name">
+                <p>Omnichannel Strategy: Marketplaces & Branded Stores</p>
+              </div>
+              <div className="platform-txt">
+                <p>We help you balance a branded online presence with a strategic footprint on global marketplaces like Amazon and Noon. This omnichannel approach ensures maximum reach while maintaining your brand’s independent identity.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
       {/* e-commerce platform section ends */}
