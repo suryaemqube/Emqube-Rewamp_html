@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectCoverflow  } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectCoverflow  } from "swiper/modules";
 import gsap from 'gsap';
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -266,6 +266,24 @@ const Header = () => {
     { src: "/assets/img/logo-transAsia.jpg", alt: "TransAsia" },
     { src: "/assets/img/logo-winspire.jpg", alt: "Winspire" },
     { src: "/assets/img/logo-electricway.jpg", alt: "Electricway" },
+  ];
+  
+  const logos_technology = [
+    { src: "/assets/img/wordpress.webp", alt: "Wordpress" },
+    { src: "/assets/img/drupal.webp", alt: "Drupal" },
+    { src: "/assets/img/contentful.webp", alt: "Contentful" },
+    { src: "/assets/img/strap.webp", alt: "Strap" },
+    { src: "/assets/img/magento.webp", alt: "Magento" },
+    { src: "/assets/img/woo-commerce.webp", alt: "Woo-Commerce" },
+    { src: "/assets/img/opencart.webp", alt: "Opencart" },
+    { src: "/assets/img/shopify.webp", alt: "Shopify" },
+    { src: "/assets/img/bigcommerce.webp", alt: "BigCommerce" },
+    { src: "/assets/img/php.webp", alt: "PHP" },
+    { src: "/assets/img/asp-core.webp", alt: "ASP" },
+    { src: "/assets/img/react.webp", alt: "React" },
+    { src: "/assets/img/angular.webp", alt: "Angular" },
+    { src: "/assets/img/gatsby.webp", alt: "Gatsby" },
+    { src: "/assets/img/vue-js.webp", alt: "Vue js" },
   ];
 
     // onload intro section animation - starts
@@ -549,8 +567,8 @@ const Header = () => {
           </div>
           <div className="inside-intro-title">
             <h1>Software Solutions House</h1>
-            <p className="inside-sub-txt">Custom Software Development & Digital Transformation Services in Dubai <br />Partnering with UAE Businesses since 2003</p>
-            {/* <p className="inside-sub-txt txt-med">Partnering with UAE Businesses since 2003</p> */}
+            <p className="inside-sub-txt">Custom Software Development & Digital Transformation Services in Dubai</p>
+            <p className="inside-sub-txt txt-med">Partnering with UAE Businesses since 2003</p>
           </div>
           <div className="inside-intro-txt">
             <p><span className="txt-med">emQube</span> fulfills the digital transformation goals of your organization with a complete range of software services. Whether you need a <span className="txt-med">customized software system</span> developed from scratch, the integration of powerful <span className="txt-med">SaaS solutions</span>, or a hybrid of both, we deliver. </p>
@@ -1460,6 +1478,165 @@ const Header = () => {
           <h2 className="slide-up">Technology Platforms</h2>
           <Swiper className="techSwiper slide-up"
             // modules={[Navigation, Pagination, Autoplay]}
+            // slidesPerView={3.2}
+            // loop={true}
+            navigation
+            // pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+            breakpoints={{
+              0: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+              },
+              768: {
+                slidesPerView: 5,
+              },
+              1024: {
+                slidesPerView: 7,
+                spaceBetween: 20,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/angular-js.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/azure.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/asp.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/sql.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/mvc.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/windowsMob.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/vscode.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/angular-js.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/azure.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/asp.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/sql.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/mvc.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/windowsMob.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="tech-wrapp">
+                <div className="client-icon">
+                  <img src="/assets/img/vscode.webp" alt="Emovers logo"></img>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+      {/* Technology Section Ends */}
+
+      {/* Technology Platform section starts */}
+      <section className="brand-wrapper digital-plaform-wrapper">
+        <div className="container">
+          <h2 className="txt-center txt-gradient slide-up">Technology Platforms</h2>
+          <p className="txt-center">What should be the platform for your new Website</p>
+          <ul className="brand-list d-flex">
+            {(isMobile ? logos_technology.slice(0, visibleCount) : logos_technology).map((logos_technology, index) => (
+              <li key={index} className="stagger-li">
+                <a href="#">
+                  <img src={logos_technology.src} width="148" height="72" alt={logos_technology.alt} />
+                  <p className="platform-name">{logos_technology.alt}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {isMobile && (
+            <a href="javascript:void(0);"
+              onClick={loadMore}
+              className={`view-more-btn ${
+                visibleCount >= logos_technology.length ? "disabled" : ""
+              }`}
+              disabled={visibleCount >= logos_technology.length}
+            >
+              {visibleCount >= logos_technology.length ? "No more brands" : "View more"}
+            </a>
+          )}
+        </div>
+      </section>
+      {/* Technology Platform section ends */}
+
+      {/* Technology Section Starts */}
+      <section className="technology-wrapper digital-brand-wrapper">
+        <div className="container">
+          <h2 className="slide-up">Brands that Trust Us</h2>
+          <Swiper className="techSwiper slide-up"
+            modules={[Autoplay]}
             // slidesPerView={3.2}
             // loop={true}
             navigation

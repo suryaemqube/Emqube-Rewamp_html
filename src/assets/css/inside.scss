@@ -906,12 +906,14 @@ $light_grey: var(--light_grey);
 													// 1024 - 1920 : 20 - 36
 													font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
 													font-size: 30px;
-													@media(max-width: 1500px){
-														font-size: 28px;
-													}
-													@media(max-width: 1400px){
-														font-size: 26px;
-													}
+													// 1024 - 1920 : 17 - 30
+													font-size: clamp(1.063rem, 0.1350rem + 1.4500vw, 1.875rem);
+													// @media(max-width: 1500px){
+													// 	font-size: 28px;
+													// }
+													// @media(max-width: 1400px){
+													// 	font-size: 26px;
+													// }
 													@media(max-width: 1023px){
 														// 320 - 1023 : 19 - 20
 														font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
@@ -925,6 +927,8 @@ $light_grey: var(--light_grey);
 													color: #767676;
 													font-family: HelvNowDis-light;
 													font-weight: 300;
+													// 1024 - 1920 : 15 - 22
+													font-size: clamp(0.938rem, 0.4386rem + 0.7804vw, 1.375rem);
 													@media(max-width: 767px){
 														padding-right: 0px;
 													}
@@ -2000,6 +2004,86 @@ $light_grey: var(--light_grey);
 				}
 				@media(max-width: 500px){
 					gap: 0 50px;
+				}
+			}
+		}
+	}
+	.brand-wrapper.digital-plaform-wrapper{
+		.container{
+			> h2{
+				padding-bottom: 0;
+				line-height: 1.3em;
+				margin-bottom: 10px;
+			}
+			> p{
+				font-family: HelvNowDis-light;
+				font-weight: 300;
+				color: var(--light_grey);
+				// 1024 - 1920 : 15 - 20
+				font-size: clamp(0.938rem, 0.5814rem + 0.5571vw, 1.25rem);
+				@media(max-width: 767px){
+					font-size: 1rem;
+				}
+			}
+			.brand-list{
+				gap: 45px;
+				// 1024 - 1920 : 32 - 60
+				padding-top: clamp(2rem, 0.0000rem + 3.1250vw, 3.75rem);
+				@media(max-width: 767px){
+					padding-top: 30px;
+				}
+				@media(max-width: 650px){
+					gap: 30px;
+				}
+				li{
+					  width: 17.4%;
+						height: auto;
+						@media(max-width: 1800px){
+							width: 16.8%;
+						}
+						@media(max-width: 1490px){
+							width: 16%;
+						}
+						@media(max-width: 900px){
+							width: 20%;
+						}
+						@media(max-width: 650px){
+							width: 25%;
+						}
+					a{
+						display: flex;
+						flex-direction: column;
+						@media(max-width: 1500px){
+							min-height: auto;
+						}
+						img{
+							margin-bottom: 8px;
+							@media(max-width: 1500px){
+								width: auto;
+							}
+							@media(max-width: 650px){
+								width: 70px;
+							}
+							@media(max-width: 450px){
+								width: 60px;
+							}
+						}
+						.platform-name{
+							font-family: HelvNowDis-light;
+							font-weight: 300;
+							color: var(--light_grey);
+							text-align: center;
+							// 1024 - 1920 : 15 - 20
+							font-size: clamp(0.938rem, 0.5814rem + 0.5571vw, 1.25rem);
+							@media(max-width: 767px){
+								font-size: 1rem;
+							}
+							@media(max-width: 600px){
+								line-height: 1.3em;
+								font-size: 14px;
+							}
+						}
+					}
 				}
 			}
 		}

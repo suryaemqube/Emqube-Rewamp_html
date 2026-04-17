@@ -983,16 +983,7 @@
   margin-bottom: 20px;
   font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
   font-size: 30px;
-}
-@media (max-width: 1500px) {
-  .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper .swiper-wrapper .swiper-slide .swiper-slide-content .slide-text h3 {
-    font-size: 28px;
-  }
-}
-@media (max-width: 1400px) {
-  .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper .swiper-wrapper .swiper-slide .swiper-slide-content .slide-text h3 {
-    font-size: 26px;
-  }
+  font-size: clamp(1.063rem, 0.135rem + 1.45vw, 1.875rem);
 }
 @media (max-width: 1023px) {
   .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper .swiper-wrapper .swiper-slide .swiper-slide-content .slide-text h3 {
@@ -1009,6 +1000,7 @@
   color: #767676;
   font-family: HelvNowDis-light;
   font-weight: 300;
+  font-size: clamp(0.938rem, 0.4386rem + 0.7804vw, 1.375rem);
 }
 @media (max-width: 767px) {
   .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper .swiper-wrapper .swiper-slide .swiper-slide-content .slide-text p {
@@ -2137,6 +2129,105 @@
 @media (max-width: 500px) {
   .inside-page .brand-wrapper .container .brand-list {
     gap: 0 50px;
+  }
+}
+.inside-page .brand-wrapper.digital-plaform-wrapper .container > h2 {
+  padding-bottom: 0;
+  line-height: 1.3em;
+  margin-bottom: 10px;
+}
+.inside-page .brand-wrapper.digital-plaform-wrapper .container > p {
+  font-family: HelvNowDis-light;
+  font-weight: 300;
+  color: var(--light_grey);
+  font-size: clamp(0.938rem, 0.5814rem + 0.5571vw, 1.25rem);
+}
+@media (max-width: 767px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container > p {
+    font-size: 1rem;
+  }
+}
+.inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list {
+  gap: 45px;
+  padding-top: clamp(2rem, 0rem + 3.125vw, 3.75rem);
+}
+@media (max-width: 767px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list {
+    padding-top: 30px;
+  }
+}
+@media (max-width: 650px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list {
+    gap: 30px;
+  }
+}
+.inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li {
+  width: 17.4%;
+  height: auto;
+}
+@media (max-width: 1800px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li {
+    width: 16.8%;
+  }
+}
+@media (max-width: 1490px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li {
+    width: 16%;
+  }
+}
+@media (max-width: 900px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li {
+    width: 20%;
+  }
+}
+@media (max-width: 650px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li {
+    width: 25%;
+  }
+}
+.inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1500px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a {
+    min-height: auto;
+  }
+}
+.inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a img {
+  margin-bottom: 8px;
+}
+@media (max-width: 1500px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a img {
+    width: auto;
+  }
+}
+@media (max-width: 650px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a img {
+    width: 70px;
+  }
+}
+@media (max-width: 450px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a img {
+    width: 60px;
+  }
+}
+.inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a .platform-name {
+  font-family: HelvNowDis-light;
+  font-weight: 300;
+  color: var(--light_grey);
+  text-align: center;
+  font-size: clamp(0.938rem, 0.5814rem + 0.5571vw, 1.25rem);
+}
+@media (max-width: 767px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a .platform-name {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list li a .platform-name {
+    line-height: 1.3em;
+    font-size: 14px;
   }
 }
 .inside-page .technology-wrapper {

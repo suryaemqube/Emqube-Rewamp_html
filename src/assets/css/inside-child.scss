@@ -77,7 +77,16 @@ content: "\f009";
     // for business application development
     background-image: url(../img/inside-page-shape1.svg);
     // for mobile app development
-    background-image: url(../img/mobile-app-development-inro-bg.svg);
+    // background-image: url(../img/mobile-app-development-inro-bg.svg);
+    // // for ai development page
+    // background-image: url(../img/ai-development-intro-bg-angle.svg);
+    // // Whatsapp for business page
+    // background-image: url(../img/whatsapp-for-business-intro-bg-angle.svg);
+    // // business intelligence page
+    // background-image: url(../img/business-intelligence-intro-bg-angle.svg);
+    // // E-commerce page
+    // background-image: url(../img/ecommerce-intro-bg-angle.svg);
+    
     background-size: contain;
     width: 100%;
     height: 100%;
@@ -268,7 +277,7 @@ content: "\f009";
         padding: clamp(2.5rem, 2.2315rem + 1.3423vw, 2.875rem) 20px;
       }
       .left{
-        width: 39%;
+        width: 40%;
         position: relative;
         // 1024 - 1920 : 30 - 70
         padding-right: clamp(1.875rem, -0.9821rem + 4.4643vw, 4.375rem);
@@ -358,6 +367,7 @@ content: "\f009";
       content: '';
       position: absolute;
       top: -140px;
+      top: 100px;
       left: 0;
       width: 100%;
       height: 100%;
@@ -366,6 +376,9 @@ content: "\f009";
       background-image: url(../img/inside-child-strategic-shape-bg.png);
       background-repeat: no-repeat;
       z-index: -1;
+      @media(max-width: 1500px){
+        top: 30px;
+      }
     }
     .container{
       max-width: 1550px;
@@ -765,6 +778,50 @@ content: "\f009";
             }
             @media(max-width: 500px){
               flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
+  .engagement-model-wrapp.step-5{
+    .container{
+      @media(max-width: 1380px){
+        max-width: 90%;
+      }
+      .eng-model-step{
+        ul{
+          justify-content: center;
+          gap: 13px;
+          @media(max-width: 1600px){
+            gap: 10px;
+          }
+          @media(max-width: 1280px){
+            gap: 55px 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          @media(max-width: 767px){
+            gap: 30px;
+          }
+          li{
+            width: 20%;
+            @media(max-width: 1280px){
+              width: 30%;
+            }
+            @media(max-width: 991px){
+              width: 47%;
+            }
+            @media(max-width: 767px){
+              width: 100%;
+            }
+            @media(max-width: 500px){
+              flex-direction: column;
+            }
+            .eng-title{
+              h5{
+                height: auto;
+              }
             }
           }
         }
@@ -1470,6 +1527,135 @@ content: "\f009";
     }
   }
   // business intelligence section ends
+
+  // core development section starts
+  .core-web-deve-wrapper{
+    position: relative;
+    z-index: 9;
+    .container{
+      ul{
+        gap: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+        li{
+          width: 49%;
+          background: #FFF;
+          box-shadow: 168px 132px 60px 0 rgba(0, 0, 0, 0.00), 107px 85px 55px 0 rgba(0, 0, 0, 0.00), 60px 48px 46px 0 rgba(0, 0, 0, 0.01), 27px 21px 34px 0 rgba(0, 0, 0, 0.02), 7px 5px 19px 0 rgba(0, 0, 0, 0.02);
+          // 1024 - 1920 : 32 - 60
+				  padding: clamp(2rem, 0.0000rem + 3.1250vw, 3.75rem);
+          text-align: center;
+          position: relative;
+          @media(max-width: 1664px){
+            width: 48%;
+          }
+          &:before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: top left;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+          .count{
+            border-radius: 100%;
+            width: 90px;
+            height: 90px;
+            background-color: var(--white);
+            border: 10px solid var(--light_green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.65em;
+            position: absolute;
+            top: 40px;
+            // 320 - 1920 : 16 - 28
+            font-size: clamp(1rem, 0.7rem + 0.75vw, 1.75rem);
+            @media(max-width: 1500px){
+              width: 70px;
+              height: 70px;
+              border-width: 7px;
+            }
+            @media(max-width: 991px){
+              font-size: 20px;
+            }
+            @media(max-width: 767px){
+              font-size: 18px;
+            }
+          }
+          p{
+            font-family: HelvNowDis-light;
+            font-weight: 300;
+            color: var(--light_grey);
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.65em;
+            width: 325px;
+          }
+          .title{
+            // 320 - 1920 : 16 - 28
+            font-size: clamp(1rem, 0.7rem + 0.75vw, 1.75rem);
+            color: #5E5E5E;
+            font-family: HelvNowDis-medium;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.55em;
+            margin-bottom: 10px;
+            width: 100%;
+            @media(max-width: 991px){
+              font-size: 20px;
+            }
+            @media(max-width: 767px){
+              font-size: 18px;
+            }
+          }
+          &:nth-child(1){
+            .count{
+              left: 30px;
+            }
+            &:before{
+              background-image: url(../img/core-deve-shape1-v1.svg);
+            }
+          }
+          &:nth-child(2){
+            .count{
+              left: 20px;
+              @media(max-width: 1530px){
+                left: 14px;
+              }
+            }
+            &:before{
+              background-image: url(../img/core-deve-shape-2-v1.svg);
+            }
+          }
+          &:nth-child(3){
+            .count{
+              left: 16px;
+            }
+            &:before{
+              background-image: url(../img/core-deve-shape-3-v3.svg);
+            }
+          }
+          &:nth-child(4){
+            .count{
+              left: 80px;
+              @media(max-width: 1530px){
+                left: 73px;
+              }
+            }
+            &:before{
+              left: 50px;
+              background-image: url(../img/core-deve-shape-4-v2.svg);
+            }
+          }
+        }
+      }
+    }
+  }
+  // core development section ends
 
   // e-commerce platform section starts
   .e-comm-platform-wrapp{
