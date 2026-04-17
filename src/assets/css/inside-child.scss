@@ -524,6 +524,12 @@ content: "\f009";
               z-index: 2;
               transform: scaleY(0);
               transform-origin: top;
+              @media(max-width: 767px){
+                top: 86px;
+                left: -39px;
+                bottom: auto;
+                height: 75%;
+              }
 
               //  &:after{
               //   content: '';

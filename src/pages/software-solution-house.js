@@ -963,8 +963,8 @@ const Header = () => {
                       {webSlides2.map((slide2, index2) => (
                         <button
                           key={slide2.key + '-dot'}
-                          className={`dot ${webActiveSlide === index2 ? 'active' : ''}`}
-                          onClick={() => webSwiper?.slideToLoop(index2)}
+                          className={`dot ${webActiveSlide2 === index2 ? 'active' : ''}`}
+                          onClick={() => webSwiper2?.slideToLoop(index2)}
                           aria-label={`Go to slide ${index2 + 1}`}
                         />
                       ))}
@@ -1198,7 +1198,7 @@ const Header = () => {
       {/* engagement model starts */}
       <section className="engagement-model-wrapp parent-eng-model">
         <div className="container">
-          <h2 className="txt-center slide-up">Our Engagement Model</h2>
+          <h2 className="txt-center slide-up"><span className="txt-regular">Our</span> Engagement Model</h2>
           <p className="sub-txt slide-up">Refined over hundreds of projects, our model ensures the end-result is aligned with your goals and ready for future scale.</p>
           <div className="eng-model-step">
             <ul>
@@ -1213,7 +1213,7 @@ const Header = () => {
                   </svg>
                 </div>
                 <div className="eng-title">
-                  <h5>Consulting</h5>
+                  <h3>Consulting</h3>
                   <p>Defining use-cases and functional requirements.</p>
                 </div>
               </li>
@@ -1230,7 +1230,7 @@ const Header = () => {
                   </svg>
                 </div>
                 <div className="eng-title">
-                  <h5>Development</h5>
+                  <h3>Development</h3>
                   <p>Building from scratch or configuring pre-packaged solutions.</p>
                 </div>
               </li>
@@ -1246,7 +1246,7 @@ const Header = () => {
                   </svg>
                 </div>
                 <div className="eng-title">
-                  <h5>Quality Assurance</h5>
+                  <h3>Quality Assurance</h3>
                   <p>Rigorous testing to ensure a bug-free, fit-for-purpose solution.</p>
                 </div>
               </li>
@@ -1262,7 +1262,7 @@ const Header = () => {
                   </svg>
                 </div>
                 <div className="eng-title">
-                  <h5>Deployment & Training</h5>
+                  <h3>Deployment & Training</h3>
                   <p>Secure production release and comprehensive user training.</p>
                 </div>
               </li>
@@ -1277,7 +1277,7 @@ const Header = () => {
                     </svg>
                 </div>
                 <div className="eng-title">
-                  <h5>Ongoing Support</h5>
+                  <h3>Ongoing Support</h3>
                   <p>Sustainable management and change-request handling.</p>
                 </div>
               </li>
@@ -1291,9 +1291,9 @@ const Header = () => {
       {/* Work Reference Section Starts */}
       <section className="work-ref-wrapper">
         <div className="container">
-          <h2 className="txt-center slide-up">Work References</h2>
+          <h2 className="txt-center slide-up"><span className="txt-regular">Work</span> References</h2>
         </div>
-        <Swiper className="workSwiper"
+        <Swiper className="workSwiper slide-up"
           modules={[Navigation, Pagination]}
           
           
@@ -1301,7 +1301,7 @@ const Header = () => {
           // loop={true}
           navigation
           pagination
-          // pagination={{ clickable: true }}
+          pagination={{ clickable: true }}
           autoplay={{ delay: 3000 }}
           breakpoints={{
             0: {
@@ -1326,7 +1326,7 @@ const Header = () => {
             },
           }}
         >
-          <SwiperSlide className="stagger-li">
+          <SwiperSlide>
             <a href="#">
               <div className="work-wrapp">
                 <div className="client-icon">
@@ -1347,7 +1347,7 @@ const Header = () => {
               </div>
             </a>
           </SwiperSlide>
-          <SwiperSlide className="stagger-li">
+          <SwiperSlide>
             <a href="#">
               <div className="work-wrapp">
                 <div className="client-icon">
@@ -1364,7 +1364,7 @@ const Header = () => {
               </div>
             </a>
           </SwiperSlide>
-          <SwiperSlide className="stagger-li">
+          <SwiperSlide>
             <a href="#">
               <div className="work-wrapp">
                 <div className="client-icon">
@@ -1381,7 +1381,7 @@ const Header = () => {
               </div>
             </a>
           </SwiperSlide>
-          <SwiperSlide className="stagger-li">
+          <SwiperSlide>
               <a href="#">
                 <div className="work-wrapp">
                   <div className="client-icon">
@@ -1429,9 +1429,9 @@ const Header = () => {
         <div className="container">
           <h2 className="txt-center txt-gradient slide-up">Brands That Trust Us</h2>
 
-          <ul className="brand-list d-flex">
+          <ul className="brand-list d-flex slide-up">
             {(isMobile ? logos.slice(0, visibleCount) : logos).map((logo, index) => (
-              <li key={index} className="stagger-li">
+              <li key={index}>
                 <a href="#">
                   <img src={logo.src} width="148" height="72" alt={logo.alt} />
                 </a>

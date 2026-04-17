@@ -836,7 +836,7 @@ const Header = () => {
         ) : (
           <Swiper
             modules={[Navigation, Pagination]}
-            className="workSwiper"
+            className="workSwiper slide-up"
             navigation
             pagination
             autoplay={{ delay: 3000 }}
@@ -864,7 +864,7 @@ const Header = () => {
             }}
           >
             {slides.map((slide) => (
-              <SwiperSlide key={slide.key} className="slide-up">
+              <SwiperSlide key={slide.key}>
                 {slide.content}
               </SwiperSlide>
             ))}

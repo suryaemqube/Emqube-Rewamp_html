@@ -567,6 +567,14 @@
   transform: scaleY(0);
   transform-origin: top;
 }
+@media (max-width: 767px) {
+  .inside-child .strategic-choice-wrapper .container ul li .right .line-fill {
+    top: 86px;
+    left: -39px;
+    bottom: auto;
+    height: 75%;
+  }
+}
 .inside-child .strategic-choice-wrapper .container ul li .right p {
   font-family: HelvNowDis-light;
   color: var(--light_grey);

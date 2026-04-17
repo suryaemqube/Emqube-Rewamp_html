@@ -462,10 +462,10 @@ const Header = () => {
         <ul className="main-nav-ul d-flex">
           <li className={`menu-item-has-children children-level-2 ${activeMenu === "software" ? "click" : ""}`} onClick={() => toggleMainMenu("software")}>
             <a href="javascript:void(0);">Software</a>
-            <ul className={`sub-menu submenu has-children-inner slide-up ${activeMenu === "software" ? "show" : ""}`}>
+            <ul className={`sub-menu submenu has-children-inner  ${activeMenu === "software" ? "show" : ""}`}>
               <li className={`menu-item-has-children children-level-0 ${activeSubMenu === "development" ? "click" : ""}`} onClick={(e) => {e.stopPropagation(); toggleSubMenu("development");}}>
                 <a href="javascript:void(0);">Development</a>
-                <ul className={`sub-menu submenu has-children-inner slide-up ${activeSubMenu === "development" ? "show" : ""}`}>
+                <ul className={`sub-menu submenu has-children-inner  ${activeSubMenu === "development" ? "show" : ""}`}>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
@@ -476,7 +476,7 @@ const Header = () => {
               </li>
               <li className="menu-item-has-children children-level-1">
                 <a href="javascript:void(0);">Products</a>
-                <ul className="sub-menu submenu has-children-inner slide-up">
+                <ul className="sub-menu submenu has-children-inner ">
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
@@ -486,7 +486,7 @@ const Header = () => {
               </li>
               <li className="menu-item-has-children children-level-2">
                 <a href="javascript:void(0);">Consulting</a>
-                <ul className="sub-menu submenu has-children-inner slide-up">
+                <ul className="sub-menu submenu has-children-inner ">
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
                 </ul>
