@@ -1300,7 +1300,7 @@ const Header = () => {
           // slidesPerView={3.2}
           // loop={true}
           navigation
-          pagination
+          // pagination
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000 }}
           breakpoints={{

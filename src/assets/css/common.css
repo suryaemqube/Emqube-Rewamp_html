@@ -764,6 +764,8 @@ header {
 @media (max-width: 900px) {
   header {
     padding: 13px 0;
+    position: fixed;
+    background-color: var(--white);
   }
 }
 header .sub-menu {
@@ -983,6 +985,18 @@ header .inner-container .main-nav .main-nav-ul > li > a {
     padding: 30px 15px;
   }
 }
+@media (max-width: 900px) {
+  header .company-logo .logo-black {
+    display: block !important;
+    transition: all 0.5s ease-in-out !important;
+  }
+}
+@media (max-width: 900px) {
+  header .company-logo .logo-white {
+    display: none !important;
+    transition: all 0.5s ease-in-out !important;
+  }
+}
 
 header.scrolled {
   position: fixed;
@@ -1013,7 +1027,6 @@ header.scrolled .inner-container .main-nav > .main-nav-ul > li > a {
   padding: 30px 20px;
 }
 header.scrolled .inner-container .main-nav > .main-nav-ul > li.square-fill-btn-wrapp > a {
-  background-color: transparent;
   color: var(--white);
 }
 header.scrolled .inner-container .main-nav > .main-nav-ul > li.square-fill-btn-wrapp:hover > a {
@@ -1086,6 +1099,12 @@ header.active .company-logo .logo-white {
 
 .mob-menu-click.scrolled .ham path {
   stroke: var(--black);
+}
+
+@media (max-width: 900px) {
+  .ham path {
+    stroke: var(--black) !important;
+  }
 }
 
 .menu-toggle {
@@ -1164,13 +1183,15 @@ header.active .company-logo .logo-white {
 }
 .menu-toggle ul li .has-children-inner.show {
   max-height: inherit;
+  max-height: 270px;
+  max-height: 380px;
   transition: all 0.4s;
-}
-.menu-toggle ul > li:nth-last-child(2) a {
-  padding-bottom: 25px;
 }
 .menu-toggle .main-nav-ul {
   flex-direction: column;
+}
+.menu-toggle > ul > li:nth-last-child(2) a {
+  padding-bottom: 25px;
 }
 
 .menu-toggle.active {

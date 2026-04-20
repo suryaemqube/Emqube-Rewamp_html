@@ -767,6 +767,8 @@ header{
   // }
   @media(max-width: 900px){
     padding: 13px 0;
+    position: fixed;
+    background-color: var(--white);
   }
   .sub-menu{
     // display: flex;
@@ -1013,6 +1015,20 @@ header{
       } 
     }
   }
+  .company-logo{
+    .logo-black{
+      @media(max-width: 900px){
+        display: block !important;
+        transition: all 0.5s ease-in-out !important;
+      }
+    }
+    .logo-white{
+      @media(max-width: 900px){
+        display: none !important;
+        transition: all 0.5s ease-in-out !important;
+      }
+    }
+  }
 }
 header.scrolled{
   position: fixed;
@@ -1047,7 +1063,7 @@ header.scrolled{
           }
           &.square-fill-btn-wrapp{
             > a{
-              background-color: transparent;
+              // background-color: transparent;
               color: var(--white);
             }
             &:hover{
@@ -1139,6 +1155,13 @@ header.active{
     }
   }
 }
+.ham{
+    path{
+      @media(max-width: 900px){
+        stroke: var(--black) !important;
+      }
+    }
+  }
 .menu-toggle {
   max-height: 0;
   overflow: hidden;
@@ -1229,9 +1252,16 @@ header.active{
       }
       .has-children-inner.show{
         max-height: inherit;
+        max-height: 270px;
+        max-height: 380px;
         transition: all .4s;
       }
     }
+  }
+  .main-nav-ul{
+    flex-direction: column;
+  }
+  > ul{
     > li{
       &:nth-last-child(2){
         a{
@@ -1239,9 +1269,6 @@ header.active{
         }
       }
     }
-  }
-  .main-nav-ul{
-    flex-direction: column;
   }
 }
 .menu-toggle.active {

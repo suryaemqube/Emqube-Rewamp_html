@@ -31,6 +31,100 @@ const Header = () => {
 
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
+  // for references section - reels / posts / articles - Starts
+
+  const [activeRefTab, setActiveRefTab] = useState("reels");
+
+  const referenceData = {
+    reels: [
+      { id: 1, type: "video", src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/05/tamam-reel-1.mp4" },
+      { id: 2, type: "video", src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/06/homework-reel-3.mp4" },
+      { id: 3, type: "video", src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/05/emovers-reel-1.mp4" },
+    ],
+    posts: [
+      { id: 1, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/cc-social-media-thumb.jpg", link: "https://www.instagram.com/corporateconnectionsuae/" },
+      { id: 2, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/emovers-social-media-thumb-v1.jpg", link: "https://instagram.com/emoversuae/" },
+      { id: 3, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/tamam-social-media-thumb-v1.jpg", link: "https://www.instagram.com/tamammovers/" },
+      { id: 4, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/tld-social-media-v1.jpg", link: "https://www.instagram.com/leatherdocuae/" },
+      { id: 5, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/electricway-social-media-thumb-v1.jpg", link: "https://www.instagram.com/electric_way/" },
+    ],
+    articles: [
+      { id: 1, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/Emovers-mailer.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/Emovers-mailer.jpg" },
+      { id: 2, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/Insurance-policy-mailer.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/Insurance-policy-mailer.jpg" },
+      { id: 3, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/Homework-mailer.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/Homework-mailer.jpg" },
+      { id: 4, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/Tamam-mailer-1.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/Tamam-mailer-1.jpg" },
+      { id: 5, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/TLD-mailer.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/TLD-mailer.jpg" },
+    ],
+  };
+
+  const MediaCard = ({ item }) => {
+
+    const handlePlay = (e) => {
+      document.querySelectorAll("video").forEach((v) => {
+        if (v !== e.target) v.pause();
+      });
+      e.target.play();
+    };
+
+    const content =
+      item.type === "video" ? (
+        <video
+          src={item.src}
+          muted
+          playsInline
+          onClick={handlePlay}
+        />
+      ) : (
+        <img src={item.src} alt="" />
+      );
+
+    // 👉 POSTS (external link)
+    if (item.link && item.link.startsWith("http")) {
+      return (
+        <a href={item.link} target="_blank" rel="noopener noreferrer" className="media-card">
+          {content}
+        </a>
+      );
+    }
+
+    // 👉 ARTICLES (internal link)
+    if (item.link) {
+      return (
+        <a href={item.link} className="media-card">
+          {content}
+        </a>
+      );
+    }
+
+    // 👉 REELS (no link)
+    return <div className="media-card">{content}</div>;
+  };
+
+  const isMobile = windowWidth < 1024;
+  const items = referenceData[activeRefTab];
+
+  // const VideoCard = ({ src }) => {
+  //   const handlePlay = (e) => {
+  //     document.querySelectorAll("video").forEach((v) => {
+  //       if (v !== e.target) v.pause();
+  //     });
+  //     e.target.play();
+  //   };
+
+  //   return (
+  //     <div className="video-card">
+  //       <video
+  //         src={src}
+  //         muted
+  //         playsInline
+  //         onClick={handlePlay}
+  //       />
+  //     </div>
+  //   );
+  // };
+
+  // for references section - reels / posts / articles - Ends
+
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
@@ -1263,29 +1357,145 @@ const Header = () => {
           <h2>Our Core Web Development Capabilities</h2>
           <ul>
             <li>
-              <span className="count">1</span>
-              <p className="title">Strategic Site Architecture</p>
-              <p>Intuitive sitemaps and navigation logic designed for instant information retrieval.</p>
+              <div className="left-img">
+                <img src="/assets/img/list1.svg"></img>
+              </div>
+              <div className="right-txt">
+                <p className="title">Strategic Site Architecture</p>
+                <p>Intuitive sitemaps and navigation logic designed for instant information retrieval.</p>
+              </div>
             </li>
             <li>
-              <span className="count">2</span>
-              <p className="title">Bespoke Visual Design</p>
-              <p>Unique layouts and interactive elements that represent your brand without generic templates.</p>
+              <div className="left-img">
+                <img src="/assets/img/list2.svg"></img>
+              </div>
+              <div className="right-txt">
+                <p className="title">Bespoke Visual Design</p>
+                <p>Unique layouts and interactive elements that represent your brand without generic templates.</p>
+              </div>
             </li>
             <li>
-              <span className="count">3</span>
-              <p className="title">Integrated Content Development</p>
-              <p>In-house content writing, professional photography, and videography to tell your story.</p>
+              <div className="left-img">
+                <img src="/assets/img/list3.svg"></img>
+              </div>
+              <div className="right-txt">
+                <p className="title">Integrated Content Development</p>
+                <p>In-house content writing, professional photography, and videography to tell your story.</p>
+              </div>
             </li>
             <li>
-              <span className="count">4</span>
-              <p className="title">Enterprise-Grade Hosting</p>
-              <p>Robust, secured hosting environments ensuring 99.9% uptime and global accessibility.</p>
+              <div className="left-img">
+                <img src="/assets/img/list4.svg"></img>
+              </div>
+              <div className="right-txt">
+                <p className="title">Enterprise-Grade Hosting</p>
+                <p>Robust, secured hosting environments ensuring 99.9% uptime and global accessibility.</p>
+              </div>
             </li>
           </ul>
         </div>
       </section>
       {/* core web development section ends */}
+
+      {/* social media platform section starts */}
+      <section className="social-media-plat-wrapper">
+        <div className="container">
+          <h2>Select the Right Social Media Platform</h2>
+          <ul>
+            <li className="linkedin">
+              <div className="social-txt-wrapp">
+                <div className="social-media-title">
+                  <h3>Linkedin</h3>
+                </div>
+                <div className="social-media-txt">
+                  <p><span className="txt-med">Best suited for:</span> B2B & Professional</p>
+                  <p><span className="txt-med">Primary Audience:</span> Decision-makers, C-suite, and industry professionals.</p>
+                  <p><span className="txt-med">Core Purpose:</span> Lead Generation & Authority: Ideal for corporate updates, networking, and high-value B2B lead gen.</p>
+                </div>
+                <div className="social-platgform-logo">
+                  <img src="/assets/img/linkedin-logo.jpg" alt="Linkedin"></img>
+                </div>
+              </div>
+            </li>
+            <li className="insta">
+              <div className="social-txt-wrapp">
+                <div className="social-media-title">
+                  <h3>Instagram</h3>
+                </div>
+                <div className="social-media-txt">
+                  <p><span className="txt-med">Best suited for:</span> B2C & Lifestyle</p>
+                  <p><span className="txt-med">Primary Audience:</span> Gen Z, Millennials, and visually-driven consumers.</p>
+                  <p><span className="txt-med">Core Purpose:</span> Brand Building: High-impact visual storytelling, product showcases, and lifestyle engagement.</p>
+                </div>
+                <div className="social-platgform-logo">
+                  <img src="/assets/img/instagram-logo.jpg" alt="Instagram"></img>
+                </div>
+              </div>
+            </li>
+            <li className="fb">
+              <div className="social-txt-wrapp">
+                <div className="social-media-title">
+                  <h3>Facebook</h3>
+                </div>
+                <div className="social-media-txt">
+                  <p><span className="txt-med">Best suited for:</span> B2C & Local Communities</p>
+                  <p><span className="txt-med">Primary Audience:</span> Broad demographic (25–65+) with a focus on families and local groups.</p>
+                  <p><span className="txt-med">Core Purpose:</span> Customer Loyalty: Managing community groups, local service promotions, and targeted retail reach.</p>
+                </div>
+                <div className="social-platgform-logo">
+                  <img src="/assets/img/facebook-logo.jpg" alt="Facebook"></img>
+                </div>
+              </div>
+            </li>
+            <li className="twitter">
+              <div className="social-txt-wrapp">
+                <div className="social-media-title">
+                  <h3>X (Twitter)</h3>
+                </div>
+                <div className="social-media-txt">
+                  <p><span className="txt-med">Best suited for:</span> B2B & Real-Time News</p>
+                  <p><span className="txt-med">Primary Audience:</span> Tech-savvy users, journalists, and industry thought leaders.</p>
+                  <p><span className="txt-med">Core Purpose:</span> Public Relations: Real-time updates, customer service interactions, and participating in industry trends.</p>
+                </div>
+                <div className="social-platgform-logo">
+                  <img src="/assets/img/twitter-logo.jpg" alt="X (Twitter)"></img>
+                </div>
+              </div>
+            </li>
+            <li className="youtube">
+              <div className="social-txt-wrapp">
+                <div className="social-media-title">
+                  <h3>Youtube</h3>
+                </div>
+                <div className="social-media-txt">
+                  <p><span className="txt-med">Best suited for:</span> B2B, B2C & D2C</p>
+                  <p><span className="txt-med">Primary Audience:</span> Global audience seeking information, tutorials, or entertainment.</p>
+                  <p><span className="txt-med">Core Purpose:</span> Education & Trust: In-depth product demos, "How-To" guides, and building long-term brand authority through video.</p>
+                </div>
+                <div className="social-platgform-logo">
+                  <img src="/assets/img/youtube-logo.jpg" alt="Youtube"></img>
+                </div>
+              </div>
+            </li>
+            <li className="tiktok">
+              <div className="social-txt-wrapp">
+                <div className="social-media-title">
+                  <h3>TikTok</h3>
+                </div>
+                <div className="social-media-txt">
+                  <p><span className="txt-med">Best suited for:</span> B2C & D2C</p>
+                  <p><span className="txt-med">Primary Audience:</span> Younger demographics (Gen Z/Alpha) driven by trends and authentic video.</p>
+                  <p><span className="txt-med">Core Purpose:</span> Discovery & Viral Growth: High-energy product launches and humanizing your brand through short-form video.</p>
+                </div>
+                <div className="social-platgform-logo">
+                  <img src="/assets/img/tiktok-logo.jpg" alt="Youtube"></img>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      {/* social media platform section ends */}
 
       {/* e-commerce platform section starts */}
       <section className="e-comm-platform-wrapp">
@@ -1331,8 +1541,62 @@ const Header = () => {
         </div>
       </section>
       {/* e-commerce platform section ends */}
-      
 
+      {/* references section starts */}
+      <section className="references-inside-wrapp">
+        <div className="container">
+          <h2>References</h2>
+        </div>
+        {/* 48 36 36 */}
+        {/* Tabs */}
+        <div className="ref-inside">
+          <div className="container">
+            <div className="ref-tabs">
+              {["reels", "posts", "articles"].map((tab) => (
+                <button
+                  key={tab}
+                  className={activeRefTab === tab ? "active" : ""}
+                  onClick={() => setActiveRefTab(tab)}
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
+            </div>
+            {/* Content */}
+            <div className="ref-content">
+              {(isMobile || items.length > 4) ? (
+                <Swiper
+                  modules={[Navigation]}
+                  loop = "true"
+                  spaceBetween={20}
+                  slidesPerView={4}
+                  navigation={!isMobile} // hide arrows on mobile if you want
+                  breakpoints={{
+                    320: { slidesPerView: 1.1 },
+                    480: { slidesPerView: 1.5 },
+                    768: { slidesPerView: 2.5 },
+                    1024: { slidesPerView: 4 },
+                  }}
+                >
+                  {items.map((item) => (
+                    <SwiperSlide key={item.id}>
+                      <MediaCard item={item} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              ) : (
+                <div className="ref-grid">
+                  {items.map((item) => (
+                    <MediaCard key={item.id} item={item} />
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* references section ends */}
+      
       {/* Work Reference Section Starts */}
       <section className="work-ref-wrapper">
         <div className="container">
