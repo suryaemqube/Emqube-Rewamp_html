@@ -1305,7 +1305,7 @@ const Header = () => {
           autoplay={{ delay: 3000 }}
           breakpoints={{
             0: {
-              slidesPerView: 2,
+              slidesPerView: 1.1,
               spaceBetween: 10,
               slidesOffsetBefore: 20,
             },

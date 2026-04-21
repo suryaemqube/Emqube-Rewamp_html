@@ -2509,4 +2509,8 @@
   position: relative;
   z-index: 9;
   background-color: transparent;
+}
+.inside-child footer {
+  position: relative;
+  z-index: 9;
 }/*# sourceMappingURL=inside-child.css.map */

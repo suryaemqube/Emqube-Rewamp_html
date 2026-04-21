@@ -113,15 +113,27 @@ const Header = () => {
   const accordionItems = [
     {
       question: 'Does Zoho CRM work for field sales in the UAE?',
-      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tellus vitae dolor vestibulum porta in eget arcu.'
+      answer: (
+        <>
+        Yes, the mobile app allows your Dubai-based field team to log calls and update deals without an internet connection, syncing automatically once online.
+        </>
+      )
     },
     {
       question: 'Is Zoho CRM FTA-compliant?',
-      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula nibh vitae libero dictum, at luctus nisl suscipit.'
+      answer: (
+        <>
+        While CRM manages your sales process, our expert integration with <span className="txt-med">Zoho Books</span> ensures your entire financial flow is fully <span className="txt-med">UAE VAT-compliant</span> and audit-ready.
+        </>
+      )
     },
     {
       question: 'Can we restrict data access for different branches?',
-      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod turpis vel leo tincidunt, vitae luctus justo tempor.'
+      answer: (
+        <>
+        Absolutely. We set up hierarchical permissions and roles so your staff only see the data relevant to their specific branch or job function.
+        </>
+      )
     }
   ];
 
@@ -138,17 +150,12 @@ const Header = () => {
             <div className="client-icon">
               <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
             </div>
-            <span className="arrow-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
             <div className="proj-img">
               <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img>
             </div>
             <div className="proj-txt">
-              <p className="proj-name">E-Move</p>
-              <p>Region's largest relocation company with services for furniture installation and storage</p>
+              <p className="proj-name">Real Estate Brokerages:</p>
+              <p>Configured property-specific modules and lead rotation rules to prevent "lead leakage" and maintain agent confidentiality in the competitive Dubai property market.</p>
             </div>
           </div>
         </a>
@@ -162,13 +169,12 @@ const Header = () => {
             <div className="client-icon">
               <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
             </div>
-            <span className="arrow-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
             <div className="proj-img">
               <img src="/assets/img/ccms-project-img.webp" alt="Emovers"></img>
+            </div>
+            <div className="proj-txt">
+              <p className="proj-name">Citizenship & Residency Services:</p>
+              <p>Managed high-value pipelines with automated documentation tracking for complex international application processes.</p>
             </div>
           </div>
         </a>
@@ -182,13 +188,31 @@ const Header = () => {
             <div className="client-icon">
               <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
             </div>
-            <span className="arrow-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
             <div className="proj-img">
               <img src="/assets/img/insurance-policy-project-img.webp" alt="Emovers"></img>
+            </div>
+            <div className="proj-txt">
+              <p className="proj-name">Trading & Distribution:</p>
+              <p>Unified customer data across multiple stakeholders with real-time sales leaderboards to drive territory performance in wholesale food distribution.</p>
+            </div>
+          </div>
+        </a>
+      )
+    },
+    {
+      key: 4,
+      content: (
+        <a href="#">
+          <div className="work-wrapp">
+            <div className="client-icon">
+              <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+            </div>
+            <div className="proj-img">
+              <img src="/assets/img/insurance-policy-project-img.webp" alt="Emovers"></img>
+            </div>
+            <div className="proj-txt">
+              <p className="proj-name">Plants & Accessories Retail:</p>
+              <p>Replaced legacy accounting systems with a CRM-led dashboard showing customer history and payment status in one unified view.</p>
             </div>
           </div>
         </a>
@@ -196,49 +220,49 @@ const Header = () => {
     }
   ];
 
-    // common script for all animation - starts
-    useEffect(() => {
-      const elements = document.querySelectorAll(
-        ".slide-up, .fade-in, .stagger-li"
-      );
+  // common script for all animation - starts
+  useEffect(() => {
+    const elements = document.querySelectorAll(
+      ".slide-up, .fade-in, .stagger-li"
+    );
 
-      const observer = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
 
-              if (entry.target.classList.contains("fade-in")) {
-                entry.target.classList.add("visible");
-              }
-
-              if (entry.target.classList.contains("slide-up")) {
-                entry.target.classList.add("visible");
-              }
-
-              if (entry.target.classList.contains("stagger-li")) {
-                setTimeout(() => {
-                  entry.target.classList.add("visible");
-                }, index * 100);
-              }
-
-              observer.unobserve(entry.target);
+            if (entry.target.classList.contains("fade-in")) {
+              entry.target.classList.add("visible");
             }
-          });
-        },
-        {
-          threshold: 0.2,
-        }
-      );
 
-      elements.forEach((el) => observer.observe(el));
+            if (entry.target.classList.contains("slide-up")) {
+              entry.target.classList.add("visible");
+            }
 
-      // 🧹 CLEANUP (VERY IMPORTANT in React)
-      return () => {
-        elements.forEach((el) => observer.unobserve(el));
-      };
+            if (entry.target.classList.contains("stagger-li")) {
+              setTimeout(() => {
+                entry.target.classList.add("visible");
+              }, index * 100);
+            }
 
-    }, []);
-    // common script for all animation - ends
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    // 🧹 CLEANUP (VERY IMPORTANT in React)
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+
+  }, []);
+  // common script for all animation - ends
 
   // onload intro section animation - starts
   useEffect(() => {
@@ -313,6 +337,35 @@ const Header = () => {
     })
   }, [])
   // onscroll straegic section aniamtion - ends
+
+  // create collapsible footer menu - starts
+  const [isMobile, setIsMobile] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 767);
+      };
+
+      handleResize();
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    useEffect(() => {
+      if (!isMobile) {
+        setOpenIndex(null);
+      }
+    }, [isMobile]);
+
+    const toggleFooter = (index) => {
+      if (!isMobile) return; // ⛔ only mobile
+
+      setOpenIndex(prev => (prev === index ? null : index));
+    };
+
+  // create collapsible footer menu - ends
 
   return (
     <>
@@ -586,7 +639,7 @@ const Header = () => {
               <div className="right">
                 <span className="line-fill"></span>
                 <p className="title">Sales Force Automation & Zia AI</p>
-                <p>Eliminate manual work with automated follow-ups and advanced lead scoring. We leverage Zia, Zoho’s AI assistant, to predict the "best time to contact" prospects, detect anomalies in sales patterns, and provide intelligent revenue forecasting tailored to the UAE market trends.</p>
+                <p>Eliminate manual work with automated follow-ups and advanced lead scoring. We leverage <span className="txt-med">Zia, Zoho’s AI assistant</span>, to predict the "best time to contact" prospects, detect anomalies in sales patterns, and provide intelligent revenue forecasting tailored to the UAE market trends.</p>
               </div>
             </li>
             <li>
@@ -604,7 +657,7 @@ const Header = () => {
               <div className="right">
                 <span className="line-fill"></span>
                 <p className="title">Seamless Zoho Ecosystem Integration</p>
-                <p>Break down silos by connecting your CRM with the entire Zoho suite. We specialize in linking Zoho Books for financial visibility, Zoho Projects for post-sale delivery, and Zoho People for resource management. Syncing your data ensures a unified flow from the initial lead to the final ledger.</p>
+                <p>Break down silos by connecting your CRM with the entire Zoho suite. We specialize in linking <span className="txt-med">Zoho Books</span> for financial visibility, <span className="txt-med">Zoho Projects</span> for post-sale delivery, and <span className="txt-med">Zoho People</span> for resource management. Syncing your data ensures a unified flow from the initial lead to the final ledger.</p>
               </div>
             </li>
             <li>
@@ -642,7 +695,7 @@ const Header = () => {
               <div className="right">
                 <span className="line-fill"></span>
                 <p className="title">Omnichannel & Third-Party App Sync</p>
-                <p>Engage with customers via email, live chat, and telephony within a single unified timeline. We connect your CRM with popular third-party applications used across Dubai, including WhatsApp Business, Microsoft 365, Google Workspace, and Zapier, to centralize your business communications.</p>
+                <p>Engage with customers via email, live chat, and telephony within a single unified timeline. We connect your CRM with popular third-party applications used across Dubai, including <span className="txt-med">WhatsApp Business, Microsoft 365, Google Workspace, and Zapier</span>, to centralize your business communications.</p>
               </div>
             </li>
           </ul>
@@ -699,7 +752,7 @@ const Header = () => {
                 <h3>System Integration and API Development</h3>
               </div>
               <div className="bottom">
-                <p>Our technical team specializes in bridging the gap between Zoho CRM and your existing tech stack. Whether it is a native integration with Zoho Books for FTA-compliant VAT invoicing or a custom API connection to your corporate website, we ensure data flows seamlessly across all platforms.</p>
+                <p>Our technical team specializes in bridging the gap between Zoho CRM and your existing tech stack. Whether it is a native integration with Zoho Books for <span className="txt-med">FTA-compliant VAT invoicing</span> or a custom API connection to your corporate website, we ensure data flows seamlessly across all platforms.</p>
               </div>
             </li>
             <li>
@@ -841,7 +894,7 @@ const Header = () => {
           <ul className="partner-single">
             <li className="stagger-li">
               <div className="part-txt">
-                <p>With over <span className="txt-med">20 years of software background and 12+ years specializing in Zoho CRM implementation</span>, emQube is a trusted name in the UAE’s digital landscape. We don't just "install" software; we understand the local business culture and regulatory requirements in Dubai. Our team focuses on <span className="txt-med">"rightsizing"</span> the solution—ensuring you get exactly what your business needs without unnecessary complexity or hidden costs. </p>
+                <p>With over <span className="txt-med">20 years of software background</span> and <span className="txt-med">12+ years specializing in Zoho CRM implementation</span>, emQube is a trusted name in the UAE’s digital landscape. We don't just "install" software; we understand the local business culture and regulatory requirements in Dubai. Our team focuses on <span className="txt-med">"rightsizing"</span> the solution—ensuring you get exactly what your business needs without unnecessary complexity or hidden costs. </p>
                 <p>As a leading software development agency in Dubai, we engineer Zoho CRM to mirror your unique sales DNA. Whether you are a startup in JLT or an enterprise in Business Bay, we ensure every prospect is nurtured and every revenue opportunity is captured through world-class CRM strategy.</p>
               </div>
               <div className="part-img">
@@ -860,7 +913,7 @@ const Header = () => {
           <ul className="zoho-app-list">
             <li>
               <div className="zoho-app-logo">
-                <img src="/assets/img/zoho-books.jpg" alt="Zoho Books"></img>
+                <img src="/assets/img/zoho-books-v1.png" alt="Zoho Books"></img>
               </div>
               <div className="zoho-app-txt">
                 <p>Zoho Books is a unified platform that covers all your back-office needs, from invoicing and order management to accounting and beyond. </p>
@@ -875,47 +928,47 @@ const Header = () => {
             </li>
             <li>
               <div className="zoho-app-logo">
-                <img src="/assets/img/zoho-books.jpg" alt="Zoho Books"></img>
+                <img src="/assets/img/zoho-people-v1.png" alt="Zoho People"></img>
               </div>
               <div className="zoho-app-txt">
-                <p>Zoho Books is a unified platform that covers all your back-office needs, from invoicing and order management to accounting and beyond. </p>
-                <p>Automate routine tasks from invoicing workflows to payment reminders. Allow Zoho to handle them effortlessly while you focus on your business.</p>
-                <p>Enhance the power of your CRM and give salesperson a full view of the invoices and payment history of customers.</p>
-                <p>Implement Zoho Books with a reliable and responsive authorized Zoho Partner in Dubai</p>
+                <p>Zoho People is a comprehensive online HR solution designed to simplify and automate your HR processes from one centralized platform.</p>
+                <p>Centralize your employee database in a single place, expedite your HR tasks and functions. Access valuable information and reports within minutes.</p>
+                <p>Give the sales team a single portal to manage their leaves, attendance, wages, appraisals and more.</p>
+                <p>Implement Zoho People with a reliable and responsive authorized Zoho Partner in Dubai.</p>
                 <a href="#" className="fill-btn">Book a Free Strategy Session with our Zoho Experts</a>
               </div>
               <div className="zoho-app-img">
-                <img src="/assets/img/zoho-books-right-img.jpg"></img>
+                <img src="/assets/img/zoho-people-right-img.png"></img>
               </div>
             </li>
             <li>
               <div className="zoho-app-logo">
-                <img src="/assets/img/zoho-books.jpg" alt="Zoho Books"></img>
+                <img src="/assets/img/zoho-project-v1.png" alt="Zoho Project"></img>
               </div>
               <div className="zoho-app-txt">
-                <p>Zoho Books is a unified platform that covers all your back-office needs, from invoicing and order management to accounting and beyond. </p>
-                <p>Automate routine tasks from invoicing workflows to payment reminders. Allow Zoho to handle them effortlessly while you focus on your business.</p>
-                <p>Enhance the power of your CRM and give salesperson a full view of the invoices and payment history of customers.</p>
-                <p>Implement Zoho Books with a reliable and responsive authorized Zoho Partner in Dubai</p>
+                <p>Zoho Projects is a unified project management platform that covers all your operational needs, from task scheduling and resource planning to collaboration and beyond. </p>
+                <p>Automate routine tasks from task transitions to status updates. Allow Zoho to handle them effortlessly while you focus on your business goals.</p>
+                <p>Enhance the power of your CRM and give salespersons a full view of project progress and milestone completion for their customers. </p>
+                <p>Implement Zoho Projects with a reliable and responsive authorized Zoho Partner in Dubai.</p>
                 <a href="#" className="fill-btn">Book a Free Strategy Session with our Zoho Experts</a>
               </div>
               <div className="zoho-app-img">
-                <img src="/assets/img/zoho-books-right-img.jpg"></img>
+                <img src="/assets/img/zoho-project-right-img.png"></img>
               </div>
             </li>
             <li>
               <div className="zoho-app-logo">
-                <img src="/assets/img/zoho-books.jpg" alt="Zoho Books"></img>
+                <img src="/assets/img/zoho-creator-v1.png" alt="Zoho Creator"></img>
               </div>
               <div className="zoho-app-txt">
-                <p>Zoho Books is a unified platform that covers all your back-office needs, from invoicing and order management to accounting and beyond. </p>
-                <p>Automate routine tasks from invoicing workflows to payment reminders. Allow Zoho to handle them effortlessly while you focus on your business.</p>
-                <p>Enhance the power of your CRM and give salesperson a full view of the invoices and payment history of customers.</p>
-                <p>Implement Zoho Books with a reliable and responsive authorized Zoho Partner in Dubai</p>
+                <p>Zoho Creator is a unified low-code platform that covers all your custom application needs, acting as the central nervous system that ties your different Zoho apps into a single, customized solution.</p>
+                <p>Automate routine tasks across your entire ecosystem, from cross-departmental data flows to complex approval chains. Allow Zoho to handle the heavy lifting while you focus on business innovation.</p>
+                <p>Enhance the power of your CRM, Books, and People by building custom bridges that sync data seamlessly, giving your team a 360-degree view of every customer interaction and internal process.</p>
+                <p>Implement Zoho Creator with a reliable and responsive authorized Zoho Partner in Dubai.</p>
                 <a href="#" className="fill-btn">Book a Free Strategy Session with our Zoho Experts</a>
               </div>
               <div className="zoho-app-img">
-                <img src="/assets/img/zoho-books-right-img.jpg"></img>
+                <img src="/assets/img/zoho-creator-right-img.png"></img>
               </div>
             </li>
           </ul>
@@ -925,22 +978,31 @@ const Header = () => {
 
       {/* industry section starts */}
       <section className="insudtry-list-wrapp indus-flex-dir-btm">
-        <h2 className="slide-up">Work Reference</h2>
+        {/* <h2 className="slide-up">Work Reference</h2> */}
+        <h2 className="slide-up">Industries</h2>
         <div className="container">
           <div className="left">
-            <h3 className="slide-up">Industries</h3>
-            <ul className="flex-dir-row">
+            {/* <h3 className="slide-up">Industries</h3> */}
+            <ul className="flex-dir-row flex-wrap">
               <li className="stagger-li">
                 <span className="icon"><i className="icon icon-fmcg"></i></span>
-                <p>Children Stores</p>
+                <p>Real Estate</p>
               </li>
               <li className="stagger-li">
                 <span className="icon"><i className="icon icon-automative"></i></span>
-                <p>Coffee</p>
+                <p>Citizen Ship Services</p>
               </li>
               <li className="stagger-li">
                 <span className="icon"><i className="icon icon-insurance"></i></span>
-                <p>Packaging</p>
+                <p>Business Setup</p>
+              </li>
+              <li className="stagger-li">
+                <span className="icon"><i className="icon icon-insurance"></i></span>
+                <p>Trading</p>
+              </li>
+              <li className="stagger-li">
+                <span className="icon"><i className="icon icon-insurance"></i></span>
+                <p>Freight & Logistics</p>
               </li>
             </ul>
           </div>
@@ -971,7 +1033,7 @@ const Header = () => {
             autoplay={{ delay: 3000 }}
             breakpoints={{
               0: {
-                slidesPerView: 2,
+                slidesPerView: 1.1,
                 spaceBetween: 10,
                 slidesOffsetBefore: 20,
               },
@@ -1081,47 +1143,59 @@ const Header = () => {
             <div className="f-right">
               <div className="footer-link">
                 <p className="main-link-name">Software Solutions House</p>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Software development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Mobile App Development</a></li>
-                  <li><a href="javascript:void(0);">WhatsApp for Business</a></li>
-                  <li><a href="javascript:void(0);">AI Development</a></li>
-                  <li><a href="javascript:void(0);">Business Intelligence</a></li>
-                  <li><a href="javascript:void(0);">E-Commerce Applications</a></li>
+                <ul className={`footer-accordion ${openIndex === 0 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(0)}><a href="javascript:void(0);">Software development</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Business Application Development</a></li>
+                    <li><a href="javascript:void(0);">Mobile App Development</a></li>
+                    <li><a href="javascript:void(0);">WhatsApp for Business</a></li>
+                    <li><a href="javascript:void(0);">AI Development</a></li>
+                    <li><a href="javascript:void(0);">Business Intelligence</a></li>
+                    <li><a href="javascript:void(0);">E-Commerce Applications</a></li>
+                  </ul>
                 </ul>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Software Products</a></li>
-                  <li><a href="javascript:void(0);">CRM (Zoho, Salesforce)</a></li>
-                  <li><a href="javascript:void(0);">ERP (Zoho One, Odoo)</a></li>
-                  <li><a href="javascript:void(0);">FM - CAFM Pro</a></li>
-                  <li><a href="javascript:void(0);">HRMS - HRMS Pro</a></li>
-                  <li><a href="javascript:void(0);">Productivity-135</a></li>
+                <ul className={`footer-accordion ${openIndex === 1 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(1)}><a href="javascript:void(0);">Software Products</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">CRM (Zoho, Salesforce)</a></li>
+                    <li><a href="javascript:void(0);">ERP (Zoho One, Odoo)</a></li>
+                    <li><a href="javascript:void(0);">FM - CAFM Pro</a></li>
+                    <li><a href="javascript:void(0);">HRMS - HRMS Pro</a></li>
+                    <li><a href="javascript:void(0);">Productivity-135</a></li>
+                  </ul>
                 </ul>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Software Consulting</a></li>
-                  <li><a href="javascript:void(0);">Digital Transformation</a></li>
-                  <li><a href="javascript:void(0);">Product Development</a></li>
+                <ul className={`footer-accordion ${openIndex === 2 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(2)}><a href="javascript:void(0);">Software Consulting</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Digital Transformation</a></li>
+                    <li><a href="javascript:void(0);">Product Development</a></li>
+                  </ul>
                 </ul>
               </div>
               <div className="footer-link">
                 <p className="main-link-name">Digital Content Studio</p>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Website Development</a></li>
-                  <li><a href="javascript:void(0);">Corporate Website</a></li>
-                  <li><a href="javascript:void(0);">Personality Website</a></li>
+                <ul className={`footer-accordion ${openIndex === 3 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(3)}><a href="javascript:void(0);">Website Development</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Corporate Website</a></li>
+                    <li><a href="javascript:void(0);">Personality Website</a></li>
+                  </ul>
                 </ul>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Digital Marketing</a></li>
-                  <li><a href="javascript:void(0);">Social Media</a></li>
-                  <li><a href="javascript:void(0);">SEO</a></li>
-                  <li><a href="javascript:void(0);">Email Marketing</a></li>
-                  <li><a href="javascript:void(0);">Digital Ads</a></li>
+                <ul className={`footer-accordion ${openIndex === 4 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(4)}><a href="javascript:void(0);">Digital Marketing</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Social Media</a></li>
+                    <li><a href="javascript:void(0);">SEO</a></li>
+                    <li><a href="javascript:void(0);">Email Marketing</a></li>
+                    <li><a href="javascript:void(0);">Digital Ads</a></li>
+                  </ul>
                 </ul>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Content Production</a></li>
-                  <li><a href="javascript:void(0);">Corporate Films</a></li>
-                  <li><a href="javascript:void(0);">Digital Assets</a></li>
+                <ul className={`footer-accordion ${openIndex === 5 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(5)}><a href="javascript:void(0);">Content Production</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Corporate Films</a></li>
+                    <li><a href="javascript:void(0);">Digital Assets</a></li>
+                  </ul>
                 </ul>
               </div>
               <div className="footer-link">

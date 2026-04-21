@@ -75,16 +75,55 @@
 .zoho-product:after {
   background-image: url(../img/zoho-bg-img.svg);
 }
+@media (max-width: 1500px) {
+  .zoho-product:after {
+    top: 100px;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product:after {
+    top: 190px;
+    height: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product:after {
+    top: 350px;
+    height: 80%;
+  }
+}
 .zoho-product .inside-child-intro-wrapper {
   padding-bottom: clamp(6.25rem, -0.1786rem + 10.0446vw, 11.875rem);
+}
+@media (max-width: 1080px) {
+  .zoho-product .inside-child-intro-wrapper {
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper {
+    padding-bottom: 10px;
+  }
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+}
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left {
   width: 40%;
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .partner-tag {
   border-radius: 50px;
@@ -95,10 +134,32 @@
   align-items: center;
   margin-bottom: clamp(1.25rem, -0.0357rem + 2.0089vw, 2.375rem);
 }
+@media (max-width: 1500px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .partner-tag {
+    padding: 15px 25px;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .partner-tag {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .partner-tag {
+    padding: 10px 15px;
+  }
+}
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .partner-tag img {
   width: 40px;
   height: 40px;
   margin-right: 15px;
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .partner-tag img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .partner-tag p {
   color: var(--white);
@@ -133,6 +194,11 @@
   background-color: var(--light_green);
   width: 100px;
 }
+@media (max-width: 1500px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left h1:before {
+    width: 85px;
+  }
+}
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .sub-txt {
   color: #3D3D3D;
   font-family: HelvNowDis-light;
@@ -145,6 +211,11 @@
     font-size: clamp(1.063rem, 1.0348rem + 0.1411vw, 1.125rem);
   }
 }
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .left .sub-txt {
+    font-size: clamp(1.125rem, 0.9259rem + 0.9368vw, 1.375rem);
+  }
+}
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right {
   width: 58%;
   border-radius: 4px;
@@ -152,9 +223,25 @@
   box-shadow: 7px 12px 25.2px 0 rgba(0, 0, 0, 0.11);
   padding: clamp(1.625rem, -0.0893rem + 2.6786vw, 3.125rem) clamp(3.313rem, -0.0436rem + 5.2446vw, 6.25rem);
 }
+@media (max-width: 1500px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right {
+    padding: clamp(1.625rem, -0.0893rem + 3.6786vw, 3.125rem) clamp(3.313rem, -0.0436rem + 5.2446vw, 6.25rem);
+  }
+}
+@media (max-width: 1365px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right {
+    padding: 40px;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right {
+    padding: 30px;
+  }
+}
 @media (max-width: 767px) {
   .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right {
     padding: 30px 20px;
+    width: 100%;
   }
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul {
@@ -167,12 +254,38 @@
   margin-bottom: 25px;
   width: 31%;
 }
+@media (max-width: 1247px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li {
+    width: 30%;
+  }
+}
+@media (max-width: 870px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li {
+    width: 47%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li.w-100 {
   width: 100%;
   margin-right: 0;
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li.w-50 {
   width: 48%;
+}
+@media (max-width: 1109px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li.w-50 {
+    width: 47%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li.w-50 {
+    width: 100%;
+  }
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li:last-child {
   margin-bottom: 0;
@@ -183,6 +296,16 @@
   font-weight: 300;
   font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
 }
+@media (max-width: 1500px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li label {
+    font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li label {
+    font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+  }
+}
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
   border: none;
   padding: 15px 0;
@@ -190,6 +313,23 @@
   box-sizing: border-box;
   width: 100%;
   font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+}
+@media (max-width: 1500px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
+    font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
+    padding: 10px 0;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
+    font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+  }
+}
+.zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
   color: var(--dark_grey);
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input:focus, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input:focus-visible, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea:focus, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea:focus-visible {
@@ -198,10 +338,20 @@
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
   height: 100px;
 }
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
+    height: 80px;
+  }
+}
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap {
   display: flex;
   justify-content: flex-end;
   margin-top: clamp(1rem, 0rem + 1.5625vw, 1.875rem);
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap {
+    justify-content: center;
+  }
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap {
   position: relative;
@@ -234,6 +384,11 @@
   font-weight: 300;
   font-size: clamp(1.063rem, 0.2779rem + 1.2268vw, 1.75rem);
 }
+@media (max-width: 1500px) {
+  .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all .text {
+    font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+  }
+}
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all .wpcf7-spinner {
   position: absolute;
   right: 0;
@@ -243,9 +398,60 @@
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all:hover .text {
   color: var(--white);
 }
+@media (max-width: 1080px) {
+  .zoho-product .intro-highlight-wrapper .container .right p {
+    line-height: 1.5em;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .intro-highlight-wrapper .container .right p {
+    font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+  }
+}
 .zoho-product .strategic-choice-wrapper .container h2 {
   padding-bottom: 0;
   margin-bottom: clamp(2.5rem, -0.3571rem + 4.4643vw, 5rem);
+}
+@media (max-width: 767px) {
+  .zoho-product .strategic-choice-wrapper .container ul li .left {
+    position: relative;
+    top: 0px;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .strategic-choice-wrapper .container ul li .right:before {
+    top: 6px;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .strategic-choice-wrapper .container ul li .right:before {
+    width: 10px;
+    height: 10px;
+    top: 65px;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .strategic-choice-wrapper .container ul li .right:after {
+    top: 85px;
+    height: 70%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .strategic-choice-wrapper .container ul li .right .line-fill {
+    top: 85px;
+    height: 70%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .strategic-choice-wrapper .container ul li .right .title {
+    font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem) !important;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .strategic-choice-wrapper .container ul li .right p {
+    font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
+    line-height: 1.7em;
+  }
 }
 .zoho-product .zoho-crm-wrapper {
   position: relative;
@@ -264,6 +470,13 @@
   box-shadow: 0 331px 93px 0 rgba(0, 0, 0, 0), 0 212px 85px 0 rgba(0, 0, 0, 0), 0 119px 71px 0 rgba(0, 0, 0, 0.01), 0 53px 53px 0 rgba(0, 0, 0, 0.02), 0 13px 29px 0 rgba(0, 0, 0, 0.02);
   position: relative;
   z-index: 1;
+  padding: clamp(1.313rem, -0.0436rem + 2.1196vw, 2.5rem);
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-crm-wrapper .container .crm-list li {
+    width: 100%;
+    padding: 20px;
+  }
 }
 .zoho-product .zoho-crm-wrapper .container .crm-list li:before {
   content: "";
@@ -277,9 +490,6 @@
   background: url(../img/crm-li-bg-img.png) #ffffff 0px -12.618px/100% 123.221% no-repeat;
   background-blend-mode: multiply;
   z-index: -1;
-}
-.zoho-product .zoho-crm-wrapper .container .crm-list li {
-  padding: clamp(1.313rem, -0.0436rem + 2.1196vw, 2.5rem);
 }
 .zoho-product .zoho-crm-wrapper .container .crm-list li.w-100 {
   width: 100%;
@@ -299,11 +509,27 @@
   align-items: center;
   margin-right: 14px;
 }
+@media (max-width: 767px) {
+  .zoho-product .zoho-crm-wrapper .container .crm-list li .top span.icon {
+    width: 40px;
+    height: 40px;
+  }
+}
 .zoho-product .zoho-crm-wrapper .container .crm-list li .top span.icon svg {
   width: 30px;
 }
+@media (max-width: 767px) {
+  .zoho-product .zoho-crm-wrapper .container .crm-list li .top span.icon svg {
+    width: 23px;
+  }
+}
 .zoho-product .zoho-crm-wrapper .container .crm-list li .bottom {
   width: 82%;
+}
+@media (max-width: 1080px) {
+  .zoho-product .zoho-crm-wrapper .container .crm-list li .bottom {
+    width: 100%;
+  }
 }
 .zoho-product .zoho-crm-wrapper .container .crm-list li h3 {
   font-size: clamp(1rem, 0.7rem + 0.75vw, 1.75rem);
@@ -311,12 +537,60 @@
   font-family: HelvNowDis-medium;
   font-weight: 500;
 }
+@media (max-width: 1080px) {
+  .zoho-product .zoho-crm-wrapper .container .crm-list li h3 {
+    width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-crm-wrapper .container .crm-list li h3 {
+    font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem) !important;
+  }
+}
 .zoho-product .zoho-crm-wrapper .container .crm-list li p {
   color: #767676;
   font-family: HelvNowDis-light;
   font-weight: 300;
   line-height: 1.65em;
   font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+}
+@media (max-width: 1500px) {
+  .zoho-product .zoho-crm-wrapper .container .crm-list li p {
+    font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-crm-wrapper .container .crm-list li p {
+    font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
+    line-height: 1.7em;
+  }
+}
+.zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
+  font-weight: 400;
+  font-family: HelvNowDis-reg;
+  height: auto;
+  font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+}
+@media (max-width: 1500px) {
+  .zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
+    font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
+    height: auto;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
+    font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title p {
+    font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+    line-height: 1.5em;
+  }
 }
 .zoho-product .inside-partner-wrapper .container .partner-single li {
   width: 100%;
@@ -326,36 +600,80 @@
   align-items: center;
   padding: clamp(1.313rem, -0.0436rem + 2.1196vw, 2.5rem) clamp(2.75rem, -0.1071rem + 4.4643vw, 5.25rem) clamp(2.5rem, -0.0006rem + 3.9071vw, 4.688rem) clamp(2rem, 0rem + 3.125vw, 3.75rem);
 }
+@media (max-width: 767px) {
+  .zoho-product .inside-partner-wrapper .container .partner-single li {
+    flex-direction: column;
+  }
+}
 .zoho-product .inside-partner-wrapper .container .partner-single li .part-txt {
   width: 65%;
   padding: 0;
   margin-right: clamp(1.625rem, -0.0893rem + 2.6786vw, 3.125rem);
 }
+@media (max-width: 767px) {
+  .zoho-product .inside-partner-wrapper .container .partner-single li .part-txt {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
 .zoho-product .inside-partner-wrapper .container .partner-single li .part-txt p {
   text-align: left;
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-partner-wrapper .container .partner-single li .part-txt p {
+    font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
+    line-height: 1.7em;
+  }
 }
 .zoho-product .inside-partner-wrapper .container .partner-single li .part-img {
   width: 35%;
 }
+@media (max-width: 767px) {
+  .zoho-product .inside-partner-wrapper .container .partner-single li .part-img {
+    width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .inside-partner-wrapper .container .partner-single li .part-img img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
 .zoho-product .zoho-app-wrapper {
   position: relative;
   z-index: 9;
+}
+.zoho-product .zoho-app-wrapper .container h2 {
+  background: linear-gradient(0deg, #313131 37.7%, #525252 79.71%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .zoho-product .zoho-app-wrapper .container .zoho-app-list {
   display: flex;
   flex-direction: column;
   gap: 60px 0;
 }
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list {
+    gap: 30px 0;
+  }
+}
 .zoho-product .zoho-app-wrapper .container .zoho-app-list li {
   background: #FFF;
   box-shadow: 0 7px 32.1px 0 rgba(0, 0, 0, 0.08);
   position: relative;
-  padding: clamp(2.5rem, -0.3571rem + 4.4643vw, 5rem);
+  padding: clamp(2.313rem, -0.0436rem + 3.6821vw, 4.375rem) clamp(2.5rem, -0.3571rem + 4.4643vw, 5rem);
   padding-bottom: clamp(3.313rem, -0.0436rem + 5.2446vw, 6.25rem);
-  padding-top: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li {
+    padding: 40px 20px 20px;
+  }
 }
 .zoho-product .zoho-app-wrapper .container .zoho-app-list li:before {
   content: "";
@@ -366,16 +684,59 @@
   height: 13px;
   background-color: var(--light_green);
 }
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li:before {
+    height: 8px;
+  }
+}
 .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-logo {
   width: 80%;
+  padding-bottom: clamp(1.25rem, 0.178rem + 1.675vw, 2.188rem);
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-logo {
+    width: 60%;
+  }
+}
+@media (max-width: 1500px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-logo img {
+    width: 250px;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-logo img {
+    width: 200px;
+  }
 }
 .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-img {
   position: absolute;
-  right: 0;
+  right: 20px;
   top: 100px;
 }
-.zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt {
-  padding-left: 20px;
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-img {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+.zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt p {
+  font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+  color: #767676;
+  font-family: HelvNowDis-light;
+  font-weight: 300;
+  line-height: 1.7em;
+}
+@media (max-width: 1500px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt p {
+    font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt p {
+    font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
+    line-height: 1.7em;
+  }
 }
 .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt .fill-btn {
   border-radius: 77px;
@@ -384,10 +745,150 @@
   padding: 23px 35px;
   color: #4E9C5A;
   font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s ease-in-out;
+  z-index: 1;
+  margin-top: clamp(1.25rem, -0.8929rem + 3.3482vw, 3.125rem);
+}
+@media (max-width: 1500px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt .fill-btn {
+    font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt .fill-btn {
+    padding: 15px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt .fill-btn {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt .fill-btn {
+    font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
+  }
+}
+.zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt .fill-btn:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--light_green);
+  transition: width 0.5s ease-in-out;
+  z-index: -1;
+}
+.zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt .fill-btn:hover {
+  color: var(--white);
+  transition: color 0.5s ease-in-out;
+}
+.zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt .fill-btn:hover:before {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
 }
 .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt, .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-img {
   width: 50%;
 }
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-txt, .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-img {
+    width: 100%;
+  }
+}
+@media (max-width: 1500px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-img {
+    width: 45%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container .zoho-app-list li .zoho-app-img {
+    width: 100%;
+  }
+}
 .zoho-product .insudtry-list-wrapp:before {
   display: none;
+}
+@media (max-width: 767px) {
+  .zoho-product .insudtry-list-wrapp.indus-flex-dir-btm .container {
+    padding-left: 0;
+  }
+}
+.zoho-product .insudtry-list-wrapp.indus-flex-dir-btm .container .left ul.flex-dir-row.flex-wrap {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.zoho-product .insudtry-list-wrapp.indus-flex-dir-btm .container .left ul.flex-dir-row.flex-wrap li {
+  width: 30%;
+}
+@media (max-width: 1500px) {
+  .zoho-product .insudtry-list-wrapp.indus-flex-dir-btm .container .left ul.flex-dir-row.flex-wrap li {
+    width: 25%;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .insudtry-list-wrapp.indus-flex-dir-btm .container .left ul.flex-dir-row.flex-wrap li {
+    width: 27%;
+    align-self: center;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .insudtry-list-wrapp.indus-flex-dir-btm .container .left ul.flex-dir-row.flex-wrap li {
+    width: 47%;
+  }
+}
+.zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt {
+  justify-content: flex-start;
+  height: auto;
+  min-height: 320px;
+  bottom: -200px;
+  transition: bottom 0.5s ease-in-out;
+}
+@media (max-width: 1500px) {
+  .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt {
+    min-height: 240px;
+    bottom: -150px;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt {
+    bottom: 0;
+    min-height: auto;
+  }
+}
+.zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt .proj-name {
+  text-align: center;
+  font-family: HelvNowDis-medium;
+  font-weight: 500;
+}
+.zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt .proj-name, .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt p {
+  font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+  line-height: 1.6em;
+}
+@media (max-width: 1500px) {
+  .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt .proj-name, .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt p {
+    font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt .proj-name, .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt p {
+    font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt .proj-name, .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt p {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (max-width: 1080px) {
+  .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt p:last-child {
+    display: block;
+  }
+}
+.zoho-product .work-ref-wrapper .workSwiper .swiper-slide:hover .proj-txt {
+  bottom: 0;
+  transition: bottom 0.5s ease-in-out;
 }/*# sourceMappingURL=zoho-product.css.map */
