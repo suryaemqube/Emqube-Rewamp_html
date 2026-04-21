@@ -78,6 +78,7 @@
 @media (max-width: 1500px) {
   .zoho-product:after {
     top: 100px;
+    height: 80%;
   }
 }
 @media (max-width: 1080px) {
@@ -842,20 +843,20 @@
 .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt {
   justify-content: flex-start;
   height: auto;
-  min-height: 320px;
+  max-height: 320px;
   bottom: -200px;
   transition: bottom 0.5s ease-in-out;
 }
 @media (max-width: 1500px) {
   .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt {
-    min-height: 240px;
+    max-height: 240px;
     bottom: -150px;
   }
 }
 @media (max-width: 1080px) {
   .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt {
     bottom: 0;
-    min-height: auto;
+    max-height: auto;
   }
 }
 .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt .proj-name {
