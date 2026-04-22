@@ -1035,8 +1035,18 @@ header.scrolled .inner-container .main-nav > .main-nav-ul > li.square-fill-btn-w
 header.scrolled .inner-container .main-nav > .main-nav-ul > li .sub-menu {
   top: 82px;
 }
+@media (max-width: 1500px) {
+  header.scrolled .inner-container .main-nav > .main-nav-ul > li .sub-menu {
+    top: 70px;
+  }
+}
 header.scrolled .inner-container .main-nav > .main-nav-ul > li.menu-item-has-children:hover > a:after {
   top: 82px;
+}
+@media (max-width: 1500px) {
+  header.scrolled .inner-container .main-nav > .main-nav-ul > li.menu-item-has-children:hover > a:after {
+    top: 70px;
+  }
 }
 
 header.active {

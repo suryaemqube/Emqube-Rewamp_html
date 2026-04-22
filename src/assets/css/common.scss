@@ -1074,11 +1074,17 @@ header.scrolled{
           }
           .sub-menu{
             top: 82px;
+            @media(max-width: 1500px){
+              top: 70px;
+            }
           }
           &.menu-item-has-children{
             &:hover{
               > a:after{
                 top: 82px;
+                @media(max-width: 1500px){
+                  top: 70px;
+                }
               }
             }
           }
