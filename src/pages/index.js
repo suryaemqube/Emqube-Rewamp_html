@@ -368,6 +368,34 @@ const Header = () => {
   }, []);
   // common script for all animation - ends
 
+  // create collapsible footer menu - starts
+  const [isMobile, setIsMobile] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 767);
+      };
+
+      handleResize();
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    useEffect(() => {
+      if (!isMobile) {
+        setOpenIndex(null);
+      }
+    }, [isMobile]);
+
+    const toggleFooter = (index) => {
+      if (!isMobile) return; // ⛔ only mobile
+
+      setOpenIndex(prev => (prev === index ? null : index));
+    };
+  // create collapsible footer menu - ends
+
   return (
     <>
     
@@ -862,47 +890,59 @@ const Header = () => {
             <div className="f-right">
               <div className="footer-link">
                 <p className="main-link-name">Software Solutions House</p>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Software development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Mobile App Development</a></li>
-                  <li><a href="javascript:void(0);">WhatsApp for Business</a></li>
-                  <li><a href="javascript:void(0);">AI Development</a></li>
-                  <li><a href="javascript:void(0);">Business Intelligence</a></li>
-                  <li><a href="javascript:void(0);">E-Commerce Applications</a></li>
+                <ul className={`footer-accordion ${openIndex === 0 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(0)}><a href="javascript:void(0);">Software development</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Business Application Development</a></li>
+                    <li><a href="javascript:void(0);">Mobile App Development</a></li>
+                    <li><a href="javascript:void(0);">WhatsApp for Business</a></li>
+                    <li><a href="javascript:void(0);">AI Development</a></li>
+                    <li><a href="javascript:void(0);">Business Intelligence</a></li>
+                    <li><a href="javascript:void(0);">E-Commerce Applications</a></li>
+                  </ul>
                 </ul>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Software Products</a></li>
-                  <li><a href="javascript:void(0);">CRM (Zoho, Salesforce)</a></li>
-                  <li><a href="javascript:void(0);">ERP (Zoho One, Odoo)</a></li>
-                  <li><a href="javascript:void(0);">FM - CAFM Pro</a></li>
-                  <li><a href="javascript:void(0);">HRMS - HRMS Pro</a></li>
-                  <li><a href="javascript:void(0);">Productivity-135</a></li>
+                <ul className={`footer-accordion ${openIndex === 1 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(1)}><a href="javascript:void(0);">Software Products</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">CRM (Zoho, Salesforce)</a></li>
+                    <li><a href="javascript:void(0);">ERP (Zoho One, Odoo)</a></li>
+                    <li><a href="javascript:void(0);">FM - CAFM Pro</a></li>
+                    <li><a href="javascript:void(0);">HRMS - HRMS Pro</a></li>
+                    <li><a href="javascript:void(0);">Productivity-135</a></li>
+                  </ul>
                 </ul>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Software Consulting</a></li>
-                  <li><a href="javascript:void(0);">Digital Transformation</a></li>
-                  <li><a href="javascript:void(0);">Product Development</a></li>
+                <ul className={`footer-accordion ${openIndex === 2 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(2)}><a href="javascript:void(0);">Software Consulting</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Digital Transformation</a></li>
+                    <li><a href="javascript:void(0);">Product Development</a></li>
+                  </ul>
                 </ul>
               </div>
               <div className="footer-link">
                 <p className="main-link-name">Digital Content Studio</p>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Website Development</a></li>
-                  <li><a href="javascript:void(0);">Corporate Website</a></li>
-                  <li><a href="javascript:void(0);">Personality Website</a></li>
+                <ul className={`footer-accordion ${openIndex === 3 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(3)}><a href="javascript:void(0);">Website Development</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Corporate Website</a></li>
+                    <li><a href="javascript:void(0);">Personality Website</a></li>
+                  </ul>
                 </ul>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Digital Marketing</a></li>
-                  <li><a href="javascript:void(0);">Social Media</a></li>
-                  <li><a href="javascript:void(0);">SEO</a></li>
-                  <li><a href="javascript:void(0);">Email Marketing</a></li>
-                  <li><a href="javascript:void(0);">Digital Ads</a></li>
+                <ul className={`footer-accordion ${openIndex === 4 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(4)}><a href="javascript:void(0);">Digital Marketing</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Social Media</a></li>
+                    <li><a href="javascript:void(0);">SEO</a></li>
+                    <li><a href="javascript:void(0);">Email Marketing</a></li>
+                    <li><a href="javascript:void(0);">Digital Ads</a></li>
+                  </ul>
                 </ul>
-                <ul>
-                  <li className="f-main-name"><a href="javascript:void(0);">Content Production</a></li>
-                  <li><a href="javascript:void(0);">Corporate Films</a></li>
-                  <li><a href="javascript:void(0);">Digital Assets</a></li>
+                <ul className={`footer-accordion ${openIndex === 5 ? "active" : ""}`}>
+                  <li className="f-main-name" onClick={() => toggleFooter(5)}><a href="javascript:void(0);">Content Production</a></li>
+                  <ul className="submenu">
+                    <li><a href="javascript:void(0);">Corporate Films</a></li>
+                    <li><a href="javascript:void(0);">Digital Assets</a></li>
+                  </ul>
                 </ul>
               </div>
               <div className="footer-link">

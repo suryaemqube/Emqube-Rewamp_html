@@ -1008,8 +1008,7 @@ const Header = () => {
           </div>
         </div>
       </section>
-      {/* industry section ends */}
-      
+      {/* industry section ends */}     
 
       {/* Work Reference Section Starts */}
       <section className="work-ref-wrapper">
