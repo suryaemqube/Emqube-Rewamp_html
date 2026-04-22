@@ -131,8 +131,15 @@ content: "\f009";
 				}
 				.left{
 					width: 42%;
+					padding-top: 25px;
 					// 1024 - 1920 : 49 - 90
 					margin-left: clamp(3rem, 0.0000rem + 4.6875vw, 5.625rem);
+					@media(max-width: 1500px){
+						padding-top: 10px;
+					}
+					@media(max-width: 1080px){
+						padding-top: 0;
+					}
 					@media(max-width: 850px){
 						margin-left: 30px;
 						width: 44%;
@@ -275,6 +282,7 @@ content: "\f009";
 					padding: clamp(3.313rem, -0.0436rem + 5.2446vw, 6.25rem);
 					@media(max-width: 1500px){
 						padding: clamp(1.625rem, -0.0893rem + 3.6786vw, 3.125rem) clamp(3.313rem, -0.0436rem + 5.2446vw, 6.25rem);
+						padding-top: clamp(2.5rem, -12.75rem + 20vw, 5rem);
 					}
 					@media(max-width: 1365px){
 						padding: 45px 40px;
@@ -452,12 +460,16 @@ content: "\f009";
 											}
 											.btn-wrap{
 												position: relative;
+												width: 180px;
 												.view-all{
 													padding: 15px 25px;
 													width: auto;
 													border-radius: 50px;
-													border: 1px solid #ABABAB;
-													background: #F0EFEF;
+													border: 1px solid var(--light_green);
+													background: var(--light_green);
+													&:after{
+														background-color: var(--white);
+													}
 													input{
 														background: transparent;
 														border: none;
@@ -474,9 +486,11 @@ content: "\f009";
 														cursor: pointer;
 													}
 													.text{
-														color: #7A7A7A;
+														color: var(--white);
 														font-family: HelvNowDis-light;
 														font-weight: 300;
+														width: 100%;
+														text-align: center;
 														// 1024 - 1920 : 17 - 28
 														font-size: clamp(1.063rem, 0.2779rem + 1.2268vw, 1.75rem);
 														@media(max-width: 1500px){
@@ -491,7 +505,9 @@ content: "\f009";
 													}
 													&:hover{
 														.text{
-															color: var(--white);
+															// color: var(--white);
+															color: var(--light_green);
+															transition: color 0.3s ease-in-out;
 														}
 													}
 												}

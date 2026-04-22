@@ -524,8 +524,8 @@ const Header = () => {
                           <div class="submit-button-wrap">
                             <div class="btn-wrap">
                               <div class="view-all reverse pos-ab-aligh-right">
-                                <input class="wpcf7-form-control wpcf7-submit has-spinner submit-btn" type="submit" value="Request a call back" /><span class="wpcf7-spinner"></span>
-                                <span class="text">Request a call back</span>
+                                <input class="wpcf7-form-control wpcf7-submit has-spinner submit-btn" type="submit" value="Submit" /><span class="wpcf7-spinner"></span>
+                                <span class="text">Submit</span>
                               </div>
                             </div>
                           </div>

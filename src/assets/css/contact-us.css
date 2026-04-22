@@ -142,7 +142,18 @@
 }
 .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .left {
   width: 42%;
+  padding-top: 25px;
   margin-left: clamp(3rem, 0rem + 4.6875vw, 5.625rem);
+}
+@media (max-width: 1500px) {
+  .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .left {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 1080px) {
+  .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .left {
+    padding-top: 0;
+  }
 }
 @media (max-width: 850px) {
   .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .left {
@@ -284,6 +295,7 @@
 @media (max-width: 1500px) {
   .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right {
     padding: clamp(1.625rem, -0.0893rem + 3.6786vw, 3.125rem) clamp(3.313rem, -0.0436rem + 5.2446vw, 6.25rem);
+    padding-top: clamp(2.5rem, -12.75rem + 20vw, 5rem);
   }
 }
 @media (max-width: 1365px) {
@@ -508,13 +520,17 @@
 }
 .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap {
   position: relative;
+  width: 180px;
 }
 .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all {
   padding: 15px 25px;
   width: auto;
   border-radius: 50px;
-  border: 1px solid #ABABAB;
-  background: #F0EFEF;
+  border: 1px solid var(--light_green);
+  background: var(--light_green);
+}
+.contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all:after {
+  background-color: var(--white);
 }
 .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all input {
   background: transparent;
@@ -532,9 +548,11 @@
   cursor: pointer;
 }
 .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all .text {
-  color: #7A7A7A;
+  color: var(--white);
   font-family: HelvNowDis-light;
   font-weight: 300;
+  width: 100%;
+  text-align: center;
   font-size: clamp(1.063rem, 0.2779rem + 1.2268vw, 1.75rem);
 }
 @media (max-width: 1500px) {
@@ -549,7 +567,8 @@
   transform: translateY(-50%);
 }
 .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all:hover .text {
-  color: var(--white);
+  color: var(--light_green);
+  transition: color 0.3s ease-in-out;
 }
 .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .captcha, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap {
   margin-top: clamp(1rem, 0rem + 1.5625vw, 1.875rem);
