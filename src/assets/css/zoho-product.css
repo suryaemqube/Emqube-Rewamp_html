@@ -383,6 +383,7 @@
   color: #7A7A7A;
   font-family: HelvNowDis-light;
   font-weight: 300;
+  text-transform: initial;
   font-size: clamp(1.063rem, 0.2779rem + 1.2268vw, 1.75rem);
 }
 @media (max-width: 1500px) {
@@ -509,6 +510,7 @@
   justify-content: center;
   align-items: center;
   margin-right: 14px;
+  transition: all 0.5s ease-in-out;
 }
 @media (max-width: 767px) {
   .zoho-product .zoho-crm-wrapper .container .crm-list li .top span.icon {
@@ -566,6 +568,14 @@
     line-height: 1.7em;
   }
 }
+.zoho-product .zoho-crm-wrapper .container .crm-list li:hover .top span.icon {
+  background-color: var(--light_green);
+  transition: all 0.5s ease-in-out;
+}
+.zoho-product .zoho-crm-wrapper .container .crm-list li:hover .top span.icon svg path {
+  fill: var(--white);
+  transition: 0.5s ease-in-out;
+}
 .zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
   font-weight: 400;
   font-family: HelvNowDis-reg;
@@ -603,6 +613,7 @@
   display: flex;
   align-items: center;
   padding: clamp(1.313rem, -0.0436rem + 2.1196vw, 2.5rem) clamp(2.75rem, -0.1071rem + 4.4643vw, 5.25rem) clamp(2.5rem, -0.0006rem + 3.9071vw, 4.688rem) clamp(2rem, 0rem + 3.125vw, 3.75rem);
+  padding: clamp(1.563rem, -1.7973rem + 5.2504vw, 3.125rem) clamp(2.75rem, -0.1071rem + 4.4643vw, 5.25rem) clamp(1.563rem, -1.7973rem + 5.2504vw, 3.125rem) clamp(2rem, 0rem + 3.125vw, 3.75rem);
 }
 @media (max-width: 767px) {
   .zoho-product .inside-partner-wrapper .container .partner-single li {

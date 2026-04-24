@@ -761,7 +761,6 @@ video {
 }
 
 header {
-  box-shadow: 0 4px 30.6px 0 rgba(0, 0, 0, 0.03);
   position: absolute;
   top: 0;
   left: 0;
@@ -772,7 +771,6 @@ header {
   header {
     padding: 13px 0;
     position: fixed;
-    background: rgba(255, 255, 255, 0.1);
   }
 }
 header .sub-menu {
@@ -1063,11 +1061,11 @@ header.active {
   background-color: var(--white);
 }
 header.active .company-logo .logo-black {
-  display: block;
+  display: block !important;
   transition: all 0.5s ease-in-out;
 }
 header.active .company-logo .logo-white {
-  display: none;
+  display: none !important;
   transition: all 0.5s ease-in-out;
 }
 

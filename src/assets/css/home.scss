@@ -47,6 +47,35 @@
 			}
 		}
 	}
+	header.active{
+  background-color: var(--white);
+  .company-logo{
+    .logo-black{
+      display: block !important;
+      transition: all 0.5s ease-in-out;
+    }
+    .logo-white{
+      display: none !important;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+.mob-menu-click{
+	.hamRotate.active {
+    transform: rotate(45deg);
+    .line{
+      stroke: var(--dark_grey) !important;
+    }
+    .top{
+      stroke-dashoffset: -98px;
+      stroke-dasharray: 40 139;
+    }
+    .bottom{
+      stroke-dashoffset: -138px;
+      stroke-dasharray: 40 139;
+    }
+  }
+}
 	.mob-menu-click.scrolled{
 		.ham{
 			.line{

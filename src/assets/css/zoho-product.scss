@@ -331,6 +331,7 @@ content: "\f009";
 														color: #7A7A7A;
 														font-family: HelvNowDis-light;
 														font-weight: 300;
+														text-transform: initial;
 														// 1024 - 1920 : 17 - 28
 														font-size: clamp(1.063rem, 0.2779rem + 1.2268vw, 1.75rem);
 														@media(max-width: 1500px){
@@ -492,6 +493,7 @@ content: "\f009";
 							justify-content: center;
 							align-items: center;
 							margin-right: 14px;
+							transition: all 0.5s ease-in-out;
 							@media(max-width: 767px){
 								width: 40px;
 								height: 40px;
@@ -538,6 +540,20 @@ content: "\f009";
 							// 340 - 767 : 15 - 18
 							font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
 							line-height: 1.7em;
+						}
+					}
+					&:hover{
+						.top{
+							span.icon{
+								background-color: var(--light_green);
+								transition: all 0.5s ease-in-out;
+								svg{
+									path{
+										fill: var(--white);
+										transition: 0.5s ease-in-out;
+									}
+								}
+							}
 						}
 					}
 				}
@@ -601,6 +617,8 @@ content: "\f009";
 					align-items: center;
 					// 1024 - 1920 : 21 44 40 32 - 40 84 75 60
 					padding: clamp(1.313rem, -0.0436rem + 2.1196vw, 2.5rem) clamp(2.75rem, -0.1071rem + 4.4643vw, 5.25rem) clamp(2.5rem, -0.0006rem + 3.9071vw, 4.688rem) clamp(2rem, 0.0000rem + 3.1250vw, 3.75rem);
+					// 1024 - 1920 : 25 44 50 32 - 50 84 50 60
+					padding: clamp(1.563rem, -1.7973rem + 5.2504vw, 3.125rem) clamp(2.75rem, -0.1071rem + 4.4643vw, 5.25rem) clamp(1.563rem, -1.7973rem + 5.2504vw, 3.125rem) clamp(2rem, 0.0000rem + 3.1250vw, 3.75rem);
 					@media(max-width: 767px){
 						flex-direction: column;
 					}

@@ -31,6 +31,31 @@
     display: none !important;
   }
 }
+.home header.active {
+  background-color: var(--white);
+}
+.home header.active .company-logo .logo-black {
+  display: block !important;
+  transition: all 0.5s ease-in-out;
+}
+.home header.active .company-logo .logo-white {
+  display: none !important;
+  transition: all 0.5s ease-in-out;
+}
+.home .mob-menu-click .hamRotate.active {
+  transform: rotate(45deg);
+}
+.home .mob-menu-click .hamRotate.active .line {
+  stroke: var(--dark_grey) !important;
+}
+.home .mob-menu-click .hamRotate.active .top {
+  stroke-dashoffset: -98px;
+  stroke-dasharray: 40 139;
+}
+.home .mob-menu-click .hamRotate.active .bottom {
+  stroke-dashoffset: -138px;
+  stroke-dasharray: 40 139;
+}
 @media (max-width: 900px) {
   .home .mob-menu-click.scrolled .ham .line {
     stroke: var(--black) !important;

@@ -303,7 +303,11 @@ content: "\f009";
             transform: translateY(-50%);
             height: 100px;
             width: 1px;
-            background-color: #505050;
+            // background-color: #505050;
+            background-image: url(../img/hr-seperator-line.svg);
+            width: 1px;
+            // height: 106%;
+            background-size: cover;
           }
         }
         p{

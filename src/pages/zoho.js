@@ -610,7 +610,7 @@ const Header = () => {
       <section className="intro-highlight-wrapper slide-up">
         <div className="container">
           <div className="left">
-            <p><span className="txt-grey">Stop Chasing Leads.</span><span className="txt-green">Start Closing Deals</span></p>
+            <p><span className="txt-green">Stop Chasing Leads.</span><span className="txt-grey">Start Closing Deals</span></p>
           </div>
           <div className="right">
             <p>Move beyond fragmented spreadsheets and disconnected tools.</p>
