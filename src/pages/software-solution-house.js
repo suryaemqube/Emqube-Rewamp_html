@@ -613,7 +613,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="inside-intro-title">
-            <h1>Software Solutions House</h1>
+            <h1>Software Solution House</h1>
             <p className="inside-sub-txt">Custom Software Development & Digital Transformation Services in Dubai <br />Partnering with UAE Businesses since 2003</p>
             {/* <p className="inside-sub-txt txt-med">Partnering with UAE Businesses since 2003</p> */}
           </div>
