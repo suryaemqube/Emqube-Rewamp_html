@@ -233,7 +233,7 @@ const Header = () => {
     }));
   };
 
-  const [visibleCount, setVisibleCount] = useState(9);
+  const [visibleCount, setVisibleCount] = useState(8);
   const [openIndex, setOpenIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -283,6 +283,9 @@ const Header = () => {
 
     // onload intro section animation - starts
     useEffect(() => {
+
+      const mm = gsap.matchMedia();
+
       gsap.fromTo(
         ".inside-intro-wrapper .inside-intro-title,.inside-intro-wrapper .inside-intro-txt",
         {
@@ -298,42 +301,90 @@ const Header = () => {
           ease: "power2.out",
           // delay: 0.2,
         }
-      )
-      gsap.fromTo(
-        ".inside-intro-wrapper .inside-intro-count.left ul li",
+      );
+
+      // Breakpoint-specific animations
+      mm.add(
         {
-          x: -100,
-          opacity: 0,
-          stagger: 0.3,
-          ease: "power2.out"
+          isDesktop: "(min-width: 768px)",
+          isMobile: "(max-width: 767px)",
         },
-        {
-          x: 0,
-          opacity: 1,
-          stagger: 0.3,
-          duration: 0.5,
-          ease: "power2.out",
-          // delay: 0.2,
-        },
-        "-=0.5"
-      )
-      gsap.fromTo(
-        ".inside-intro-wrapper .inside-intro-count.right ul li",
-        {
-          x: 100,
-          opacity: 0,
-          stagger: 0.3,
-          ease: "power2.out"
-        },
-        {
-          x: 0,
-          opacity: 1,
-          stagger: 0.3,
-          ease: "power2.out",
-          // delay: 0.2,
-        },
-        "-=0.5"
-      )
+        (context) => {
+        const { isDesktop, isMobile } = context.conditions;
+
+        // LEFT LIST
+        gsap.fromTo(
+          ".inside-intro-wrapper .inside-intro-count.left ul li",
+          {
+            x: isDesktop ? -100 : 0, // 👈 change based on screen
+            y: isMobile ? 50 : 0,    // 👈 example for mobile
+            opacity: 0,
+          },
+          {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            stagger: 0.3,
+            duration: 0.5,
+            ease: "power2.out",
+          }
+        );
+
+        // RIGHT LIST
+        gsap.fromTo(
+          ".inside-intro-wrapper .inside-intro-count.right ul li",
+          {
+            x: isDesktop ? 100 : 0,
+            y: isMobile ? 50 : 0,
+            opacity: 0,
+          },
+          {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            stagger: 0.3,
+            duration: 0.5,
+            ease: "power2.out",
+          }
+        );
+      }
+    );
+
+      // gsap.fromTo(
+      //   ".inside-intro-wrapper .inside-intro-count.left ul li",
+      //   {
+      //     x: -100,
+      //     opacity: 0,
+      //     stagger: 0.3,
+      //     ease: "power2.out"
+      //   },
+      //   {
+      //     x: 0,
+      //     opacity: 1,
+      //     stagger: 0.3,
+      //     duration: 0.5,
+      //     ease: "power2.out",
+      //     // delay: 0.2,
+      //   },
+      //   "-=0.5"
+      // )
+      // gsap.fromTo(
+      //   ".inside-intro-wrapper .inside-intro-count.right ul li",
+      //   {
+      //     x: 100,
+      //     opacity: 0,
+      //     stagger: 0.3,
+      //     ease: "power2.out"
+      //   },
+      //   {
+      //     x: 0,
+      //     opacity: 1,
+      //     stagger: 0.3,
+      //     ease: "power2.out",
+      //     // delay: 0.2,
+      //   },
+      //   "-=0.5"
+      // )
     }, [])
     // onload intro section animation - ends
 
@@ -648,9 +699,9 @@ const Header = () => {
                       autoplay={{ delay: 3000 }}
                       breakpoints={{
                         0: {
-                          centeredSlides: true,
-                          slidesPerView: 1.4,
-                          spaceBetween: 10,
+                          // centeredSlides: false,
+                          slidesPerView: 1,
+                          spaceBetween: 20,
                           slidesOffsetBefore: 0,
                           preventClicks:true,
                         },
@@ -780,8 +831,8 @@ const Header = () => {
                       breakpoints={{
                         0: {
                           centeredSlides: true,
-                          slidesPerView: 1.4,
-                          spaceBetween: 10,
+                          slidesPerView: 1,
+                          spaceBetween: 20,
                           slidesOffsetBefore: 0,
                           preventClicks:true,
                         },
@@ -910,8 +961,8 @@ const Header = () => {
                       breakpoints={{
                         0: {
                           centeredSlides: true,
-                          slidesPerView: 1.4,
-                          spaceBetween: 10,
+                          slidesPerView: 1,
+                          spaceBetween: 20,
                           slidesOffsetBefore: 0,
                           preventClicks:true,
                         },
@@ -1356,7 +1407,7 @@ const Header = () => {
                 </div>
                 <div className="proj-txt">
                   {/* <p className="proj-name">E-Move</p> */}
-                  <p>Region's largest relocation company with services for furniture installation and storage</p>
+                  <p>The largest relocation company runs a paperless operation for quotes, jobs, invoices and payroll eclipsing other competitors.</p>
                 </div>
               </div>
             </a>
@@ -1375,6 +1426,10 @@ const Header = () => {
                 <div className="proj-img">
                   <img src="/assets/img/bmw-project-image.jpg" alt="Emovers"></img>
                 </div>
+                <div className="proj-txt">
+                  {/* <p className="proj-name">E-Move</p> */}
+                  <p>German luxury automobile company relies on emQube developed web application to manage sales in 11 countries in the region</p>
+                </div>
               </div>
             </a>
           </SwiperSlide>
@@ -1392,6 +1447,10 @@ const Header = () => {
                 <div className="proj-img">
                   <img src="/assets/img/nestle-project-image.jpg" alt="Emovers"></img>
                 </div>
+                <div className="proj-txt">
+                  {/* <p className="proj-name">E-Move</p> */}
+                  <p>Swiss multinational leader in FMCG leverages a custom-built application to monitor inventory and sales in the Middle East region.</p>
+                </div>
               </div>
             </a>
           </SwiperSlide>
@@ -1399,7 +1458,7 @@ const Header = () => {
               <a href="#">
                 <div className="work-wrapp">
                   <div className="client-icon">
-                    <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                    <img src="/assets/img/orient-finance-logo.png" alt="Orient Finance logo"></img>
                   </div>
                   <span className="arrow-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
@@ -1407,8 +1466,12 @@ const Header = () => {
                     </svg>
                   </span>
                   <div className="proj-img">
-                    <img src="/assets/img/insurance-policy-project-img.webp" alt="Emovers"></img>
+                    <img src="/assets/img/orient-finance-proj-img.jpg" alt="Orient Finance"></img>
                   </div>
+                  <div className="proj-txt">
+                  {/* <p className="proj-name">E-Move</p> */}
+                  <p>Making online purchase of insurance easier, our web application for a leading broker in Dubai helped grow business rapidly.</p>
+                </div>
                 </div>
               </a>
           </SwiperSlide>

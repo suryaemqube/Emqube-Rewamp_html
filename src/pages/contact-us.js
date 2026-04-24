@@ -473,25 +473,25 @@ const Header = () => {
                         <li>
                           <span class="wpcf7-form-control-wrap" data-name="first-name">
                             <label>Your Name</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="" value="" type="text" name="first-name" />
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" type="text" name="first-name" />
                           </span>
                         </li>
                         <li>
                           <span class="wpcf7-form-control-wrap" data-name="last-name">
                             <label>Email</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="" value="" type="email" name="company-email" />
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder=""  type="email" name="company-email" />
                           </span>
                         </li>
                         <li>
                           <span class="wpcf7-form-control-wrap" data-name="company-name">
                             <label>Company Name</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="" value="" type="text" name="company-name" />
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder=""  type="text" name="company-name" />
                           </span>
                         </li>
                         <li className="w-50">
                           <span class="wpcf7-form-control-wrap" data-name="mobile-number">
                             <label>Phone No.</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="" value="" type="tel" name="mobile-number" />
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder=""  type="tel" name="mobile-number" />
                           </span>
                         </li>
                         <li className="w-50 mob-w-100">

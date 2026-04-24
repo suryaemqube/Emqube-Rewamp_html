@@ -6,6 +6,9 @@
   --light_grey: #767676;
 }
 
+main.about-us.inside-page header {
+  z-index: 99;
+}
 main.about-us.inside-page {
   position: relative;
 }
@@ -74,6 +77,18 @@ main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-title .
     right: 60px;
   }
 }
+@media (min-width: 1365px) and (max-width: 1500px) {
+  main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right {
+    bottom: -70px;
+    right: 55px;
+  }
+}
+@media (min-width: 1365px) and (max-width: 1500px) {
+  main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-green {
+    top: -13px;
+    left: -46px !important;
+  }
+}
 main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-txt {
   width: 865px;
 }
@@ -89,7 +104,7 @@ main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-txt {
 }
 @media (max-width: 1480px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-txt {
-    width: 45%;
+    width: 59%;
   }
 }
 @media (max-width: 1180px) {
@@ -131,6 +146,11 @@ main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count u
     font-size: clamp(1.875rem, 1.5133rem + 1.5432vw, 2.5rem);
   }
 }
+@media (max-width: 1500px) {
+  main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count ul li .count-txt {
+    font-size: clamp(0.906rem, 0.7038rem + 0.316vw, 1rem);
+  }
+}
 @media (min-width: 768px) and (max-width: 1000px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count ul li .count-txt br {
     display: none;
@@ -153,6 +173,12 @@ main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count u
     width: 180px;
   }
 }
+@media (min-width: 1365px) and (max-width: 1500px) {
+  main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count ul li.bg-green {
+    height: 145px;
+    width: 165px;
+  }
+}
 @media (min-width: 1001px) and (max-width: 1100px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count ul li.bg-green {
     height: 150px;
@@ -173,6 +199,11 @@ main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count u
 @media (min-width: 1101px) and (max-width: 1600px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count ul li.bg-white {
     width: 180px;
+  }
+}
+@media (min-width: 1365px) and (max-width: 1500px) {
+  main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count ul li.bg-white {
+    width: 150px;
   }
 }
 @media (min-width: 1001px) and (max-width: 1100px) {

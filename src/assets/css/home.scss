@@ -5,6 +5,58 @@
   --dark_grey: #121A21;
   --light_grey: #767676;
 }
+.home{
+	header{
+		.inner-container{
+			.company-logo{
+				.logo-black{
+					@media(max-width: 900px){
+						display: none !important;
+					}
+				}
+				.logo-white{
+					@media(max-width: 900px){
+						display: block !important;
+					}
+				}
+			}
+		}
+	}
+	.mob-menu-click{
+		.ham{
+			.line{
+				@media(max-width: 900px){
+					stroke: var(--white) !important;
+				}
+			}
+		}
+	}
+	header.scrolled{
+		.inner-container{
+			.company-logo{
+				.logo-black{
+					@media(max-width: 900px){
+						display: block !important;
+					}
+				}
+				.logo-white{
+					@media(max-width: 900px){
+						display: none !important;
+					}
+				}
+			}
+		}
+	}
+	.mob-menu-click.scrolled{
+		.ham{
+			.line{
+				@media(max-width: 900px){
+					stroke: var(--black) !important;
+				}
+			}
+		}
+	}
+}
 .hero-video-wrapper{
 	position: relative;
 	width: 100%;

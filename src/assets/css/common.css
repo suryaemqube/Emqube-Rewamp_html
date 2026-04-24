@@ -596,6 +596,12 @@ p:last-child {
     width: 150px;
   }
 }
+@media (max-width: 767px) {
+  .view-all {
+    background-color: var(--white);
+    border: none;
+  }
+}
 .view-all .text {
   transition: all 0.3s;
   position: relative;
@@ -740,6 +746,7 @@ video {
 @media (max-width: 767px) {
   .view-more-btn {
     display: inline-flex;
+    margin-top: 15px;
   }
 }
 
@@ -765,7 +772,7 @@ header {
   header {
     padding: 13px 0;
     position: fixed;
-    background-color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 header .sub-menu {
@@ -780,6 +787,7 @@ header .sub-menu {
   max-height: 0;
   position: absolute !important;
   top: 126px;
+  top: 100px;
   transform: translateX(-50%) scaleY(0) !important;
   transform-origin: 50% 0;
   transition: all 0.3s;
@@ -808,6 +816,7 @@ header .sub-menu li {
 header .sub-menu li a {
   width: 100%;
   color: var(--white);
+  line-height: 1.3em;
 }
 header .sub-menu > li a {
   position: relative;
@@ -947,6 +956,7 @@ header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children:hover
   left: calc(50% - 4px);
   position: absolute;
   top: 126px;
+  top: 100px;
   width: 0;
   z-index: 900000;
 }
@@ -1250,6 +1260,7 @@ footer {
   footer {
     padding: 30px 0;
     padding-bottom: 120px;
+    padding-bottom: 90px;
   }
 }
 @media (max-width: 1689px) {
@@ -1455,7 +1466,7 @@ footer .inner-container .f-btm {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  padding-right: 50px;
 }
 @media (max-width: 767px) {
   footer .inner-container .f-btm {
@@ -1513,6 +1524,9 @@ footer .inner-container .f-btm .f-social-list li a:hover {
     max-height: none !important;
     overflow: visible;
   }
+  .footer-accordion li a {
+    padding-left: 0 !important;
+  }
   .f-main-name::after {
     content: "";
   }
@@ -1520,10 +1534,11 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 .sticky-buttons {
   position: fixed;
   right: 10px;
-  bottom: 140px;
+  bottom: 80px;
   display: flex;
   flex-direction: column;
   z-index: 99999999;
+  transition: bottom 0.5s ease-in-out;
 }
 @media (max-width: 767px) {
   .sticky-buttons {
@@ -1535,7 +1550,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
     align-items: center;
     width: 100%;
     padding: 10px 0;
-    box-shadow: 0 6px 30.6px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
     left: 0;
   }
 }
@@ -1578,6 +1593,16 @@ footer .inner-container .f-btm .f-social-list li a:hover {
   transition: fill 0.5s ease-in-out;
 }
 
+.sticky-buttons.active {
+  bottom: 140px;
+  transition: bottom 0.5s ease-in-out;
+}
+@media (max-width: 767px) {
+  .sticky-buttons.active {
+    bottom: 0;
+  }
+}
+
 .backtotop {
   position: fixed;
   right: 10px;
@@ -1601,6 +1626,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
   .backtotop {
     width: 30px;
     height: 30px;
+    bottom: 10px;
   }
 }
 .backtotop svg {

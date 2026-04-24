@@ -493,6 +493,12 @@
     font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
   }
 }
+.contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input::-moz-placeholder, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea::-moz-placeholder, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li select::-moz-placeholder {
+  color: var(--light_grey);
+}
+.contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input::placeholder, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea::placeholder, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li select::placeholder {
+  color: var(--light_grey);
+}
 .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input:focus, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input:focus-visible, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea:focus, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea:focus-visible, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li select:focus, .contact-main .inside-child-intro-wrapper.contact-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li select:focus-visible {
   outline: none;
 }

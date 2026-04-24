@@ -12,6 +12,9 @@ $dark_grey: var(--dark_grey);
 $light_grey: var(--light_grey);
 
 main.about-us.inside-page{
+  header{
+    z-index: 99;
+  }
   position: relative;
   &:after{
     content: '';
@@ -75,6 +78,16 @@ main.about-us.inside-page{
           bottom: -150px;
           right: 60px;
         }
+        @media(min-width: 1365px) and (max-width: 1500px){
+          bottom: -70px;
+          right: 55px;
+        }
+        .bg-green{
+          @media(min-width: 1365px) and (max-width: 1500px){
+            top: -13px;
+            left: -46px !important;
+          }
+        }
       }
       .inside-intro-txt{
         width: 865px;
@@ -85,7 +98,7 @@ main.about-us.inside-page{
 					width: 600px;
 				}
 				@media(max-width: 1480px){
-					width: 45%;
+					width: 59%;
 				}
 				@media(max-width: 1180px){
 					width: 40%;
@@ -123,6 +136,9 @@ main.about-us.inside-page{
 							}
             }
             .count-txt{
+              @media(max-width: 1500px){
+                font-size: clamp(0.906rem, 0.7038rem + 0.3160vw, 1rem);
+              }
               br{
                 @media(min-width: 768px) and (max-width: 1000px){
                   display: none;
@@ -141,10 +157,15 @@ main.about-us.inside-page{
                 height: 170px;
                 width: 180px;
               }
+              @media(min-width: 1365px) and (max-width: 1500px){
+                height: 145px;
+                width: 165px;
+              }
               @media(min-width: 1001px) and (max-width: 1100px){
                 height: 150px;
                 width: 170px;
               }
+              
             }
             &.bg-white{
               @media(min-width: 1701px){
@@ -156,6 +177,9 @@ main.about-us.inside-page{
               }
               @media(min-width: 1101px) and (max-width: 1600px){
                 width: 180px;
+              }
+              @media(min-width: 1365px) and (max-width: 1500px){
+                width: 150px;
               }
               @media(min-width: 1001px) and (max-width: 1100px){
                 width: 170px;

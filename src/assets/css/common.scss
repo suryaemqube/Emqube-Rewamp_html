@@ -617,6 +617,10 @@ p{
     padding: 10px 12px 10px 15px;
     width: 150px;
   }
+  @media(max-width: 767px){
+    background-color: var(--white);
+    border: none;
+  }
 	.text{
 		transition: all 0.3s;
     position: relative;
@@ -739,6 +743,7 @@ video{
   display: none;
   @media(max-width: 767px){
     display: inline-flex;
+    margin-top: 15px;
   }
 }
 .view-more-btn.active{
@@ -768,7 +773,8 @@ header{
   @media(max-width: 900px){
     padding: 13px 0;
     position: fixed;
-    background-color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    // background-color: var(--white);
   }
   .sub-menu{
     // display: flex;
@@ -785,6 +791,7 @@ header{
     max-height: 0;
     position: absolute !important;
     top: 126px;
+    top: 100px;
     transform: translateX(-50%) scaleY(0) !important;
     transform-origin: 50% 0;
     transition: all .3s;
@@ -805,6 +812,7 @@ header{
       a{
         width: 100%;
         color: var(--white);
+        line-height: 1.3em;
       }
     }
     > li{
@@ -969,6 +977,7 @@ header{
                   left: calc(50% - 4px);
                   position: absolute;
                   top: 126px;
+                  top: 100px;
                   width: 0;
                   z-index: 900000;
                   @media(max-width: 1500px){
@@ -1325,6 +1334,7 @@ footer{
   @media(max-width: 767px){
     padding: 30px 0;
     padding-bottom: 120px;
+    padding-bottom: 90px;
   }
   .inner-container{
     @media(max-width: 1689px){
@@ -1498,7 +1508,7 @@ footer{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 50px;
+      padding-right: 50px;
       @media(max-width: 767px){
         padding-left: 0;
         padding-right: 0;
@@ -1566,7 +1576,9 @@ footer{
     max-height: none !important;
     overflow: visible;
   }
-
+  .footer-accordion li a{
+    padding-left: 0 !important;
+  }
   .f-main-name::after {
     content: "";
   }
@@ -1577,10 +1589,11 @@ footer{
 .sticky-buttons {
   position: fixed;
   right: 10px;
-  bottom: 140px;
+  bottom: 80px;
   display: flex;
   flex-direction: column;
   z-index: 99999999;
+  transition: bottom 0.5s ease-in-out;
   @media(max-width: 767px){
     background-color: var(--white);
     bottom: 100px;
@@ -1590,7 +1603,7 @@ footer{
     align-items: center;
     width: 100%;
     padding: 10px 0;
-    box-shadow: 0 6px 30.6px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
     left: 0;
   }
   a {
@@ -1631,6 +1644,13 @@ footer{
     }
   }
 }
+.sticky-buttons.active{
+  bottom: 140px;
+  transition: bottom 0.5s ease-in-out;
+  @media(max-width: 767px){
+    bottom: 0;
+  }
+}
 // sticky button ends
 
 // Scrolltop section starts
@@ -1653,6 +1673,7 @@ footer{
   @media(max-width: 767px){
     width: 30px;
     height: 30px;
+    bottom: 10px;
   }
   svg {
     transition: all 0.3s;

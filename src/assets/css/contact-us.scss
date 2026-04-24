@@ -439,6 +439,9 @@ content: "\f009";
 												// 340 - 767 : 17 - 20
 												font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
 											}
+											&::placeholder{
+												color: var(--light_grey);
+											}
 											&:focus,&:focus-visible{
 												outline: none;
 											}

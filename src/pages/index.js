@@ -968,7 +968,7 @@ const Header = () => {
       {/* footer ends */}
 
       {/* Sticky buttons starts */}
-      <div class="sticky-buttons">
+      <div class={`sticky-buttons ${showTop ? "active" : ""}`}>
         <a href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
             <circle cx="36" cy="36" r="36" fill="#4E9C5A"/>
@@ -1012,7 +1012,7 @@ const Header = () => {
 
 export default function Home() {
   return (
-    <main>
+    <main className="home">
       <Header />
     </main>
   );

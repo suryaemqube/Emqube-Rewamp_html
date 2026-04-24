@@ -6,6 +6,37 @@
   --light_grey: #767676;
 }
 
+@media (max-width: 900px) {
+  .home header .inner-container .company-logo .logo-black {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .home header .inner-container .company-logo .logo-white {
+    display: block !important;
+  }
+}
+@media (max-width: 900px) {
+  .home .mob-menu-click .ham .line {
+    stroke: var(--white) !important;
+  }
+}
+@media (max-width: 900px) {
+  .home header.scrolled .inner-container .company-logo .logo-black {
+    display: block !important;
+  }
+}
+@media (max-width: 900px) {
+  .home header.scrolled .inner-container .company-logo .logo-white {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .home .mob-menu-click.scrolled .ham .line {
+    stroke: var(--black) !important;
+  }
+}
+
 .hero-video-wrapper {
   position: relative;
   width: 100%;
