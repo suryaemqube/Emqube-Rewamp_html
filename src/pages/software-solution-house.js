@@ -1461,12 +1461,12 @@ const Header = () => {
                     <img src="/assets/img/orient-finance-logo.png" alt="Orient Finance logo"></img>
                   </div>
                   <span className="arrow-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                   {/*  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                       <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    </svg>*/}
                   </span>
                   <div className="proj-img">
-                    <img src="/assets/img/orient-finance-proj-img.jpg" alt="Orient Finance"></img>
+                    <img src="/assets/img/insurance-policy-project-img.webp" alt="Insurance Policy"></img>
                   </div>
                   <div className="proj-txt">
                   {/* <p className="proj-name">E-Move</p> */}
