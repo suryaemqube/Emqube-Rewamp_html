@@ -102,6 +102,9 @@
 .inside-child header {
   z-index: 99;
 }
+.inside-child.mobile-app-development:after {
+  background-image: url(../img/mobile-app-development-inro-bg.svg);
+}
 .inside-child .inside-child-intro-wrapper {
   filter: blur(10px);
   opacity: 0.6; /* optional for nicer effect */
@@ -116,7 +119,7 @@
 }
 @media (max-width: 1480px) {
   .inside-child .inside-child-intro-wrapper {
-    padding-top: 15rem;
+    padding-top: 160px;
   }
 }
 @media (max-width: 1200px) {
@@ -148,11 +151,9 @@
   font-size: clamp(1.563rem, -0.0793rem + 2.5661vw, 3rem);
   position: relative;
   display: inline-block;
-  border: 3px solid transparent;
+  border: none;
   border-radius: 36px;
-  border: 1px solid #4E9C5A;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
-  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
   background: linear-gradient(90deg, #87D292 0%, #4E9C5A 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -168,6 +169,17 @@
   .inside-child .inside-child-intro-wrapper .container .title-wrapp .parent-page-title {
     font-size: clamp(1.25rem, 1.18rem + 0.8949vw, 1.5rem);
   }
+}
+.inside-child .inside-child-intro-wrapper .container .title-wrapp .parent-page-title:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 36px;
+  background: linear-gradient(90deg, #87D292 0%, #4E9C5A 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 .inside-child .inside-child-intro-wrapper .container .title-wrapp h1 {
   font-family: HelvNowDis-medium;
@@ -1971,9 +1983,24 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 80%;
+  height: 98px;
   width: 1px;
   background-color: var(--black);
+}
+@media (max-width: 1500px) {
+  .inside-child .e-comm-platform-wrapp .container ul li .platform-logo span:nth-child(2):before {
+    height: 80px;
+  }
+}
+@media (max-width: 1400px) {
+  .inside-child .e-comm-platform-wrapp .container ul li .platform-logo span:nth-child(2):before {
+    height: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .inside-child .e-comm-platform-wrapp .container ul li .platform-logo span:nth-child(2):before {
+    height: 50px;
+  }
 }
 .inside-child .e-comm-platform-wrapp .container ul li .platform-name {
   position: relative;
@@ -2079,6 +2106,11 @@
   top: 0;
   background-color: #0064CA;
 }
+@media (max-width: 1500px) {
+  .inside-child .social-media-plat-wrapper .container ul li:before {
+    width: 6px;
+  }
+}
 @media (max-width: 767px) {
   .inside-child .social-media-plat-wrapper .container ul li:before {
     width: 5px;
@@ -2107,8 +2139,8 @@
 }
 @media (max-width: 1500px) {
   .inside-child .social-media-plat-wrapper .container ul li .social-platgform-logo {
-    width: 20%;
-    padding-right: 30px;
+    width: 18%;
+    margin-right: 90px;
   }
 }
 @media (max-width: 1400px) {
@@ -2138,7 +2170,7 @@
 @media (max-width: 1500px) {
   .inside-child .social-media-plat-wrapper .container ul li .social-media-title {
     width: 22%;
-    padding-left: 30px;
+    padding-left: 90px;
   }
 }
 @media (max-width: 1400px) {
@@ -2171,6 +2203,7 @@
   margin-right: auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 @media (max-width: 767px) {
   .inside-child .social-media-plat-wrapper .container ul li .social-txt-wrapp {
@@ -2178,6 +2211,7 @@
   }
 }
 .inside-child .social-media-plat-wrapper .container ul li h3 {
+  color: #5E5E5E;
   font-size: clamp(1.563rem, -0.0793rem + 2.5661vw, 3rem);
 }
 @media (max-width: 1023px) {
@@ -2198,6 +2232,11 @@
 }
 .inside-child .social-media-plat-wrapper .container ul .social-media-txt {
   margin-right: clamp(2.5rem, 0.0047rem + 3.9028vw, 4.688rem);
+}
+@media (max-width: 1500px) {
+  .inside-child .social-media-plat-wrapper .container ul .social-media-txt {
+    width: 51%;
+  }
 }
 @media (max-width: 1023px) {
   .inside-child .social-media-plat-wrapper .container ul .social-media-txt {
@@ -2327,6 +2366,11 @@
 .inside-child .references-inside-wrapp .ref-content .ref-grid .media-card {
   height: 60%;
   width: 20%;
+  position: relative;
+}
+.inside-child .references-inside-wrapp .ref-content .ref-grid .media-card:hover .video-control {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 .inside-child .references-inside-wrapp .ref-content .ref-grid .media-card video, .inside-child .references-inside-wrapp .ref-content .ref-grid .media-card img {
   width: 100%;
@@ -2335,6 +2379,26 @@
      object-fit: cover;
   -o-object-position: top center;
      object-position: top center;
+}
+.inside-child .references-inside-wrapp .ref-content .video-control {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.inside-child .references-inside-wrapp .ref-content .video-control svg {
+  width: 50px;
+  height: auto;
+}
+.inside-child .references-inside-wrapp .ref-content .video-control svg path, .inside-child .references-inside-wrapp .ref-content .video-control svg rect {
+  fill: var(--white);
 }
 .inside-child .references-inside-wrapp .ref-content .swiper {
   max-width: 90%;

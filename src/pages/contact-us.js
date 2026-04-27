@@ -388,7 +388,7 @@ const Header = () => {
                     <div className="right-contact">
                       <p>#801 M Square, <br />Sheikh Khalifa Bin Zayed Street. <br />Dubai. UAE</p>
                       <p>
-                        <a href="#">Google maps link</a>
+                        <a href="https://www.google.com/maps/place/emQube+LLC/@25.2498391,55.3005616,17z/data=!4m8!3m7!1s0x3e5f433c4d7d1515:0x269e122f1ea04bc5!8m2!3d25.2498391!4d55.3005616!9m1!1b1!16s%2Fg%2F11gzfdc86?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google maps link</a>
                         <span className="icon">
                           <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 10 12" fill="none">
                             <path d="M0.175254 10.5368L7.23047 1.17166L0.1932 2.16161L-5.48652e-05 1.22509L8.71276 -0.00055572L9.9384 8.71226L8.98491 8.78487L7.99497 1.7476L0.939751 11.1127L0.175254 10.5368Z" fill="#4E9C5A"/>

@@ -666,6 +666,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 1500px) {
+  .zoho-product .zoho-app-wrapper .container h2 {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .zoho-app-wrapper .container h2 {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
+}
 .zoho-product .zoho-app-wrapper .container .zoho-app-list {
   display: flex;
   flex-direction: column;
@@ -678,7 +689,7 @@
 }
 .zoho-product .zoho-app-wrapper .container .zoho-app-list li {
   background: #FFF;
-  box-shadow: 0 7px 32.1px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.06);
   position: relative;
   padding: clamp(2.313rem, -0.0436rem + 3.6821vw, 4.375rem) clamp(2.5rem, -0.3571rem + 4.4643vw, 5rem);
   padding-bottom: clamp(3.313rem, -0.0436rem + 5.2446vw, 6.25rem);
@@ -857,12 +868,25 @@
     width: 47%;
   }
 }
+.zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp {
+  position: relative;
+}
+.zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.54) 100%);
+  z-index: 1;
+}
 .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt {
   justify-content: flex-start;
   height: 100%;
   max-height: 320px;
   bottom: -200px;
   transition: bottom 0.5s ease-in-out;
+  z-index: 2;
 }
 @media (max-width: 1500px) {
   .zoho-product .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .proj-txt {
