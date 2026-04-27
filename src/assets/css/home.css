@@ -432,6 +432,20 @@
 @media (max-width: 767px) {
   .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(2) {
     width: 50%;
+    width: 42%;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 356px) {
+  .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(2) {
+    width: 43%;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(2) {
+    padding-right: 0px;
+    width: 46%;
   }
 }
 .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(3) {
@@ -469,6 +483,20 @@
 @media (max-width: 767px) {
   .home-intro-wrapper .container .left .count-wrapper ul li:last-child {
     width: 50%;
+    width: 42%;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 356px) {
+  .home-intro-wrapper .container .left .count-wrapper ul li:last-child {
+    width: 43%;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .home-intro-wrapper .container .left .count-wrapper ul li:last-child {
+    padding-right: 0px;
+    width: 46%;
   }
 }
 .home-intro-wrapper .container .left .count-wrapper ul li:last-child:after {
@@ -477,6 +505,31 @@
 @media (max-width: 767px) {
   .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(odd) {
     padding-left: 0;
+    width: 57%;
+    padding-left: 40px;
+  }
+}
+@media (max-width: 365px) {
+  .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(odd) {
+    padding-right: 10px;
+  }
+}
+@media (max-width: 355px) {
+  .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(odd) {
+    padding-left: 30px;
+    width: 55%;
+  }
+}
+@media (max-width: 335px) {
+  .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(odd) {
+    padding-left: 20px;
+    width: 55%;
+  }
+}
+@media (max-width: 320px) {
+  .home-intro-wrapper .container .left .count-wrapper ul li:nth-child(odd) {
+    padding-left: 0px;
+    width: 54%;
   }
 }
 @media (max-width: 767px) {
@@ -1123,6 +1176,11 @@
 @media (max-width: 1500px) {
   .brand-wrapper .container {
     max-width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .brand-wrapper .container {
+    text-align: center;
   }
 }
 .brand-wrapper .container .brand-list {

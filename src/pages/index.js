@@ -63,6 +63,29 @@ const Header = () => {
     });
   };
 
+  const [visibleCount, setVisibleCount] = useState(8);
+
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 9);
+  };
+
+  const logos = [
+    { src: "/assets/img/logo-difc.jpg", alt: "DIFC" },
+    { src: "/assets/img/logo-bmw.jpg", alt: "BMW" },
+    { src: "/assets/img/logo-nespresso-logo.jpg", alt: "NESPRESSO" },
+    { src: "/assets/img/logo-emovers.jpg", alt: "E-Movers" },
+    { src: "/assets/img/logo-tld.jpg", alt: "The Leather Doctor" },
+    { src: "/assets/img/logo-innerspace.jpg", alt: "Innerspace" },
+    { src: "/assets/img/logo-lighttech.jpg", alt: "Lighttech" },
+    { src: "/assets/img/logo-Haecker.jpg", alt: "Haecker" },
+    { src: "/assets/img/logo-nikai.jpg", alt: "Nikai" },
+    { src: "/assets/img/logo-swisscotec.jpg", alt: "Swisscotec" },
+    { src: "/assets/img/logo-karam.jpg", alt: "Karam" },
+    { src: "/assets/img/logo-transAsia.jpg", alt: "TransAsia" },
+    { src: "/assets/img/logo-winspire.jpg", alt: "Winspire" },
+    { src: "/assets/img/logo-electricway.jpg", alt: "Electricway" },
+  ];
+
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
@@ -818,7 +841,7 @@ const Header = () => {
       <section className="brand-wrapper">
         <div className="container">
           <h2 className="txt-center txt-gradient slide-up">Brands That Trust Us</h2>
-          <ul className="brand-list d-flex">
+          {/* <ul className="brand-list d-flex">
             <li className="stagger-li"><a href="#"><img src="/assets/img/logo-difc.jpg" width="148" height="72" alt="DIFC"></img></a></li>
             <li className="stagger-li"><a href="#"><img src="/assets/img/logo-bmw.jpg" width="148" height="72" alt="BMW"></img></a></li>
             <li className="stagger-li"><a href="#"><img src="/assets/img/logo-nespresso-logo.jpg" width="148" height="72" alt="NESPRESSO"></img></a></li>
@@ -833,7 +856,28 @@ const Header = () => {
             <li className="stagger-li"><a href="#"><img src="/assets/img/logo-transAsia.jpg" width="148" height="72" alt="transAsia"></img></a></li>
             <li className="stagger-li"><a href="#"><img src="/assets/img/logo-winspire.jpg" width="148" height="72" alt="winspire"></img></a></li>
             <li className="stagger-li"><a href="#"><img src="/assets/img/logo-electricway.jpg" width="148" height="72" alt="Electricway"></img></a></li>
+          </ul> */}
+          <ul className="brand-list d-flex slide-up">
+            {(isMobile ? logos.slice(0, visibleCount) : logos).map((logo, index) => (
+              <li key={index}>
+                <a href="#">
+                  <img src={logo.src} width="148" height="72" alt={logo.alt} />
+                </a>
+              </li>
+            ))}
           </ul>
+
+          {isMobile && (
+            <a href="javascript:void(0);"
+              onClick={loadMore}
+              className={`view-more-btn ${
+                visibleCount >= logos.length ? "disabled" : ""
+              }`}
+              disabled={visibleCount >= logos.length}
+            >
+              {visibleCount >= logos.length ? "No more brands" : "View more"}
+            </a>
+          )}
         </div>
       </section>
       {/* Home Page Brand section ends */}

@@ -404,6 +404,16 @@
 							}
 							@media(max-width: 767px){
 								width: 50%;
+								width: 42%;
+								padding-right: 30px;
+							}
+							@media(max-width: 356px){
+								width: 43%;
+								padding-right: 20px;
+							}
+							@media(max-width: 320px){
+								padding-right: 0px;
+								width: 46%;
 							}
 						}
 						&:nth-child(3){
@@ -429,6 +439,16 @@
 							}
 							@media(max-width: 767px){
 								width: 50%;
+								width: 42%;
+								padding-right: 30px;
+							}
+							@media(max-width: 356px){
+								width: 43%;
+								padding-right: 20px;
+							}
+							@media(max-width: 320px){
+								padding-right: 0px;
+								width: 46%;
 							}
 							&:after{
 								display: none;
@@ -437,6 +457,23 @@
 						&:nth-child(odd){
 							@media(max-width: 767px){
 								padding-left: 0;
+								width: 57%;
+								padding-left: 40px;
+							}
+							@media(max-width: 365px){
+								padding-right: 10px;
+							}
+							@media(max-width: 355px){
+								padding-left: 30px;
+								width: 55%;
+							}
+							@media(max-width: 335px){
+								padding-left: 20px;
+								width: 55%;
+							}
+							@media(max-width: 320px){
+								padding-left: 0px;
+								width: 54%;
 							}
 						}
 						&:nth-child(2n){
@@ -1023,6 +1060,9 @@
 		}
 		@media(max-width: 1500px){
 			max-width: 90%;
+		}
+		@media(max-width: 767px){
+			text-align: center;
 		}
 		.brand-list{
 			align-items: center;

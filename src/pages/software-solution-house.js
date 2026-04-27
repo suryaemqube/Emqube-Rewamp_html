@@ -613,7 +613,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="inside-intro-title">
-            <h1>Software Solutions House</h1>
+            <h1>Software Solution House</h1>
             <p className="inside-sub-txt">Custom Software Development & Digital Transformation Services in Dubai <br />Partnering with UAE Businesses since 2003</p>
             {/* <p className="inside-sub-txt txt-med">Partnering with UAE Businesses since 2003</p> */}
           </div>
@@ -1458,7 +1458,7 @@ const Header = () => {
               <a href="#">
                 <div className="work-wrapp">
                   <div className="client-icon">
-                    <img src="/assets/img/orient-finance-logo.png" alt="Orient Finance logo"></img>
+                    {/* <img src="/assets/img/orient-finance-logo.png" alt="Orient Finance logo"></img> */}
                   </div>
                   <span className="arrow-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
@@ -1466,7 +1466,7 @@ const Header = () => {
                     </svg>
                   </span>
                   <div className="proj-img">
-                    <img src="/assets/img/orient-finance-proj-img.jpg" alt="Orient Finance"></img>
+                    <img src="/assets/img/insurance-policy-project-img.webp" alt="Insurance Policy"></img>
                   </div>
                   <div className="proj-txt">
                   {/* <p className="proj-name">E-Move</p> */}
