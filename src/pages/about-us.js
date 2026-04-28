@@ -284,6 +284,8 @@ const Header = () => {
 
     // onload intro section animation - starts
     useEffect(() => {
+      const mm = gsap.matchMedia();
+
       gsap.fromTo(
         ".inside-intro-wrapper .inside-intro-title,.inside-intro-wrapper .inside-intro-txt",
         {
@@ -299,42 +301,90 @@ const Header = () => {
           ease: "power2.out",
           // delay: 0.2,
         }
-      )
-      gsap.fromTo(
-        ".inside-intro-wrapper .inside-intro-count.left ul li",
+      );
+
+      // Breakpoint-specific animations
+      mm.add(
         {
-          x: -100,
-          opacity: 0,
-          stagger: 0.3,
-          ease: "power2.out"
+          isDesktop: "(min-width: 768px)",
+          isMobile: "(max-width: 767px)",
         },
-        {
-          x: 0,
-          opacity: 1,
-          stagger: 0.3,
-          duration: 0.5,
-          ease: "power2.out",
-          // delay: 0.2,
-        },
-        "-=0.5"
-      )
-      gsap.fromTo(
-        ".inside-intro-wrapper .inside-intro-count.right ul li",
-        {
-          x: 100,
-          opacity: 0,
-          stagger: 0.3,
-          ease: "power2.out"
-        },
-        {
-          x: 0,
-          opacity: 1,
-          stagger: 0.3,
-          ease: "power2.out",
-          // delay: 0.2,
-        },
-        "-=0.5"
-      )
+        (context) => {
+        const { isDesktop, isMobile } = context.conditions;
+
+        // LEFT LIST
+        gsap.fromTo(
+          ".inside-intro-wrapper .inside-intro-count.left ul li",
+          {
+            x: isDesktop ? -100 : 0, // 👈 change based on screen
+            y: isMobile ? 50 : 0,    // 👈 example for mobile
+            opacity: 0,
+          },
+          {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            stagger: 0.3,
+            duration: 0.5,
+            ease: "power2.out",
+          }
+        );
+
+        // RIGHT LIST
+        gsap.fromTo(
+          ".inside-intro-wrapper .inside-intro-count.right ul li",
+          {
+            x: isDesktop ? 100 : 0,
+            y: isMobile ? 50 : 0,
+            opacity: 0,
+          },
+          {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            stagger: 0.3,
+            duration: 0.5,
+            ease: "power2.out",
+          }
+        );
+      }
+    );
+    
+      // gsap.fromTo(
+      //   ".inside-intro-wrapper .inside-intro-count.left ul li",
+      //   {
+      //     x: -100,
+      //     opacity: 0,
+      //     stagger: 0.3,
+      //     ease: "power2.out"
+      //   },
+      //   {
+      //     x: 0,
+      //     opacity: 1,
+      //     stagger: 0.3,
+      //     duration: 0.5,
+      //     ease: "power2.out",
+      //     // delay: 0.2,
+      //   },
+      //   "-=0.5"
+      // )
+      // gsap.fromTo(
+      //   ".inside-intro-wrapper .inside-intro-count.right ul li",
+      //   {
+      //     x: 100,
+      //     opacity: 0,
+      //     stagger: 0.3,
+      //     ease: "power2.out"
+      //   },
+      //   {
+      //     x: 0,
+      //     opacity: 1,
+      //     stagger: 0.3,
+      //     ease: "power2.out",
+      //     // delay: 0.2,
+      //   },
+      //   "-=0.5"
+      // )
     }, [])
     // onload intro section animation - ends
 

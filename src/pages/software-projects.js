@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "/src/assets/css/common.css";
 import "/src/assets/css/inside.css";
-import "/src/assets/css/reference.css";
+import "/src/assets/css/software-projects.css";
 
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -64,143 +64,6 @@ const Header = () => {
     });
   };
 
-  const [activeTab, setActiveTab] = useState('custom');
-  const [activeTab1, setActiveTab1] = useState('enterprise');
-  const [activeTab2, setActiveTab2] = useState('whatsapp');
-  const [webSwiper, setWebSwiper] = useState(null);
-  const [webActiveSlide, setWebActiveSlide] = useState(0);
-   const [webSwiper1, setWebSwiper1] = useState(null);
-  const [webActiveSlide1, setWebActiveSlide1] = useState(0);
-   const [webSwiper2, setWebSwiper2] = useState(null);
-  const [webActiveSlide2, setWebActiveSlide2] = useState(0);
-
-  const webSlides = [
-    { key: 'ecommerce', 
-      img: '/assets/img/Business-application-development-1.jpg', 
-      title: 'Custom Business Applications', 
-      text: (
-        <>
-        Build bespoke software applications tailored to your specific operational requirements with <span className="txt-med">zero licensing costs</span>.
-        </>
-      )
-    },
-    { key: 'corporate', 
-      img: '/assets/img/Mobile-app-development.jpg', 
-      title: 'Enterprise Mobile App Development', 
-      text: (
-        <>
-        Create high-performance mobile applications for your business or startup on robust <span className="txt-med">iOS, Android, and Hybrid</span> platforms.
-        </>
-      )
-    },
-    { key: 'webapp', 
-      img: '/assets/img/Whatsapp-for-business.jpg', 
-      title: 'WhatsApp for Business & AI Chatbots', 
-      text: (
-        <>
-        Integrate your business systems with <span className="txt-med">WhatsApp for Business</span> to automate customer acquisition, transactions, and support.
-        </>
-      ) 
-    },
-    { key: 'cms', 
-      img: '/assets/img/ai-development-1x.webp', 
-      title: 'AI & Generative AI Development', 
-      text: (
-        <>
-        Leverage <span className="txt-med">AI Agents</span>, LLMs, and GenAI services to automate complex tasks and execute intelligent workflows across departments.
-        </>
-      )
-    },
-    { key: 'pwa', 
-      img: '/assets/img/business-intelligence-1x.webp', 
-      title: 'Business Intelligence & Analytics', 
-      text: (
-        <>
-        Rely on <span className="txt-med">Intelligent MIS</span> to make data-driven decisions with visual dashboards and insightful reports on <span className="txt-med">PowerBI, Tableau, and QlikSense</span>.
-        </>
-      )
-    },
-    { key: 'api', 
-      img: '/assets/img/e-commerce-application-1x.webp', 
-      title: 'Scalable E-Commerce Solutions', 
-      text: (
-        <>
-        Go online with e-commerce platforms tailored to your business model on robust systems like <span className="txt-med">Magento, WooCommerce, and Shopify</span>.
-        </>
-      ) 
-    },
-  ];
-
-  const webSlides1 = [
-    { key: 'ecommerce', 
-      img: '/assets/img/crm-1x.webp', 
-      title: 'CRM Implementation', 
-      text: (
-        <>
-        Configure leading tools such as <span className="txt-med">Zoho CRM</span> and <span className="txt-med">Salesforce</span>, or our fully customizable <span className="txt-med">SalesPro</span> for local sales cycles.
-        </>
-      ) 
-    },
-    { key: 'corporate', 
-      img: '/assets/img/erp-transformation-1x.webp', 
-      title: 'ERP Transformation', 
-      text: (
-        <>
-        Digitally transform your business with versatile ERPs built on <span className="txt-med">Odoo</span> or <span className="txt-med">Zoho One</span> for a unified system.
-        </>
-      ) 
-    },
-    { key: 'webapp', 
-      img: '/assets/img/facility-management-1x.webp', 
-      title: 'Advanced Facility Management', 
-      text: (
-        <>
-        Optimize your FM services with <span className="txt-med">CAFM Pro</span>, our proprietary solution built specifically for the FM industry.
-        </>
-      )
-    },
-    { key: 'cms', 
-      img: '/assets/img/payroll-1x.webp', 
-      title: 'HRMS, Payroll & Attendance', 
-      text: (
-        <>
-        Manage attendance and disburse payroll with overtime calculations via <span className="txt-med">HRMS Pro</span>, built for teams of <span className="txt-med">200+</span>.
-        </>
-      ) 
-    },
-    { key: 'pwa', 
-      img: '/assets/img/productivity-1x.webp', 
-      title: 'Personal Productivity', 
-      text: (
-        <>
-        Enhance daily output with the <span className="txt-med">135 Pro To-Do Planner</span>, featuring managerial overview and priority control.
-        </>
-      )
-    },
-  ];
-
-  const webSlides2 = [
-    { key: 'ecommerce', 
-      img: '/assets/img/digital-transformation-1x.webp', 
-      title: 'Digital Transformation Strategy', 
-      text: (
-        <>
-        Achieve your long-term objectives by relying on our deep understanding of <span className="txt-med">business processes</span> and emerging technologies.
-        </>
-      )
-
-    },
-    { key: 'corporate', 
-      img: '/assets/img/MVP-Software-Product-Development.webp', 
-      title: 'MVP & Software Product Development', 
-      text: (
-        <>
-        Launch your Minimum <span className="txt-med">Viable Product (MVP)</span> with expert UI/UX services supplemented by our decades of technical expertise.
-        </>
-      ) 
-
-    },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -281,41 +144,6 @@ const Header = () => {
         // delay: 0.2,
       }
     )
-    gsap.fromTo(
-      ".inside-intro-wrapper .inside-intro-count.left ul li",
-      {
-        x: -100,
-        opacity: 0,
-        stagger: 0.3,
-        ease: "power2.out"
-      },
-      {
-        x: 0,
-        opacity: 1,
-        stagger: 0.3,
-        duration: 0.5,
-        ease: "power2.out",
-        // delay: 0.2,
-      },
-      "-=0.5"
-    )
-    gsap.fromTo(
-      ".inside-intro-wrapper .inside-intro-count.right ul li",
-      {
-        x: 100,
-        opacity: 0,
-        stagger: 0.3,
-        ease: "power2.out"
-      },
-      {
-        x: 0,
-        opacity: 1,
-        stagger: 0.3,
-        ease: "power2.out",
-        // delay: 0.2,
-      },
-      "-=0.5"
-    )
   }, [])
   // onload intro section animation - ends
 
@@ -362,62 +190,6 @@ const Header = () => {
 
   }, []);
   // common script for all animation - ends
-
-  // onscroll straegic section aniamtion - starts
-    useEffect(() => {
-      gsap.registerPlugin(ScrollTrigger)
-  
-      const items = gsap.utils.toArray(".strategic-choice-wrapper li")
-  
-      items.forEach((item) => {
-        const line = item.querySelector(".line-fill")
-        const right = item.querySelector(".right")
-  
-        const height = right.offsetHeight - 50 // 👈 exact calc
-  
-        // gsap.fromTo(
-        //   line,
-        //   {
-        //     height: 0,
-        //   },
-        //   {
-        //     height: height, // 👈 dynamic px value
-        //     ease: "none",
-        //     scrollTrigger: {
-        //       trigger: item,
-        //       start: "top 70%",
-        //       end: "bottom 30%",
-        //       scrub: true,
-        //     },
-        //   }
-        // )
-        gsap.fromTo(line,
-        { 
-          scaleY: 0 
-        },
-        {
-          scaleY: 1,
-          // scrollTrigger: {
-          //   trigger: item,
-          //   scrub: true,
-          // },
-          scrollTrigger: {
-            trigger: item,
-            start: "top 70%",
-            end: "bottom 30%",
-            scrub: true,
-            toggleClass: {
-              targets: [item, right], // 👈 both li + right
-              className: "active",
-            },
-          },
-        }
-      )
-      })
-    }, [])
-  // onscroll straegic section aniamtion - ends
-
-  
 
 
   return (
@@ -582,10 +354,10 @@ const Header = () => {
       <section className="inside-intro-wrapper">
         <div className="container">
           <div className="inside-intro-title">
-            <h1>References</h1>
+            <h1>Software Projects</h1>
           </div>
           <div className="inside-intro-txt">
-            <p>Our work is truly a mirror of who, what, and how we are. Words can be woven, and promises can be made, but ultimately, the proof is in the results we deliver for you. We are proud of our work and always grateful to our customers for giving us an opportunity to exceed their expectations while meeting our own.</p>
+            <p>Review our project briefs to learn more about our experience and expertise in delivering solutions across a wide range of application domains and business segments.</p>
           </div>
         </div>
         <div className="scroll-down-arrow">
@@ -596,7 +368,7 @@ const Header = () => {
               gsap.to(window, {
                 duration: 1,
                 scrollTo: {
-                  y: ".soft-proj-wrapper", // target section class or id
+                  y: ".sft-project-list-wrapper", // target section class or id
                   offsetY: 100,       // 👈 your offset
                 },
                 ease: "power2.out",
@@ -611,235 +383,243 @@ const Header = () => {
       </section>
       {/* Inside intro section ends */}
 
-      {/* software project section starts */}
-      <section className="soft-proj-wrapper">
+      {/* software project list section starts */}
+      <section className="sft-project-list-wrapper">
         <div className="container">
-          <h2>Software Projects</h2>
-          <p>We have executed several projects across different domains and industries. As a full-stack developer we built customised solutions that run operations of companies in UAE and USA. As a software implementation company we have completed projects for Zoho and Salesforce.</p>
-          <div className="soft-proj-list">
-            <ul>
-              <li>
-                <a href="#">
-                  <h3>Business Applications</h3>
-                  <p>Complete business application for paperless operations for <span className="txt-med">Moving Company</span> and <span className="txt-med">Insurance Brokerage</span> and many more</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <h3>CRM Implementations</h3>
-                  <p>Enabling CRM and Projects in  Zoho, Salesforce, and Zoho Creator for <span className="txt-med">Freight & Logistics</span> and Citizenship Services clients in</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <h3>E-Commerce</h3>
-                  <p>Taking business online for <span className="txt-med">Coffee roasting company</span> and a store dedicated to <span className="txt-med">children books and toys</span>.</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <h3>Ai Chatbots</h3>
-                  <p>Conversation and Transactional Chatbots for <span className="txt-med">Trading Company</span> and <span className="txt-med">German Furniture</span> company on WhatsApp platform with AI power.</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <h3>Business Intelligence</h3>
-                  <p>Regional reporting solutions for <span className="txt-med">German Automaker</span> and a <span className="txt-med">Swiss Confectionary</span> giant.</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <h3>Mobile Apps</h3>
-                  <p>Mobile app built for start-ups and integration with legacy systems for <span className="txt-med">logistics company</span></p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      {/* software project section ends */}
-
-      {/* digital portfolio section starts */}
-      <section className="digital-proj-wrapper-inside">
-        <div className="container">
-          <h2>Digital Portfolio</h2>
-          <p>Our digital portfolio reflects our creativity across different formats and platforms encompassing a wide range of business sectors. Each engagement is a thoughtful execution of digital strategy backed by visual design, impactful content and dependable technology.</p>
-          <div className="digi-proj-list">
-            <ul>
-              <li className="website websites">
-                <a href="#">
-                  <div className="digi-proj-txt">
-                   <h3>Websites</h3>
-                    <p>Corporate and Celebrity websites for different industries in Consumer, Industrial, Engineering, Real-Estate, Technology domains.</p>
-                  </div>
-                </a>
-              </li>
-              <li className="email email-camp">
-                <a href="#">
-                  <div className="digi-proj-txt">
-                    <h3>Email Campaigns</h3>
-                    <p>Visual design and text marketing campaigns using Twilio, SendGrid, Zoho Campaign, MailChimp.</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <ul>
-              <li className="social social-media">
-                <a href="#">
-                  <div className="digi-proj-txt">
-                    <h3>Social Media</h3>
-                    <p>Strategy and content for Instagram/Facebook, LinkedIn, Tiktok, and WhatsApp platforms.</p>
-                  </div>
-                </a>
-              </li>
-              <li className="digital digital-assets">
-                <a href="#">
-                  <div className="digi-proj-txt">
-                    <h3>Digital Assets</h3>
-                    <p>Creation of digital brochures, product catalogues, multimedia graphics, and animations.</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <ul>
-              <li className="videos videos-proj">
-                <a href="#">
-                  <div className="digi-proj-txt">
-                    <h3>Videos</h3>
-                    <p>Videos for profile, products, services, company events and internal communication.</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      {/* digital portfolio section ends */}
-
-      {/* Work Reference Section Starts */}
-      <section className="work-ref-wrapper">
-        <div className="container">
-          <h2 className="txt-center slide-up">Clients</h2>
-          <p>An average relationship tenure with clients is 10+ years, and since 2003 we have been working with reputed companies in Dubai, UAE and USA.</p>
-        </div>
-        <Swiper className="workSwiper slide-up"
-          modules={[Navigation, Pagination]}
-          // slidesPerView={3.2}
-          // loop={true}
-          navigation
-          // pagination
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.1,
-              spaceBetween: 10,
-              slidesOffsetBefore: 20,
-            },
-            768: {
-              slidesPerView: 1.9,
-              spaceBetween: 10,
-              slidesOffsetBefore: 20,
-            },
-            991: {
-              slidesPerView: 2.5,
-              slidesOffsetBefore: 145,
-              spaceBetween: 20,
-            },
-              1300: {
-              slidesPerView: 3.6,
-              slidesOffsetBefore: 145,
-              spaceBetween: 20,
-            },
-          }}
-        >
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>The largest relocation company runs a paperless operation for quotes, jobs, invoices and payroll eclipsing other competitors.</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/bmw-logo.png" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/bmw-project-image.jpg" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>German luxury automobile company relies on emQube developed web application to manage sales in 11 countries in the region</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/nestle-logo.png" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/nestle-project-image.jpg" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>Swiss multinational leader in FMCG leverages a custom-built application to monitor inventory and sales in the Middle East region.</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
+          <ul className="proj-mai-list">
+            <li>
               <a href="#">
-                <div className="work-wrapp">
-                  <div className="client-icon">
+                <div className="proj-main-img">
+                  <img src="/assets/img/smart.webp" alt="SMART"></img>
+                  <p className="proj-main-title">SMART</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
                   </div>
                   <span className="arrow-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                       <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </span>
-                  <div className="proj-img">
-                    <img src="/assets/img/insurance-policy-project-img.webp" alt="Insurance Policy"></img>
-                  </div>
-                  <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>Making online purchase of insurance easier, our web application for a leading broker in Dubai helped grow business rapidly.</p>
                 </div>
+                <div className="proj-main-txt">
+                  <p>German luxury automobile company relies on emQube developed web application to manage sales in 11 countries in the region.</p>
                 </div>
               </a>
-          </SwiperSlide>
-        </Swiper>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/online-insurance-brokers.webp" alt="Online Insurance Brokers"></img>
+                  <p className="proj-main-title">Online Insurance Brokers</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>Making online purchase of insurance easier, our web application for a leading broker in Dubai helped grow business rapidly.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/relocation-erp.webp" alt="Relocation ERP"></img>
+                  <p className="proj-main-title">Relocation ERP</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>The largest relocation company runs a paperless operation for quotes, jobs, invoices and payroll eclipsing other competitors.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/immigration-services.webp" alt="Immigration Services"></img>
+                  <p className="proj-main-title">Immigration Services</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>Zoho CRM implementation for a company facilitating global migration helps manage enquiries and close sales faster.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/real-estate-broker.webp" alt="Real Estate Broker"></img>
+                  <p className="proj-main-title">Real Estate Broker</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>Dubai's booming real estate markets needs responsive Zoho One to convert enquiries from multi-channels to deals.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/nora.webp" alt="NORA"></img>
+                  <p className="proj-main-title">NORA</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>Swiss multinational leader in FMCG leverages a custom-built application to monitor inventory and sales in the Middle East region.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/distance-learning-provider.webp" alt="Distance Learning Provider"></img>
+                  <p className="proj-main-title">Distance Learning Provider</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>US pharmaceutical services company enables medical fraternity to meet online and in-person events, all managed by the software we built.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/ai-websites.webp" alt="AI Websites"></img>
+                  <p className="proj-main-title">AI Websites</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>GenAI driven technology that usher in AI-driven browsing of website content giving customers faster and more accurate information with a natural language interaction.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/whatsapp-for-business.webp" alt="WhatsApp for Business"></img>
+                  <p className="proj-main-title">WhatsApp for Business</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>Enhanced lead generation and enhanced customer service with WhatsApp for Business integration with underlying software systems including ERPs.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/cybersecurity-crm.webp" alt="Cybersecurity CRM"></img>
+                  <p className="proj-main-title">Cybersecurity CRM</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>A US company in the cybersecurity space relies on Zoho CRM to track leads from inception to sales across the Middle-East. Insightful Zoho Analytics report provides HO the information required to make marketing decisions. </p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/equipment-trading.webp" alt="Equipment Trading"></img>
+                  <p className="proj-main-title">Equipment Trading</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>An equipment supplier tracks sales-leads using Zoho Books to create customised quotations, sales orders and final invoices while managing procurement and logistic expenses. </p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div className="proj-main-img">
+                  <img src="/assets/img/freight-logistics.webp" alt="Freight & Logistics"></img>
+                  <p className="proj-main-title">Freight & Logistics</p>
+                  <div className="proj-list-main-angle">
+                    <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
+                  </div>
+                  <span className="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <div className="proj-main-txt">
+                  <p>Zoho CRM, Zoho Books, Zoho Projects solution customization for freight company for complete business cycle management.</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
-      {/* Work Reference Section Ends */}
+      {/* software project list section ends */}
+
 
       {/* home cta section starts */}
       <section className="cta-wrapper">
@@ -1015,7 +795,7 @@ const Header = () => {
 
 export default function Home() {
   return (
-    <main className="inside-page references-page">
+    <main className="inside-page software-projects-page">
       <Header />
     </main>
   );

@@ -765,6 +765,7 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list {
     flex-direction: column;
     gap: 90px 20px;
     padding-left: 20px;
+    padding-left: 0;
   }
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li {
@@ -786,6 +787,9 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li {
   main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li {
     padding: 0;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-exp-year {
@@ -839,6 +843,11 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a {
   main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a {
     width: 190px;
     height: 190px;
+  }
+}
+@media (max-width: 767px) {
+  main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a {
+    text-align: center;
   }
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .mem-green-shape {
@@ -1008,7 +1017,7 @@ main.about-us.inside-page .abt-btm-wrapper .container .emqube-edge-txt {
 @media (max-width: 500px) {
   main.about-us.inside-page .abt-btm-wrapper .container .emqube-edge-txt {
     width: 100%;
-    padding-top: 100px;
+    padding-top: 120px;
   }
 }
 main.about-us.inside-page .abt-btm-wrapper .container .emqube-edge-txt .edge-title {
