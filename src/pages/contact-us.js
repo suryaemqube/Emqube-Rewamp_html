@@ -439,7 +439,7 @@ const Header = () => {
                       <p><span className="txt-regular">Office Hours: </span>Monday- Friday: 9.00 AM - 6.00 PM</p>
                     </div>
                   </li>
-                  <li className="job-enq">
+                  {/* <li className="job-enq">
                     <div className="left-contact">
                       <span className="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -450,7 +450,7 @@ const Header = () => {
                     <div className="right-contact">
                       <p><span className="txt-regular">Job inquiry: </span><a href="#">Click here</a> to submit your CV</p>
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
@@ -516,7 +516,7 @@ const Header = () => {
                             </p>
                             <p className="c4wp-display-captcha-form">
                               <label for="Solve Captcha*">Solve Captcha* 9 + 6&nbsp;&nbsp;=&nbsp;&nbsp; </label>
-                              <input className="c4wp_user_input_captcha" id="captcha" type="text" name="captcha" value="" />
+                              <input className="c4wp_user_input_captcha" id="captcha" type="text" name="captcha" />
                             </p>
                           </div>
                         </li>
