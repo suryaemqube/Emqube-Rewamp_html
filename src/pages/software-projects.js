@@ -390,7 +390,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/smart.webp" alt="SMART"></img>
+                  <img src="/assets/img/smart-v1.webp" alt="SMART"></img>
                   <p className="proj-main-title">SMART</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -409,7 +409,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/online-insurance-brokers.webp" alt="Online Insurance Brokers"></img>
+                  <img src="/assets/img/online-insurance-brokers-v1.webp" alt="Online Insurance Brokers"></img>
                   <p className="proj-main-title">Online Insurance Brokers</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -428,7 +428,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/relocation-erp.webp" alt="Relocation ERP"></img>
+                  <img src="/assets/img/relocation-erp-v1.webp" alt="Relocation ERP"></img>
                   <p className="proj-main-title">Relocation ERP</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -447,7 +447,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/immigration-services.webp" alt="Immigration Services"></img>
+                  <img src="/assets/img/immigration-services-v1.webp" alt="Immigration Services"></img>
                   <p className="proj-main-title">Immigration Services</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -466,7 +466,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/real-estate-broker.webp" alt="Real Estate Broker"></img>
+                  <img src="/assets/img/real-estate-broker-v1.webp" alt="Real Estate Broker"></img>
                   <p className="proj-main-title">Real Estate Broker</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -485,7 +485,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/nora.webp" alt="NORA"></img>
+                  <img src="/assets/img/nora-v1.webp" alt="NORA"></img>
                   <p className="proj-main-title">NORA</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -504,7 +504,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/distance-learning-provider.webp" alt="Distance Learning Provider"></img>
+                  <img src="/assets/img/distance-learning-provider-v1.webp" alt="Distance Learning Provider"></img>
                   <p className="proj-main-title">Distance Learning Provider</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -523,7 +523,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/ai-websites.webp" alt="AI Websites"></img>
+                  <img src="/assets/img/ai-websites-v1.webp" alt="AI Websites"></img>
                   <p className="proj-main-title">AI Websites</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -542,7 +542,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/whatsapp-for-business.webp" alt="WhatsApp for Business"></img>
+                  <img src="/assets/img/whatsapp-for-business-v1.webp" alt="WhatsApp for Business"></img>
                   <p className="proj-main-title">WhatsApp for Business</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -561,7 +561,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/cybersecurity-crm.webp" alt="Cybersecurity CRM"></img>
+                  <img src="/assets/img/cybersecurity-crm-v1.webp" alt="Cybersecurity CRM"></img>
                   <p className="proj-main-title">Cybersecurity CRM</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -580,7 +580,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/equipment-trading.webp" alt="Equipment Trading"></img>
+                  <img src="/assets/img/equipment-trading-v1.webp" alt="Equipment Trading"></img>
                   <p className="proj-main-title">Equipment Trading</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>
@@ -599,7 +599,7 @@ const Header = () => {
             <li>
               <a href="#">
                 <div className="proj-main-img">
-                  <img src="/assets/img/freight-logistics.webp" alt="Freight & Logistics"></img>
+                  <img src="/assets/img/freight-logistics-v1.webp" alt="Freight & Logistics"></img>
                   <p className="proj-main-title">Freight & Logistics</p>
                   <div className="proj-list-main-angle">
                     <img src="/assets/img/sft-proj-list-angle.svg" alr="angle on project list"></img>

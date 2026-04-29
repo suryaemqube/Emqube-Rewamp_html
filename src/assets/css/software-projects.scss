@@ -83,7 +83,17 @@ main.software-projects-page.inside-page{
         h1{
           line-height: 1em;
           // 1024 - 1920 : 18 - 34
-          margin-bottom: clamp(1.125rem, -0.0179rem + 1.7857vw, 2.125rem);
+          // margin-bottom: clamp(1.125rem, -0.0179rem + 1.7857vw, 2.125rem);
+          // 1024 - 1920 : 34 - 64
+          padding-bottom: clamp(2.125rem, -0.0179rem + 3.3482vw, 4rem);
+          // 1024 - 1920 : 22 - 42
+          margin-bottom: clamp(1.375rem, -0.0536rem + 2.2321vw, 2.625rem);
+          &:before{
+            width: 50px;
+            @media(max-width: 1500px){
+              width: 40px;
+            }
+          }
         }
         .inside-sub-txt{
           // 1024 - 1920 : 19 - 32
@@ -108,7 +118,7 @@ main.software-projects-page.inside-page{
 					width: 600px;
 				}
 				@media(max-width: 1480px){
-					width: 50%;
+					width: 40%;
 				}
 				@media(max-width: 1180px){
 					width: 40%;
@@ -162,6 +172,9 @@ main.software-projects-page.inside-page{
         gap: clamp(1.563rem, -0.0793rem + 2.5661vw, 3rem) clamp(0.938rem, 0.0100rem + 1.4500vw, 1.75rem);
         li{
           width: 32%;
+          border-radius: 4px;
+          background: #FFF;
+          box-shadow: 7px 12px 30px 0 rgba(0, 0, 0, 0.05);
           @media(max-width: 991px){
             width: 48%;
           }
@@ -169,9 +182,6 @@ main.software-projects-page.inside-page{
             width: 100%;
           }
           a{
-            border-radius: 4px;
-            background: #FFF;
-            box-shadow: 7px 12px 30px 0 rgba(0, 0, 0, 0.05);
             // 1024 - 1920 : 38 - 72
             padding: 12px 16px clamp(2.375rem, -0.0536rem + 3.7946vw, 4.5rem);
             @media(max-width: 1500px){
@@ -188,17 +198,17 @@ main.software-projects-page.inside-page{
               @media(max-width: 767px){
                 height: 200px;
               }
-              &:before{
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-                background: linear-gradient(237deg, rgba(102, 102, 102, 0.00) 30.44%, rgba(0, 0, 0, 0.60) 81.63%);
-                z-index: 1;
-                border-radius: 4px;
-              }
+              // &:before{
+              //   content: '';
+              //   position: absolute;
+              //   width: 100%;
+              //   height: 100%;
+              //   left: 0;
+              //   top: 0;
+              //   background: linear-gradient(237deg, rgba(102, 102, 102, 0.00) 30.44%, rgba(0, 0, 0, 0.60) 81.63%);
+              //   z-index: 1;
+              //   border-radius: 4px;
+              // }
               > img{
                 width: 100%;
                 height: 100%;
@@ -214,6 +224,7 @@ main.software-projects-page.inside-page{
                 width: 100%;
                 height: 100%;
                 z-index: 1;
+                display: none;
               }
               .proj-main-title{
                 font-family: HelvNowDis-medium;

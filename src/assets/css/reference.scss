@@ -83,7 +83,17 @@ main.references-page.inside-page{
         h1{
           line-height: 1em;
           // 1024 - 1920 : 18 - 34
-          margin-bottom: clamp(1.125rem, -0.0179rem + 1.7857vw, 2.125rem);
+          // margin-bottom: clamp(1.125rem, -0.0179rem + 1.7857vw, 2.125rem);
+          // 1024 - 1920 : 34 - 64
+          padding-bottom: clamp(2.125rem, -0.0179rem + 3.3482vw, 4rem);
+          // 1024 - 1920 : 22 - 42
+          margin-bottom: clamp(1.375rem, -0.0536rem + 2.2321vw, 2.625rem);
+          &:before{
+            width: 50px;
+            @media(max-width: 1500px){
+              width: 40px;
+            }
+          }
         }
         .inside-sub-txt{
           // 1024 - 1920 : 19 - 32

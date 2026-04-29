@@ -84,7 +84,16 @@ main.references-page.inside-page .inside-intro-wrapper .container .inside-intro-
 }
 main.references-page.inside-page .inside-intro-wrapper .container .inside-intro-title h1 {
   line-height: 1em;
-  margin-bottom: clamp(1.125rem, -0.0179rem + 1.7857vw, 2.125rem);
+  padding-bottom: clamp(2.125rem, -0.0179rem + 3.3482vw, 4rem);
+  margin-bottom: clamp(1.375rem, -0.0536rem + 2.2321vw, 2.625rem);
+}
+main.references-page.inside-page .inside-intro-wrapper .container .inside-intro-title h1:before {
+  width: 50px;
+}
+@media (max-width: 1500px) {
+  main.references-page.inside-page .inside-intro-wrapper .container .inside-intro-title h1:before {
+    width: 40px;
+  }
 }
 main.references-page.inside-page .inside-intro-wrapper .container .inside-intro-title .inside-sub-txt {
   font-size: clamp(1.188rem, 0.26rem + 1.45vw, 2rem);
