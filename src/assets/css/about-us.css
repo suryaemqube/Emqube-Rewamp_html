@@ -909,7 +909,7 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .team
      object-position: center center;
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a:hover .mem-green-shape {
-  transform: rotate(-12deg);
+  transform: rotateZ(24deg) translateX(-38px);
   transition: transform 0.5s ease-in-out;
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a:hover .mem-exp-year {

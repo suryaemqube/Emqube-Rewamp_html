@@ -1,0 +1,310 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --light_green: #4e9c5a;
+  --dark_grey: #121A21;
+  --light_grey: #767676;
+}
+$white: var(--white);
+$black: var(--black);
+$light_green: var(--light_green);
+$dark_grey: var(--dark_grey);
+$light_grey: var(--light_grey);
+
+main.software-projects-page.inside-page{
+  header{
+    z-index: 99;
+  }
+  position: relative;
+  &:after{
+    content: '';
+    background-image: url(../img/software-projects-bg.svg);
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    background-repeat: no-repeat;
+    bottom: auto;
+    z-index: 0;
+    @media(min-width: 768px) and (max-width: 1080px){
+      top: 70px;
+    }
+    @media(max-width: 767px){
+      background-image: none
+    }
+    @media(max-width: 600px){
+      top: 0px;
+    }
+  }
+
+  p{
+    font-family: HelvNowDis-light;
+    font-weight: 300;
+    color: #767676;
+    // 320 - 1920 : 14 - 22
+    font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+    @media(max-width: 1500px){
+      font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+    }
+    @media(max-width: 767px){
+      // 340 - 767 : 17 - 20
+      font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+    }
+  }
+  h2{
+    // 1024 - 1920 : 26 - 50
+    padding-bottom: clamp(1.625rem, -0.0893rem + 2.6786vw, 3.125rem);
+    margin-bottom: 0;
+    background: linear-gradient(0deg, #313131 37.7%, #525252 79.71%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  // intro section starts
+  .inside-intro-wrapper{
+    position: relative;
+    z-index: 9;
+    @media(min-width: 1001px){
+      // 1024 - 1920 : 200 - 375
+      padding-top: clamp(12.5rem, -0.0006rem + 19.5321vw, 23.438rem);
+    }
+    .container{
+      .inside-intro-title{
+        // 1024 - 1920 : 16 - 30
+        padding-top: clamp(1rem, 0.0000rem + 1.5625vw, 1.875rem);
+        // 1024 - 1920 : 15 - 27
+        margin-bottom: clamp(0.938rem, 0.0809rem + 1.3393vw, 1.688rem);
+        @media(max-width: 767px){
+          padding-bottom: 0;
+        }
+        h1{
+          line-height: 1em;
+          // 1024 - 1920 : 18 - 34
+          // margin-bottom: clamp(1.125rem, -0.0179rem + 1.7857vw, 2.125rem);
+          // 1024 - 1920 : 34 - 64
+          padding-bottom: clamp(2.125rem, -0.0179rem + 3.3482vw, 4rem);
+          // 1024 - 1920 : 22 - 42
+          margin-bottom: clamp(1.375rem, -0.0536rem + 2.2321vw, 2.625rem);
+          &:before{
+            width: 50px;
+            @media(max-width: 1500px){
+              width: 40px;
+            }
+          }
+        }
+        .inside-sub-txt{
+          // 1024 - 1920 : 19 - 32
+          font-size: clamp(1.188rem, 0.26rem + 1.45vw, 2rem);
+          @media(max-width: 1023px){
+            // 320 - 1023 : 17 - 18
+            font-size: clamp(1.063rem, 1.0348rem + 0.1411vw, 1.125rem);
+          }
+        }
+        &:after{
+          @media(max-width: 767px){
+            display: none;
+          }
+        }
+      }
+      .inside-intro-txt{
+        width: 865px;
+				@media(max-width: 1590px){
+					width: 700px;
+				}
+				@media (resolution: 1.25dppx){
+					width: 600px;
+				}
+				@media(max-width: 1480px){
+					width: 40%;
+				}
+				@media(max-width: 1180px){
+					width: 40%;
+				}
+				@media(max-width: 1000px){
+					width: 80%;
+					order: 4;
+				}
+				@media(max-width: 500px){
+					width: 100%;
+				}
+        p{
+          font-family: HelvNowDis-light;
+          font-weight: 300;
+          // 320 - 1920 : 14 - 22
+          font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+          @media(max-width: 1500px){
+            font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+          }
+          @media(max-width: 767px){
+            // 340 - 767 : 17 - 20
+            font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+          }
+        }
+      }
+    }
+    .scroll-down-arrow{
+      // 1024 - 1920 : 32 - 60
+      margin-top: clamp(2rem, 0.0000rem + 3.1250vw, 3.75rem);
+      @media(max-width: 1500px){
+				margin-top: clamp(3.125rem, -2.4464rem + 8.7054vw, 4rem);
+			}
+      svg{
+        @media(max-width: 1500px){
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  // intro section ends
+
+  // software projects main list section starts
+  .sft-project-list-wrapper{
+    position: relative;
+    z-index: 9;
+    .container{
+      .proj-mai-list{
+        display: flex;
+        flex-wrap: wrap;
+        // 1024 - 1920 : 25 15 - 48 28
+        gap: clamp(1.563rem, -0.0793rem + 2.5661vw, 3rem) clamp(0.938rem, 0.0100rem + 1.4500vw, 1.75rem);
+        li{
+          width: 32%;
+          border-radius: 4px;
+          background: #FFF;
+          box-shadow: 7px 12px 30px 0 rgba(0, 0, 0, 0.05);
+          @media(max-width: 991px){
+            width: 48%;
+          }
+          @media(max-width: 767px){
+            width: 100%;
+          }
+          a{
+            // 1024 - 1920 : 38 - 72
+            padding: 12px 16px clamp(2.375rem, -0.0536rem + 3.7946vw, 4.5rem);
+            @media(max-width: 1500px){
+              padding-top: 10px;
+              padding-left: 14px;
+              padding-right: 14px;
+            }
+            .proj-main-img{
+              position: relative;
+              border-radius: 4px;
+              @media(max-width: 1080px){
+                height: 180px;
+              }
+              @media(max-width: 767px){
+                height: 200px;
+              }
+              // &:before{
+              //   content: '';
+              //   position: absolute;
+              //   width: 100%;
+              //   height: 100%;
+              //   left: 0;
+              //   top: 0;
+              //   background: linear-gradient(237deg, rgba(102, 102, 102, 0.00) 30.44%, rgba(0, 0, 0, 0.60) 81.63%);
+              //   z-index: 1;
+              //   border-radius: 4px;
+              // }
+              > img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+              }
+              .proj-main-title,.proj-list-main-angle{
+                position: absolute;
+              }
+              .proj-list-main-angle{
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                display: none;
+              }
+              .proj-main-title{
+                font-family: HelvNowDis-medium;
+		            font-weight: 500;
+                width: 95%;
+                bottom: 25px;
+                left: 25px;
+                color: var(--white);
+                z-index: 2;
+                // 1024 - 1920 : 20 - 36
+                font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+                @media(max-width: 1500px){
+                  left: 15px;
+                  // 1024 - 1500 : 22 - 25
+                  font-size: clamp(1.375rem, 0.9706rem + 0.6319vw, 1.563rem);
+                }
+                @media(max-width: 1023px){
+                  // 320 - 1023 : 19 - 20
+                  font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
+                  line-height: 1.3em;
+                }
+                @media(max-width: 1080px){
+                  line-height: 1.3em;
+                  bottom: 12px;
+                }
+              }
+              .arrow-icon{
+                position: absolute;
+                top: 12px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                background-color: var(--white);
+                transition: all 0.5s ease-in-out;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                svg{
+                  path{
+                    transition: all 0.5s ease-in-out;
+                  }
+                }
+              }
+            }
+            .proj-main-txt{
+              padding: 20px 22px 0;
+              @media(max-width: 1500px){
+                padding: 15px 15px 0;
+              }
+              p{
+                line-height: 1.7em;
+              }
+            }
+            &:hover{
+              .proj-main-img{
+                .arrow-icon{
+                  background-color: var(--light_green);
+                  transition: all 0.5s ease-in-out;
+                  svg{
+                    path{
+                      stroke: var(--white);
+                      transition: all 0.5s ease-in-out;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // software projects main list section ends
+
+  // cta section starts
+  .cta-wrapper{
+    position: relative;
+    z-index: 9;
+  }
+  // cta section ends
+
+}

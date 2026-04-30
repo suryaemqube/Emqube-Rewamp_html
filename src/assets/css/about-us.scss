@@ -844,7 +844,9 @@ main.about-us.inside-page{
             }
             &:hover{
               .mem-green-shape{
-                transform: rotate(-12deg);
+                // transform: rotate(-12deg);
+                // transform: rotateZ(-43deg) translateX(38px);
+                transform: rotateZ(24deg) translateX(-38px);
                 transition: transform 0.5s ease-in-out;
               }
               .mem-exp-year{
