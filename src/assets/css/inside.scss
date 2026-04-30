@@ -63,6 +63,22 @@ $light_grey: var(--light_grey);
 					}
 				}
 			}
+			.main-nav-ul{
+				> li.menu-item-has-children{
+					> a:before{
+						background-image: url(../img/angle-down-menu-blk.svg);
+						transform: rotate(0);
+						width: 16px;
+						height: 18px;
+						@media(max-width: 1024px){
+							top: 47px;
+							right: 0;
+							width: 11px;
+							height: 12px;
+						}
+					}
+				}
+			}
 		}
 	}
 	header.scrolled{

@@ -798,9 +798,16 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-ex
   background-color: var(--light_green);
   padding: 13px 32px;
   top: 20px;
-  right: -100px;
+  right: -115px;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transform: translateY(10px);
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+@media (max-width: 1500px) {
+  main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-exp-year {
+    right: -100px;
+  }
 }
 @media (max-width: 1300px) {
   main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-exp-year {
@@ -831,7 +838,6 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-ex
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a {
   position: relative;
-  border: 1px dashed #505050;
   border-radius: 100%;
   width: 230px;
   height: 230px;
@@ -852,6 +858,7 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a {
   }
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .mem-green-shape {
+  display: none;
   width: 230px;
   height: 115px;
   border: 30px solid #4E9C5A;
@@ -874,6 +881,51 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .mem-
     bottom: -12px;
     left: 3px;
   }
+}
+main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .circle-wrapp {
+  width: 260px;
+  height: 260px;
+  position: absolute;
+  z-index: -1;
+}
+@media (max-width: 1080px) {
+  main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .circle-wrapp {
+    width: 225px;
+    height: 225px;
+  }
+}
+@media (max-width: 767px) {
+  main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .circle-wrapp {
+    width: 220px;
+    height: 220px;
+  }
+}
+main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .circle-wrapp svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .circle-wrapp svg .dotted-ring {
+  fill: none;
+  stroke: #555;
+  stroke-width: 3px;
+  stroke-dasharray: 4 8;
+}
+main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .circle-wrapp svg .green-ring {
+  fill: none;
+  stroke: #4ba657;
+  stroke-width: 30px;
+  stroke-linecap: butt;
+  stroke-dasharray: 310 431;
+  stroke-dashoffset: 535;
+  transition: stroke-dashoffset 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .circle-wrapp.green {
+  z-index: 2;
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a .team-mem-name {
   padding-top: 35px;
@@ -912,9 +964,13 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a:hover
   transform: rotateZ(24deg) translateX(-38px);
   transition: transform 0.5s ease-in-out;
 }
+main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a:hover .circle-wrapp svg .green-ring {
+  stroke-dashoffset: 440;
+}
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a:hover .mem-exp-year {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li p {
   text-align: center;

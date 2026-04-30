@@ -756,9 +756,14 @@ main.about-us.inside-page{
             background-color: var(--light_green);
             padding: 13px 32px;
             top: 20px;
-            right: -100px;
+            right: -115px;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            transform: translateY(10px);
+            z-index: 2;
+            transition: all 0.5s ease-in-out;
+            @media(max-width: 1500px){
+              right: -100px;
+            }
             @media(max-width: 1300px){
               right: -80px;
             }
@@ -779,7 +784,7 @@ main.about-us.inside-page{
           }
           a{
             position: relative;
-            border: 1px dashed #505050;
+            // border: 1px dashed #505050;
             border-radius: 100%;
             width: 230px;
             height: 230px;
@@ -795,6 +800,7 @@ main.about-us.inside-page{
               text-align: center;
             }
             .mem-green-shape{
+              display: none;
               width: 230px;
               height: 115px;
               border: 30px solid #4E9C5A;
@@ -814,6 +820,47 @@ main.about-us.inside-page{
                 border-width: 25px;
                 bottom: -12px;
                 left: 3px;
+              }
+            }
+            .circle-wrapp {
+              width: 260px;
+              height: 260px;
+              position: absolute;
+              z-index: -1;
+              @media(max-width: 1080px){
+                width: 225px;
+                height: 225px;
+              }
+              @media(max-width: 767px){
+                width: 220px;
+                height: 220px;
+              }
+              svg{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                transform: rotate(-90deg);
+                overflow: visible;
+                .dotted-ring{
+                  fill: none;
+                  stroke: #555;
+                  stroke-width: 3px;
+                  stroke-dasharray: 4 8;
+                }
+                .green-ring{
+                  fill: none;
+                  stroke: #4ba657;
+                  stroke-width: 30px;
+                  stroke-linecap: butt;
+                  stroke-dasharray: 310 431;
+                  stroke-dashoffset: 535;
+                  transition: stroke-dashoffset 0.85s cubic-bezier(.22, .61, .36, 1);
+                }
+              }
+              &.green{
+                z-index: 2;
               }
             }
             .team-mem-name{
@@ -849,9 +896,17 @@ main.about-us.inside-page{
                 transform: rotateZ(24deg) translateX(-38px);
                 transition: transform 0.5s ease-in-out;
               }
+              .circle-wrapp{
+                svg{
+                  .green-ring{
+                    stroke-dashoffset: 440;
+                  }
+                }
+              }
               .mem-exp-year{
                 opacity: 1;
-                transition: opacity 0.5s ease-in-out;
+                transform: translateY(0);
+                transition: all 0.5s ease-in-out;
               }
             }
           }

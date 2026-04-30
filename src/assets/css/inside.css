@@ -42,6 +42,20 @@
 .inside-page header .main-nav > ul > li.square-fill-btn-wrapp:hover > a {
   color: var(--light_green) !important;
 }
+.inside-page header .main-nav .main-nav-ul > li.menu-item-has-children > a:before {
+  background-image: url(../img/angle-down-menu-blk.svg);
+  transform: rotate(0);
+  width: 16px;
+  height: 18px;
+}
+@media (max-width: 1024px) {
+  .inside-page header .main-nav .main-nav-ul > li.menu-item-has-children > a:before {
+    top: 47px;
+    right: 0;
+    width: 11px;
+    height: 12px;
+  }
+}
 .inside-page header.scrolled {
   position: fixed;
 }

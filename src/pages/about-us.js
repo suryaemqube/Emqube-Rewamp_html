@@ -847,6 +847,20 @@ const Header = () => {
           <ul className="team-mem-list">
             <li>
               <a href="#">
+                <div class="circle-wrapp">
+                  <svg viewBox="0 0 280 280">
+                    {/* dotted full circle */}
+                    <circle class="dotted-ring" cx="140" cy="140" r="118"></circle>
+                    {/* rotating green segment */}
+                    {/* <circle class="green-ring" cx="140" cy="140" r="123"></circle> */}
+                  </svg>
+                </div>
+                <div class="circle-wrapp green">
+                  <svg viewBox="0 0 280 280">
+                    {/* rotating green segment */}
+                    <circle class="green-ring" cx="140" cy="140" r="123"></circle>
+                  </svg>
+                </div>
                 <div className="mem-green-shape">
                   {/* <img src="/assets/img/team-mem-ellipse.svg"></img> */}
                 </div>
@@ -861,6 +875,20 @@ const Header = () => {
             </li>
             <li>
               <a href="#">
+                <div class="circle-wrapp">
+                  <svg viewBox="0 0 280 280">
+                    {/* dotted full circle */}
+                    <circle class="dotted-ring" cx="140" cy="140" r="118"></circle>
+                    {/* rotating green segment */}
+                    {/* <circle class="green-ring" cx="140" cy="140" r="123"></circle> */}
+                  </svg>
+                </div>
+                <div class="circle-wrapp green">
+                  <svg viewBox="0 0 280 280">
+                    {/* rotating green segment */}
+                    <circle class="green-ring" cx="140" cy="140" r="123"></circle>
+                  </svg>
+                </div>
                 <div className="mem-green-shape">
                   {/* <img src="/assets/img/team-mem-ellipse.svg"></img> */}
                 </div>
@@ -875,6 +903,20 @@ const Header = () => {
             </li>
             <li>
               <a href="#">
+                <div class="circle-wrapp">
+                  <svg viewBox="0 0 280 280">
+                    {/* dotted full circle */}
+                    <circle class="dotted-ring" cx="140" cy="140" r="118"></circle>
+                    {/* rotating green segment */}
+                    {/* <circle class="green-ring" cx="140" cy="140" r="123"></circle> */}
+                  </svg>
+                </div>
+                <div class="circle-wrapp green">
+                  <svg viewBox="0 0 280 280">
+                    {/* rotating green segment */}
+                    <circle class="green-ring" cx="140" cy="140" r="123"></circle>
+                  </svg>
+                </div>
                 <div className="mem-green-shape">
                   {/* <img src="/assets/img/team-mem-ellipse.svg"></img> */}
                 </div>
@@ -889,6 +931,20 @@ const Header = () => {
             </li>
             <li>
               <a href="#">
+                <div class="circle-wrapp">
+                  <svg viewBox="0 0 280 280">
+                    {/* dotted full circle */}
+                    <circle class="dotted-ring" cx="140" cy="140" r="118"></circle>
+                    {/* rotating green segment */}
+                    {/* <circle class="green-ring" cx="140" cy="140" r="123"></circle> */}
+                  </svg>
+                </div>
+                <div class="circle-wrapp green">
+                  <svg viewBox="0 0 280 280">
+                    {/* rotating green segment */}
+                    <circle class="green-ring" cx="140" cy="140" r="123"></circle>
+                  </svg>
+                </div>
                 <div className="mem-green-shape">
                   {/* <img src="/assets/img/team-mem-ellipse.svg"></img> */}
                 </div>
@@ -903,6 +959,20 @@ const Header = () => {
             </li>
             <li>
               <a href="#">
+                <div class="circle-wrapp">
+                  <svg viewBox="0 0 280 280">
+                    {/* dotted full circle */}
+                    <circle class="dotted-ring" cx="140" cy="140" r="118"></circle>
+                    {/* rotating green segment */}
+                    {/* <circle class="green-ring" cx="140" cy="140" r="123"></circle> */}
+                  </svg>
+                </div>
+                <div class="circle-wrapp green">
+                  <svg viewBox="0 0 280 280">
+                    {/* rotating green segment */}
+                    <circle class="green-ring" cx="140" cy="140" r="123"></circle>
+                  </svg>
+                </div>
                 <div className="mem-green-shape">
                   {/* <img src="/assets/img/team-mem-ellipse.svg"></img> */}
                 </div>
