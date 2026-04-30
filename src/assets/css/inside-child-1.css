@@ -102,11 +102,11 @@
 .inside-child header {
   z-index: 99;
 }
-.inside-child.mobile-app-development:after {
+.inside-child.mobile-app-development1:after {
   background-image: url(../img/mobile-app-development-inro-bg.svg);
 }
 @media (max-width: 767px) {
-  .inside-child.mobile-app-development:after {
+  .inside-child.mobile-app-development1:after {
     background-image: none;
   }
 }
@@ -2630,4 +2630,4 @@
 .inside-child footer {
   position: relative;
   z-index: 9;
-}/*# sourceMappingURL=inside-child.css.map */
+}/*# sourceMappingURL=inside-child-1.css.map */

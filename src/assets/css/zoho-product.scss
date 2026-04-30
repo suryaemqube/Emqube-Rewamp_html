@@ -867,6 +867,11 @@ content: "\f009";
 	.work-ref-wrapper{
 		.workSwiper{
 			.swiper-slide{
+				a{
+					&:before{
+						background-color: rgba(0, 0, 0, 0.01);
+					}
+				}
 				.work-wrapp{
 					position: relative;
 					&:before{
@@ -883,6 +888,7 @@ content: "\f009";
 						height: 100%;
 						max-height: 320px;
 						bottom: -200px;
+						bottom: 0;
 						transition: bottom 0.5s ease-in-out;
 						z-index: 2;
 						@media(max-width: 1500px){
@@ -902,6 +908,8 @@ content: "\f009";
 							// 320 - 1920 : 14 - 22
             	font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
 							line-height: 1.6em;
+							opacity: 1 !important;
+							visibility: visible !important;
 							@media(max-width: 1500px){
 								font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
 							}
@@ -910,10 +918,10 @@ content: "\f009";
 								font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
 								// line-height: 1.7em;
 							}
-							@media(max-width: 1080px){
-								opacity: 1;
-								visibility: visible;
-							}
+							// @media(max-width: 1080px){
+							// 	opacity: 1;
+							// 	visibility: visible;
+							// }
 						}
 						p{
 							&:last-child{
@@ -926,8 +934,8 @@ content: "\f009";
 				}
 				&:hover{
 					.proj-txt{
-						bottom: 0;
-						transition: bottom 0.5s ease-in-out;
+						// bottom: 0;
+						// transition: bottom 0.5s ease-in-out;
 					}
 				}
 			}

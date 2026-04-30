@@ -696,6 +696,7 @@ main.about-us.inside-page .abt-values-wrapper .container .values-right .value-li
     width: 220px;
     height: 170px;
     height: auto;
+    width: 85%;
   }
 }
 main.about-us.inside-page .abt-values-wrapper .container .values-right .value-list .white-box p {

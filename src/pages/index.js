@@ -438,26 +438,30 @@ const Header = () => {
                   <li className="menu-item-has-children children-level-0">
                     <a href="/software-solution-house">Development</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="business-application-development">Custom Business Application Development in Dubai</a></li>
-                      <li><a href="javascript:void(0);">Mobile App Development Services in Dubai</a></li>
+                      <li><a href="business-application-development">Business Application Development</a></li>
+                      <li><a href="javascript:void(0);">Mobile App Development</a></li>
                       <li><a href="javascript:void(0);">AI Development & Agentic Solutions in Dubai</a></li>
-                      <li><a href="javascript:void(0);">WhatsApp for Business API Solutions in Dubai</a></li>
-                      <li><a href="javascript:void(0);">Business Intelligence & Data Analytics Services in Dubai</a></li>
-                      <li><a href="javascript:void(0);">E-Commerce Development & Strategy Services in Dubai</a></li>
+                      <li><a href="javascript:void(0);">WhatsApp for Business</a></li>
+                      <li><a href="javascript:void(0);">AI Development</a></li>
+                      <li><a href="javascript:void(0);">Business Intelligence</a></li>
+                      <li><a href="javascript:void(0);">E-Commerce Applications</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-1">
                     <a href="javascript:void(0);">Products</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Zoho CRM</a></li>
-                      <li><a href="javascript:void(0);">Custom Business Application Development in Dubai</a></li>
+                      <li><a href="javascript:void(0);">CRM (Zoho, Salesforce)</a></li>
+                      <li><a href="javascript:void(0);">ERP (Zoho One, Odoo)</a></li>
+                      <li><a href="javascript:void(0);">FM - CAFM Pro</a></li>
+                      <li><a href="javascript:void(0);">HRMS - HRMS Pro</a></li>
+                      <li><a href="javascript:void(0);">Productivity-135</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-2">
                     <a href="javascript:void(0);">Consulting</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="javascript:void(0);">Digital Transformation</a></li>
+                      <li><a href="javascript:void(0);">Product Development</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -469,31 +473,30 @@ const Header = () => {
                     <a href="javascript:void(0);">Website Development</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
                       <li><a href="javascript:void(0);">Corporate Website</a></li>
-                      <li><a href="javascript:void(0);">Personality Development</a></li>
+                      <li><a href="javascript:void(0);">Personality Website</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-1">
                     <a href="javascript:void(0);">Digital Marketing</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="javascript:void(0);">Social Media</a></li>
+                      <li><a href="javascript:void(0);">SEO</a></li>
+                      <li><a href="javascript:void(0);">Email Marketing</a></li>
+                      <li><a href="javascript:void(0);">Digital Ads</a></li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children children-level-2">
                     <a href="javascript:void(0);">Content Production</a>
                     <ul className="sub-menu submenu has-children-inner slide-up">
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
-                      <li><a href="javascript:void(0);">Business Application Development</a></li>
+                      <li><a href="javascript:void(0);">Corporate Films</a></li>
+                      <li><a href="javascript:void(0);">Digital Assets</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li><a href="javascript:void(0);">About Us</a></li>
               <li><a href="javascript:void(0);">emQonnect</a></li>
-              <li><a href="javascript:void(0);">Reference</a></li>
+              <li><a href="javascript:void(0);">References</a></li>
               <li className="square-fill-btn-wrapp"><a href="javascript: void(0);">Contact Us</a></li>
             </ul>
           </nav>
@@ -518,28 +521,28 @@ const Header = () => {
                 <a href="javascript:void(0);">Development</a>
                 <ul className={`sub-menu submenu has-children-inner  ${activeSubMenu === "development" ? "show" : ""}`}>
                   <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
+                  <li><a href="javascript:void(0);">Mobile App Development</a></li>
+                  <li><a href="javascript:void(0);">WhatsApp for Business</a></li>
+                  <li><a href="javascript:void(0);">AI Development</a></li>
+                  <li><a href="javascript:void(0);">Business Intelligence</a></li>
+                  <li><a href="javascript:void(0);">E-Commerce Applications</a></li>
                 </ul>
               </li>
               <li className="menu-item-has-children children-level-1">
                 <a href="javascript:void(0);">Products</a>
                 <ul className="sub-menu submenu has-children-inner ">
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
+                  <li><a href="javascript:void(0);">CRM (Zoho, Salesforce)</a></li>
+                  <li><a href="javascript:void(0);">ERP (Zoho One, Odoo)</a></li>
+                  <li><a href="javascript:void(0);">FM - CAFM Pro</a></li>
+                  <li><a href="javascript:void(0);">HRMS - HRMS Pro</a></li>
+                  <li><a href="javascript:void(0);">Productivity-135</a></li>
                 </ul>
               </li>
               <li className="menu-item-has-children children-level-2">
                 <a href="javascript:void(0);">Consulting</a>
                 <ul className="sub-menu submenu has-children-inner ">
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
+                  <li><a href="javascript:void(0);">Digital Transformation</a></li>
+                  <li><a href="javascript:void(0);">Product Development</a></li>
                 </ul>
               </li>
             </ul>
@@ -551,31 +554,30 @@ const Header = () => {
                 <a href="javascript:void(0);">Website Development</a>
                 <ul className="sub-menu submenu has-children-inner slide-up">
                   <li><a href="javascript:void(0);">Corporate Website</a></li>
-                  <li><a href="javascript:void(0);">Personality Development</a></li>
+                  <li><a href="javascript:void(0);">Personality Website</a></li>
                 </ul>
               </li>
               <li className="menu-item-has-children children-level-1">
                 <a href="javascript:void(0);">Digital Marketing</a>
                 <ul className="sub-menu submenu has-children-inner slide-up">
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
+                  <li><a href="javascript:void(0);">Social Media</a></li>
+                  <li><a href="javascript:void(0);">SEO</a></li>
+                  <li><a href="javascript:void(0);">Email Marketing</a></li>
+                  <li><a href="javascript:void(0);">Digital Ads</a></li>
                 </ul>
               </li>
               <li className="menu-item-has-children children-level-2">
                 <a href="javascript:void(0);">Content Production</a>
                 <ul className="sub-menu submenu has-children-inner slide-up">
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
-                  <li><a href="javascript:void(0);">Business Application Development</a></li>
+                  <li><a href="javascript:void(0);">Corporate Films</a></li>
+                  <li><a href="javascript:void(0);">Digital Assets</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li><a href="javascript:void(0);">About Us</a></li>
           <li><a href="javascript:void(0);">emQonnect</a></li>
-          <li><a href="javascript:void(0);">Reference</a></li>
+          <li><a href="javascript:void(0);">References</a></li>
           <li className="square-fill-btn-wrapp"><a href="javascript: void(0);">Contact Us</a></li>
         </ul>
       </nav>
@@ -992,8 +994,8 @@ const Header = () => {
               <div className="footer-link">
                 <ul>
                   <li className="main-link-name"><a href="javascript:void(0);">About Us</a></li>
-                  <li className="main-link-name"><a href="javascript:void(0);">EmQonnect</a></li>
-                  <li className="main-link-name"><a href="javascript:void(0);">Reference</a></li>
+                  <li className="main-link-name"><a href="javascript:void(0);">emQonnect</a></li>
+                  <li className="main-link-name"><a href="javascript:void(0);">References</a></li>
                 </ul>
               </div>
             </div>
