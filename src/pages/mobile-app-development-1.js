@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "/src/assets/css/common.css";
 // import "/src/assets/css/home.css";
 import "/src/assets/css/inside.css";
-import "/src/assets/css/inside-child-1.css";
+import "/src/assets/css/inside-child.css";
 
 gsap.registerPlugin(ScrollToPlugin);
 
