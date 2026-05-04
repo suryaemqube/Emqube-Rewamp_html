@@ -8,10 +8,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "/src/assets/css/common.css";
-// import "/src/assets/css/home.css";
 import "/src/assets/css/inside.css";
 import "/src/assets/css/inside-child.css";
-import "/src/assets/css/contact-us.css";
+import "/src/assets/css/emqonnect-detail.css";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -111,49 +110,50 @@ const Header = () => {
   };
 
 
-  // common script for all animation - starts
-  useEffect(() => {
-    const elements = document.querySelectorAll(
-      ".slide-up, .fade-in, .stagger-li"
-    );
 
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
+    // common script for all animation - starts
+    useEffect(() => {
+      const elements = document.querySelectorAll(
+        ".slide-up, .fade-in, .stagger-li"
+      );
 
-            if (entry.target.classList.contains("fade-in")) {
-              entry.target.classList.add("visible");
-            }
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
 
-            if (entry.target.classList.contains("slide-up")) {
-              entry.target.classList.add("visible");
-            }
-
-            if (entry.target.classList.contains("stagger-li")) {
-              setTimeout(() => {
+              if (entry.target.classList.contains("fade-in")) {
                 entry.target.classList.add("visible");
-              }, index * 100);
+              }
+
+              if (entry.target.classList.contains("slide-up")) {
+                entry.target.classList.add("visible");
+              }
+
+              if (entry.target.classList.contains("stagger-li")) {
+                setTimeout(() => {
+                  entry.target.classList.add("visible");
+                }, index * 100);
+              }
+
+              observer.unobserve(entry.target);
             }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
 
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
+      elements.forEach((el) => observer.observe(el));
 
-    elements.forEach((el) => observer.observe(el));
+      // 🧹 CLEANUP (VERY IMPORTANT in React)
+      return () => {
+        elements.forEach((el) => observer.unobserve(el));
+      };
 
-    // 🧹 CLEANUP (VERY IMPORTANT in React)
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-
-  }, []);
-  // common script for all animation - ends
+    }, []);
+    // common script for all animation - ends
 
   // onload intro section animation - starts
   useEffect(() => {
@@ -176,6 +176,7 @@ const Header = () => {
   }, [])
   // onload intro section animation - ends
 
+  
 
   // create collapsible footer menu - starts
   const [isMobile, setIsMobile] = useState(false);
@@ -365,183 +366,164 @@ const Header = () => {
       </nav>
 
       {/* Inside intro section starts */}
-      <section className="inside-intro-wrapper inside-child-intro-wrapper contact-intro-wrapper">
+      <section className="inside-intro-wrapper inside-child-intro-wrapper">
         <div class="container">
           <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
             <span><a href="/">Home</a></span>
-            <span><span> / </span><span class="post post-page current-item">Contact</span></span>
+            <span><span> / </span><span class="post post-page current-item">The Rejuvenating Effect of Shinrin-Yoku</span></span>
           </div>
-          <h1>We are waiting <span className="txt-regular">for you</span></h1>
-          <div className="product-head-wrapper">
-            <div className="left">
-              <p className="interested-txt sub-txt">Interested to know how we can assist you? <span className="txt-med">Connect With Our Team</span></p>
-              <div className="contact-info-wrapp">
-                <ul>
-                  <li className="loc">
-                    <div className="left-contact">
-                      <span className="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="50" viewBox="0 0 35 50" fill="none">
-                          <path d="M17.5 23.75C15.8424 23.75 14.2527 23.0915 13.0806 21.9194C11.9085 20.7473 11.25 19.1576 11.25 17.5C11.25 15.8424 11.9085 14.2527 13.0806 13.0806C14.2527 11.9085 15.8424 11.25 17.5 11.25C19.1576 11.25 20.7473 11.9085 21.9194 13.0806C23.0915 14.2527 23.75 15.8424 23.75 17.5C23.75 18.3208 23.5883 19.1335 23.2742 19.8918C22.9602 20.6501 22.4998 21.3391 21.9194 21.9194C21.3391 22.4998 20.6501 22.9602 19.8918 23.2742C19.1335 23.5883 18.3208 23.75 17.5 23.75ZM17.5 0C12.8587 0 8.40752 1.84374 5.12563 5.12563C1.84374 8.40752 0 12.8587 0 17.5C0 30.625 17.5 50 17.5 50C17.5 50 35 30.625 35 17.5C35 12.8587 33.1563 8.40752 29.8744 5.12563C26.5925 1.84374 22.1413 0 17.5 0Z" fill="#4E9C5A"/>
-                        </svg>
-                      </span>
-                    </div>
-                    <div className="right-contact">
-                      <p>#801 M Square, <br />Sheikh Khalifa Bin Zayed Street. <br />Dubai. UAE</p>
-                      <p>
-                        <a href="https://www.google.com/maps/place/emQube+LLC/@25.2498391,55.3005616,17z/data=!4m8!3m7!1s0x3e5f433c4d7d1515:0x269e122f1ea04bc5!8m2!3d25.2498391!4d55.3005616!9m1!1b1!16s%2Fg%2F11gzfdc86?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google maps link</a>
-                        <span className="icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 10 12" fill="none">
-                            <path d="M0.175254 10.5368L7.23047 1.17166L0.1932 2.16161L-5.48652e-05 1.22509L8.71276 -0.00055572L9.9384 8.71226L8.98491 8.78487L7.99497 1.7476L0.939751 11.1127L0.175254 10.5368Z" fill="#4E9C5A"/>
-                          </svg>
-                        </span>
-                      </p>
-                    </div>
-                  </li>
-                  <li className="mail">
-                    <div className="left-contact">
-                      <span className="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" viewBox="0 0 40 32" fill="none">
-                          <path d="M36 0H4C1.8 0 0.02 1.8 0.02 4L0 28C0 30.2 1.8 32 4 32H36C38.2 32 40 30.2 40 28V4C40 1.8 38.2 0 36 0ZM35.2 8.5L21.06 17.34C20.42 17.74 19.58 17.74 18.94 17.34L4.8 8.5C4.59946 8.38742 4.42384 8.23532 4.28378 8.05291C4.14372 7.87049 4.04212 7.66156 3.98515 7.43874C3.92818 7.21593 3.91701 6.98387 3.95231 6.75661C3.98762 6.52936 4.06867 6.31163 4.19056 6.1166C4.31245 5.92158 4.47265 5.75331 4.66145 5.62199C4.85026 5.49067 5.06374 5.39902 5.28899 5.3526C5.51424 5.30617 5.74657 5.30593 5.97191 5.3519C6.19725 5.39786 6.41093 5.48907 6.6 5.62L20 14L33.4 5.62C33.5891 5.48907 33.8027 5.39786 34.0281 5.3519C34.2534 5.30593 34.4858 5.30617 34.711 5.3526C34.9363 5.39902 35.1497 5.49067 35.3385 5.62199C35.5274 5.75331 35.6875 5.92158 35.8094 6.1166C35.9313 6.31163 36.0124 6.52936 36.0477 6.75661C36.083 6.98387 36.0718 7.21593 36.0149 7.43874C35.9579 7.66156 35.8563 7.87049 35.7162 8.05291C35.5762 8.23532 35.4005 8.38742 35.2 8.5Z" fill="#4E9C5A"/>
-                        </svg>
-                      </span>
-                    </div>
-                    <div className="right-contact">
-                      <p><span className="txt-regular">Email: </span><a href="mailto: info@emqube.com">info@emqube.com</a></p>
-                    </div>
-                  </li>
-                  <li className="whatsapp">
-                    <div className="left-contact">
-                      <span className="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
-                          <path d="M18.3334 0C28.4589 0 36.6667 8.20783 36.6667 18.3333C36.6667 28.4588 28.4589 36.6667 18.3334 36.6667C15.0934 36.6722 11.9104 35.8148 9.1117 34.1825L0.00736167 36.6667L2.48603 27.5587C0.852452 24.759 -0.00564965 21.5747 2.79926e-05 18.3333C2.79926e-05 8.20783 8.20786 0 18.3334 0ZM12.0854 9.71667L11.7187 9.73133C11.4816 9.74767 11.25 9.80993 11.0367 9.91467C10.8379 10.0274 10.6564 10.1682 10.4977 10.3327C10.2777 10.5398 10.153 10.7195 10.0192 10.8937C9.34108 11.7753 8.97598 12.8577 8.98153 13.97C8.9852 14.8683 9.21986 15.7428 9.58653 16.5605C10.3364 18.2142 11.5702 19.965 13.1982 21.5875C13.5905 21.978 13.9755 22.3703 14.3899 22.7352C16.4128 24.5161 18.8234 25.8004 21.4299 26.4862L22.4712 26.6457C22.8104 26.664 23.1495 26.6383 23.4905 26.6218C24.0244 26.5937 24.5456 26.4491 25.0177 26.1983C25.2576 26.0743 25.4919 25.9397 25.7199 25.795C25.7199 25.795 25.7975 25.7424 25.949 25.63C26.1965 25.4467 26.3487 25.3165 26.554 25.102C26.708 24.9431 26.8364 24.7586 26.939 24.5483C27.082 24.2495 27.225 23.6793 27.2837 23.2045C27.3277 22.8415 27.3149 22.6435 27.3094 22.5207C27.302 22.3245 27.1389 22.121 26.961 22.0348L25.894 21.5563C25.894 21.5563 24.299 20.8615 23.3237 20.4178C23.2216 20.3734 23.1123 20.3479 23.001 20.3427C22.8756 20.3295 22.7488 20.3435 22.6292 20.3837C22.5096 20.4239 22.4001 20.4893 22.308 20.5755C22.2989 20.5718 22.176 20.6763 20.8505 22.2823C20.7744 22.3846 20.6697 22.4618 20.5495 22.5043C20.4293 22.5467 20.2993 22.5524 20.1759 22.5207C20.0564 22.4888 19.9394 22.4484 19.8257 22.3997C19.5984 22.3043 19.5195 22.2677 19.3637 22.2017C18.3111 21.7432 17.3368 21.1227 16.4762 20.3628C16.2452 20.1612 16.0307 19.9412 15.8107 19.7285C15.0895 19.0377 14.4609 18.2563 13.9407 17.4038L13.8325 17.2297C13.756 17.112 13.6933 16.9859 13.6455 16.8538C13.5759 16.5843 13.7574 16.368 13.7574 16.368C13.7574 16.368 14.2029 15.8803 14.41 15.6163C14.6117 15.3597 14.7822 15.1103 14.8922 14.9325C15.1085 14.5842 15.1764 14.2267 15.0627 13.9498C14.5494 12.6958 14.0189 11.4486 13.4714 10.208C13.3632 9.96233 13.0424 9.78633 12.7509 9.7515C12.6519 9.73928 12.5529 9.7295 12.4539 9.72217C12.2077 9.70805 11.9609 9.7105 11.715 9.7295L12.0854 9.71667Z" fill="#4E9C5A"/>
-                        </svg>
-                      </span>
-                    </div>
-                    <div className="right-contact">
-                      <p><span className="txt-regular">Whatsapp: </span><a href="http://wa.link/r2k9tk" target="_blank">http://wa.link/r2k9tk</a></p>
-                    </div>
-                  </li>
-                  <li className="office-time">
-                    <div className="left-contact">
-                      <span className="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                          <mask id="mask0_2379_7731"  maskUnits="userSpaceOnUse" x="0" y="0" width="35" height="35">
-                          <path d="M17.1666 33.0007C25.9114 33.0007 33 25.9121 33 17.1673C33 8.42257 25.9114 1.33398 17.1666 1.33398C8.4219 1.33398 1.33331 8.42257 1.33331 17.1673C1.33331 25.9121 8.4219 33.0007 17.1666 33.0007Z" fill="white" stroke="white" stroke-width="2.66667" stroke-linejoin="round"/>
-                          <path d="M17.173 7.66797V17.1759L23.8855 23.8892" stroke="black" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                          </mask>
-                          <g mask="url(#mask0_2379_7731)">
-                          <path d="M-1.83337 -1.83203H36.1666V36.168H-1.83337V-1.83203Z" fill="#4E9C5A"/>
-                          </g>
-                        </svg>
-                      </span>
-                    </div>
-                    <div className="right-contact">
-                      <p><span className="txt-regular">Office Hours: </span>Monday- Friday: 9.00 AM - 6.00 PM</p>
-                    </div>
-                  </li>
-                  {/* <li className="job-enq">
-                    <div className="left-contact">
-                      <span className="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                          <path d="M15.75 0C19.9272 0 23.9332 1.65937 26.8869 4.61307C29.8406 7.56677 31.5 11.5728 31.5 15.75C31.5 19.9272 29.8406 23.9332 26.8869 26.8869C23.9332 29.8406 19.9272 31.5 15.75 31.5C11.5728 31.5 7.56677 29.8406 4.61307 26.8869C1.65937 23.9332 0 19.9272 0 15.75C0 11.5728 1.65937 7.56677 4.61307 4.61307C7.56677 1.65937 11.5728 0 15.75 0ZM16.5832 6.73242C14.7574 6.73242 13.3137 7.25156 12.252 8.28984C11.1621 9.33047 10.6453 10.7648 10.6453 12.5965H13.4648C13.4648 11.5594 13.6652 10.7402 14.0836 10.1707C14.5547 9.47812 15.3211 9.1582 16.4109 9.1582C17.2594 9.15352 17.9191 9.38438 18.3902 9.85078C18.8653 10.3784 19.114 11.0716 19.0828 11.7809C19.0743 12.4272 18.8377 13.0498 18.4148 13.5387L18.1195 13.8832C16.5094 15.3211 15.5461 16.3582 15.2227 17.0297C14.8781 17.6977 14.7305 18.5133 14.7305 19.4555V19.8H17.5746V19.452C17.5746 18.8578 17.6977 18.341 17.9473 17.8453C18.1868 17.3685 18.5233 16.947 18.9352 16.6078C20.1234 15.5672 20.8406 14.8992 21.0656 14.6531C21.6598 13.8586 21.9797 12.8461 21.9797 11.6086C21.9797 10.0992 21.4852 8.91094 20.4961 8.04375C19.5047 7.1543 18.1934 6.73242 16.5832 6.73242ZM16.1402 21.0129C15.8904 21.0058 15.6416 21.0481 15.4081 21.1374C15.1746 21.2267 14.961 21.3612 14.7797 21.5332C14.5977 21.7032 14.4547 21.9107 14.3606 22.1414C14.2666 22.372 14.2236 22.6203 14.2348 22.8691C14.2348 23.4141 14.407 23.8605 14.7797 24.2051C15.1433 24.5574 15.6305 24.753 16.1367 24.75C16.6816 24.75 17.1246 24.5742 17.4973 24.2297C17.6815 24.0549 17.8273 23.8436 17.9253 23.6094C18.0234 23.3752 18.0716 23.123 18.0668 22.8691C18.0713 22.6211 18.0254 22.3748 17.9317 22.1451C17.838 21.9155 17.6986 21.7073 17.5219 21.5332C17.1454 21.1863 16.6485 20.9996 16.1367 21.0129" fill="#4E9C5A"/>
-                        </svg>
-                      </span>
-                    </div>
-                    <div className="right-contact">
-                      <p><span className="txt-regular">Job inquiry: </span><a href="#">Click here</a> to submit your CV</p>
-                    </div>
-                  </li> */}
-                </ul>
-              </div>
-            </div>
-            <div className="right">
-              <div className="right-to-us-wrapp">
-                <p>
-                  <span className="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                      <path d="M36.315 2.46712L37.2983 3.45045C38.6533 4.80712 38.4483 7.21212 36.8367 8.82212L16.5583 29.1004L9.98833 31.5038C9.16333 31.8071 8.36 31.4138 8.19666 30.6288C8.14165 30.344 8.16763 30.0495 8.27166 29.7788L10.7217 23.1521L30.9433 2.92878C32.555 1.31878 34.96 1.11045 36.315 2.46712ZM15.6733 4.48378C15.8922 4.48378 16.1089 4.52689 16.3111 4.61065C16.5133 4.69441 16.6971 4.81717 16.8518 4.97194C17.0066 5.1267 17.1294 5.31043 17.2131 5.51264C17.2969 5.71485 17.34 5.93158 17.34 6.15045C17.34 6.36932 17.2969 6.58605 17.2131 6.78825C17.1294 6.99046 17.0066 7.1742 16.8518 7.32896C16.6971 7.48372 16.5133 7.60649 16.3111 7.69025C16.1089 7.77401 15.8922 7.81712 15.6733 7.81712H9.00666C8.12261 7.81712 7.27476 8.1683 6.64964 8.79343C6.02452 9.41855 5.67333 10.2664 5.67333 11.1504V31.1504C5.67333 32.0345 6.02452 32.8823 6.64964 33.5075C7.27476 34.1326 8.12261 34.4838 9.00666 34.4838H29.0067C29.8907 34.4838 30.7386 34.1326 31.3637 33.5075C31.9888 32.8823 32.34 32.0345 32.34 31.1504V24.4838C32.34 24.0418 32.5156 23.6178 32.8282 23.3053C33.1407 22.9927 33.5646 22.8171 34.0067 22.8171C34.4487 22.8171 34.8726 22.9927 35.1852 23.3053C35.4977 23.6178 35.6733 24.0418 35.6733 24.4838V31.1504C35.6733 32.9186 34.971 34.6142 33.7207 35.8645C32.4705 37.1147 30.7748 37.8171 29.0067 37.8171H9.00666C7.23855 37.8171 5.54286 37.1147 4.29262 35.8645C3.04238 34.6142 2.34 32.9186 2.34 31.1504V11.1504C2.34 9.38234 3.04238 7.68665 4.29262 6.4364C5.54286 5.18616 7.23855 4.48378 9.00666 4.48378H15.6733Z" fill="white"/>
-                    </svg>
-                  </span>
-                  Write to us
-                </p>
-              </div>
-              <div className="form-wrap">
-                <div className="wpcf7 js">
-                  <form>
-                    <div className="form-wrapper">
-                      <ul>
-                        <li>
-                          <span class="wpcf7-form-control-wrap" data-name="first-name">
-                            {/* <label>Your Name</label> */}
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" type="text" name="first-name" placeholder="Your Name" />
-                          </span>
-                        </li>
-                        <li>
-                          <span class="wpcf7-form-control-wrap" data-name="last-name">
-                            {/* <label>Email</label> */}
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email"  type="email" name="company-email" />
-                          </span>
-                        </li>
-                        <li>
-                          <span class="wpcf7-form-control-wrap" data-name="company-name">
-                            {/* <label>Company Name</label> */}
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Company Name"  type="text" name="company-name" />
-                          </span>
-                        </li>
-                        <li className="w-50">
-                          <span class="wpcf7-form-control-wrap" data-name="mobile-number">
-                            {/* <label>Phone No.</label> */}
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone No."  type="tel" name="mobile-number" />
-                          </span>
-                        </li>
-                        <li className="w-50 mob-w-100">
-                          <span class="wpcf7-form-control-wrap" data-name="company-email">
-                            {/* <label>How did you hear about us?</label> */}
-                            <select>
-                              <option>How did you hear about us?</option>
-                              <option>List1</option>
-                              <option>List2</option>
-                              <option>List3</option>
-                              <option>List4</option>
-                            </select>
-                          </span>
-                        </li>
-                        <li className="w-100">
-                          {/* <label>Describe your requirements</label> */}
-                          <textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Describe your requirements" name="your-message" spellcheck="false"></textarea>
-                        </li>
-                        <li className="w-50 mob-w-100">
-                          <div className="captcha">
-                            <p>
-                              <span className="wpcf7-form-control-wrap wpcaptcha-588"></span>
-                            </p>
-                            <p className="c4wp-display-captcha-form">
-                              <label for="Solve Captcha*">Solve Captcha* 9 + 6&nbsp;&nbsp;=&nbsp;&nbsp; </label>
-                              <input className="c4wp_user_input_captcha" id="captcha" type="text" name="captcha" />
-                            </p>
-                          </div>
-                        </li>
-                        <li className="w-50 mob-w-100">
-                          <div class="submit-button-wrap">
-                            <div class="btn-wrap">
-                              <div class="view-all reverse pos-ab-aligh-right">
-                                <input class="wpcf7-form-control wpcf7-submit has-spinner submit-btn" type="submit" value="Submit" /><span class="wpcf7-spinner"></span>
-                                <span class="text">Submit</span>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+          <div className="title-wrapp">
+            <h1>The Rejuvenating Effect of Shinrin-Yoku</h1>
           </div>
         </div>
       </section>
       {/* Inside intro section ends */}
 
+      {/* emqonnect detail section starts */}
+      <section className="emqonnect-detail-wrapper">
+        <div className="container">
+          <div className="blog-detail-content">
+            <p className="date">December 26, 2024</p>
+            <div className="blog-detail-img">
+              <img src="/assets/img/blog-detail.jpg" alt="The Rejuvenating Effect of Shinrin-Yoku"></img>
+            </div>
+            <div className="blog-detail-txt">
+              <p>As we spend most of our time indoors inside our homes, offices and vehicles, we’re constantly glued to our screens and tech devices. Compulsive viewing of our phone updates and notifications, constant checking of emails, sharing files and documents create technology-related stress termed ‘Technostress’. Symptoms range from headaches, mental fatigue, eye and neck strain to insomnia, frustration, irritability and loss of enthusiasm. </p>
+              <p>This is why spending some time in nature is a must to digitally detox from devices and help you unwind and de-stress for the day. Nature has the power to make us feel good. The melody of the birds chirping, the sweet smell of the soil, the refreshing rays of the sun, the fragrance of the flowers and the cool breeze— lend us a sense of comfort and alleviate our stress. Immersing yourself in nature will also help you relax and rejuvenate. It not only recharges your energy and vitality but also helps you think more clearly and come back fresh to work. </p>
+              <p><b>Shinrin-Yoku, a Japanese term, is the simple act of spending time in nature. Shinrin in Japanese means ‘forest’, and Yoku means ‘bath’. So Shinrin-Yoku means forest bathing or taking in the forest.</b></p>
+              <p>In simple words, absorbing the serenity of nature through all your five senses promotes mental, physical, and spiritual well-being. Even an hour of forest bathing can positively impact your health. Nature’s vibes have been proven to elevate mood, and energy levels, enhance focus and improve sleep quality. </p>
+              <p>Going on a walk in nature and finding your peace spot in the woods, mountains, beach, lake, forest or even a park nearby will help ease the pressures of modern-day life and provide a sense of calm. Walk slowly soaking your senses in the natural beauty around. Be highly aware of feeling the breeze hitting your skin and hair, the aroma of the blooming flowers and the cool grass crushing under your feet. Observe the tiny details like the patterns of leaves, colours of flowers, the sounds of the insects and birds or the water trickling down as waves. </p>
+              <p>By opening our senses to the wonders of Earth’s creation, we bridge the gap and reconnect to our natural world. Through Shinrin-Yoku I invite you to experience this simple remedy to tap into the bounties of nature and uplift your overall well-being. </p>
+              <p>Alvina Clara, Content Writer, emQube</p>
+            </div>
+            <div className="blog-detail-share">
+              <p>Share this post: </p>
+              <ul>
+                <li><a href="javascript:void(0);"><img src="/assets/img/facebook-icon.svg" alt="facebook icon"></img></a></li>
+                <li><a href="javascript:void(0);"><img src="/assets/img/twitter-icon.svg" alt="twitter icon"></img></a></li>
+                <li><a href="javascript:void(0);"><img src="/assets/img/linkedin-icon.svg" alt="linkedin icon"></img></a></li>
+                <li><a href="javascript:void(0);"><img src="/assets/img/instagram-icon.svg" alt="instagram icon"></img></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* emqonnect detail section ends */}
+
+      {/* latest post section starts */}
+      <section className="latest-post-wrapper">
+        <div className="container">
+          <h2>Latest Posts</h2>
+          <div className="emqonnect-list">
+            <ul>
+              <li>
+                <a href="/emqonnect-detail">
+                  <span className="newsletter-tag">Newsletter</span>
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/get-rid-of-your-inner-enemies-in-2025.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="issue">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/the-rejuvenating-effect-of-shinrin-yoku.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/content-marketing-will-rule.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div className="view-all-btn">
+              <a href="javascript:void(0);" class="view-all">
+                <span class="text">View All</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* latest post section ends */}
+
+      {/* home cta section starts */}
+      <section className="cta-wrapper">
+        <div className="container">
+          <p className="cta-title stagger-li">Ready to build your customized software?</p>
+          <p className="cta-txt stagger-li">Talk to our Business Applications Team in Dubai</p>
+          <div className="cta-btn-wrapp d-flex">
+            <ul class="lets-talk-wrap">
+              <li class="whatsapp stagger-li">
+                <a href="#" class="view-all pos-ab-aligh-right ">
+                  <span class="text">WhatsApp</span>
+                  <span class="circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                      <path d="M13.75 0C21.3441 0 27.5 6.15588 27.5 13.75C27.5 21.3441 21.3441 27.5 13.75 27.5C11.3201 27.5042 8.93282 26.8611 6.83377 25.6369L0.00552125 27.5L1.86452 20.669C0.639339 18.5693 -0.00423724 16.181 2.09944e-05 13.75C2.09944e-05 6.15588 6.1559 0 13.75 0ZM9.06402 7.2875L8.78902 7.2985C8.61122 7.31075 8.4375 7.35745 8.27752 7.436C8.12844 7.52058 7.99229 7.62616 7.87327 7.7495C7.70827 7.90488 7.61477 8.03963 7.5144 8.17025C7.00581 8.83149 6.73198 9.64331 6.73615 10.4775C6.7389 11.1512 6.9149 11.8071 7.1899 12.4204C7.75227 13.6606 8.67765 14.9737 9.89865 16.1906C10.1929 16.4835 10.4816 16.7778 10.7924 17.0514C12.3096 18.3871 14.1175 19.3503 16.0724 19.8646L16.8534 19.9843C17.1078 19.998 17.3621 19.9788 17.6179 19.9664C18.0183 19.9453 18.4092 19.8369 18.7633 19.6488C18.9432 19.5557 19.1189 19.4548 19.2899 19.3462C19.2899 19.3462 19.3481 19.3068 19.4618 19.2225C19.6474 19.085 19.7615 18.9874 19.9155 18.8265C20.031 18.7073 20.1273 18.5689 20.2043 18.4113C20.3115 18.1871 20.4188 17.7595 20.4628 17.4034C20.4958 17.1311 20.4861 16.9826 20.482 16.8905C20.4765 16.7434 20.3541 16.5907 20.2208 16.5261L19.4205 16.1672C19.4205 16.1672 18.2243 15.6461 17.4928 15.3134C17.4162 15.28 17.3342 15.2609 17.2508 15.257C17.1567 15.2472 17.0616 15.2577 16.9719 15.2878C16.8822 15.3179 16.8001 15.367 16.731 15.4316C16.7241 15.4289 16.632 15.5073 15.6379 16.7118C15.5808 16.7884 15.5022 16.8464 15.4121 16.8782C15.322 16.91 15.2245 16.9143 15.1319 16.8905C15.0423 16.8666 14.9545 16.8363 14.8693 16.7998C14.6988 16.7283 14.6396 16.7008 14.5228 16.6512C13.7333 16.3074 13.0026 15.842 12.3571 15.2721C12.1839 15.1209 12.023 14.9559 11.858 14.7964C11.3171 14.2783 10.8457 13.6922 10.4555 13.0529L10.3744 12.9222C10.317 12.834 10.2699 12.7394 10.2341 12.6404C10.1819 12.4382 10.318 12.276 10.318 12.276C10.318 12.276 10.6521 11.9102 10.8075 11.7122C10.9588 11.5197 11.0866 11.3328 11.1691 11.1994C11.3314 10.9381 11.3823 10.67 11.297 10.4624C10.912 9.52188 10.5142 8.58642 10.1035 7.656C10.0224 7.47175 9.78177 7.33975 9.56315 7.31362C9.4889 7.30446 9.41465 7.29712 9.3404 7.29163C9.15577 7.28104 8.97065 7.28287 8.78627 7.29713L9.06402 7.2875Z" fill="white"/>
+                      </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="contact-us stagger-li">
+                <a href="javascript:void(0);" class="view-all">
+                  <span class="text">Contact Us</span>
+                  <span class="circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                      <path d="M19.4425 13.5931L1.75468 13.5931C1.30622 13.5931 0.9303 13.4414 0.62693 13.138C0.32356 12.8347 0.171875 12.4587 0.171875 12.0103C0.171875 11.5618 0.32356 11.1859 0.62693 10.8825C0.9303 10.5792 1.30622 10.4275 1.75468 10.4275L19.4425 10.4275L11.6867 2.67177C11.3702 2.35521 11.2185 1.98589 11.2317 1.56381C11.2449 1.14173 11.4098 0.772406 11.7263 0.455846C12.0429 0.165666 12.4122 0.0139809 12.8343 0.000790847C13.2564 -0.0123992 13.6257 0.139286 13.9422 0.455846L24.3887 10.9023C24.547 11.0606 24.6591 11.2321 24.7251 11.4167C24.791 11.6014 24.824 11.7992 24.824 12.0103C24.824 12.2213 24.791 12.4192 24.7251 12.6038C24.6591 12.7885 24.547 12.96 24.3887 13.1182L13.9422 23.5647C13.6521 23.8549 13.2893 24 12.8541 24C12.4188 24 12.0429 23.8549 11.7263 23.5647C11.4098 23.2482 11.2515 22.8723 11.2515 22.437C11.2515 22.0017 11.4098 21.6258 11.7263 21.3092L19.4425 13.5931Z" fill="#4E9C5A"></path>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="call-us stagger-li">
+                <a href="#" class="view-all pos-ab-aligh-right ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M22.6 24C19.8222 24 17.0778 23.3944 14.3667 22.1833C11.6556 20.9722 9.18889 19.2556 6.96667 17.0333C4.74444 14.8111 3.02778 12.3444 1.81667 9.63333C0.605556 6.92222 0 4.17778 0 1.4C0 1 0.133333 0.666667 0.4 0.4C0.666667 0.133333 1 0 1.4 0H6.8C7.11111 0 7.38889 0.105556 7.63333 0.316667C7.87778 0.527778 8.02222 0.777778 8.06667 1.06667L8.93333 5.73333C8.97778 6.08889 8.96667 6.38889 8.9 6.63333C8.83333 6.87778 8.71111 7.08889 8.53333 7.26667L5.3 10.5333C5.74444 11.3556 6.27222 12.15 6.88333 12.9167C7.49444 13.6833 8.16667 14.4222 8.9 15.1333C9.58889 15.8222 10.3111 16.4611 11.0667 17.05C11.8222 17.6389 12.6222 18.1778 13.4667 18.6667L16.6 15.5333C16.8 15.3333 17.0611 15.1833 17.3833 15.0833C17.7056 14.9833 18.0222 14.9556 18.3333 15L22.9333 15.9333C23.2444 16.0222 23.5 16.1833 23.7 16.4167C23.9 16.65 24 16.9111 24 17.2V22.6C24 23 23.8667 23.3333 23.6 23.6C23.3333 23.8667 23 24 22.6 24Z" fill="#242424"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      {/* home cta section ends */}
 
       {/* footer starts */}
       <footer>
@@ -677,7 +659,7 @@ const Header = () => {
 
 export default function Home() {
   return (
-    <main className="inside-page inside-child contact-main">
+    <main className="inside-page inside-child emqonnect-detail">
       <Header />
     </main>
   );

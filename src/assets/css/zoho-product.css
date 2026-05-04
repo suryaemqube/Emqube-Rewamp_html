@@ -309,7 +309,7 @@
 }
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
   border: none;
-  padding: 15px 0;
+  padding: 20px 0 15px;
   border-bottom: 1px solid #7A7A7A;
   box-sizing: border-box;
   width: 100%;
@@ -318,6 +318,7 @@
 @media (max-width: 1500px) {
   .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li input, .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li textarea {
     font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+    padding: 15px 0 12px;
   }
 }
 @media (max-width: 767px) {

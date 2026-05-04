@@ -370,39 +370,293 @@ const Header = () => {
         <div class="container">
           <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
             <span><a href="/">Home</a></span>
-            <span><span> / </span><a href="/website-development/">Website Development</a></span>
-            <span><span> / </span><span class="post post-page current-item">About Website Development</span></span>
+            <span><span> / </span><span class="post post-page current-item">emQonnect</span></span>
           </div>
           <div className="title-wrapp">
-            <p className="parent-page-title">Software Development</p>
-            <h1><span className="txt-regular">Custom</span> Business Application <br />Development <span className="txt-regular">in Dubai</span></h1>
-            <p className="sub-txt">Bespoke Software Solutions Tailored to Your Unique Business Logic</p>
-          </div>
-          <div className="scroll-down-arrow">
-            <a href="#"
-              onClick={(e) => {
-                e.preventDefault();
-
-                gsap.to(window, {
-                  duration: 1,
-                  scrollTo: {
-                    y: ".intro-highlight-wrapper", // target section class or id
-                    offsetY: 50,       // 👈 your offset
-                  },
-                  ease: "power2.out",
-                });
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M8 18L12 22M12 22L16 18M12 22V2" stroke="#4E9C5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
+            <h1>emQonnect</h1>
+            <p>Standing out in the age of information can be challenging-but we know how to do just that. Operating across sectors and helping businesses of all kinds has allowed us to brainstorm and come up with unique ways of communicating to consumers. Get the latest insights about everything web and expand your expertise with us.</p>
           </div>
         </div>
       </section>
       {/* Inside intro section ends */}
 
-      
+      {/* emqonnect listing section starts */}
+      <section className="emqonnect-list-wrapper">
+        <div className="container">
+          <div className="emqonnect-top-filter">
+            <div className="filter-left">
+              <p>Filter by Category :</p>
+              <select>
+                <option>Search Engine Marketing</option>
+                <option>Emailer</option>
+              </select>
+            </div>
+            <div className="filter-right">
+              <p>Change View: </p>
+              <ul className="layout-view">
+                <li className="grid active">
+                  <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                      <rect x="0.5" y="0.5" width="11" height="11" stroke="white"/>
+                      <rect x="15.5" y="0.5" width="11" height="11" stroke="white"/>
+                      <rect x="15.5" y="15.5" width="11" height="11" stroke="white"/>
+                      <rect x="0.5" y="15.5" width="11" height="11" stroke="white"/>
+                    </svg>
+                  </a>
+                </li>
+                <li className="list">
+                  <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23" fill="none">
+                      <line y1="0.5" x2="30" y2="0.5" stroke="#4E9C5A"/>
+                      <line y1="11.5" x2="24.3243" y2="11.5" stroke="#4E9C5A"/>
+                      <line y1="22.5" x2="17.027" y2="22.5" stroke="#4E9C5A"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="emqonnect-list">
+            <ul>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/get-rid-of-your-inner-enemies-in-2025.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/the-rejuvenating-effect-of-shinrin-yoku.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/content-marketing-will-rule.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/are-you-drip-marketing-not-yet.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/will-emirates-airlines-sell-house-mortgages.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/sticking-to-your-new-year-resolutions.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/meraki-in-all-that-you-do.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/mitigate-the-risk-of-it-project-failures.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/break-free-from-the-chains-of-fopo.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/meraki-in-all-that-you-do.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/mitigate-the-risk-of-it-project-failures.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/emqonnect-detail">
+                  <div className="emq-img">
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <img src="/assets/img/break-free-from-the-chains-of-fopo.webp"></img>
+                  </div>
+                  <div className="emq-blog-txt">
+                    <p className="date">December 26, 2024</p>
+                    <h2>Get rid of your Inner Enemies in 2025</h2>
+                    <div className="blog-txt">
+                      <p>In a world shaken by war and political chaos, let us choose to welcome the new year with higher thinking and deeper understanding to ensure peace and unity. While we cannot </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul className="emqonnect-pagination">
+            <li className="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+          </ul>
+        </div>
+      </section>
+      {/* emqonnect listing section ends */}
 
       {/* home cta section starts */}
       <section className="cta-wrapper">
@@ -578,7 +832,7 @@ const Header = () => {
 
 export default function Home() {
   return (
-    <main className="inside-page inside-child">
+    <main className="inside-page inside-child emqonnect-list">
       <Header />
     </main>
   );

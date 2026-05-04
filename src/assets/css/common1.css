@@ -1,0 +1,76 @@
+/* Play/Pause Button */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: 0.3s ease;
+}
+
+/* Optional hover effect */
+.video-wrapper:hover .play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Tabs */
+/* Video Grid */
+.video-list-pradnya {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.video-item {
+  width: 300px;
+}
+
+.video-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Play Button */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image Grid */
+.image-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.image-item {
+  width: 300px;
+}
+
+.image-item img {
+  width: 100%;
+  border-radius: 10px;
+}/*# sourceMappingURL=common1.css.map */

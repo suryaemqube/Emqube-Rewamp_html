@@ -553,37 +553,37 @@ const Header = () => {
                       <ul>
                         <li>
                           <span class="wpcf7-form-control-wrap" data-name="first-name">
-                            <label>First name</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder=""  type="text" name="first-name" />
+                            {/* <label>First name</label> */}
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First name"  type="text" name="first-name" />
                           </span>
                         </li>
                         <li>
                           <span class="wpcf7-form-control-wrap" data-name="last-name">
-                            <label>Last Name</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder=""  type="text" name="last-name" />
+                            {/* <label>Last Name</label> */}
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name"  type="text" name="last-name" />
                           </span>
                         </li>
                         <li>
                           <span class="wpcf7-form-control-wrap" data-name="company-name">
-                            <label>Company Name</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder=""  type="text" name="company-name" />
+                            {/* <label>Company Name</label> */}
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Company Name"  type="text" name="company-name" />
                           </span>
                         </li>
                         <li className="w-50">
                           <span class="wpcf7-form-control-wrap" data-name="company-email">
-                            <label>Email</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder=""  type="email" name="company-email" />
+                            {/* <label>Email</label> */}
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email"  type="email" name="company-email" />
                           </span>
                         </li>
                         <li className="w-50">
                           <span class="wpcf7-form-control-wrap" data-name="mobile-number">
-                            <label>Phone No.</label>
-                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder=""  type="tel" name="mobile-number" />
+                            {/* <label>Phone No.</label> */}
+                            <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone No."  type="tel" name="mobile-number" />
                           </span>
                         </li>
                         <li className="w-100">
-                          <label>Describe your requirements</label>
-                          <textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="" name="your-message" spellcheck="false"></textarea>
+                          {/* <label>Describe your requirements</label> */}
+                          <textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Describe your requirements" name="your-message" spellcheck="false"></textarea>
                         </li>
                         <li className="w-100">
                           <div class="submit-button-wrap">

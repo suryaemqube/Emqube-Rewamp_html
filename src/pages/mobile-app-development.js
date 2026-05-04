@@ -73,146 +73,6 @@ const Header = () => {
     </svg>
   );
 
-
-  const MediaCard = ({ item }) => {
-
-    const videoRef = useRef(null);
-    const isPlaying = activeVideoId === `${activeRefTab}-${item.id}`;
-
-    // const handlePlay = (e) => {
-    //   document.querySelectorAll("video").forEach((v) => {
-    //     if (v !== e.target) v.pause();
-    //   });
-    //   e.target.play();
-    // };
-
-    // const toggleVideo = () => {
-    //   const video = videoRef.current;
-
-    //   console.log("clicked", video);
-    //   if (!video) return;
-
-    //   // Pause all videos
-    //   document.querySelectorAll("video").forEach((v) => v.pause());
-
-    //   if (isPlaying) {
-    //     video.play();
-    //     setActiveVideoId(null);
-    //   } else {
-    //     const playPromise = video.play();
-
-    //     if (playPromise !== undefined) {
-    //       playPromise
-    //         .then(() => {
-    //           console.log("playing...");
-    //         })
-    //         .catch((err) => {
-    //           console.log("play error:", err);
-    //         });
-    //     }
-    //     setActiveVideoId(`${activeRefTab}-${item.id}`);
-    //   }
-    // };
-
-    const toggleVideo = () => {
-      const video = videoRef.current;
-      if (!video) return;
-
-      // pause all other videos (your existing logic 👍)
-      document.querySelectorAll("video").forEach((v) => {
-        if (v !== video) v.pause();
-      });
-
-      // toggle play / pause
-      if (video.paused) {
-        video.play().catch(() => {});
-        setActiveVideoId(`${activeRefTab}-${item.id}`);
-      } else {
-        video.pause();
-        setActiveVideoId(null);
-      }
-    };
-
-    const content =
-      item.type === "video" ? (
-        <div className="video-wrapper">
-          <video
-            ref={videoRef}
-            src={item.src}
-            muted
-            playsInline
-            // onClick={handlePlay}
-            // onClick={toggleVideo}
-          />
-
-          {/* Play / Pause Button */}
-          <button className="video-control" 
-            onClick={(e) => {
-              e.preventDefault();
-              // e.stopPropagation();   // 🔥 important (avoid double trigger)
-              toggleVideo();
-            }}
-          // onClick={toggleVideo}
-          >
-            {/* {isPlaying ? "⏸" : "▶"} */}
-            {isPlaying ? <PauseIcon /> : <PlayIcon />}
-          </button>
-        </div>
-        // <video
-        //   src={item.src}
-        //   muted
-        //   playsInline
-        //   onClick={handlePlay}
-        // />
-      ) : (
-        <img src={item.src} alt="" />
-      );
-
-    // 👉 POSTS (external link)
-    if (item.link && item.link.startsWith("http")) {
-      return (
-        <a href={item.link} target="_blank" rel="noopener noreferrer" className="media-card">
-          {content}
-        </a>
-      );
-    }
-
-    // 👉 ARTICLES (internal link)
-    if (item.link) {
-      return (
-        <a href={item.link} className="media-card">
-          {content}
-        </a>
-      );
-    }
-
-    // 👉 REELS (no link)
-    return <div className="media-card">{content}</div>;
-  };
-
-  const isMobile1 = windowWidth < 1024;
-  const items = referenceData[activeRefTab];
-
-  // const VideoCard = ({ src }) => {
-  //   const handlePlay = (e) => {
-  //     document.querySelectorAll("video").forEach((v) => {
-  //       if (v !== e.target) v.pause();
-  //     });
-  //     e.target.play();
-  //   };
-
-  //   return (
-  //     <div className="video-card">
-  //       <video
-  //         src={src}
-  //         muted
-  //         playsInline
-  //         onClick={handlePlay}
-  //       />
-  //     </div>
-  //   );
-  // };
-
   // for references section - reels / posts / articles - Ends
 
   useEffect(() => {
@@ -256,7 +116,6 @@ const Header = () => {
     });
   };
 
-  const [activeTab, setActiveTab] = useState('custom');
 
   const [activeAccordion, setActiveAccordion] = useState(null);
   
@@ -469,36 +328,6 @@ const Header = () => {
   // onload intro section animation - ends
 
   // onscroll straegic section aniamtion - starts
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger)
-
-  //   const items = gsap.utils.toArray(".strategic-choice-wrapper li")
-
-  //   items.forEach((item) => {
-  //     const line = item.querySelector(".line-fill")
-  //     const content = item.querySelector(".right")
-
-  //     gsap.fromTo(
-  //       line,
-  //       {
-  //         height: "0%",
-  //       },
-  //       {
-  //         height: "calc(100% - 45px)",
-  //         ease: "none",
-  //         scrollTrigger: {
-  //           trigger: item,
-  //           start: "top 70%",
-  //           end: "bottom 30%",
-  //           scrub: true, // 🔥 THIS makes it smooth & reversible
-            
-  //           onEnter: () => content.classList.add("active"),
-  //           onLeaveBack: () => content.classList.remove("active"),
-  //         },
-  //       }
-  //     )
-  //   })
-  // }, [])
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -581,6 +410,53 @@ const Header = () => {
     };
 
   // create collapsible footer menu - ends
+
+  const [activeTab, setActiveTab] = useState("reels");
+    
+  const videoRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const reels = [
+    { id: 1, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/05/tamam-reel-1.mp4" },
+    { id: 2, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/06/homework-reel-3.mp4" },
+    { id: 3, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/05/emovers-reel-1.mp4" },
+  ];
+  const posts = [
+    { id: 1, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/cc-social-media-thumb.jpg", link: "https://www.instagram.com/corporateconnectionsuae/" },
+    { id: 2, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/emovers-social-media-thumb-v1.jpg", link: "https://instagram.com/emoversuae/" },
+    { id: 3, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/tamam-social-media-thumb-v1.jpg", link: "https://www.instagram.com/tamammovers/" },
+    { id: 4, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/tld-social-media-v1.jpg", link: "https://www.instagram.com/leatherdocuae/" },
+    { id: 5, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/electricway-social-media-thumb-v1.jpg", link: "https://www.instagram.com/electric_way/" },
+  ];
+  const articles = [
+    { id: 1, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/Emovers-mailer.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/Emovers-mailer.jpg" },
+    { id: 2, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/Insurance-policy-mailer.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/Insurance-policy-mailer.jpg" },
+    { id: 3, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/Homework-mailer.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/Homework-mailer.jpg" },
+    { id: 4, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/Tamam-mailer-1.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/Tamam-mailer-1.jpg" },
+    { id: 5, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/TLD-mailer.jpg", link: "https://www.wp.emqubeweb.com/wp-content/uploads/TLD-mailer.jpg" },
+  ];
+
+  const isMobile1 = windowWidth < 1024;
+
+  const handleToggle = (index) => {
+    const currentVideo = videoRefs.current[index];
+
+    // Pause all videos
+    videoRefs.current.forEach((video, i) => {
+      if (video && i !== index) {
+        video.pause();
+      }
+    });
+
+    // Toggle
+    if (activeIndex === index) {
+      currentVideo.pause();
+      setActiveIndex(null);
+    } else {
+      currentVideo.play();
+      setActiveIndex(index);
+    }
+  };
 
   return (
     <>
@@ -1689,58 +1565,195 @@ const Header = () => {
         <div className="container">
           <h2>References</h2>
         </div>
-        {/* 48 36 36 */}
         {/* Tabs */}
         <div className="ref-inside">
           <div className="container">
-            <div className="ref-tabs">
-              {["reels", "posts", "articles"].map((tab) => (
-                <button
-                  key={tab}
-                  className={activeRefTab === tab ? "active" : ""}
-                  onClick={() => setActiveRefTab(tab)}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
+            <div className="ref-tabs tabs">
+              <button
+                className={activeTab === "reels" ? "active" : ""}
+                onClick={() => setActiveTab("reels")}
+              >
+                Reels
+              </button>
+              <button
+                className={activeTab === "posts" ? "active" : ""}
+                onClick={() => setActiveTab("posts")}
+              >
+                Posts
+              </button>
+              <button
+                className={activeTab === "articles" ? "active" : ""}
+                onClick={() => setActiveTab("articles")}
+              >
+                Articles
+              </button>
             </div>
             {/* Content */}
-            <div className="ref-content">
-              {(isMobile1 || items.length > 4) ? (
-                <Swiper
-                  modules={[Navigation]}
-                  loop = "true"
-                  spaceBetween={20}
-                  slidesPerView={4}
-                  // navigation={!isMobile1} // hide arrows on mobile if you want
-                  navigation={{
-                    nextEl: `.next-${activeRefTab}`,
-                    prevEl: `.prev-${activeRefTab}`,
-                  }}
-                  breakpoints={{
-                    320: { slidesPerView: 1.1 },
-                    480: { slidesPerView: 1.5 },
-                    768: { slidesPerView: 2.5 },
-                    1024: { slidesPerView: 4 },
-                  }}
-                  key={activeRefTab}
-                >
-                  {items.map((item) => (
-                    <SwiperSlide key={item.id}>
-                      <MediaCard item={item} />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              ) : (
-                <div className="ref-grid">
-                  {items.map((item) => (
-                    <MediaCard 
-                      key={item.id} 
-                      item={item}
-                      activeVideoId={activeVideoId}
-                      setActiveVideoId={setActiveVideoId} 
-                    />
-                  ))}
+            <div className="ref-content tab-content">
+              {/* ✅ Videos */}
+              {activeTab === "reels" && (
+                <div className="video-list reels-wrapper">
+                  {(isMobile1 || reels.length > 4) ? (
+                    <Swiper
+                      modules={[Navigation]}
+                      loop = "true"
+                      spaceBetween={20}
+                      slidesPerView={4}
+                      // navigation={!isMobile1} // hide arrows on mobile if you want
+                      // navigation={{
+                      //   nextEl: `.next-${activeRefTab}`,
+                      //   prevEl: `.prev-${activeRefTab}`,
+                      // }}
+                      breakpoints={{
+                        0: { 
+                          slidesPerView: 1,
+                          spaceBetween: 10,
+                        },
+                        768: { slidesPerView: 2.5 },
+                        1024: { slidesPerView: 4 },
+                      }}
+                      // key={activeRefTab}
+                    >
+                      {reels.map((video, index) => (
+                        <SwiperSlide key={index}>
+                          <div key={video.id} className="video-item">
+                            <div
+                              className="video-wrapper"
+                              onClick={() => handleToggle(index)}
+                            >
+                              <video
+                                ref={(el) => (videoRefs.current[index] = el)}
+                                src={video.src}
+                                muted
+                                playsInline
+                                preload="metadata"
+                                className="video"
+                              />
+
+                              <div className="play-btn">
+                                {activeIndex === index ? "❚❚" : "▶"}
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="ref-grid">
+                      {reels.map((video, index) => (
+                        <div key={video.id} className="video-item">
+                          <div
+                            className="video-wrapper"
+                            onClick={() => handleToggle(index)}
+                          >
+                            <video
+                              ref={(el) => (videoRefs.current[index] = el)}
+                              src={video.src}
+                              muted
+                              playsInline
+                              preload="metadata"
+                              className="video"
+                            />
+
+                            <div className="play-btn">
+                              {activeIndex === index ? "❚❚" : "▶"}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+              {/* ✅ Posts */}
+              {activeTab === "posts" && (
+                <div className="image-list posts-wrapper">
+                  {(isMobile1 || posts.length > 3) ? (
+                    <Swiper
+                      modules={[Navigation]}
+                      loop = "true"
+                      spaceBetween={20}
+                      slidesPerView={4}
+                      // navigation={!isMobile1} // hide arrows on mobile if you want
+                      // navigation={{
+                      //   nextEl: `.next-${activeRefTab}`,
+                      //   prevEl: `.prev-${activeRefTab}`,
+                      // }}
+                      breakpoints={{
+                        320: { slidesPerView: 1.1 },
+                        480: { slidesPerView: 1.5 },
+                        768: { slidesPerView: 2.5 },
+                        1024: { slidesPerView: 4 },
+                      }}
+                      // key={activeRefTab}
+                    >
+                      {posts.map((img) => (
+                        <SwiperSlide key={img}>
+                          <div key={img.id} className="image-item">
+                            <a href={img.link} target="_blank" rel="noreferrer">
+                              <img src={img.src} alt="" />
+                            </a>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="ref-grid">
+                      {posts.map((img) => (
+                        <div key={img.id} className="image-item">
+                          <a href={img.link} target="_blank" rel="noreferrer">
+                            <img src={img.src} alt="" />
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+              {/* ✅ Articles */}
+              {activeTab === "articles" && (
+                <div className="arti-list articles-wrapper">
+                  {(isMobile1 || articles.length > 3) ? (
+                    <Swiper
+                      modules={[Navigation]}
+                      loop = "true"
+                      spaceBetween={20}
+                      slidesPerView={4}
+                      // navigation={!isMobile1} // hide arrows on mobile if you want
+                      // navigation={{
+                      //   nextEl: `.next-${activeRefTab}`,
+                      //   prevEl: `.prev-${activeRefTab}`,
+                      // }}
+                      breakpoints={{
+                        320: { slidesPerView: 1.1 },
+                        480: { slidesPerView: 1.5 },
+                        768: { slidesPerView: 2.5 },
+                        1024: { slidesPerView: 4 },
+                      }}
+                      // key={activeRefTab}
+                    >
+                      {articles.map((img) => (
+                        <SwiperSlide key={img}>
+                          <div key={img.id} className="image-item">
+                            <a href={img.link} target="_blank" rel="noreferrer">
+                              <img src={img.src} alt="" />
+                            </a>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="ref-grid">
+                      {articles.map((img) => (
+                        <div key={img.id} className="image-item">
+                          <a href={img.link} target="_blank" rel="noreferrer">
+                            <img src={img.src} alt="" />
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  
                 </div>
               )}
             </div>
@@ -1771,7 +1784,7 @@ const Header = () => {
             autoplay={{ delay: 3000 }}
             breakpoints={{
               0: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 spaceBetween: 10,
                 slidesOffsetBefore: 20,
               },

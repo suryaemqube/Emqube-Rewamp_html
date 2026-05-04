@@ -310,7 +310,7 @@ template {
   display: none;
 }
 
-body {
+body, input, textarea, select {
   font-family: HelvNowDis-reg;
   color: var(--black);
 }
