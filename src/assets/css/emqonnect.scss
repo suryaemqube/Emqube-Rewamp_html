@@ -137,10 +137,10 @@ main.emqonnect-list.inside-page{
         .filter-left{
           display: flex;
           align-items: center;
-          @media(max-width: 767px){
-            flex-direction: column;
-            align-items: flex-start;
-          }
+          // @media(max-width: 767px){
+          //   flex-direction: column;
+          //   align-items: flex-start;
+          // }
           p{
             font-size: 14px;
             color: var(--black);
@@ -161,7 +161,7 @@ main.emqonnect-list.inside-page{
               height: 40px;
             }
             @media(max-width: 767px){
-              margin-left: 0;
+              margin-left: 10px;
               height: 35px;
               padding: 5px 10px;
             }
@@ -173,9 +173,21 @@ main.emqonnect-list.inside-page{
         .filter-right{
           display: flex;
           align-items: center;
+          padding-right: 120px;
+          @media(max-width: 1500px){
+            padding-right: 130px;
+          }
+          @media(max-width: 1200px){
+            padding-right: 120px;
+          }
+          @media(max-width: 1080px){
+            padding-right: 85px;
+          }
           @media(max-width: 767px){
             flex-direction: column;
             align-items: flex-start;
+            padding-right: 0;
+            display: none;
           }
           p{
             font-size: 16px;
@@ -197,6 +209,7 @@ main.emqonnect-list.inside-page{
               margin-left: 0;
             }
             li{
+              cursor: pointer;
               a{
                 width: 40px;
                 height: 40px;
@@ -277,6 +290,12 @@ main.emqonnect-list.inside-page{
           flex-wrap: wrap;
           // 1024 - 1920 : 72 20 - 135 20
           gap: clamp(4.5rem, -0.0006rem + 7.0321vw, 8.438rem) 20px;
+          @media(max-width: 991px){
+            gap: 40px 20px;
+          }
+          @media(max-width: 767px){
+            gap: 20px;
+          }
           li{
             border-radius: 5px;
             width: 32.5%;
@@ -338,6 +357,7 @@ main.emqonnect-list.inside-page{
                   height: 100%;
                   object-fit: cover;
                   object-position: center center;
+                  border-radius: 5px 5px 0 0;
                 }
                 &::before{
                   content: '';
@@ -395,6 +415,67 @@ main.emqonnect-list.inside-page{
               .emq-blog-txt{
                 h2{
                   color: #767676 !important;
+                }
+              }
+            }
+          }
+          &.list{
+            flex-direction: column;
+            gap: 30px;
+            @media(max-width: 767px){
+              gap: 20px;
+            }
+            li{
+              width: 100%;
+              a{
+                display: flex;
+                align-items: stretch;
+                @media(max-width: 767px){
+                  flex-direction: column;
+                }
+                .emq-img{
+                  @media(min-width: 768px){
+                    border-radius: 5px 0 0 5px;
+                    width: 33%;
+                    height: auto;
+                  }
+                  @media(min-width: 768px) and (max-width: 1080px){
+                    width: 30%;
+                  }
+                  .arrow-icon{
+                    @media(min-width: 768px) and (max-width: 1080px){
+                      top: 15px;
+                      right: 15px;
+                    }
+                  }
+                  &:before{
+                    @media(min-width: 768px){
+                      border-radius: 5px 0 0 5px;
+                    }
+                  }
+                  img{
+                    @media(min-width: 768px){
+                      border-radius: 5px 0 0 5px;
+                    }
+                  }
+                }
+                .emq-blog-txt{
+                  @media(min-width: 768px){
+                    width: 67%;
+                    // 1024 - 1920 : 15 15 25 - 35 30 50
+                    padding: 5px clamp(0.938rem, -0.4906rem + 2.2321vw, 2.188rem) clamp(0.938rem, -0.1329rem + 1.6732vw, 1.875rem) clamp(1.563rem, -0.2221rem + 2.7893vw, 3.125rem);
+                  }
+                  @media(min-width: 768px) and (max-width: 1080px){
+                    width: 70%;
+                  }
+                  h2{
+                    @media(min-width: 768px){
+                      margin-bottom: 18px;
+                    }
+                    @media(min-width: 768px) and (max-width: 1080px){
+                      margin-bottom: 15px;
+                    }
+                  }
                 }
               }
             }

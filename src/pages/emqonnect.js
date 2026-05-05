@@ -207,6 +207,8 @@ const Header = () => {
 
   // create collapsible footer menu - ends
 
+  const [view, setView] = useState("grid"); // default
+
   return (
     <>
     
@@ -394,7 +396,12 @@ const Header = () => {
             <div className="filter-right">
               <p>Change View: </p>
               <ul className="layout-view">
-                <li className="grid active">
+                <li className={`grid ${view === "grid" ? "active" : ""}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setView("grid");
+                  }}
+                >
                   <a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
                       <rect x="0.5" y="0.5" width="11" height="11" stroke="white"/>
@@ -404,7 +411,12 @@ const Header = () => {
                     </svg>
                   </a>
                 </li>
-                <li className="list">
+                <li className={`list ${view === "list" ? "active" : ""}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setView("list");
+                  }}
+                >
                   <a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23" fill="none">
                       <line y1="0.5" x2="30" y2="0.5" stroke="#4E9C5A"/>
@@ -417,7 +429,7 @@ const Header = () => {
             </div>
           </div>
           <div className="emqonnect-list">
-            <ul>
+            <ul className={`items-wrapper ${view}`}>
               <li>
                 <a href="/emqonnect-detail">
                   <div className="emq-img">
