@@ -27,15 +27,21 @@ export default function Home({ data }) {
     // const { ScrollTrigger } = require("gsap/ScrollTrigger")
     gsap.registerPlugin(ScrollTrigger)
   }, [])
+  
 
-  const loadMore = () => {
-    setVisibleCount((prev) => prev + 9);
-  };
+  useEffect(() => {
+    const loadMore = () => {
+      setVisibleCount((prev) => prev + 9);
+    };
+  }, [])  
 
-  const logos = options?.brandLogos.map(item => ({
-    src: item.mediaItemUrl, 
-    alt: item.altText
-  }));
+
+  useEffect(() => {
+    const logos = options?.brandLogos.map(item => ({
+      src: item.mediaItemUrl, 
+      alt: item.altText
+    }));
+  }, [])
 
 
   // homepage video section animation - onscroll - starts
