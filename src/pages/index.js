@@ -7,7 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import Layout from "../components/Layout";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
+
+
 
 
 export default function Home({ data }) {
@@ -20,6 +22,11 @@ export default function Home({ data }) {
   const wrapperRef = useRef(null);
 
   const [visibleCount, setVisibleCount] = useState(8);
+
+  useEffect(() => {
+    // const { ScrollTrigger } = require("gsap/ScrollTrigger")
+    gsap.registerPlugin(ScrollTrigger)
+  }, [])
 
   const loadMore = () => {
     setVisibleCount((prev) => prev + 9);
