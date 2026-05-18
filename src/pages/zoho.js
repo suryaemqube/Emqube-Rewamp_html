@@ -367,6 +367,32 @@ const Header = () => {
 
   // create collapsible footer menu - ends
 
+  // onclick scroll to specific section - starts
+  const getOffset = () => {
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      return 130; // mobile
+    } else if (window.matchMedia("(max-width: 1080px)").matches) {
+      return 80; // tablet / iPad
+    } else {
+      return 100; // desktop
+    }
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      const offset = getOffset();
+      const position = element.offsetTop - offset;
+
+      window.scrollTo({
+        top: position,
+        behavior: "smooth",
+      });
+    }
+  };
+  // onclick scroll to specific section - ends
+
   return (
     <>
     
@@ -538,12 +564,24 @@ const Header = () => {
           </div>
           <div className="product-head-wrapper">
             <div className="left">
-              <div className="partner-tag">
-                <img src="/assets/img/authorized-icon.svg" alt="Authorized Partner"></img>
-                <p>Authorized Partner</p>
+              <div className="zoho-left-top-wrapp">
+                <div className="zoho-logo">
+                  <img src="/assets/img/zoho-logo-top.png"></img>
+                </div>
+                <div className="partner-tag">
+                  <img src="/assets/img/authorized-icon.svg" alt="Authorized Partner"></img>
+                  <p>Authorized Partner</p>
+                </div>
               </div>
               <h1>Expert Zoho CRM <span className="txt-regular">Partner in Dubai</span></h1>
               <p className="sub-txt">Maximise the complete value <br />of your customer life cycle</p>
+              <div className="zoho-interlinks">
+                <ul>
+                  <li><a onClick={() => scrollToSection("zoho-crm-module")}>Zoho CRM Modules & Features</a></li>
+                  <li><a onClick={() => scrollToSection("zoho-crm-service")}>Our Specialized CRM Services</a></li>
+                  <li><a onClick={() => scrollToSection("zoho-eng-model")}>Our Proven Engagement Model</a></li>
+                </ul>
+              </div>
             </div>
             <div className="right">
               <div className="form-wrap">
@@ -551,31 +589,31 @@ const Header = () => {
                   <form>
                     <div className="form-wrapper">
                       <ul>
-                        <li>
+                        <li className="w-50">
                           <span class="wpcf7-form-control-wrap" data-name="first-name">
                             {/* <label>First name</label> */}
                             <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First name"  type="text" name="first-name" />
                           </span>
                         </li>
-                        <li>
+                        <li className="w-50">
                           <span class="wpcf7-form-control-wrap" data-name="last-name">
                             {/* <label>Last Name</label> */}
                             <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Last Name"  type="text" name="last-name" />
                           </span>
                         </li>
-                        <li>
+                        <li className="w-100">
                           <span class="wpcf7-form-control-wrap" data-name="company-name">
                             {/* <label>Company Name</label> */}
                             <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Company Name"  type="text" name="company-name" />
                           </span>
                         </li>
-                        <li className="w-50">
+                        <li className="w-100">
                           <span class="wpcf7-form-control-wrap" data-name="company-email">
                             {/* <label>Email</label> */}
                             <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email"  type="email" name="company-email" />
                           </span>
                         </li>
-                        <li className="w-50">
+                        <li className="w-100">
                           <span class="wpcf7-form-control-wrap" data-name="mobile-number">
                             {/* <label>Phone No.</label> */}
                             <input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone No."  type="tel" name="mobile-number" />
@@ -620,7 +658,7 @@ const Header = () => {
       {/* child page intro highlight section ends */}
 
       {/* Child page strategic choice section starts */}
-      <section className="strategic-choice-wrapper">
+      <section className="strategic-choice-wrapper" id="zoho-crm-module">
         <div className="container">
           <h2>Zoho CRM Modules & Features</h2>
           <ul>
@@ -704,7 +742,7 @@ const Header = () => {
       {/* Child page strategic choice section ends */}
 
       {/* crm services section starts */}
-      <section className="zoho-crm-wrapper">
+      <section className="zoho-crm-wrapper" id="zoho-crm-service">
         <div className="container">
           <h2>Our Specialized CRM Services</h2>
           <ul className="crm-list">
@@ -788,7 +826,7 @@ const Header = () => {
       {/* crm services section ends */}
 
       {/* engagement model starts */}
-      <section className="engagement-model-wrapp">
+      <section className="engagement-model-wrapp" id="zoho-eng-model">
         <div className="container">
           <h2 className="txt-center slide-up">Our Proven Engagement Model</h2>
           <div className="eng-model-step">
@@ -1220,7 +1258,7 @@ const Header = () => {
       {/* footer ends */}
 
       {/* Sticky buttons starts */}
-      <div class="sticky-buttons">
+      <div className={`sticky-buttons ${showTop ? "active" : ""}`}>
         <a href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
             <circle cx="36" cy="36" r="36" fill="#4E9C5A"/>

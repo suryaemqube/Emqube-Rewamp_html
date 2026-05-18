@@ -52,12 +52,19 @@ main.about-us.inside-page{
         @media(min-width: 1001px){
           top: 0;
         }
+        @media(max-width: 767px){
+          order: 3;
+        }
       }
       .inside-intro-title{
         // 1024 - 1920 : 16 - 30
         padding-top: clamp(1rem, 0.0000rem + 1.5625vw, 1.875rem);
         // 1024 - 1920 : 15 - 27
         margin-bottom: clamp(0.938rem, 0.0809rem + 1.3393vw, 1.688rem);
+        @media(max-width: 767px){
+          order: 1;
+          padding-bottom: 0;
+        }
         h1{
           line-height: 1em;
           // 1024 - 1920 : 18 - 34
@@ -71,6 +78,11 @@ main.about-us.inside-page{
             font-size: clamp(1.063rem, 1.0348rem + 0.1411vw, 1.125rem);
           }
         }
+        &:after{
+          @media(max-width: 767px){
+            display: none;
+          }
+        }
       }
       .inside-intro-count.right{
         @media(min-width: 1001px){
@@ -81,6 +93,9 @@ main.about-us.inside-page{
         @media(min-width: 1365px) and (max-width: 1500px){
           bottom: -70px;
           right: 55px;
+        }
+        @media(max-width: 767px){
+          order: 4;
         }
         .bg-green{
           @media(min-width: 1365px) and (max-width: 1500px){
@@ -107,6 +122,10 @@ main.about-us.inside-page{
 					width: 80%;
 					order: 4;
 				}
+        @media(max-width: 767px){
+          order: 2;
+          padding-top: 0;
+        }
 				@media(max-width: 500px){
 					width: 100%;
 				}

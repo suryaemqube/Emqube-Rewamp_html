@@ -14,6 +14,7 @@ $light_grey: var(--light_grey);
 main.case-study-detail.inside-page{
   header{
     z-index: 99;
+    background-color: var(--white);
   }
   position: relative;
   &:after{

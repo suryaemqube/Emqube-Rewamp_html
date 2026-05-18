@@ -73,6 +73,7 @@ content: "\f009";
 .zoho-product{
 	&:after{
 		background-image: url(../img/zoho-bg-img.svg);
+		top: 100px;
 		@media(max-width: 1500px){
 			top: 100px;
 			height: 80%;
@@ -82,7 +83,7 @@ content: "\f009";
 			height: 80%;
 		}
 		@media(max-width: 767px){
-			top: 350px;
+			top: 550px;
 			height: 80%;
 		}
 	}
@@ -107,48 +108,111 @@ content: "\f009";
 					padding-top: 30px;
 				}
 				.left{
-					width: 40%;
+					width: 50%;
 					@media(max-width: 767px){
 						width: 100%;
 						margin-bottom: 30px;
 					}
-					.partner-tag{
-						border-radius: 50px;
-						border: 1px solid var(--light_green);
-						background: #6DD17C;
-						padding: 20px 30px;
-						display: inline-flex;
+					.zoho-left-top-wrapp{
+						display: flex;
 						align-items: center;
-						// 1024 - 1920 : 20 - 38
-						margin-bottom: clamp(1.25rem, -0.0357rem + 2.0089vw, 2.375rem);
-						@media(max-width: 1500px){
-							padding: 15px 25px;
-						}
-						@media(max-width: 1080px){
-							padding: 10px 20px;
-						}
-						@media(max-width: 767px){
-							padding: 10px 15px;
-						}
-						img{
-							width: 40px;
-							height: 40px;
-							margin-right: 15px;
+						justify-content: flex-start;
+						// 1024 - 1920 : 25 - 50
+						margin-bottom: clamp(1.563rem, -0.2221rem + 2.7893vw, 3.125rem);
+						.zoho-logo{
+							width: 260px;
+							margin-right: 35px;
+							@media(max-width: 1500px){
+								width: 230px;
+								margin-right: 25px;
+							}
+							@media(max-width: 1380px){
+								width: 200px;
+								margin-right: 20px;
+							}
 							@media(max-width: 767px){
-								width: 30px;
-								height: 30px;
-								margin-right: 10px;
+								width: 150px;
+								margin-right: 15px;
+							}
+							@media(max-width: 450px){
+								width: 140px;
+								margin-right: 12px;
+							}
+							@media(max-width: 350px){
+								width: 130px;
+								margin-right: 12px;
+							}
+							@media(max-width: 345px){
+								width: 110px;
 							}
 						}
-						p{
-							color: var(--white);
-							line-height: 1.2em;
-							// 1024 - 1920 : 20 - 36
-							font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
-							@media(max-width: 1023px){
-								// 320 - 1023 : 19 - 20
-								font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
-								line-height: 1.3em;
+						.partner-tag{
+							border-radius: 50px;
+							border: 1px solid var(--light_green);
+							background: #6DD17C;
+							padding: 18px 25px;
+							display: inline-flex;
+							align-items: center;
+							// 1024 - 1920 : 20 - 38
+							// margin-bottom: clamp(1.25rem, -0.0357rem + 2.0089vw, 2.375rem);
+							@media(max-width: 1500px){
+								padding: 13px 25px;
+							}
+							@media(max-width: 1080px){
+								padding: 10px 20px;
+							}
+							@media(max-width: 767px){
+								padding: 10px 15px;
+							}
+							@media(max-width: 600px){
+								padding: 7px 11px;
+							}
+							img{
+								width: 25px;
+								height: 25px;
+								margin-right: 15px;
+								@media(max-width: 1500px){
+									width: 23px;
+									height: 23px;
+								}
+								@media(max-width: 767px){
+									width: 20px;
+									height: 20px;
+									margin-right: 10px;
+								}
+								@media(max-width: 600px){
+									width: 16px;
+									height: 16px;
+									margin-right: 5px;
+								}
+							}
+							p{
+								color: var(--white);
+								line-height: 1.2em;
+								// 1024 - 1920 : 20 - 36
+								// font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+								font-size: 20px;
+								@media(max-width: 1500px){
+									font-size: 17px;
+								}
+								@media(max-width: 1380px){
+									// font-size: 16px;
+								}
+								@media(max-width: 1080px){
+									// 320 - 1023 : 19 - 20
+									// font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
+									font-size: 16px;
+									line-height: 1.3em;
+								}
+								@media(max-width: 767px){
+									font-size: 15px;
+								}
+								@media(max-width: 600px){
+									font-size: 14px;
+								}
+								@media(max-width: 345px){
+									font-size: 13px;
+								}
 							}
 						}
 					}
@@ -194,10 +258,80 @@ content: "\f009";
 							// 340 - 767 : 18 - 22
 							font-size: clamp(1.125rem, 0.9259rem + 0.9368vw, 1.375rem);
 						}
+						br{
+							display: none;
+						}
+					}
+					.zoho-interlinks{
+						// 1024 - 1920 : 20 - 38
+						margin-top: clamp(1.25rem, -0.0357rem + 2.0089vw, 2.375rem);
+						ul{
+							display: flex;
+							align-items: stretch;
+							justify-content: flex-start;
+							flex-wrap: wrap;
+							li{
+								a{
+									color: var(--light_green);
+									padding: 3px 18px 3px 0;
+									margin-right: 18px;
+									position: relative;
+									cursor: pointer;
+									margin-bottom: 15px;
+									font-family: HelvNowDis-light;
+                	font-weight: 300;
+									transition: all 0.3s ease-in-out;
+									@media(max-width: 1380px){
+										margin-bottom: 12px;
+									}
+									@media(max-width: 1080px){
+										padding-right: 15px;
+										margin-right: 15px;
+										margin-bottom: 12px;
+									}
+									@media(max-width: 767px){
+										padding-right: 10px;
+										margin-right: 10px;
+										margin-bottom: 8px;
+									}
+									&:after{
+										content: '';
+										position: absolute;
+										width: 1px;
+										height: 100%;
+										background-color: var(--light_green);
+										right: 0;
+										top: 50%;
+										transform: translateY(-50%);
+									}
+									&:hover{
+										color: #3D3D3D;
+										transition: all 0.3s ease-in-out;
+										&:after{
+											background-color: #3D3D3D;
+											transition: all 0.3s ease-in-out;
+										}
+									}
+								}
+								&:first-child{
+									a{
+										padding-left: 0;
+									}
+								}
+								&:last-child{
+									a{
+										margin-right: 0;
+										&:after{
+											display: none;
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 				.right{
-					width: 58%;
+					width: 45%;
 					border-radius: 4px;
 					background: #FFF;
 					box-shadow: 7px 12px 25.2px 0 rgba(0, 0, 0, 0.11);
@@ -242,7 +376,7 @@ content: "\f009";
 											margin-right: 0;
 										}
 										&.w-50{
-											width: 48%;
+											width: 47%;
 											@media(max-width: 1109px){
 												width: 47%;
 											}
@@ -265,6 +399,7 @@ content: "\f009";
 											@media(max-width: 767px){
 												// 340 - 767 : 17 - 20
 												font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+												font-size: 15px;
 											}
 										}
 										input,textarea{
@@ -285,10 +420,25 @@ content: "\f009";
 											@media(max-width: 767px){
 												// 340 - 767 : 17 - 20
 												font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+												font-size: 15px;
 											}
 											color: var(--dark_grey);
 											&:focus,&:focus-visible{
 												outline: none;
+											}
+											&::placeholder{
+												color: #7A7A7A;
+												font-family: HelvNowDis-light;
+												// 320 - 1920 : 14 - 22
+                				font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+												@media(max-width: 1500px){
+													font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+												}
+												@media(max-width: 767px){
+													// 340 - 767 : 17 - 20
+													font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
+													font-size: 15px;
+												}
 											}
 										}
 										textarea{
@@ -881,7 +1031,8 @@ content: "\f009";
 						width: 100%;
 						height: 100%;
 						z-index: 0;
-						background: linear-gradient(0deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.54) 100%);
+						// background: linear-gradient(0deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.54) 100%);
+						background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255,255,255,0) 80%);
 						z-index: 1;
 					}
 					.proj-txt{
@@ -894,7 +1045,7 @@ content: "\f009";
 						z-index: 2;
 						@media(max-width: 1500px){
 							max-height: 240px;
-							bottom: -150px;
+							bottom: 0;
 						}
 						@media(max-width: 1080px){
 							bottom: 0;
@@ -937,6 +1088,11 @@ content: "\f009";
 					.proj-txt{
 						// bottom: 0;
 						// transition: bottom 0.5s ease-in-out;
+					}
+					a{
+						&:before{
+							opacity: 0;
+						}
 					}
 				}
 			}

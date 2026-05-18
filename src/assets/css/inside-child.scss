@@ -76,17 +76,6 @@ content: "\f009";
     content: '';
     // for business application development
     background-image: url(../img/inside-page-shape1.svg);
-    // for mobile app development
-    // background-image: url(../img/mobile-app-development-inro-bg.svg);
-    // // for ai development page
-    // background-image: url(../img/ai-development-intro-bg-angle.svg);
-    // // Whatsapp for business page
-    // background-image: url(../img/whatsapp-for-business-intro-bg-angle.svg);
-    // // business intelligence page
-    // background-image: url(../img/business-intelligence-intro-bg-angle.svg);
-    // // E-commerce page
-    // background-image: url(../img/ecommerce-intro-bg-angle.svg);
-    
     background-size: contain;
     width: 100%;
     height: 100%;
@@ -456,12 +445,13 @@ content: "\f009";
             width: 140px;
             height: 160px;
             margin-top: 50px;
+            margin-top: 40px;
             // 1024 - 1920 : 30 - 80
             margin-right: clamp(1.875rem, -1.6964rem + 5.5804vw, 5rem);
             @media(max-width: 1500px){
               width: 130px;
               height: 150px;
-              margin-top: 45px;
+              margin-top: 30px;
             }
             @media(max-width: 1380px){
               width: 120px;
@@ -503,11 +493,18 @@ content: "\f009";
               height: 17px;
               border-radius: 100%;
               // background-color: var(--light_green);
-               background-color: #8F8F8F;
+              background-color: #8F8F8F;
               top: 17px;
+              top: 10px;
               left: -8px;
               @media(max-width: 1680px){
                 top: 10px;
+              }
+              @media(max-width: 1500px){
+                top: 5px;
+                width: 14px;
+                height: 14px;
+                left: -6px;
               }
                @media(max-width: 1380px){
                 width: 15px;
@@ -526,12 +523,16 @@ content: "\f009";
               width: 2px;
               // height: 79%;
               height: calc(100% - 45px);
+              height: calc(100% - 35px);
               border-radius: 100%;
               // background-color: var(--light_green);
               background-color: #8F8F8F;
               background-color: #cccccc;
               bottom: 0;
               left: 0;
+              @media(max-width: 1500px){
+                height: calc(100% - 30px);
+              }
               @media(max-width: 767px){
                 top: 86px;
                 left: -39px;
@@ -544,12 +545,16 @@ content: "\f009";
               width: 2px;
               // height: 0%; /* start empty */
               height: calc(100% - 45px);
+              height: calc(100% - 35px);
               background-color: var(--light_green); /* grey */
               bottom: 0;
               left: 0;
               z-index: 2;
               transform: scaleY(0);
               transform-origin: top;
+              @media(max-width: 1500px){
+                height: calc(100% - 30px);
+              }
               @media(max-width: 767px){
                 top: 86px;
                 left: -39px;
@@ -579,6 +584,10 @@ content: "\f009";
               font-family: HelvNowDis-light;
               color: var(--light_grey);
               line-height: 1.6em;
+              margin-bottom: 30px;
+              @media(max-width: 767px){
+                margin-bottom: 20px;
+              }
             }
             p.title{
               // 1024 - 1920 : 30 - 56
@@ -759,6 +768,26 @@ content: "\f009";
             }
           }
         }
+        ul.count-3{
+          li{
+            .eng-title{
+              h5{
+                height: 60px;
+                padding: 0 50px;
+                @media(max-width: 1380px){
+                  padding: 0 35px;
+                }
+                @media(max-width: 1080px){
+                  padding: 0 30px;
+                }
+                @media(max-width: 767px){
+                  height: auto;
+                  padding: 0 20px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -810,6 +839,21 @@ content: "\f009";
             }
             @media(max-width: 500px){
               flex-direction: column;
+            }
+            .eng-title{
+              h5{
+                height: auto;
+                padding: 0 50px;
+                @media(max-width: 1380px){
+                  padding: 0 35px;
+                }
+                @media(max-width: 1080px){
+                  padding: 0 30px;
+                }
+                @media(max-width: 767px){
+                  padding: 0 20px;
+                }
+              }
             }
           }
         }
@@ -1493,7 +1537,9 @@ content: "\f009";
             font-size: clamp(1.188rem, 0.26rem + 1.45vw, 2rem);
             @media(max-width: 1500px){
               padding: 8px 20px;
-              top: -22px
+              top: -22px;
+              // 1024 - 1920 : 19 - 22
+              font-size: clamp(1.188rem, 0.7857rem + 0.6286vw, 1.375rem);
             }
             @media(max-width: 1100px){
               left: 50%;
@@ -1540,6 +1586,18 @@ content: "\f009";
               font-family: HelvNowDis-light;
               font-weight: 300;
               color: var(--light_grey);
+              @media(max-width: 1500px){
+                font-size: 17px;
+                line-height: 1.7em;
+              }
+              @media(max-width: 1080px){
+                font-size: 16px;
+                line-height: 1.6em;
+              }
+              @media(max-width: 767px){
+                font-size: 14px;
+                line-height: 1.5em;
+              }
             }
           }
           // .left,.right{
@@ -1996,6 +2054,8 @@ content: "\f009";
           padding: clamp(1.625rem, -0.0893rem + 2.6786vw, 3.125rem) 0;
           // 1024 - 1920 : 36 - 68
           margin-bottom: clamp(2.25rem, -0.0357rem + 3.5714vw, 4.25rem);
+          position: sticky;
+          top: 90px;
           @media(max-width: 1023px){
             // 375 - 1023 : 28 - 32
             margin-bottom: clamp(1.75rem, 1.6053rem + 0.6173vw, 2rem);
@@ -2296,13 +2356,29 @@ content: "\f009";
         }
       }
       .swiper{
-        max-width: 90%;
-        margin-left: 50px;
-        margin-right: 50px;
+        // max-width: 90%;
+        margin: 0 auto;
+        padding: 0 30px;
         @media(max-width: 1080px){
           max-width: 100%;
           margin-left: 0;
           margin-right: 0;
+        }
+        .swiper-button-prev,.swiper-button-next{
+          background-color: var(--white);
+          padding: 8px;
+          border-radius: 50%;
+          svg{
+            path{
+              fill: var(--light_green);
+            }
+          }
+        }
+        .swiper-button-prev{
+          left: -15px;
+        }
+        .swiper-button-next{
+          right: -15px;
         }
         .media-card{
           @media(max-width: 767px){
@@ -2325,12 +2401,15 @@ content: "\f009";
             }
           }
         }
-        .swiper-wrapper{
-          width: 90%;
-          justify-content: center;
-          @media(max-width: 767px){
-            width: 100%;
-          }
+        // .swiper-wrapper{
+        //   width: 90%;
+        //   justify-content: center;
+        //   @media(max-width: 767px){
+        //     width: 100%;
+        //   }
+        // }
+        .image-item,.video-item{
+          width: auto;
         }
       }
     }
@@ -2524,4 +2603,34 @@ content: "\f009";
 		z-index: 9;
 	}
 	// footer ends
+}
+.inisde-child.mobile-app-development{
+  &:after{
+    // for mobile app development
+    background-image: url(../img/mobile-app-development-inro-bg.svg);
+  }
+}
+.inisde-child.ai-development{
+  &:after{
+    // // for ai development page
+    background-image: url(../img/ai-development-intro-bg-angle.svg);
+  }
+}
+.inisde-child.whatsapp-business{
+  &:after{
+    // // Whatsapp for business page
+    background-image: url(../img/whatsapp-for-business-intro-bg-angle.svg);
+  }
+}
+.inisde-child.business-intelligence{
+  &:after{
+    // // business intelligence page
+    background-image: url(../img/business-intelligence-intro-bg-angle.svg);
+  }
+}
+.inisde-child.E-Commerce{
+  &:after{
+    // // E-commerce page
+    background-image: url(../img/ecommerce-intro-bg-angle.svg);
+  }
 }

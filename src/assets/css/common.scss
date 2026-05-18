@@ -794,7 +794,7 @@ header{
     top: 100px;
     transform: translateX(-50%) scaleY(0) !important;
     transform-origin: 50% 0;
-    transition: all .3s;
+    transition: max-height .4s ease;
     width: 250px;
     width: 255px;
     z-index: 9999;
@@ -1000,6 +1000,7 @@ header{
                 left: calc(50% - 4px);
                 position: absolute;
                 top: 60px;
+                top: 62px;
                 right: -8px;
                 left: auto;
                 width: 0;
@@ -1013,9 +1014,12 @@ header{
                 @media(max-width: 1500px){
                   // top: 90px;
                   top: 55px;
+                  width: 13px !important;
+                  height: 8px !important;
                 }
                 @media(max-width: 1024px){
                   top: 47px;
+                  top: 51px;
                   right: 0;
                   width: 11px;
                   height: 12px;
@@ -1159,6 +1163,10 @@ header.scrolled{
                 transform: rotate(0);
                 width: 16px;
                 height: 18px;
+                @media(max-width: 1500px){
+                  width: 13px;
+                  height: 8px;
+                }
               }
             }
             &:hover{
@@ -1297,6 +1305,9 @@ header.active{
             top: 50%;
             transform: translateY(-50%) rotate(0deg);
             transition: transform 0.5s ease-in-out;
+            @media(max-width: 1500px){
+
+            }
           }
         }
         ul{
@@ -1306,7 +1317,7 @@ header.active{
           overflow: hidden;
           padding: 0;
           position: static;
-          transition: all .4s;
+          transition: max-height .4s ease;
           margin: 0;
           li{
             a{
@@ -1338,11 +1349,11 @@ header.active{
           }
         }
       }
-      .has-children-inner.show{
+      .has-children-inner.show,.sub-menu.show{
         max-height: inherit;
         max-height: 270px;
         max-height: 380px;
-        transition: all .4s;
+        transition: max-height .4s ease;
       }
     }
   }
@@ -1621,6 +1632,7 @@ footer{
 
   .footer-accordion.active .submenu {
     max-height: 500px;
+    transition: max-height .4s ease;
   }
 
   .f-main-name {

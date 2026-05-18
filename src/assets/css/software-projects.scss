@@ -14,6 +14,10 @@ $light_grey: var(--light_grey);
 main.software-projects-page.inside-page{
   header{
     z-index: 99;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    // border: 1px solid rgba(255, 255, 255, 0.2);
   }
   position: relative;
   &:after{
@@ -214,6 +218,8 @@ main.software-projects-page.inside-page{
                 height: 100%;
                 object-fit: cover;
                 object-position: center center;
+                filter: brightness(1);
+                transition: filter 0.5s ease-in-out;
               }
               .proj-main-title,.proj-list-main-angle{
                 position: absolute;
@@ -234,6 +240,8 @@ main.software-projects-page.inside-page{
                 left: 25px;
                 color: var(--white);
                 z-index: 2;
+                transform: translateY(0px);
+                transition: transform 0.5s ease-in-out;
                 // 1024 - 1920 : 20 - 36
                 font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
                 @media(max-width: 1500px){
@@ -281,6 +289,10 @@ main.software-projects-page.inside-page{
             }
             &:hover{
               .proj-main-img{
+                img{
+                  filter: brightness(0.6);
+                  transition: filter 0.5s ease-in-out;
+                }
                 .arrow-icon{
                   background-color: var(--light_green);
                   transition: all 0.5s ease-in-out;
@@ -291,6 +303,10 @@ main.software-projects-page.inside-page{
                     }
                   }
                 }
+              }
+              .proj-main-title{
+                transform: translateY(-20px);
+                transition: transform 0.5s ease-in-out;
               }
             }
           }
@@ -304,6 +320,23 @@ main.software-projects-page.inside-page{
   .cta-wrapper{
     position: relative;
     z-index: 9;
+    .container{
+      .cta-title{
+        // 1024 - 1920 : 24 - 36
+        font-size: clamp(1.5rem, 0.6429rem + 1.3393vw, 2.25rem);
+        background: none; 
+        -webkit-background-clip: initial;
+        background-clip: initial;
+        -webkit-text-fill-color: initial; 
+        color: #121A21;
+      }
+      .cta-txt{
+        font-family: HelvNowDis-Bold;
+        // 1024 - 1920 : 32 - 48
+        font-size: clamp(2rem, 0.8571rem + 1.7857vw, 3rem);
+        color: #121A21;
+      }
+    }
   }
   // cta section ends
 

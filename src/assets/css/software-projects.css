@@ -8,6 +8,9 @@
 
 main.software-projects-page.inside-page header {
   z-index: 99;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 main.software-projects-page.inside-page {
   position: relative;
@@ -226,6 +229,8 @@ main.software-projects-page.inside-page .sft-project-list-wrapper .container .pr
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
+  filter: brightness(1);
+  transition: filter 0.5s ease-in-out;
 }
 main.software-projects-page.inside-page .sft-project-list-wrapper .container .proj-mai-list li a .proj-main-img .proj-main-title, main.software-projects-page.inside-page .sft-project-list-wrapper .container .proj-mai-list li a .proj-main-img .proj-list-main-angle {
   position: absolute;
@@ -246,6 +251,8 @@ main.software-projects-page.inside-page .sft-project-list-wrapper .container .pr
   left: 25px;
   color: var(--white);
   z-index: 2;
+  transform: translateY(0px);
+  transition: transform 0.5s ease-in-out;
   font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
 }
 @media (max-width: 1500px) {
@@ -293,6 +300,10 @@ main.software-projects-page.inside-page .sft-project-list-wrapper .container .pr
 main.software-projects-page.inside-page .sft-project-list-wrapper .container .proj-mai-list li a .proj-main-txt p {
   line-height: 1.7em;
 }
+main.software-projects-page.inside-page .sft-project-list-wrapper .container .proj-mai-list li a:hover .proj-main-img img {
+  filter: brightness(0.6);
+  transition: filter 0.5s ease-in-out;
+}
 main.software-projects-page.inside-page .sft-project-list-wrapper .container .proj-mai-list li a:hover .proj-main-img .arrow-icon {
   background-color: var(--light_green);
   transition: all 0.5s ease-in-out;
@@ -301,7 +312,24 @@ main.software-projects-page.inside-page .sft-project-list-wrapper .container .pr
   stroke: var(--white);
   transition: all 0.5s ease-in-out;
 }
+main.software-projects-page.inside-page .sft-project-list-wrapper .container .proj-mai-list li a:hover .proj-main-title {
+  transform: translateY(-20px);
+  transition: transform 0.5s ease-in-out;
+}
 main.software-projects-page.inside-page .cta-wrapper {
   position: relative;
   z-index: 9;
+}
+main.software-projects-page.inside-page .cta-wrapper .container .cta-title {
+  font-size: clamp(1.5rem, 0.6429rem + 1.3393vw, 2.25rem);
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  color: #121A21;
+}
+main.software-projects-page.inside-page .cta-wrapper .container .cta-txt {
+  font-family: HelvNowDis-Bold;
+  font-size: clamp(2rem, 0.8571rem + 1.7857vw, 3rem);
+  color: #121A21;
 }/*# sourceMappingURL=software-projects.css.map */

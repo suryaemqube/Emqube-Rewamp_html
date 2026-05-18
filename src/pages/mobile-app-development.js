@@ -420,6 +420,9 @@ const Header = () => {
     { id: 1, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/05/tamam-reel-1.mp4" },
     { id: 2, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/06/homework-reel-3.mp4" },
     { id: 3, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/05/emovers-reel-1.mp4" },
+    { id: 4, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/05/tamam-reel-1.mp4" },
+    { id: 5, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/06/homework-reel-3.mp4" },
+    { id: 6, src: "http://mohammeds108.sg-host.com/wp-content/uploads/2023/05/emovers-reel-1.mp4" },
   ];
   const posts = [
     { id: 1, type: "image", src: "https://www.wp.emqubeweb.com/wp-content/uploads/cc-social-media-thumb.jpg", link: "https://www.instagram.com/corporateconnectionsuae/" },
@@ -823,7 +826,7 @@ const Header = () => {
         <div className="container">
           <h2 className="txt-center slide-up">Mobile App Development Lifecycle</h2>
           <div className="eng-model-step">
-            <ul>
+            <ul className="count-3">
               <li className="stagger-li">
                 <div className="step-count">1</div>
                 <div className="eng-icon">
@@ -1089,7 +1092,7 @@ const Header = () => {
             <li className="stagger-li">
               <div className="part-img">
                 <img src="/assets/img/partner-img.jpg"></img>
-                <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
+                <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
               </div>
               <div className="part-txt">
                 <h3>20+ Years of Expertise in Dubai and the UAE</h3>
@@ -1099,7 +1102,7 @@ const Header = () => {
             <li className="stagger-li">
               <div className="part-img">
                 <img src="/assets/img/local-team-img.jpg"></img>
-                <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
+                <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
               </div>
               <div className="part-txt">
                 <h3>Local Team, End-to-End Delivery</h3>
@@ -1109,7 +1112,7 @@ const Header = () => {
             <li className="stagger-li">
               <div className="part-img">
                 <img src="/assets/img/specialized-img.jpg"></img>
-                <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
+                <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
               </div>
               <div className="part-txt">
                 <h3>Specialized Technical Stack: Microsoft Platforms with Business insights</h3>
@@ -1129,7 +1132,7 @@ const Header = () => {
             <li className="stagger-li">
               <div className="part-img">
                 <img src="/assets/img/partner-img.jpg"></img>
-                <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
+                <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
               </div>
               <div className="part-txt">
                 <h3>20+ Years of Expertise in Dubai and the UAE</h3>
@@ -1139,7 +1142,7 @@ const Header = () => {
             <li className="stagger-li">
               <div className="part-img">
                 <img src="/assets/img/local-team-img.jpg"></img>
-                <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
+                <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
               </div>
               <div className="part-txt">
                 <h3>Local Team, End-to-End Delivery</h3>
@@ -1597,8 +1600,9 @@ const Header = () => {
                     <Swiper
                       modules={[Navigation]}
                       loop = "true"
+                      navigation={true}
                       spaceBetween={20}
-                      slidesPerView={4}
+                      slidesPerView={3}
                       // navigation={!isMobile1} // hide arrows on mobile if you want
                       // navigation={{
                       //   nextEl: `.next-${activeRefTab}`,
@@ -1610,7 +1614,7 @@ const Header = () => {
                           spaceBetween: 10,
                         },
                         768: { slidesPerView: 2.5 },
-                        1024: { slidesPerView: 4 },
+                        1024: { slidesPerView: 3 },
                       }}
                       // key={activeRefTab}
                     >
@@ -1671,6 +1675,7 @@ const Header = () => {
                   {(isMobile1 || posts.length > 3) ? (
                     <Swiper
                       modules={[Navigation]}
+                      navigation={true}
                       loop = "true"
                       spaceBetween={20}
                       slidesPerView={4}
@@ -1716,6 +1721,7 @@ const Header = () => {
                   {(isMobile1 || articles.length > 3) ? (
                     <Swiper
                       modules={[Navigation]}
+                      navigation={true}
                       loop = "true"
                       spaceBetween={20}
                       slidesPerView={4}

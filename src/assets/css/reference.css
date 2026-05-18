@@ -8,6 +8,10 @@
 
 main.references-page.inside-page header {
   z-index: 99;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 main.references-page.inside-page {
   position: relative;
@@ -354,6 +358,8 @@ main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-p
   background-size: contain;
   background-position: top right;
   position: relative;
+  filter: brightness(1);
+  transition: filter 0.5s ease-in-out;
 }
 @media (max-width: 1830px) {
   main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li {
@@ -401,12 +407,21 @@ main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-p
     left: 0;
     right: auto;
     height: 320px;
+    filter: brightness(0.8);
   }
 }
 @media (max-width: 500px) {
   main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li {
     height: 210px;
   }
+}
+main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li:hover {
+  filter: brightness(0.8);
+  transition: filter 0.5s ease-in-out;
+}
+main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li:hover .digi-proj-txt {
+  transform: translateY(-20px);
+  transition: transform 0.5s ease-in-out;
 }
 main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li a {
   display: block;
@@ -420,10 +435,6 @@ main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-p
   main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li a {
     padding: clamp(1.375rem, 0.0893rem + 2.0089vw, 2.5rem) clamp(0.938rem, 0.2668rem + 1.0487vw, 1.25rem) clamp(1.563rem, -1.7973rem + 5.2504vw, 3.125rem);
   }
-}
-main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li a:hover {
-  opacity: 0.6;
-  transition: opacity 0.5s ease-in-out;
 }
 main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li h3 {
   font-size: clamp(1.188rem, 0.26rem + 1.45vw, 2rem);
@@ -471,6 +482,8 @@ main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-p
   right: 15px;
   top: 55px;
   left: auto;
+  transform: translateY(0px);
+  transition: transform 0.5s ease-in-out;
 }
 @media (max-width: 1650px) {
   main.references-page.inside-page .digital-proj-wrapper-inside .container .digi-proj-list ul li .digi-proj-txt {
@@ -985,4 +998,17 @@ main.references-page.inside-page .work-ref-wrapper .workSwiper .swiper-slide .wo
 main.references-page.inside-page .cta-wrapper {
   position: relative;
   z-index: 9;
+}
+main.references-page.inside-page .cta-wrapper .container .cta-title {
+  font-size: clamp(1.5rem, 0.6429rem + 1.3393vw, 2.25rem);
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  color: #121A21;
+}
+main.references-page.inside-page .cta-wrapper .container .cta-txt {
+  font-family: HelvNowDis-Bold;
+  font-size: clamp(2rem, 0.8571rem + 1.7857vw, 3rem);
+  color: #121A21;
 }/*# sourceMappingURL=reference.css.map */

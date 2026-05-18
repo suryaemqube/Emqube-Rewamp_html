@@ -432,6 +432,7 @@ const Header = () => {
             <ul className={`items-wrapper ${view}`}>
               <li>
                 <a href="/emqonnect-detail">
+                  <span class="newsletter-tag">Newsletter</span>
                   <div className="emq-img">
                     <span className="arrow-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">

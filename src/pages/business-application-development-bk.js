@@ -480,7 +480,7 @@ const Header = () => {
             <li>
               <div className="part-img">
                 <img src="/assets/img/partner-img.jpg"></img>
-                <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
+                <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
               </div>
               <div className="part-txt">
                 <h3>20+ Years of Expertise in Dubai and the UAE</h3>
@@ -490,7 +490,7 @@ const Header = () => {
             <li>
               <div className="part-img">
                 <img src="/assets/img/local-team-img.jpg"></img>
-                <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
+                <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
               </div>
               <div className="part-txt">
                 <h3>Local Team, End-to-End Delivery</h3>
@@ -500,7 +500,7 @@ const Header = () => {
             <li>
               <div className="part-img">
                 <img src="/assets/img/specialized-img.jpg"></img>
-                <div className="img-angle"><img src="/assets/img/partner-shape-circle.png"></img></div>
+                <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
               </div>
               <div className="part-txt">
                 <h3>Specialized Technical Stack: Microsoft Platforms with Business insights</h3>

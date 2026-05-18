@@ -8,6 +8,7 @@
 
 main.case-study-detail.inside-page header {
   z-index: 99;
+  background-color: var(--white);
 }
 main.case-study-detail.inside-page {
   position: relative;

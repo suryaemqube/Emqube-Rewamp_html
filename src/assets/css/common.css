@@ -788,7 +788,7 @@ header .sub-menu {
   top: 100px;
   transform: translateX(-50%) scaleY(0) !important;
   transform-origin: 50% 0;
-  transition: all 0.3s;
+  transition: max-height 0.4s ease;
   width: 250px;
   width: 255px;
   z-index: 9999;
@@ -946,6 +946,7 @@ header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children > a:b
   left: calc(50% - 4px);
   position: absolute;
   top: 60px;
+  top: 62px;
   right: -8px;
   left: auto;
   width: 0;
@@ -960,11 +961,14 @@ header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children > a:b
 @media (max-width: 1500px) {
   header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children > a:before {
     top: 55px;
+    width: 13px !important;
+    height: 8px !important;
   }
 }
 @media (max-width: 1024px) {
   header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children > a:before {
     top: 47px;
+    top: 51px;
     right: 0;
     width: 11px;
     height: 12px;
@@ -1060,6 +1064,12 @@ header.scrolled .inner-container .main-nav > .main-nav-ul > li.menu-item-has-chi
   transform: rotate(0);
   width: 16px;
   height: 18px;
+}
+@media (max-width: 1500px) {
+  header.scrolled .inner-container .main-nav > .main-nav-ul > li.menu-item-has-children > a:before {
+    width: 13px;
+    height: 8px;
+  }
 }
 header.scrolled .inner-container .main-nav > .main-nav-ul > li.menu-item-has-children:hover > a:after {
   top: 82px;
@@ -1193,7 +1203,7 @@ header.active .company-logo .logo-white {
   overflow: hidden;
   padding: 0;
   position: static;
-  transition: all 0.4s;
+  transition: max-height 0.4s ease;
   margin: 0;
 }
 .menu-toggle ul li.menu-item-has-children ul li a {
@@ -1212,11 +1222,11 @@ header.active .company-logo .logo-white {
   transform: translateY(-50%) rotate(180deg);
   transition: transform 0.5s ease-in-out;
 }
-.menu-toggle ul li .has-children-inner.show {
+.menu-toggle ul li .has-children-inner.show, .menu-toggle ul li .sub-menu.show {
   max-height: inherit;
   max-height: 270px;
   max-height: 380px;
-  transition: all 0.4s;
+  transition: max-height 0.4s ease;
 }
 .menu-toggle .main-nav-ul {
   flex-direction: column;
@@ -1511,6 +1521,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
   }
   .footer-accordion.active .submenu {
     max-height: 500px;
+    transition: max-height 0.4s ease;
   }
   .f-main-name {
     cursor: pointer;
