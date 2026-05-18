@@ -9,7 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useEffect, useContext } from "react";
 import { Slice } from "gatsby";
-import { PageStateContext } from "../components/context/PageStateContext";
+import { PageStateContext } from "./context/PageStateContext";
 
 import Header from "./header"
 import "./layout.css"
