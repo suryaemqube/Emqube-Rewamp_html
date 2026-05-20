@@ -27,6 +27,7 @@ main.emqonnect-list.inside-page:after {
   background-repeat: no-repeat;
   bottom: auto;
   z-index: 0;
+  background-position: right;
 }
 @media (min-width: 768px) and (max-width: 1080px) {
   main.emqonnect-list.inside-page:after {
@@ -304,6 +305,10 @@ main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-to
 main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-top-filter .filter-right .layout-view li.list.active a svg line {
   stroke: var(--white);
 }
+main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
 main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list ul {
   display: flex;
   flex-wrap: wrap;
@@ -531,6 +536,10 @@ main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-li
   main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list ul.list li a .emq-blog-txt h2 {
     margin-bottom: 15px;
   }
+}
+main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list.is-loading {
+  opacity: 0;
+  pointer-events: none; /* prevent clicks during loading */
 }
 main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-pagination {
   display: flex;

@@ -2730,4 +2730,24 @@
 .inside-child footer {
   position: relative;
   z-index: 9;
+}
+
+.inisde-child.mobile-app-development:after {
+  background-image: url(../img/mobile-app-development-inro-bg.svg);
+}
+
+.inisde-child.ai-development:after {
+  background-image: url(../img/ai-development-intro-bg-angle.svg);
+}
+
+.inisde-child.whatsapp-business:after {
+  background-image: url(../img/whatsapp-for-business-intro-bg-angle.svg);
+}
+
+.inisde-child.business-intelligence:after {
+  background-image: url(../img/business-intelligence-intro-bg-angle.svg);
+}
+
+.inisde-child.E-Commerce:after {
+  background-image: url(../img/ecommerce-intro-bg-angle.svg);
 }/*# sourceMappingURL=inside-child.css.map */

@@ -42,14 +42,12 @@ function Footer({ sliceContext }) {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	useEffect(() => {
-		const scrollToTop = () => {
-			window.scrollTo({
-				top: 0,
-				behavior: "smooth",
-			});
-		};
-	}, [])
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
 
 		useEffect(() => {
 			const handleResize = () => {
@@ -68,13 +66,11 @@ function Footer({ sliceContext }) {
 			}
 		}, [isMobile]);
 
-		useEffect(() => {
-			const toggleFooter = (index) => {
-				if (!isMobile) return; // ⛔ only mobile
+		const toggleFooter = (index) => {
+			if (!isMobile) return; // ⛔ only mobile
 
-				setOpenIndex(prev => (prev === index ? null : index));
-			};
-		}, [])
+			setOpenIndex(prev => (prev === index ? null : index));
+		};
 	// create collapsible footer menu - ends
 
 	  // common script for all animation - starts
@@ -163,6 +159,7 @@ function Footer({ sliceContext }) {
       </div>
       {/* scroll to top */}
 			
+
 			<footer>
         <div className="inner-container">
           <div className="f-top slide-up">

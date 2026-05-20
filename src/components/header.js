@@ -37,150 +37,185 @@ const Header = ({ sliceContext }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const toggleMenu = () => {
-      setMenuActive(!menuActive);
-    };
-  }, [])
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
 
-  useEffect(() => {
-    const toggleMenuItem = (parentKey, id) => {
-      // setOpenMenus((prev) => ({
-      //   ...prev,
-      //   [id]: !prev[id],
-      // }));
-      setOpenMenus((prev) => ({
-        ...prev,
-        [parentKey]: prev[parentKey] === id ? null : id,
-      }));
-    };
-  }, [])
+  // const toggleMenuItem = () => {
+  //   setMenuItemActive(!menuItemActive);
+  //   // setMenuItemActive(prev => (prev === menu ? null : menu));
+  // };
 
-  useEffect(() => {
-    const toggleMainMenu = (menu) => {
-      setActiveMenu(prev => (prev === menu ? null : menu));
-      setActiveSubMenu(null); // reset child when parent closes
-    };
-  }, [])
+  const toggleMenuItem = (parentKey, id) => {
+    // setOpenMenus((prev) => ({
+    //   ...prev,
+    //   [id]: !prev[id],
+    // }));
+    setOpenMenus((prev) => ({
+      ...prev,
+      [parentKey]: prev[parentKey] === id ? null : id,
+    }));
+  };
 
-  useEffect(() => {
-    const toggleSubMenu = (submenu) => {
-      setActiveSubMenu(prev => (prev === submenu ? null : submenu));
-    };
-  }, [])
+  const toggleMainMenu = (menu) => {
+    setActiveMenu(prev => (prev === menu ? null : menu));
+    setActiveSubMenu(null); // reset child when parent closes
+  };
 
-  useEffect(() => {
-    const handleMenuClick = (level, id) => {
-      setActiveMenus(prev => ({
-        ...prev,
-        [level]: prev[level] === id ? null : id,
-        ...(level === "level1" && { level2: null }) // reset child when parent changes
-      }));
-    };
-  }, [])
+  const toggleSubMenu = (submenu) => {
+    setActiveSubMenu(prev => (prev === submenu ? null : submenu));
+  };
 
-  useEffect(() => {
-    const MobileMenuItem = ({ item, level = 1, parentKey = "root" }) => {
-      const hasChildren = item.children && item.children.length > 0;
+  const handleMenuClick = (level, id) => {
+    setActiveMenus(prev => ({
+      ...prev,
+      [level]: prev[level] === id ? null : id,
+      ...(level === "level1" && { level2: null }) // reset child when parent changes
+    }));
+  };
 
-      const isOpen = openMenus[parentKey] === item.id;
+  // const MobileMenuItem = ({ item, level = 1, parentKey = "root" }) => {
+  //   const hasChildren = item.children && item.children.length > 0;
+  //   const isOpen = openMenus[parentKey] === item.id;
 
-      return (
-        <li
-          className={`level-${level} ${Array.isArray(item.cssClasses) && item.cssClasses.length
-              ? item.cssClasses.join(" ") : ""
-              } ${Array.isArray(item.children) && item.children.length
-                ? "has-children menu-item-has-children" : ""}
-              ${level < 2 ? "menu-item" : ""} ${
-            isOpen ? "click" : ""
-          } `}
-        >
-          
-          <a href="#"
-            className="menu-item-row"
-            onClick={() => {
-              if (hasChildren) {
-                toggleMenuItem(parentKey, item.id);
-              }
-            }}
-          >
-            <span
-              dangerouslySetInnerHTML={{ __html: item.label }}
-            />
-            
-            {/* {hasChildren && <span className="arrow">{isOpen ? "-" : "+"}</span>} */}
-          </a>
+  //   return (
+  //     <li
+  //       className={`level-${level} ${Array.isArray(item.cssClasses) && item.cssClasses.length
+  //           ? item.cssClasses.join(" ") : ""
+  //           } ${Array.isArray(item.children) && item.children.length
+  //             ? "has-children menu-item-has-children" : ""}
+  //           ${level < 2 ? "menu-item" : ""} ${
+  //         isOpen ? "click" : ""
+  //       } `}
+  //     >
+  //       <a
+  //         href={hasChildren ? "javascript:void(0)" : item.uri}
+  //         onClick={(e) => {
+  //           if (hasChildren) {
+  //             e.preventDefault();
+  //             // toggleMenuItem(item.id);
+  //             toggleMenuItem(parentKey, item.id);
+  //           }
+  //         }}
+  //         dangerouslySetInnerHTML={{ __html: item.label }}
+  //       />
 
-          {hasChildren && (
-            <ul className={`sub-menu has-children-inner ${isOpen ? "show" : ""}`}>
-              {item.children.map(child => (
-                <MobileMenuItem
-                  key={child.id}
-                  item={child}
-                  level={level + 1}
-                  parentKey={item.id}   // 👈 CRITICAL
-                />
-              ))}
-            </ul>
-          )}
-        </li>
-      );
-    };
-  }, [])
+  //       {hasChildren && (
+  //         <ul
+  //           className={`sub-menu submenu has-children-inner ${
+  //             isOpen ? "show" : ""
+  //           }`}
+  //         >
+  //           {item.children.map((item) => (
+  //             <MobileMenuItem
+  //               key={item.id}
+  //               item={item}
+  //               level={level + 1}
+  //               parentKey={item.id}
+  //             />
+  //           ))}
+  //         </ul>
+  //       )}
+  //     </li>
+  //   );
+  // };
 
-  useEffect(() => {
-    const MenuItem = ({ item, level }) => {
-      const [subMenuState, setSubMenuState] = useState(false);
+  const MobileMenuItem = ({ item, level = 1, parentKey = "root" }) => {
+    const hasChildren = item.children && item.children.length > 0;
 
-      return (
-        <li
-          className={`level-${level} ${Array.isArray(item.cssClasses) && item.cssClasses.length
+    const isOpen = openMenus[parentKey] === item.id;
+
+    return (
+      <li
+        className={`level-${level} ${Array.isArray(item.cssClasses) && item.cssClasses.length
             ? item.cssClasses.join(" ") : ""
             } ${Array.isArray(item.children) && item.children.length
               ? "has-children menu-item-has-children" : ""}
-            ${level < 2 ? "menu-item" : ""} `}
-        >
-          <a
-            href={
-              item.children &&
-                item.children.length > 0 &&
-                typeof window !== "undefined" &&
-                window.innerWidth < 821
-                ? "/"
-                : item.path
+            ${level < 2 ? "menu-item" : ""} ${
+          isOpen ? "click" : ""
+        } `}
+      >
+        
+        <a href="#"
+          className="menu-item-row"
+          onClick={() => {
+            if (hasChildren) {
+              toggleMenuItem(parentKey, item.id);
             }
-            target={item.target}
-            dangerouslySetInnerHTML={{ __html: item.label }}
-            // onClick={(e) => toggleSubMenu(e, item.id)}
-          />
-
-          {item.children && item.children.length > 0 && (
-            <SubMenu
-              items={item.children}
-              level={level + 1}
-            />
-          )}
-        </li>
-      );
-    };
-  }, [])
-
-  useEffect(() => {
-    const SubMenu = ({ items, level, isOpen }) => {
-      const subMenuRef = useRef(null);
-
-      return (
-        <ul
-          className={` sub-menu has-children-inner dropdown_menu in-active ${level === 2 ? "child-menu" : ""}`}
-          ref={subMenuRef}
+          }}
         >
-          {items.map((item, index) => (
-            <MenuItem item={item} key={`${index}-${level}`} level={level} />
-          ))}
-        </ul>
-      );
-    };
-  }, [])
+          <span
+            dangerouslySetInnerHTML={{ __html: item.label }}
+          />
+          
+          {/* {hasChildren && <span className="arrow">{isOpen ? "-" : "+"}</span>} */}
+        </a>
+
+        {hasChildren && (
+          <ul className={`sub-menu has-children-inner ${isOpen ? "show" : ""}`}>
+            {item.children.map(child => (
+              <MobileMenuItem
+                key={child.id}
+                item={child}
+                level={level + 1}
+                parentKey={item.id}   // 👈 CRITICAL
+              />
+            ))}
+          </ul>
+        )}
+      </li>
+    );
+  };
+
+  const MenuItem = ({ item, level }) => {
+    const [subMenuState, setSubMenuState] = useState(false);
+
+    return (
+      <li
+        className={`level-${level} ${Array.isArray(item.cssClasses) && item.cssClasses.length
+          ? item.cssClasses.join(" ") : ""
+          } ${Array.isArray(item.children) && item.children.length
+            ? "has-children menu-item-has-children" : ""}
+          ${level < 2 ? "menu-item" : ""} `}
+      >
+        <a
+          href={
+            item.children &&
+              item.children.length > 0 &&
+              typeof window !== "undefined" &&
+              window.innerWidth < 821
+              ? "/"
+              : item.path
+          }
+          target={item.target}
+          dangerouslySetInnerHTML={{ __html: item.label }}
+          // onClick={(e) => toggleSubMenu(e, item.id)}
+        />
+
+        {item.children && item.children.length > 0 && (
+          <SubMenu
+            items={item.children}
+            level={level + 1}
+          />
+        )}
+      </li>
+    );
+  };
+
+  const SubMenu = ({ items, level, isOpen }) => {
+    const subMenuRef = useRef(null);
+
+    return (
+      <ul
+        className={` sub-menu has-children-inner dropdown_menu in-active ${level === 2 ? "child-menu" : ""}`}
+        ref={subMenuRef}
+      >
+        {items.map((item, index) => (
+          <MenuItem item={item} key={`${index}-${level}`} level={level} />
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <>
@@ -226,6 +261,16 @@ const Header = ({ sliceContext }) => {
           <path className="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"></path>
         </svg>
       </div>
+
+      {/* <nav className={`main-nav menu-toggle ${menuActive ? "active" : ""}`}>
+        <ul className="main-nav-ul d-flex">
+          {headMenu &&
+            headMenu.length > 0 &&
+            headMenu.map((item, index) => (
+              <MenuItem item={item} key={`${index}menu2`} level={1} />
+          ))}
+        </ul>
+      </nav> */}
 
       <nav className={`main-nav menu-toggle ${menuActive ? "active" : ""}`}>
         <ul className="main-nav-ul d-flex">

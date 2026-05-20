@@ -47,8 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        // url: `https://mohammeds161.sg-host.com/graphql`,
-        url: process.env.GATSBY_WPGRAPHQL_URL,
+        url: `https://mohammeds161.sg-host.com/graphql`,
         skipMediaDownloads: true,
       },
     },

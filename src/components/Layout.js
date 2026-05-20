@@ -11,10 +11,9 @@ import { useEffect, useContext } from "react";
 import { Slice } from "gatsby";
 import { PageStateContext } from "./context/PageStateContext";
 
-import Header from "./header"
-import "./layout.css"
+import Header from "./Header"
 
-const Layout = ({ children, isHome, isMainParent, isChild, isMobileAppChild, isAiDevChild, isWhatsappBusChild, isBusinessIntelChild, isECommerceChild, isZoho }) => {
+const Layout = ({ children, isHome, isMainParent, isChild, isMobileAppChild, isAiDevChild, isWhatsappBusChild, isBusinessIntelChild, isECommerceChild, isZoho, about, isRef, isSftProj, isPortDetail, isEmqonnectList, isEmqonnectDetail, isDigiProj, isContact }) => {
 
   const { pageState, setPageEntering, setPageActive, setPageExiting } = useContext(PageStateContext);
 
@@ -71,6 +70,14 @@ const Layout = ({ children, isHome, isMainParent, isChild, isMobileAppChild, isA
         ${isBusinessIntelChild ? "inside-page inside-child business-intelligence" : ""}
         ${isECommerceChild ? "inside-page inside-child E-Commerce" : ""}
         ${isZoho ? "inside-page inside-child zoho-product" : ""}
+        ${about ? "inside-page about-us" : ""}
+        ${isRef ? "inside-page references-page" : ""}
+        ${isSftProj ? "inside-page software-projects-page" : ""}
+        ${isPortDetail ? "inside-page case-study-detail" : ""}
+        ${isEmqonnectList ? "inside-page inside-child emqonnect-list" : ""}
+        ${isEmqonnectDetail ? "inside-page inside-child emqonnect-detail" : ""}
+        ${isDigiProj ? "inside-page inside-child digi-portfolio" : ""}
+        ${isContact ? "inside-page inside-child contact-main" : ""}
         `}>
         <Slice alias="navigation-bar" />
         {children}

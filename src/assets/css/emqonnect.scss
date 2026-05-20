@@ -29,6 +29,7 @@ main.emqonnect-list.inside-page{
     background-repeat: no-repeat;
     bottom: auto;
     z-index: 0;
+    background-position: right;
     @media(min-width: 768px) and (max-width: 1080px){
       top: 70px;
     }
@@ -298,6 +299,8 @@ main.emqonnect-list.inside-page{
         }
       }
       .emqonnect-list{
+        transition: opacity 0.3s ease;
+        opacity: 1;
         ul{
           display: flex;
           flex-wrap: wrap;
@@ -510,6 +513,10 @@ main.emqonnect-list.inside-page{
             }
           }
         }
+      }
+      .emqonnect-list.is-loading {
+        opacity: 0;
+        pointer-events: none; /* prevent clicks during loading */
       }
       .emqonnect-pagination{
         display: flex;

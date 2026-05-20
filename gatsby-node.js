@@ -122,6 +122,34 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
 
+  const portDetail = await graphql(`
+    query {
+      allWpPortfolio(
+        filter: {
+          categories: {
+            nodes: { elemMatch: { slug: { eq: "software" } } }
+          }
+        }
+      ) {
+        nodes {
+          id
+          slug
+        }
+      }
+    }
+  `)
+
+  const blogDetail = await graphql(`
+    query {
+      allWpBlog {
+        nodes {
+          id
+          slug
+        }
+      }
+    }
+  `);
+
   if (primary.errors) {
     throw new Error(primary.errors);
   }
@@ -142,6 +170,14 @@ exports.createPages = async ({ actions, graphql }) => {
     throw new Error(footerOtherLink.errors);
   }
 
+  if (portDetail.errors) {
+    throw new Error(portDetail.errors);
+  }
+
+  if (blogDetail.errors) {
+    throw new Error(portDetail.errors);
+  }
+
   const primaryNode = primary.data?.wpMenu?.menuItems?.nodes || [];
 
   const optionsNode = options.data?.wp?.acfOption?.common || [];
@@ -151,6 +187,10 @@ exports.createPages = async ({ actions, graphql }) => {
   const footerDigitalContentStudioNode = footerDigitalContentStudio.data?.wpMenu?.menuItems?.nodes || [];
 
   const footerOtherLinkNode = footerOtherLink.data?.wpMenu?.menuItems?.nodes || [];
+
+  const portfolioTemplate = path.resolve("src/templates/portfolio-detail.js");
+
+  const blogTemplate = path.resolve("src/templates/blog-detail.js")
 
   const flatListToHierarchical = (
     data = [],
@@ -174,7 +214,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   createSlice({
     id: `navigation-bar`,
-    component: require.resolve(`./src/components/header.js`),
+    component: require.resolve(`./src/components/Header.js`),
     context: {
       priMenuData: privHrhl,
       options: optionsNode,
@@ -194,6 +234,26 @@ exports.createPages = async ({ actions, graphql }) => {
       footOthLink:footerOtherLi,
       options: optionsNode,
     },
+  });
+
+  portDetail.data.allWpPortfolio.nodes.forEach((post) => {
+    createPage({
+      path: `/software-projects/${post.slug}/`,  // ← URL structure
+      component: portfolioTemplate,
+      context: {
+        id: post.id,   // ← passed as $id to the template query
+      },
+    })
+  });
+
+  blogDetail.data.allWpBlog.nodes.forEach((post) => {
+    createPage({
+      path: `/emqonnect/${post.slug}/`,   // ← URL: /emqonnect/post-slug/
+      component: blogTemplate,
+      context: {
+        id: post.id,                       // ← passed as $id to template query
+      },
+    });
   });
 
 }
