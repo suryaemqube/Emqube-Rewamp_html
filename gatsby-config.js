@@ -14,10 +14,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Emqube`,
+    description: `Emqube - Software Solutions House`,
+    author: `@emqube`,
+    siteUrl: `https://emquberevamphtml.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -48,7 +48,17 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: `https://mohammeds161.sg-host.com/graphql`,
-        skipMediaDownloads: true,
+        type: {
+          MediaItem: {
+            localFile: {
+              requestConcurrency: 5,
+              excludeByMimeTypes: [],
+            },
+          },
+        },
+        production: {
+          hardCacheMediaFiles: false,
+        },
       },
     },
   ],
