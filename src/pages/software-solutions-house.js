@@ -35,7 +35,7 @@ export default function SoftwareSolMain({ data }) {
   });
 
   useEffect(() => {
-     if (typeof window === "undefined") return;
+     if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);
@@ -50,7 +50,7 @@ export default function SoftwareSolMain({ data }) {
   }, []);
 
   useEffect(() => {
-     if (typeof window === "undefined") return;
+     if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setShowTop(true);
@@ -66,7 +66,7 @@ export default function SoftwareSolMain({ data }) {
 
 
   const scrollToTop = () => {
-    if (typeof window === "undefined") return;
+    if (typeof window !== "undefined") return;
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -110,7 +110,7 @@ export default function SoftwareSolMain({ data }) {
 
 
   useEffect(() => {
-     if (typeof window === "undefined") return;
+     if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);
@@ -147,7 +147,7 @@ export default function SoftwareSolMain({ data }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-     if (typeof window === "undefined") return;
+     if (typeof window !== "undefined") return;
     const checkScreen = () => {
       setIsMobile(window.innerWidth <= 767);
     };
@@ -339,7 +339,7 @@ export default function SoftwareSolMain({ data }) {
               onClick={(e) => {
                 e.preventDefault();
 
-                 if (typeof window === "undefined") return;
+                 if (typeof window !== "undefined") return;
                 gsap.to(window, {
                   duration: 1,
                   scrollTo: {

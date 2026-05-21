@@ -25,17 +25,17 @@ const Header = ({ sliceContext }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window === "undefined" && window.scrollY > 300) {
+      if (typeof window !== "undefined" && window.scrollY > 300) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     };
-    if(typeof window === "undefined"){
+    if(typeof window !== "undefined"){
     window.addEventListener("scroll", handleScroll);
     }
 
-    return () => typeof window === "undefined" && window.removeEventListener("scroll", handleScroll);
+    return () => typeof window !== "undefined" && window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {

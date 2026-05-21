@@ -42,7 +42,7 @@ module.exports = {
             },
           },
         },
-        deploy: {
+        develop: {
           hardCacheMediaFiles: true,
         },
       },

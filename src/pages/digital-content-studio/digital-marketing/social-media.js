@@ -41,14 +41,14 @@ export default function SoftwareSolChild({ data }) {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window !== "undefined") return;
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);
@@ -63,7 +63,7 @@ export default function SoftwareSolChild({ data }) {
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setShowTop(true);
@@ -79,7 +79,7 @@ export default function SoftwareSolChild({ data }) {
 
 
   const scrollToTop = () => {
-    if (typeof window === "undefined") return;
+    if (typeof window !== "undefined") return;
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -92,7 +92,7 @@ export default function SoftwareSolChild({ data }) {
   
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);
@@ -320,7 +320,7 @@ export default function SoftwareSolChild({ data }) {
   const [openIndex, setOpenIndex] = useState(null);
 
     useEffect(() => {
-      if (typeof window === "undefined") return;
+      if (typeof window !== "undefined") return;
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 767);
       };
@@ -379,7 +379,7 @@ export default function SoftwareSolChild({ data }) {
               <a href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                   if (typeof window === "undefined") return;
+                   if (typeof window !== "undefined") return;
                   gsap.to(window, {
                     duration: 1,
                     scrollTo: {

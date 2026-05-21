@@ -70,10 +70,10 @@ export default function DigitalProj({ data }) {
 
   useEffect(() => {
       const handleResize = () => setWindowWidth(window.innerWidth);
-      if(typeof window === "undefined"){
+      if(typeof window !== "undefined"){
         window.addEventListener('resize', handleResize);
       }
-    return () => typeof window === "undefined" && window.removeEventListener('resize', handleResize);
+    return () => typeof window !== "undefined" && window.removeEventListener('resize', handleResize);
   }, []);
 
 
@@ -195,26 +195,26 @@ export default function DigitalProj({ data }) {
   useEffect(() => {
     
     const handleScroll1 = () => {
-      if (typeof window === "undefined" && window.scrollY > 500) {
+      if (typeof window !== "undefined" && window.scrollY > 500) {
         setShowTopFilter(true);
       } else {
         setShowTopFilter(false);
       }
     };
 
-    if(typeof window === "undefined"){
+    if(typeof window !== "undefined"){
     window.addEventListener("scroll", handleScroll1);
     }
 
-    return () => typeof window === "undefined" && window.removeEventListener("scroll", handleScroll1);
+    return () => typeof window !== "undefined" && window.removeEventListener("scroll", handleScroll1);
   }, []);
   // onscroll fixed top filter section - ends 
 
   // onclick scroll to specific section - starts
   const getOffset = () => {
-  if (typeof window === "undefined" && window.matchMedia("(max-width: 767px)").matches) {
+  if (typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches) {
     return 130; // mobile
-  } else if (typeof window === "undefined" && window.matchMedia("(max-width: 1080px)").matches) {
+  } else if (typeof window !== "undefined" && window.matchMedia("(max-width: 1080px)").matches) {
     return 80; // tablet / iPad
   } else {
     return 100; // desktop
@@ -228,7 +228,7 @@ const scrollToSection = (id) => {
     const offset = getOffset();
     const position = element.offsetTop - offset;
 
-    if (typeof window === "undefined"){
+    if (typeof window !== "undefined"){
       window.scrollTo({
         top: position,
         behavior: "smooth",
