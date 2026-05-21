@@ -12,12 +12,12 @@ const path = require("path");
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect, createSlice  } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
-  })
+  // createPage({
+  //   path: "/using-dsg",
+  //   component: require.resolve("./src/templates/using-dsg.js"),
+  //   context: {},
+  //   defer: true,
+  // })
 
   const primary = await graphql(`
     query MyQuery {
