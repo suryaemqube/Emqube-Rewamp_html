@@ -64,8 +64,9 @@ export default function SoftwareSolMain({ data }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-   if (typeof window === "undefined") return;
+
   const scrollToTop = () => {
+    if (typeof window === "undefined") return;
     window.scrollTo({
       top: 0,
       behavior: "smooth",

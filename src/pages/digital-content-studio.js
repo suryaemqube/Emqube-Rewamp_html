@@ -34,6 +34,16 @@ export default function SoftwareSolMain({ data }) {
     level2: null,
   });
 
+  const [activeTab, setActiveTab] = useState('custom');
+  const [activeTab1, setActiveTab1] = useState('enterprise');
+  const [activeTab2, setActiveTab2] = useState('whatsapp');
+  const [webSwiper, setWebSwiper] = useState(null);
+  const [webActiveSlide, setWebActiveSlide] = useState(0);
+  const [webSwiper1, setWebSwiper1] = useState(null);
+  const [webActiveSlide1, setWebActiveSlide1] = useState(0);
+  const [webSwiper2, setWebSwiper2] = useState(null);
+  const [webActiveSlide2, setWebActiveSlide2] = useState(0);
+
   useEffect(() => {
      if (typeof window === "undefined") return;
     const handleScroll = () => {
@@ -64,23 +74,16 @@ export default function SoftwareSolMain({ data }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-   if (typeof window === "undefined") return;
+   
   const scrollToTop = () => {
+    if (typeof window === "undefined") return;
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
 
-  const [activeTab, setActiveTab] = useState('custom');
-  const [activeTab1, setActiveTab1] = useState('enterprise');
-  const [activeTab2, setActiveTab2] = useState('whatsapp');
-  const [webSwiper, setWebSwiper] = useState(null);
-  const [webActiveSlide, setWebActiveSlide] = useState(0);
-  const [webSwiper1, setWebSwiper1] = useState(null);
-  const [webActiveSlide1, setWebActiveSlide1] = useState(0);
-  const [webSwiper2, setWebSwiper2] = useState(null);
-  const [webActiveSlide2, setWebActiveSlide2] = useState(0);
+  
 
 
   const webSlides = softSolMain?.sdPages?.map((softItem, index) => ({

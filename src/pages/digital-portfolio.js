@@ -69,10 +69,11 @@ export default function DigitalProj({ data }) {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
-     if (typeof window === "undefined") return;
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      if(typeof window === "undefined"){
+        window.addEventListener('resize', handleResize);
+      }
+    return () => typeof window === "undefined" && window.removeEventListener('resize', handleResize);
   }, []);
 
 
@@ -192,27 +193,28 @@ export default function DigitalProj({ data }) {
 
   // onscroll fixed top filter section - starts
   useEffect(() => {
-     if (typeof window === "undefined") return;
+    
     const handleScroll1 = () => {
-      if (window.scrollY > 500) {
+      if (typeof window === "undefined" && window.scrollY > 500) {
         setShowTopFilter(true);
       } else {
         setShowTopFilter(false);
       }
     };
 
+    if(typeof window === "undefined"){
     window.addEventListener("scroll", handleScroll1);
+    }
 
-    return () => window.removeEventListener("scroll", handleScroll1);
+    return () => typeof window === "undefined" && window.removeEventListener("scroll", handleScroll1);
   }, []);
   // onscroll fixed top filter section - ends 
 
   // onclick scroll to specific section - starts
   const getOffset = () => {
-     if (typeof window === "undefined") return;
-  if (window.matchMedia("(max-width: 767px)").matches) {
+  if (typeof window === "undefined" && window.matchMedia("(max-width: 767px)").matches) {
     return 130; // mobile
-  } else if (window.matchMedia("(max-width: 1080px)").matches) {
+  } else if (typeof window === "undefined" && window.matchMedia("(max-width: 1080px)").matches) {
     return 80; // tablet / iPad
   } else {
     return 100; // desktop
@@ -226,11 +228,12 @@ const scrollToSection = (id) => {
     const offset = getOffset();
     const position = element.offsetTop - offset;
 
-     if (typeof window === "undefined") return;
-    window.scrollTo({
-      top: position,
-      behavior: "smooth",
-    });
+    if (typeof window === "undefined"){
+      window.scrollTo({
+        top: position,
+        behavior: "smooth",
+      });
+    }
   }
 };
   // onclick scroll to specific section - ends

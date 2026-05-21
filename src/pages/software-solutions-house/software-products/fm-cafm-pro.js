@@ -62,6 +62,10 @@ export default function SftProduct({ data }) {
     level2: null,
   });
 
+  const [activeTab, setActiveTab] = useState('custom');
+
+  const [activeAccordion, setActiveAccordion] = useState(null);
+
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
@@ -101,17 +105,16 @@ export default function SftProduct({ data }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-   if (typeof window === "undefined") return;
+   
   const scrollToTop = () => {
+    if (typeof window === "undefined") return;
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
 
-  const [activeTab, setActiveTab] = useState('custom');
-
-  const [activeAccordion, setActiveAccordion] = useState(null);
+  
   
 
   useEffect(() => {

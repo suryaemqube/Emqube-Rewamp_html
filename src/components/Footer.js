@@ -15,53 +15,57 @@ function Footer({ sliceContext }) {
 	const [showTop, setShowTop] = useState(false);
 
 	useEffect(() => {
-		 if (typeof window === "undefined") return;
 		const handleScroll = () => {
-			if (window.scrollY > 300) {
+			if (typeof window !== 'undefined' && window.scrollY > 300) {
 				setScrolled(true);
 			} else {
 				setScrolled(false);
 			}
 		};
 
+		if(typeof window !== 'undefined'){
 		window.addEventListener("scroll", handleScroll);
+		}
 
-		return () => window.removeEventListener("scroll", handleScroll);
+		return () => typeof window !== 'undefined' && window.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	useEffect(() => {
-		if (typeof window === "undefined") return;
 		const handleScroll = () => {
-			if (window.scrollY > 300) {
+			if (typeof window !== 'undefined' && window.scrollY > 300) {
 				setShowTop(true);
 			} else {
 				setShowTop(false);
 			}
 		};
 
+		if(typeof window !== 'undefined'){
 		window.addEventListener("scroll", handleScroll);
+		}
 
-		return () => window.removeEventListener("scroll", handleScroll);
+		return () => typeof window !== 'undefined' && window.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	const scrollToTop = () => {
-		if (typeof window === "undefined") return;
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth",
-		});
+		if (typeof window === "undefined"){
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			});
+		}
 	};
 
 		useEffect(() => {
-			if (typeof window === "undefined") return;
 			const handleResize = () => {
-				setIsMobile(window.innerWidth <= 767);
+				setIsMobile(typeof window !== 'undefined' && window.innerWidth <= 767);
 			};
 
 			handleResize();
+			if(typeof window !== 'undefined'){
 			window.addEventListener("resize", handleResize);
+			}
 
-			return () => window.removeEventListener("resize", handleResize);
+			return () => typeof window !== 'undefined' && window.removeEventListener("resize", handleResize);
 		}, []);
 
 		useEffect(() => {
