@@ -15,6 +15,7 @@ function Footer({ sliceContext }) {
 	const [showTop, setShowTop] = useState(false);
 
 	useEffect(() => {
+		 if (typeof window === "undefined") return;
 		const handleScroll = () => {
 			if (window.scrollY > 300) {
 				setScrolled(true);
@@ -29,6 +30,7 @@ function Footer({ sliceContext }) {
 	}, []);
 
 	useEffect(() => {
+		if (typeof window === "undefined") return;
 		const handleScroll = () => {
 			if (window.scrollY > 300) {
 				setShowTop(true);
@@ -43,6 +45,7 @@ function Footer({ sliceContext }) {
 	}, []);
 
 	const scrollToTop = () => {
+		if (typeof window === "undefined") return;
 		window.scrollTo({
 			top: 0,
 			behavior: "smooth",
@@ -50,6 +53,7 @@ function Footer({ sliceContext }) {
 	};
 
 		useEffect(() => {
+			if (typeof window === "undefined") return;
 			const handleResize = () => {
 				setIsMobile(window.innerWidth <= 767);
 			};

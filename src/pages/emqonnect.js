@@ -59,6 +59,7 @@ export default function EmqonnectList({ data }) {
       setCurrentPage(page);
       setIsLoading(false); // fade in
 
+       if (typeof window === "undefined") return;
       const top = listingSectionRef.current?.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({ top, behavior: "smooth" });
     }, 300); // matches CSS transition duration

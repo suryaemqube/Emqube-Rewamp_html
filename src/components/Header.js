@@ -24,6 +24,7 @@ const Header = ({ sliceContext }) => {
   });
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);

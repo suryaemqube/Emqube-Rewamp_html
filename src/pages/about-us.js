@@ -256,6 +256,7 @@ export default function About({ data }) {
               onClick={(e) => {
                 e.preventDefault();
 
+                 if (typeof window === "undefined") return;
                 gsap.to(window, {
                   duration: 1,
                   scrollTo: {

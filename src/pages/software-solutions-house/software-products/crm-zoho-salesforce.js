@@ -52,12 +52,14 @@ export default function SftProduct({ data }) {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
+     if (typeof window === "undefined") return;
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
+     if (typeof window === "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);
@@ -72,6 +74,7 @@ export default function SftProduct({ data }) {
   }, []);
 
   useEffect(() => {
+     if (typeof window === "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setShowTop(true);
@@ -85,6 +88,7 @@ export default function SftProduct({ data }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+   if (typeof window === "undefined") return;
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -98,6 +102,7 @@ export default function SftProduct({ data }) {
   
 
   useEffect(() => {
+     if (typeof window === "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);
@@ -366,6 +371,7 @@ export default function SftProduct({ data }) {
 
   // onclick scroll to specific section - starts
   const getOffset = () => {
+     if (typeof window === "undefined") return;
     if (window.matchMedia("(max-width: 767px)").matches) {
       return 130; // mobile
     } else if (window.matchMedia("(max-width: 1080px)").matches) {
@@ -382,6 +388,7 @@ export default function SftProduct({ data }) {
       const offset = getOffset();
       const position = element.offsetTop - offset;
 
+       if (typeof window === "undefined") return;
       window.scrollTo({
         top: position,
         behavior: "smooth",

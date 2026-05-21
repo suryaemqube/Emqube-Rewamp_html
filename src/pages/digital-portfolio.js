@@ -69,6 +69,7 @@ export default function DigitalProj({ data }) {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
+     if (typeof window === "undefined") return;
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -191,6 +192,7 @@ export default function DigitalProj({ data }) {
 
   // onscroll fixed top filter section - starts
   useEffect(() => {
+     if (typeof window === "undefined") return;
     const handleScroll1 = () => {
       if (window.scrollY > 500) {
         setShowTopFilter(true);
@@ -207,6 +209,7 @@ export default function DigitalProj({ data }) {
 
   // onclick scroll to specific section - starts
   const getOffset = () => {
+     if (typeof window === "undefined") return;
   if (window.matchMedia("(max-width: 767px)").matches) {
     return 130; // mobile
   } else if (window.matchMedia("(max-width: 1080px)").matches) {
@@ -223,6 +226,7 @@ const scrollToSection = (id) => {
     const offset = getOffset();
     const position = element.offsetTop - offset;
 
+     if (typeof window === "undefined") return;
     window.scrollTo({
       top: position,
       behavior: "smooth",
