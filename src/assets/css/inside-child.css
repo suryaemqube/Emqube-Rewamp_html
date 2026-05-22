@@ -27,42 +27,42 @@
   font-family: "Untitled";
 }
 
-.icon-automative:before {
+.icon-automotive:before {
   content: "\f00b";
   font-family: "Untitled";
 }
 
-.icon-Logistics:before {
+.icon-logistics:before {
   font-family: "Untitled";
   content: "\f004";
 }
 
-.icon-Facility-Management:before {
+.icon-facility-management:before {
   font-family: "Untitled";
   content: "\f008";
 }
 
-.icon-Brokerage:before {
+.icon-brokerage:before {
   font-family: "Untitled";
   content: "\f00a";
 }
 
-.icon-Operations:before {
+.icon-operations:before {
   font-family: "Untitled";
   content: "\f003";
 }
 
-.icon-Accounting:before {
+.icon-accounting:before {
   font-family: "Untitled";
   content: "\f00c";
 }
 
-.icon-Reporting:before {
+.icon-reporting:before {
   font-family: "Untitled";
   content: "\f002";
 }
 
-.icon-Legacy-Integration:before {
+.icon-legacy-integration:before {
   font-family: "Untitled";
   content: "\f005";
 }
@@ -70,6 +70,46 @@
 .icon-crm:before {
   font-family: "Untitled";
   content: "\f009";
+}
+.icon-finance:before{
+  font-family: "Untitled";
+  content: "\f000";
+}
+.icon-trading:before{
+  font-family: "Untitled";
+  content: "\f013";
+}
+.icon-credit-cards-analysis:before{
+  font-family: "Untitled";
+  content: "\f014";
+}
+.icon-job-scheduler:before{
+  font-family: "Untitled";
+  content: "\f016";
+}
+.icon-recruitment-assistance:before{
+  font-family: "Untitled";
+  content: "\f015";
+}
+.icon-furniture:before{
+  font-family: "Untitled";
+  content: "\f017";
+}
+.icon-payment-reminder:before{
+  font-family: "Untitled";
+  content: "\f019";
+}
+.icon-project-update:before{
+  font-family: "Untitled";
+  content: "\f01a";
+}
+.icon-survey-alert:before{
+  font-family: "Untitled";
+  content: "\f018";
+}
+.icon-regional-reporting:before{
+  font-family: "Untitled";
+  content: "\f01b";
 }
 
 .inside-child {

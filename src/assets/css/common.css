@@ -480,7 +480,7 @@ p:last-child {
   font-family: HelvNowDis-Bold;
 }
 
-.txt-med {
+.txt-med, p a strong, p strong, p b {
   font-weight: 500;
   font-family: HelvNowDis-medium !important;
 }

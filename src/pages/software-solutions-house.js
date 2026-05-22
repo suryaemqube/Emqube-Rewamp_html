@@ -12,6 +12,7 @@ import "swiper/css/effect-coverflow";
 import "/src/assets/css/common.css";
 import "/src/assets/css/inside.css";
 
+import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -19,6 +20,7 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function SoftwareSolMain({ data }) {
 
   const softSolMain = data?.wpPage?.softwareSolutionsHouseLp || {};
+  const softSolMainProject = data?.wpPage?.softwareSolutionsHouseLp?.selectProjects || [];
   const options = data?.wp?.acfOption?.common;
 
   const [menuActive, setMenuActive] = useState(false);
@@ -319,7 +321,7 @@ export default function SoftwareSolMain({ data }) {
             </div>
             <div className="inside-intro-title">
               <h1 dangerouslySetInnerHTML={{__html: data?.wpPage?.title}} />
-              <div dangerouslySetInnerHTML={{__html: softSolMain?.heroTitle}} />
+              <div className="inside-sub-txt" dangerouslySetInnerHTML={{__html: softSolMain?.heroTitle}} />
             </div>
             <div className="inside-intro-txt" dangerouslySetInnerHTML={{__html: softSolMain?.heroSubText}} />
             <div className="inside-intro-count right">
@@ -789,128 +791,77 @@ export default function SoftwareSolMain({ data }) {
       {/* engagement model ends */}
       
       {/* Work Reference Section Starts */}
-      <section className="work-ref-wrapper">
-        <div className="container">
-          <h2 className="txt-center slide-up"><span className="txt-regular">Work</span> References</h2>
-        </div>
-        <Swiper className="workSwiper slide-up"
-          modules={[Navigation, Pagination]}
-          
-          
-          // slidesPerView={3.2}
-          // loop={true}
-          navigation
-          // pagination
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.1,
-              spaceBetween: 10,
-              slidesOffsetBefore: 20,
-            },
-            768: {
-              slidesPerView: 1.9,
-              spaceBetween: 10,
-              slidesOffsetBefore: 20,
-            },
-            991: {
-              slidesPerView: 2.5,
-              slidesOffsetBefore: 145,
-              spaceBetween: 20,
-            },
-             1300: {
-              slidesPerView: 3.6,
-              slidesOffsetBefore: 145,
-              spaceBetween: 20,
-            },
-          }}
-        >
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>The largest relocation company runs a paperless operation for quotes, jobs, invoices and payroll eclipsing other competitors.</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/bmw-logo.png" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/bmw-project-image.jpg" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>German luxury automobile company relies on emQube developed web application to manage sales in 11 countries in the region</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/nestle-logo.png" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/nestle-project-image.jpg" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>Swiss multinational leader in FMCG leverages a custom-built application to monitor inventory and sales in the Middle East region.</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-              <a href="#">
-                <div className="work-wrapp">
-                  <div className="client-icon">
+      {softSolMainProject && softSolMainProject.length > 0 &&
+        <section className="work-ref-wrapper">
+          <div className="container">
+            <h2 className="txt-center slide-up"><span className="txt-regular">Work</span> References</h2>
+          </div>
+          <Swiper className="workSwiper slide-up"
+            modules={[Navigation, Pagination]}
+            // slidesPerView={3.2}
+            // loop={true}
+            navigation
+            // pagination
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.1,
+                spaceBetween: 10,
+                slidesOffsetBefore: 20,
+              },
+              768: {
+                slidesPerView: 1.9,
+                spaceBetween: 10,
+                slidesOffsetBefore: 20,
+              },
+              991: {
+                slidesPerView: 2.5,
+                slidesOffsetBefore: 145,
+                spaceBetween: 20,
+              },
+              1300: {
+                slidesPerView: 3.6,
+                slidesOffsetBefore: 145,
+                spaceBetween: 20,
+              },
+            }}
+          >
+            {softSolMainProject.map((project, index) => (
+              <SwiperSlide key={project.id || index}>
+                <a href="/software-projects">
+                  <div className="work-wrapp">
+                    {/* <div className="client-icon">
+                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                    </div> */}
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <div className="proj-img">
+                      {/* <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img> */}
+                      <img
+                        src={
+                          project?.featuredImage?.node?.mediaItemUrl
+                            ? project.featuredImage.node.mediaItemUrl
+                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                        }
+                        alt={
+                          project?.featuredImage?.node?.altText
+                            ? project.featuredImage.node.altText
+                            : project?.title
+                        }
+                      />
+                    </div>
+                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
                   </div>
-                  <span className="arrow-icon">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                  <div className="proj-img">
-                    <img src="/assets/img/insurance-policy-project-img.webp" alt="Insurance Policy"></img>
-                  </div>
-                  <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>Making online purchase of insurance easier, our web application for a leading broker in Dubai helped grow business rapidly.</p>
-                </div>
-                </div>
-              </a>
-          </SwiperSlide>
-        </Swiper>
-      </section>
+                </a>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </section>
+      }
       {/* Work Reference Section Ends */}
 
       {/* Home Page Brand section starts */}
@@ -1124,6 +1075,19 @@ export const data = graphql`
         }
         ctaText
         ctaContent
+        selectProjects {
+          ... on WpPortfolio {
+            id
+            content
+            featuredImage {
+              node {
+                altText
+                mediaItemUrl
+              }
+            }
+            title
+          }
+        }
       }
     }
     wp {

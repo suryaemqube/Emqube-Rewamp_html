@@ -12,6 +12,7 @@ import "swiper/css/effect-coverflow";
 import "/src/assets/css/common.css";
 import "/src/assets/css/inside.css";
 
+import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -321,7 +322,7 @@ export default function SoftwareSolMain({ data }) {
             </div>
             <div className="inside-intro-title">
               <h1 dangerouslySetInnerHTML={{__html: data?.wpPage?.title}} />
-              <div dangerouslySetInnerHTML={{__html: softSolMain?.heroTitle}} />
+              <div className="inside-sub-txt" dangerouslySetInnerHTML={{__html: softSolMain?.heroTitle}} />
             </div>
             <div className="inside-intro-txt" dangerouslySetInnerHTML={{__html: softSolMain?.heroSubText}} />
             <div className="inside-intro-count right">

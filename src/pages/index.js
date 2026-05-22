@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { graphql, Link } from "gatsby";
 import "/src/assets/css/common.css";
 import "/src/assets/css/home.css";
+import Seo from "../components/SeoMeta";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -82,7 +83,7 @@ export default function Home({ data }) {
           // return center - itemWidth - GAP / 2;
           // return center - itemWidth;
           // return -265
-           if (typeof window !== "undefined") return;
+          //  if (typeof window !== "undefined") return;
           const w = window.innerWidth;
           
           if (w >= 1200) return 80;
@@ -97,7 +98,7 @@ export default function Home({ data }) {
           // right item
           // return center + GAP / 2;
           // return -62
-           if (typeof window !== "undefined") return;
+          //  if (typeof window !== "undefined") return;
           const w = window.innerWidth
 
           if (w >= 1200) return 0;
@@ -130,7 +131,7 @@ export default function Home({ data }) {
       // xPercent: -50, // ✅ replaces translateX(-50%)
       // right: "auto",
       width: () => {
-         if (typeof window !== "undefined") return;
+        //  if (typeof window !== "undefined") return;
         const w = window.innerWidth;
 
         if (w >= 1500) return 1200;
@@ -185,7 +186,7 @@ export default function Home({ data }) {
           // return center - itemWidth - GAP / 2;
           // return center - itemWidth;
           // return -265
-           if (typeof window !== "undefined") return;
+          //  if (typeof window !== "undefined") return;
           const w = window.innerWidth;
 
           if (w >= 1700) return -413;
@@ -201,7 +202,7 @@ export default function Home({ data }) {
           // right item
           // return center + GAP / 2;
           // return -62
-           if (typeof window !== "undefined") return;
+          //  if (typeof window !== "undefined") return;
           const w = window.innerWidth
 
           if (w >= 1700) return -250;
@@ -221,7 +222,7 @@ export default function Home({ data }) {
       // y: baseY,
 
       y: () => {
-         if (typeof window !== "undefined") return;
+        //  if (typeof window !== "undefined") return;
         const w = window.innerWidth
 
         if (w >= 1381) return baseY;
@@ -244,7 +245,7 @@ export default function Home({ data }) {
       },
 
       height: () => {
-         if (typeof window !== "undefined") return;
+        //  if (typeof window !== "undefined") return;
         const w = window.innerWidth
 
         if (w >= 1501) return 480;
@@ -497,6 +498,16 @@ export default function Home({ data }) {
   );
 }
 
+export const Head = ({ data }) => (
+  <Seo
+    seoData={data?.wpPage?.seo || []}
+    bodyClass={"no-scroll-top no-scrollbar new-home-page home"}
+    pageUrl={data?.wpPage?.uri}
+  >
+
+  </Seo>
+);
+
 export const data = graphql`
   query MyQuery {
     wpPage(databaseId: {eq: 64}) {
@@ -540,6 +551,29 @@ export const data = graphql`
             id
             mediaItemUrl
           }
+        }
+      }
+      seo {
+        canonical
+        opengraphDescription
+        opengraphImage {
+          altText
+          mediaItemUrl
+          height
+          width
+          mediaType
+        }
+        opengraphSiteName
+        opengraphTitle
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphUrl
+        opengraphModifiedTime
+        opengraphType
+        title
+        metaDesc
+        schema {
+          raw
         }
       }
     }

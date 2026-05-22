@@ -21,6 +21,7 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function SoftwareSolChild({data }) {
 
   const softSolChild = data?.wpPage?.businessApplicationDevelopment || {};
+  const softSolChildProject = data?.wpPage?.businessApplicationDevelopment?.selectProjectsList || [];
   const options = data?.wp?.acfOption?.common;
 
   const [menuActive, setMenuActive] = useState(false);
@@ -130,72 +131,6 @@ export default function SoftwareSolChild({data }) {
     setActiveAccordion(prev => (prev === index ? null : index));
   };
 
-  const slides = [
-    {
-      key: 1,
-      content: (
-        <a href="#">
-          <div className="work-wrapp">
-            <div className="client-icon">
-              <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-            </div>
-            <span className="arrow-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <div className="proj-img">
-              <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img>
-            </div>
-            <div className="proj-txt">
-              {/* <p className="proj-name">E-Move</p> */}
-              <p>Region's largest relocation company with services for furniture installation and storage</p>
-            </div>
-          </div>
-        </a>
-      )
-    },
-    {
-      key: 2,
-      content: (
-        <a href="#">
-          <div className="work-wrapp">
-            <div className="client-icon">
-              {/* <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img> */}
-            </div>
-            <span className="arrow-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <div className="proj-img">
-              <img src="/assets/img/ccms-project-img.webp" alt="Emovers"></img>
-            </div>
-          </div>
-        </a>
-      )
-    },
-    {
-      key: 3,
-      content: (
-        <a href="#">
-          <div className="work-wrapp">
-            <div className="client-icon">
-              {/* <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img> */}
-            </div>
-            <span className="arrow-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <div className="proj-img">
-              <img src="/assets/img/insurance-policy-project-img.webp" alt="Emovers"></img>
-            </div>
-          </div>
-        </a>
-      )
-    }
-  ];
 
     // common script for all animation - starts
     useEffect(() => {
@@ -366,11 +301,6 @@ export default function SoftwareSolChild({data }) {
       {softSolChild && 
         <section className="inside-intro-wrapper inside-child-intro-wrapper">
           <div class="container">
-            <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
-              <span><a href="/">Home</a></span>
-              <span><span> / </span><a href="/website-development/">Website Development</a></span>
-              <span><span> / </span><span class="post post-page current-item">About Website Development</span></span>
-            </div>
             <div className="breadcrumbs 123-test">
               {<Breadcrumb postId={100} />}
             </div>
@@ -544,6 +474,103 @@ export default function SoftwareSolChild({data }) {
         <div className="container">
           <h2 className="txt-center slide-up">Select Projects</h2>
         </div>
+        {windowWidth > 991 && softSolChildProject.length <= 3 ? (
+          <div className="centered-slides slide-up">
+            {softSolChildProject.map((project, index) => (
+              <div key={project.id || index} className="swiper-slide" style={{ flex: '0 0 auto' }}>
+                <a href="/software-projects">
+                  <div className="work-wrapp">
+                    {/* <div className="client-icon">
+                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                    </div> */}
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <div className="proj-img">
+                      <img
+                        src={
+                          project?.featuredImage?.node?.mediaItemUrl
+                            ? project.featuredImage.node.mediaItemUrl
+                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                        }
+                        alt={
+                          project?.featuredImage?.node?.altText
+                            ? project.featuredImage.node.altText
+                            : project?.title
+                        }
+                      />
+                    </div>
+                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Swiper
+            modules={[Navigation, Pagination]}
+            className="workSwiper slide-up"
+            navigation
+            pagination
+            autoplay={{ delay: 3000 }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.1,
+                spaceBetween: 10,
+                slidesOffsetBefore: 20,
+              },
+              768: {
+                slidesPerView: 1.9,
+                spaceBetween: 10,
+                slidesOffsetBefore: 20,
+              },
+              991: {
+                slidesPerView: 2.5,
+                slidesOffsetBefore: 145,
+                spaceBetween: 20,
+              },
+                1300: {
+                slidesPerView: 3.6,
+                slidesOffsetBefore: 145,
+                spaceBetween: 20,
+              },
+            }}
+          >
+            {softSolChildProject.map((project, index) => (
+              <SwiperSlide key={project.id || index}>
+                <a href="/software-projects">
+                  <div className="work-wrapp">
+                    {/* <div className="client-icon">
+                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                    </div> */}
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <div className="proj-img">
+                      <img
+                        src={
+                          project?.featuredImage?.node?.mediaItemUrl
+                            ? project.featuredImage.node.mediaItemUrl
+                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                        }
+                        alt={
+                          project?.featuredImage?.node?.altText
+                            ? project.featuredImage.node.altText
+                            : project?.title
+                        }
+                      />
+                    </div>
+                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                  </div>
+                </a>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </section>
       {/* Work Reference Section Ends */}
 
@@ -661,6 +688,19 @@ export const data = graphql`
         }
         ctaContent
         ctaTitle
+        selectProjectsList {
+          ... on WpPortfolio {
+            id
+            content
+            title
+            featuredImage {
+              node {
+                altText
+                mediaItemUrl
+              }
+            }
+          }
+        }
       }
     }
     wp {

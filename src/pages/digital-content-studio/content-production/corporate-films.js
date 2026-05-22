@@ -12,7 +12,6 @@ import "../../../../src/assets/css/common.css";
 import "../../../../src/assets/css/inside.css";
 import "../../../../src/assets/css/inside-child.css";
 
-import Breadcrumb from "../../../components/Breadcrumbs";
 import Layout from "../../../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -20,11 +19,11 @@ gsap.registerPlugin(ScrollToPlugin);
 
 export default function SoftwareSolChild({ data }) {
 
-  const softSolChild = data?.wpPage?.businessApplicationDevelopment || {};
-  const softSolChildProject = data?.wpPage?.businessApplicationDevelopment?.selectProjectsList || [];
+  const softSolChild = data?.wpPage?.websiteDevelopment || {};
+  const socialMedia = data?.wpPage?.socialMediaPlatform || {};
   const options = data?.wp?.acfOption?.common;
 
-  const itemCount = softSolChild?.emContent?.length || 0;
+  const itemCount = softSolChild?.websiteEmContent?.length || 0;
 
   const [menuActive, setMenuActive] = useState(false);
 
@@ -42,14 +41,14 @@ export default function SoftwareSolChild({ data }) {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
-     if (typeof window !== "undefined") return;
+    if (typeof window !== "undefined") return;
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-     if (typeof window !== "undefined") return;
+    if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);
@@ -64,7 +63,7 @@ export default function SoftwareSolChild({ data }) {
   }, []);
 
   useEffect(() => {
-     if (typeof window !== "undefined") return;
+    if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setShowTop(true);
@@ -78,7 +77,7 @@ export default function SoftwareSolChild({ data }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-   
+
   const scrollToTop = () => {
     if (typeof window !== "undefined") return;
     window.scrollTo({
@@ -93,7 +92,7 @@ export default function SoftwareSolChild({ data }) {
   
 
   useEffect(() => {
-     if (typeof window !== "undefined") return;
+    if (typeof window !== "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolled(true);
@@ -125,10 +124,6 @@ export default function SoftwareSolChild({ data }) {
     }));
   };
 
-  const accordionItems = softSolChild?.faqsContent.map((faqLst, index) => ({
-    question: faqLst.faqsTitle,
-    answer: faqLst.faqsContent,
-  }));
 
   const toggleAccordion = (index) => {
     setActiveAccordion(prev => (prev === index ? null : index));
@@ -325,7 +320,7 @@ export default function SoftwareSolChild({ data }) {
   const [openIndex, setOpenIndex] = useState(null);
 
     useEffect(() => {
-       if (typeof window !== "undefined") return;
+      if (typeof window !== "undefined") return;
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 767);
       };
@@ -363,15 +358,17 @@ export default function SoftwareSolChild({ data }) {
   // function for icon name convert to lower case and add hiphen between 2 words = ends
 
   return (
-    <Layout isWhatsappBusChild>
+    <Layout isAiDevChild>
     <>
 
       {/* Inside intro section starts */}
       {softSolChild && 
         <section className="inside-intro-wrapper inside-child-intro-wrapper">
           <div class="container">
-            <div className="breadcrumbs 123-test">
-              {<Breadcrumb postId={106} />}
+            <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
+              <span><a href="/">Home</a></span>
+              <span><span> / </span><a href="/website-development/">Website Development</a></span>
+              <span><span> / </span><span class="post post-page current-item">About Website Development</span></span>
             </div>
             <div className="title-wrapp">
               <p className="parent-page-title">Software Development</p>
@@ -382,7 +379,6 @@ export default function SoftwareSolChild({ data }) {
               <a href="#"
                 onClick={(e) => {
                   e.preventDefault();
-
                    if (typeof window !== "undefined") return;
                   gsap.to(window, {
                     duration: 1,
@@ -418,13 +414,13 @@ export default function SoftwareSolChild({ data }) {
       {/* child page intro highlight section ends */}
 
       {/* Child page strategic choice section starts */}
-      {softSolChild?.saContent && 
+      {softSolChild?.websiteSaContent && 
         <section className="strategic-choice-wrapper">
           <div className="container">
             <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
             <p className="sub-txt txt-center" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
             <ul>
-              {softSolChild?.saContent.map((strategList,index) => (
+              {softSolChild?.websiteSaContent.map((strategList,index) => (
                 <li>
                   <div className="left" dangerouslySetInnerHTML={{__html: strategList.saImage}} />
                   <div className="right">
@@ -441,14 +437,97 @@ export default function SoftwareSolChild({ data }) {
       }
       {/* Child page strategic choice section ends */}
 
+      {/* core web development section starts */}
+      {softSolChild?.websiteCwcp && 
+        <section className="core-web-deve-wrapper">
+          <div className="container">
+            <h2 dangerouslySetInnerHTML={{__html: softSolChild.cwcpTitle}} />
+            <ul>
+              {softSolChild?.websiteCwcp.map((corelst, index) => (
+                <li>
+                  <div className="left-img">
+                    <img src={corelst?.cwdcImage?.mediaItemUrl}></img>
+                  </div>
+                  <div className="right-txt">
+                    <p className="title" dangerouslySetInnerHTML={{__html: corelst.cwdcTitle}} />
+                    <p dangerouslySetInnerHTML={{__html: corelst.cwdcText}} />
+                  </div>
+                </li>
+              ))
+              }
+            </ul>
+          </div>
+        </section>
+      }
+      {/* core web development section ends */}
+
+      {/* social media platform section starts */}
+      {socialMedia && 
+        <section className="social-media-plat-wrapper">
+          <div className="container">
+            <h2 dangerouslySetInnerHTML={{__html: socialMedia.smpTitle}} />
+            <ul>
+              {socialMedia?.smpList && socialMedia?.smpList.map((socialLst,index) => (
+                <li className="linkedin">
+                  <div className="social-txt-wrapp">
+                    <div className="social-media-title">
+                      <h3 dangerouslySetInnerHTML={{__html: socialLst.smpListTitle}} />
+                    </div>
+                    <div className="social-media-txt">
+                      {socialLst?.smpListText?.map((socialLstTxt, ind) => (
+                        <p><span className="txt-med">{socialLstTxt.smpHead}</span>{socialLstTxt.smpTxt}</p>
+                      ))
+                      }
+                    </div>
+                    <div className="social-platgform-logo">
+                      <img src={socialLst?.smpListImage?.mediaItemUrl} alt={socialLst?.smpListTitle}></img>
+                    </div>
+                  </div>
+                </li>
+              ))
+              }
+            </ul>
+          </div>
+        </section>
+      }
+      {/* social media platform section ends */}
+
+      {/* partner with emqube section starts */}
+        <section className="inside-partner-wrapper">
+          <div className="container">
+            <h2 dangerouslySetInnerHTML={{__html: softSolChild?.wpTitle}} />
+            {softSolChild?.websiteWpwContent && 
+            <ul>
+              {softSolChild?.websiteWpwContent.map((partnerLst, index) => (
+                <li className="stagger-li">
+                  <div className="part-img">
+                    <img src={partnerLst?.wpwImage?.mediaItemUrl} alt={partnerLst?.wpwImage?.altText}></img>
+                    <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
+                  </div>
+                  <div className="part-txt">
+                    <h3 dangerouslySetInnerHTML={{__html: partnerLst.wpwTitle}} />
+                    <div dangerouslySetInnerHTML={{__html: partnerLst.wpwDescription}} />
+                  </div>
+                </li>
+              ))
+              }
+            </ul>
+            }
+            {softSolChild?.wpText &&
+              <div className="partner-txt" dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
+            }
+          </div>
+        </section>
+      {/* partner with emqube section ends */}
+
       {/* engagement model starts */}
-      {softSolChild?.emContent && 
+      {softSolChild?.websiteEmContent && 
         <section className={`engagement-model-wrapp step-${itemCount}`}>
           <div className="container">
             <h2 className="txt-center slide-up" dangerouslySetInnerHTML={{__html: softSolChild.engagementModelSectionTitle}} />
             <div className="eng-model-step">
               <ul className={`count-${itemCount}`}>
-                {softSolChild?.emContent.map((engModel,index) => (
+                {softSolChild?.websiteEmContent.map((engModel,index) => (
                   <li className="stagger-li">
                     <div className="step-count">{index + 1}</div>
                     <div className="eng-icon" dangerouslySetInnerHTML={{__html: engModel.emImage}} />
@@ -466,215 +545,14 @@ export default function SoftwareSolChild({ data }) {
       }
       {/* engagement model ends */}
 
-      {/* partner with emqube section starts */}
-      {softSolChild?.wpTitle && softSolChild?.wpwContent && 
-        <section className={`inside-partner-wrapper`}>
-          <div className="container">
-            <h2 dangerouslySetInnerHTML={{__html: softSolChild?.wpTitle}} />
-            <p dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
-            <ul>
-              {softSolChild?.wpwContent.map((partnerLst, index) => (
-                <li className="stagger-li">
-                  <div className="part-img">
-                    <img src={partnerLst?.wpwImage?.mediaItemUrl} alt={partnerLst?.wpwImage?.altText}></img>
-                    <div className="img-angle"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
-                  </div>
-                  <div className="part-txt">
-                    <h3 dangerouslySetInnerHTML={{__html: partnerLst.wpwTitle}} />
-                    <div dangerouslySetInnerHTML={{__html: partnerLst.wpwDescription}} />
-                  </div>
-                </li>
-              ))
-              }
-            </ul>
-          </div>
-        </section>
-      }
-      {/* partner with emqube section ends */}
-
-      {/* industry section starts */}
-      {softSolChild?.selectIndustries && softSolChild?.selectApplications && 
-        <section className="insudtry-list-wrapp">
-          <h2 className="slide-up">Work Reference</h2>
-          <div className="container">
-            {softSolChild?.selectIndustries &&
-              <div className="left">
-                <h3 className="slide-up">Industries</h3>
-                <ul>
-                  {softSolChild?.selectIndustries.map((indeslst,index) => {  
-                    const iconName = formatIconClass(indeslst);
-                    return (
-                      <li className="stagger-li">
-                        <span className="icon">
-                          <i className={`icon icon-${iconName}`}></i>
-                        </span>
-                        <p dangerouslySetInnerHTML={{__html: indeslst}} />
-                      </li>
-                    );
-                  })
-                  }
-                </ul>
-              </div>
-            }
-            {softSolChild?.selectApplications &&
-              <div className="right">
-                <h3 className="slide-up">Applications</h3>
-                <ul>
-                  {softSolChild?.selectApplications.map((appllst,index1) => {
-                    const iconName = formatIconClass(appllst);
-
-                    return (
-                      <li className="stagger-li">
-                        <span className="icon">
-                          <i className={`icon icon-${iconName}`}></i>
-                        </span>
-                        <p dangerouslySetInnerHTML={{__html: appllst}} />
-                      </li>
-                    )
-                  })
-                  }
-                </ul>
-              </div>
-            }
-          </div>
-        </section>
-      }
-      {/* industry section ends */}
 
       {/* Work Reference Section Starts */}
       <section className="work-ref-wrapper">
         <div className="container">
           <h2 className="txt-center slide-up">Select Projects</h2>
         </div>
-        {windowWidth > 991 && softSolChildProject.length <= 3 ? (
-          <div className="centered-slides slide-up">
-            {softSolChildProject.map((project, index) => (
-              <div key={project.id || index} className="swiper-slide" style={{ flex: '0 0 auto' }}>
-                <a href="/software-projects">
-                  <div className="work-wrapp">
-                    {/* <div className="client-icon">
-                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                    </div> */}
-                    <span className="arrow-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                    <div className="proj-img">
-                      <img
-                        src={
-                          project?.featuredImage?.node?.mediaItemUrl
-                            ? project.featuredImage.node.mediaItemUrl
-                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
-                        }
-                        alt={
-                          project?.featuredImage?.node?.altText
-                            ? project.featuredImage.node.altText
-                            : project?.title
-                        }
-                      />
-                    </div>
-                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
-                  </div>
-                </a>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <Swiper
-            modules={[Navigation, Pagination]}
-            className="workSwiper slide-up"
-            navigation
-            pagination
-            autoplay={{ delay: 3000 }}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.1,
-                spaceBetween: 10,
-                slidesOffsetBefore: 20,
-              },
-              768: {
-                slidesPerView: 1.9,
-                spaceBetween: 10,
-                slidesOffsetBefore: 20,
-              },
-              991: {
-                slidesPerView: 2.5,
-                slidesOffsetBefore: 145,
-                spaceBetween: 20,
-              },
-                1300: {
-                slidesPerView: 3.6,
-                slidesOffsetBefore: 145,
-                spaceBetween: 20,
-              },
-            }}
-          >
-            {softSolChildProject.map((project, index) => (
-              <SwiperSlide key={project.id || index}>
-                <a href="/software-projects">
-                  <div className="work-wrapp">
-                    {/* <div className="client-icon">
-                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                    </div> */}
-                    <span className="arrow-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                    <div className="proj-img">
-                      <img
-                        src={
-                          project?.featuredImage?.node?.mediaItemUrl
-                            ? project.featuredImage.node.mediaItemUrl
-                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
-                        }
-                        alt={
-                          project?.featuredImage?.node?.altText
-                            ? project.featuredImage.node.altText
-                            : project?.title
-                        }
-                      />
-                    </div>
-                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
-                  </div>
-                </a>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        )}
       </section>
       {/* Work Reference Section Ends */}
-
-      {/* faq section starts */}
-      {softSolChild?.faqsContent &&
-        <section className="faq-accordion-wrapper">
-          <div className="container">
-            <div className="faq-accordion">
-              <h2 className="faq-heading slide-up">Frequently Asked Questions</h2>
-              <div className="accordion-list slide-up">
-                {accordionItems.map((item, index) => (
-                  <div className={`accordion-item ${activeAccordion === index ? 'active' : ''}`} key={index}>
-                    <button type="button" className="accordion-trigger" onClick={() => toggleAccordion(index)}>
-                      <span>{item.question}</span>
-                      <span className="accordion-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="20" viewBox="0 0 46 20" fill="none">
-                          <path d="M22.7883 18.5158C22.6016 18.5181 22.4163 18.4812 22.2446 18.4076C22.0729 18.334 21.9185 18.2253 21.7914 18.0885L8.97291 5.27006C8.4032 4.70035 8.4032 3.8173 8.97291 3.24759C9.54262 2.67789 10.4257 2.67789 10.9954 3.24759L22.8168 15.069L34.6098 3.27608C35.1795 2.70637 36.0626 2.70637 36.6323 3.27608C37.202 3.84579 37.202 4.72884 36.6323 5.29855L23.8138 18.117C23.529 18.4018 23.1587 18.5443 22.8168 18.5443L22.7883 18.5158Z" fill="#707070"/>
-                        </svg>
-                      </span>
-                    </button>
-                    <div className="accordion-panel" style={{ maxHeight: activeAccordion === index ? '260px' : '0px' }}>
-                      <p dangerouslySetInnerHTML={{__html: item.answer}} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      }
-      {/* faq section ends */}
-
 
 
        {/* home cta section starts */}
@@ -727,29 +605,29 @@ export default function SoftwareSolChild({ data }) {
 
 export const data = graphql`
   query MyQuery {
-    wpPage(databaseId: {eq: 106}) {
+    wpPage(databaseId: {eq: 170}) {
       title
-      businessApplicationDevelopment {
+      websiteDevelopment {
         ssspPageTitle
         sspSubText
         inroTitle
         introDescription
         strategicAdvanageSubtext
         strategicAdvanageTitle
-        saContent {
+        websiteSaContent {
           saDescription
-          saImage
           saTitle
+          saImage
         }
         engagementModelSectionTitle
-        emContent {
+        websiteEmContent {
           emDescription
           emImage
           emTitle
         }
-        wpTitle
         wpText
-        wpwContent {
+        wpTitle
+        websiteWpwContent {
           wpwDescription
           wpwTitle
           wpwImage {
@@ -757,25 +635,33 @@ export const data = graphql`
             mediaItemUrl
           }
         }
-        selectIndustries
-        selectApplications
-        faqsContent {
+        cwcpTitle
+        websiteCwcp {
+          cwdcText
+          cwdcTitle
+          cwdcImage {
+            altText
+            mediaItemUrl
+          }
+        }
+        webisteFaqsContent {
           faqsContent
           faqsTitle
         }
         ctaContent
         ctaTitle
-        selectProjectsList {
-          ... on WpPortfolio {
-            id
-            content
-            title
-            featuredImage {
-              node {
-                altText
-                mediaItemUrl
-              }
-            }
+      }
+      socialMediaPlatform {
+        smpTitle
+        smpList {
+          smpListTitle
+          smpListText {
+            smpHead
+            smpTxt
+          }
+          smpListImage {
+            altText
+            mediaItemUrl
           }
         }
       }

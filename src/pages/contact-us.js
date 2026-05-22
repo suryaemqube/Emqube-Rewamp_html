@@ -11,6 +11,7 @@ import "/src/assets/css/inside.css";
 import "/src/assets/css/inside-child.css";
 import "/src/assets/css/contact-us.css";
 
+import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
 const WEBSITE_URL = process.env.GATSBY_BASE_URL
@@ -229,10 +230,9 @@ export default function ContactUs({ data }) {
       {/* Inside intro section starts */}
       <section className="inside-intro-wrapper inside-child-intro-wrapper contact-intro-wrapper">
         <div class="container">
-          <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
-            <span><a href="/">Home</a></span>
-            <span><span> / </span><span class="post post-page current-item">Contact</span></span>
-          </div>
+          <div className="breadcrumbs 123-test">
+              {<Breadcrumb postId={237} />}
+            </div>
           <h1>We are waiting <span className="txt-regular">for you</span></h1>
           <div className="product-head-wrapper">
             {contactPage?.contactPageLayout && 

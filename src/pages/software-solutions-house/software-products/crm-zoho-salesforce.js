@@ -16,6 +16,7 @@ import "../../../../src/assets/css/inside.css";
 import "../../../../src/assets/css/inside-child.css";
 import "../../../../src/assets/css/zoho-product.css";
 
+import Breadcrumb from "../../../components/Breadcrumbs";
 import Layout from "../../../components/Layout";
 
 const WEBSITE_URL = process.env.GATSBY_BASE_URL;
@@ -26,6 +27,7 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function SftProduct({ data }) {
 
   const softProductChild = data?.wpPage?.zohoProductPageLayout || {};
+  const softSolChildProject = data?.wpPage?.zohoProductPageLayout?.selectProjectList || [];
   const options = data?.wp?.acfOption?.common;
 
   const pageTitle = data?.wpPage?.title;
@@ -539,10 +541,8 @@ export default function SftProduct({ data }) {
       {softProductChild && 
         <section className="inside-intro-wrapper inside-child-intro-wrapper">
           <div class="container">
-            <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
-              <span><a href="/">Home</a></span>
-              <span><span> / </span><a href="/website-development/">Software Solutions House</a></span>
-              <span><span> / </span><span class="post post-page current-item">Software Product</span></span>
+            <div className="breadcrumbs 123-test">
+              {<Breadcrumb postId={124} />}
             </div>
             <div className="title-wrapp">
               <p className="parent-page-title">Software Product</p>
@@ -971,13 +971,39 @@ export default function SftProduct({ data }) {
       {/* Work Reference Section Starts */}
       <section className="work-ref-wrapper">
         <div className="container">
-          <h2 className="txt-center slide-up">Projects</h2>
+          <h2 className="txt-center slide-up">Select Projects</h2>
         </div>
-        {windowWidth > 991 && slides.length <= 3 ? (
+        {windowWidth > 991 && softSolChildProject.length <= 3 ? (
           <div className="centered-slides slide-up">
-            {slides.map((slide) => (
-              <div key={slide.key} className="swiper-slide" style={{ flex: '0 0 auto' }}>
-                {slide.content}
+            {softSolChildProject.map((project, index) => (
+              <div key={project.id || index} className="swiper-slide" style={{ flex: '0 0 auto' }}>
+                <a href="/software-projects">
+                  <div className="work-wrapp">
+                    {/* <div className="client-icon">
+                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                    </div> */}
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <div className="proj-img">
+                      <img
+                        src={
+                          project?.featuredImage?.node?.mediaItemUrl
+                            ? project.featuredImage.node.mediaItemUrl
+                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                        }
+                        alt={
+                          project?.featuredImage?.node?.altText
+                            ? project.featuredImage.node.altText
+                            : project?.title
+                        }
+                      />
+                    </div>
+                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                  </div>
+                </a>
               </div>
             ))}
           </div>
@@ -1004,16 +1030,42 @@ export default function SftProduct({ data }) {
                 slidesOffsetBefore: 145,
                 spaceBetween: 20,
               },
-               1300: {
+                1300: {
                 slidesPerView: 3.6,
                 slidesOffsetBefore: 145,
                 spaceBetween: 20,
               },
             }}
           >
-            {slides.map((slide) => (
-              <SwiperSlide key={slide.key}>
-                {slide.content}
+            {softSolChildProject.map((project, index) => (
+              <SwiperSlide key={project.id || index}>
+                <a href="/software-projects">
+                  <div className="work-wrapp">
+                    {/* <div className="client-icon">
+                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                    </div> */}
+                    <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <div className="proj-img">
+                      <img
+                        src={
+                          project?.featuredImage?.node?.mediaItemUrl
+                            ? project.featuredImage.node.mediaItemUrl
+                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                        }
+                        alt={
+                          project?.featuredImage?.node?.altText
+                            ? project.featuredImage.node.altText
+                            : project?.title
+                        }
+                      />
+                    </div>
+                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                  </div>
+                </a>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -1154,6 +1206,19 @@ export const data = graphql`
         zohoFaqList {
           zohoFaqAnswer
           zohoFaqQuestion
+        }
+        selectProjectList {
+          ... on WpPortfolio {
+            id
+            content
+            title
+            featuredImage {
+              node {
+                altText
+                mediaItemUrl
+              }
+            }
+          }
         }
       }
     }

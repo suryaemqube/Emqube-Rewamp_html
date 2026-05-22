@@ -391,7 +391,8 @@ main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-s
 }
 main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left .proj-tech-logo ul {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   gap: 11px;
 }
 @media (max-width: 1500px) {
@@ -413,6 +414,12 @@ main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-s
   main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left .proj-tech-logo ul li {
     width: 17%;
   }
+}
+main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left .proj-tech-logo ul li p span {
+  margin-left: 10px;
+}
+main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left .proj-tech-logo ul li p img {
+  height: 60px;
 }
 @media (max-width: 767px) {
   main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left > div {

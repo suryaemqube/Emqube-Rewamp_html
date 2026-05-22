@@ -118,7 +118,12 @@ const PortfolioDetail = ({ data }) => {
 									<ul>
 										{post?.softwarePortfolioLayout?.technologyLogos.map((techLogo, index) => (
 											<li>
+												<p>
 												<img src={techLogo?.mediaItemUrl}></img>
+												{techLogo?.altText && 
+												<span className="tech-name" dangerouslySetInnerHTML={{__html: techLogo?.altText}} />
+												}
+												</p>
 											</li>
 										))
 										}

@@ -13,6 +13,7 @@ import "/src/assets/css/common.css";
 import "/src/assets/css/inside.css";
 import "/src/assets/css/reference.css";
 
+import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);

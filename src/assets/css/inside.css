@@ -317,6 +317,9 @@
 .inside-page .inside-intro-wrapper .container .inside-intro-txt p:last-child {
   margin-bottom: 0;
 }
+.inside-page .inside-intro-wrapper .container .inside-intro-txt p a {
+  color: #767676;
+}
 .inside-page .inside-intro-wrapper .container .inside-intro-txt:after {
   content: "";
 }

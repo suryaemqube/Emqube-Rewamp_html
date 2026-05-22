@@ -22,6 +22,7 @@ import "/src/assets/css/inside.css";
 import "/src/assets/css/inside-child.css";
 import "/src/assets/css/digi-portfolio.css";
 
+import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);

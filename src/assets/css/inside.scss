@@ -302,6 +302,9 @@ $light_grey: var(--light_grey);
 					&:last-child{
 						margin-bottom: 0;
 					}
+					a{
+						color: #767676;
+					}
 				}
 				&:after{
 					content: '';

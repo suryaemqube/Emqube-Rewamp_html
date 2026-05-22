@@ -337,7 +337,8 @@ main.case-study-detail.inside-page{
           }
           ul{
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            flex-direction: column;
             gap: 11px;
             @media(max-width: 1500px){
               gap: 10px;
@@ -351,6 +352,14 @@ main.case-study-detail.inside-page{
               }
               @media(max-width: 767px){
                 width: 17%;
+              }
+              p{
+                span{
+                  margin-left: 10px;
+                }
+                img{
+                  height: 60px;
+                }
               }
             }
           }
