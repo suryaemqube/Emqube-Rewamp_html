@@ -2634,3 +2634,125 @@ content: "\f009";
     background-image: url(../img/ecommerce-intro-bg-angle.svg);
   }
 }
+
+// zoho crm section starts
+	.zoho-crm-wrapper.piller-wrapper{
+		position: relative;
+		z-index: 9;
+		.container{
+			.crm-list{
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px 4px;
+				li{
+					width: 49.7%;
+					border-radius: 4px;
+					border: 1px solid rgba(230, 230, 230, 0.00);
+					background: #FFF;
+					box-shadow: 0 331px 93px 0 rgba(0, 0, 0, 0.00), 0 212px 85px 0 rgba(0, 0, 0, 0.00), 0 119px 71px 0 rgba(0, 0, 0, 0.01), 0 53px 53px 0 rgba(0, 0, 0, 0.02), 0 13px 29px 0 rgba(0, 0, 0, 0.02);
+					position: relative;
+					z-index: 1;
+					// 1024 - 1920 : 21 - 40
+					padding: clamp(1.313rem, -0.0436rem + 2.1196vw, 2.5rem);
+					@media(max-width: 767px){
+						width: 100%;
+						padding: 20px;
+					}
+					&:before{
+						content: '';
+						position: absolute;
+						top: 0;
+						left: -5px;
+						background-size: contain;
+						width: 100%;
+						height: 100%;
+						opacity: 0.27;
+						background: url(../img/crm-li-bg-img.png) #ffffff 0px -12.618px / 100% 123.221% no-repeat;
+						background-blend-mode: multiply;
+						z-index: -1;
+					}
+					&.w-100{
+						width: 100%;
+					}
+					.top{
+						display: flex;
+						align-items: center;
+						// 1024 - 1920 : 24 - 45
+						margin-bottom: clamp(1.5rem, -0.0006rem + 2.3446vw, 2.813rem);
+						span.icon{
+							width: 50px;
+							height: 50px;
+							background-color: #F3F3F3;
+							border-radius: 50%;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							margin-right: 14px;
+							transition: all 0.5s ease-in-out;
+							@media(max-width: 767px){
+								width: 40px;
+								height: 40px;
+							}
+							svg{
+								width: 30px;
+								@media(max-width: 767px){
+									width: 23px;
+								}
+							}
+						}
+					}
+					.bottom{
+						width: 82%;
+						@media(max-width: 1080px){
+							width: 100%;
+						}
+					}
+					h3{
+						// 320 - 1920 : 16 - 28
+						font-size: clamp(1rem, 0.7rem + 0.75vw, 1.75rem);
+						color: #5E5E5E;
+						font-family: HelvNowDis-medium;
+						font-weight: 500;
+						@media(max-width: 1080px){
+							width: 80%;
+						}
+						@media(max-width: 767px){
+							// 340 - 767 : 17 - 20
+							font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem) !important;
+						}
+					}
+					p{
+						color: #767676;
+						font-family: HelvNowDis-light;
+						font-weight: 300;
+						line-height: 1.65em;
+						// 320 - 1920 : 14 - 22
+            font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+						@media(max-width: 1500px){
+							font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
+						}
+						@media(max-width: 767px){
+							// 340 - 767 : 15 - 18
+							font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
+							line-height: 1.7em;
+						}
+					}
+					&:hover{
+						.top{
+							span.icon{
+								background-color: var(--light_green);
+								transition: all 0.5s ease-in-out;
+								svg{
+									path{
+										fill: var(--white);
+										transition: 0.5s ease-in-out;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	// zoho crm section ends

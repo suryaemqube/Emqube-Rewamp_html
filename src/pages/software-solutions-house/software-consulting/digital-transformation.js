@@ -20,6 +20,7 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function SoftwareSolChild({ data }) {
 
   const softSolChild = data?.wpPage?.businessApplicationDevelopment || {};
+  const softSolChildOther = data?.wpPage?.softwareConsultingDifferenceandPillar || {};
   const options = data?.wp?.acfOption?.common;
 
   const [menuActive, setMenuActive] = useState(false);
@@ -444,10 +445,81 @@ export default function SoftwareSolChild({ data }) {
       {/* automation vs transformation section starts */}
       <section className="automation-diff-wrapper">
         <div className="container">
-          
+          <h2 dangerouslySetInnerHTML={{__html: softSolChildOther.title}} />
+          <div className="sub-txt" dangerouslySetInnerHTML={{__html: softSolChildOther.description}} />
+          {softSolChildOther?.featureTable &&
+          softSolChildOther.featureTable.length > 0 && (
+            <div className="feature-table-wrapper">
+              <div className="container">
+
+                <table className="feature-table">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Digital Transformation</th>
+                      <th>Traditional Business Automation</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {softSolChildOther.featureTable.map((item, index) => (
+                      <tr key={index}>
+                        <td
+                          dangerouslySetInnerHTML={{
+                            __html: item?.feature,
+                          }}
+                        />
+
+                        <td
+                          dangerouslySetInnerHTML={{
+                            __html: item?.digitalTransformation,
+                          }}
+                        />
+
+                        <td
+                          dangerouslySetInnerHTML={{
+                            __html: item?.traditionalBusinessAutomation,
+                          }}
+                        />
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        )}
         </div>
       </section>
       {/* automation vs transformation section ends */}
+
+      {/* crm services section starts */}
+      {softSolChildOther?.fivePillars && softSolChildOther?.pillarsList &&
+        <section className="zoho-crm-wrapper piller-wrapper" id="zoho-crm-service">
+          <div className="container">
+            <h2 dangerouslySetInnerHTML={{__html: softSolChildOther?.fivePillars}} />
+            <ul className="crm-list">
+              {softSolChildOther?.pillarsList.map((crmLst,index) => (
+                <li
+                  key={index}
+                  className={
+                    index === softSolChildOther?.pillarsList.length - 1
+                      ? "w-100"
+                      : ""
+                  }
+                >
+                  <div className="top">
+                    <span className="icon" dangerouslySetInnerHTML={{__html: crmLst.zohoCrmServiceListImage}} />
+                    <h3 dangerouslySetInnerHTML={{__html: crmLst.title}} />
+                  </div>
+                  <div className="bottom" dangerouslySetInnerHTML={{__html: crmLst.description}} />
+                </li>
+              ))
+              }
+            </ul>
+          </div>
+        </section>
+      }
+      {/* crm services section ends */}
 
       {/* engagement model starts */}
       {softSolChild?.emContent && 
