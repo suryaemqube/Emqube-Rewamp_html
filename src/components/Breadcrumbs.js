@@ -69,7 +69,7 @@ const Breadcrumb = ({ postId }) => {
               <span
                 dangerouslySetInnerHTML={{
                   __html:
-                    item.item.name === "innerspacedxb"
+                    item.item.name === "emqube"
                       ? "Home"
                       : item.item.name,
                 }}
