@@ -12,12 +12,13 @@ import "../../../../src/assets/css/common.css";
 import "../../../../src/assets/css/inside.css";
 import "../../../../src/assets/css/inside-child.css";
 
+import Breadcrumb from "../../../components/Breadcrumbs";
 import Layout from "../../../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 
-export default function SoftwareSolChild({ data }) {
+export default function SoftwareSolChild({data }) {
 
   const softSolChild = data?.wpPage?.businessApplicationDevelopment || {};
   const options = data?.wp?.acfOption?.common;
@@ -120,7 +121,7 @@ export default function SoftwareSolChild({ data }) {
     }));
   };
 
-  const accordionItems = softSolChild?.faqsContent.map((faqLst, index) => ({
+  const accordionItems = softSolChild?.faqsContent?.map((faqLst, index) => ({
     question: faqLst.faqsTitle,
     answer: faqLst.faqsContent,
   }));
@@ -369,6 +370,9 @@ export default function SoftwareSolChild({ data }) {
               <span><a href="/">Home</a></span>
               <span><span> / </span><a href="/website-development/">Website Development</a></span>
               <span><span> / </span><span class="post post-page current-item">About Website Development</span></span>
+            </div>
+            <div className="breadcrumbs 123-test">
+              {<Breadcrumb postId={100} />}
             </div>
             <div className="title-wrapp">
               <p className="parent-page-title">Software Development</p>
@@ -622,7 +626,8 @@ export default function SoftwareSolChild({ data }) {
 
 export const data = graphql`
   query MyQuery {
-    wpPage(databaseId: {eq: 100}) {
+    wpPage(databaseId: { eq: 100 }) {
+      id
       title
       businessApplicationDevelopment {
         ssspPageTitle

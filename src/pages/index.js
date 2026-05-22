@@ -25,6 +25,7 @@ export default function Home({ data }) {
     setVisibleCount((prev) => prev + 9);
   };
 
+  
   const logos = options?.brandLogos.map(item => ({
     src: item.mediaItemUrl, 
     alt: item.altText

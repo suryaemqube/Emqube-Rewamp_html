@@ -17,10 +17,10 @@ const Breadcrumb = ({ postId }) => {
   useEffect(() => {
     const fetchToken = async () => {
       try {
-         const response = await fetch(`${process.env.GATSBY_MAIN_URL}/.netlify/functions/fghdfgrtbsrd`);
+        const response = await fetch(`${process.env.GATSBY_MAIN_URL}/.netlify/functions/fghdfgrtbsrd`);
         const { token } = await response.json();
         setToken(token);
-      } catch (error) { }
+      } catch (error) {}
     };
 
     fetchToken();
@@ -39,38 +39,58 @@ const Breadcrumb = ({ postId }) => {
           }
         );
         setJsonData(response.data);
-        // console.log('breadcrumbs:', response.data)
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchBreadcrumbs();
-  }, [postId]);
+  }, [PAGEID, token]);
 
-  if (!jsonData) {
-    return <div>Loading breadcrumbs...</div>;
-  }
+  const itemListElements =
+    jsonData &&
+    jsonData.itemListElement.map((item, index) => (
+      <span key={index}>
+        {index > 0 && <span className="seperate"> &gt; </span>}
+        {index === jsonData.itemListElement.length - 1 ? (
+          <span
+            className="post post-page current-item"
+            dangerouslySetInnerHTML={{ __html: item.item.name }}
+          />
+        ) : (
+          <>
+            <a
+              href={
+                item.item["@id"] === WEBSITE_URL
+                  ? "/"
+                  : shortUrl(item.item["@id"])
+              }
+            >
+              <span
+                dangerouslySetInnerHTML={{
+                  __html:
+                    item.item.name === "innerspacedxb"
+                      ? "Home"
+                      : item.item.name,
+                }}
+              />
+            </a>
+          </>
+        )}
+      </span>
+    ));
 
-  const itemListElements = jsonData.itemListElement.map((item, index) => (
-    <span key={index}>
-      {index > 0 && <span className="seperate"> &gt; </span>}
-      {index === jsonData.itemListElement.length - 1 ? (
-        <span className="post post-page current-item" dangerouslySetInnerHTML={{ __html: item.item.name }} />
+  return (
+    <>
+      {jsonData ? (
+        itemListElements
       ) : (
-        <>
-          <a
-            href={item.item["@id"] === WEBSITE_URL ? "https://hacker.ae/" : "https://hacker.ae"+shortUrl(item.item["@id"])}
-          >
-            <span dangerouslySetInnerHTML={{ __html: item.item.name === "Häcker" ? "Home" : item.item.name }} />
-          </a> 
-        </>
+        <div className="breadcrumbs">
+          <span>Loading breadcrumbs...</span>
+        </div>
       )}
-    </span>
-  ));
-  
-
-  return <>{itemListElements}</>;
+    </>
+  );
 };
 
 export default Breadcrumb;
