@@ -501,7 +501,7 @@ export default function Home({ data }) {
 export const Head = ({ data }) => (
   <Seo
     seoData={data?.wpPage?.seo || []}
-    bodyClass={"no-scroll-top no-scrollbar new-home-page home"}
+    bodyClass={"new-home-page"}
     pageUrl={data?.wpPage?.uri}
   >
 

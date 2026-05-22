@@ -3,7 +3,7 @@ import React from "react";
 // import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 
-const Seo = ({ bodyClass, title, description, pageUrl = "emquberevamphtml.netlify.app", seoData, children, visibility = true, }) => {
+const Seo = ({ bodyClass, title, description, pageUrl = "/", seoData, children, visibility = true, }) => {
   // const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata()
   // const seo = {
   //   title: title || defaultTitle,
