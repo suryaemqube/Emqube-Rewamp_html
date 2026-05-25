@@ -235,7 +235,7 @@ main.software-projects-page.inside-page{
               .proj-main-title{
                 font-family: HelvNowDis-medium;
 		            font-weight: 500;
-                width: 95%;
+                width: 90%;
                 bottom: 25px;
                 left: 25px;
                 color: var(--white);
@@ -243,15 +243,20 @@ main.software-projects-page.inside-page{
                 transform: translateY(0px);
                 transition: transform 0.5s ease-in-out;
                 // 1024 - 1920 : 20 - 36
-                font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+                // font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+                // 1024 - 1920 : 20 - 30
+                font-size: clamp(1.25rem, 0.5357rem + 1.1161vw, 1.875rem);
+                line-height: 1.2em;
                 @media(max-width: 1500px){
                   left: 15px;
                   // 1024 - 1500 : 22 - 25
-                  font-size: clamp(1.375rem, 0.9706rem + 0.6319vw, 1.563rem);
+                  // font-size: clamp(1.375rem, 0.9706rem + 0.6319vw, 1.563rem);
+                  // 1024 - 1500 : 18 - 22
+                  font-size: clamp(1.125rem, 0.5872rem + 0.8403vw, 1.375rem);
                 }
                 @media(max-width: 1023px){
                   // 320 - 1023 : 19 - 20
-                  font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
+                  // font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
                   line-height: 1.3em;
                 }
                 @media(max-width: 1080px){

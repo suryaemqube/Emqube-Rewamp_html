@@ -114,6 +114,7 @@ main.case-study-detail.inside-page{
       .inside-intro-title{
         padding-top: 0;
         margin-bottom: 0;
+        max-width: 750px;
         @media(max-width: 767px){
           padding-bottom: 0;
           padding-left: 0;

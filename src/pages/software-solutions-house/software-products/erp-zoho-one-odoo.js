@@ -1145,7 +1145,7 @@ export default function SftProduct({ data }) {
       {/* faq section ends */}
 
       {/* home cta section starts */}
-      <LazyLoad offset={30} onContentVisible={() => setIsLoaded(true)}>
+      <LazyLoad offset={0} onContentVisible={() => setIsLoaded(true)}>
         <Suspense fallback={<div>Loading...</div>}>
           <CtaSection
             ctaTitle={ctaTitle}
