@@ -364,7 +364,7 @@ export default function SoftwareSolChild({ data }) {
   // function for icon name convert to lower case and add hiphen between 2 words = ends
 
   return (
-    <Layout isAiDevChild>
+    <Layout isBusinessIntelChild>
     <>
 
       {/* Inside intro section starts */}
@@ -471,7 +471,7 @@ export default function SoftwareSolChild({ data }) {
         <section className="inside-partner-wrapper">
           <div className="container">
             <h2 dangerouslySetInnerHTML={{__html: softSolChild?.wpTitle}} />
-            <p dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
+            <p className="sub-txt" dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
             <ul>
               {softSolChild?.wpwContent.map((partnerLst, index) => (
                 <li className="stagger-li">
@@ -504,7 +504,9 @@ export default function SoftwareSolChild({ data }) {
                   <div className="left">
                     <img src={indusLst?.iliTechLogo?.mediaItemUrl} alt={indusLst?.iliTechLogo?.altText}></img>
                   </div>
-                  <div className="right" dangerouslySetInnerHTML={{__html: indusLst.iliTechText}} />
+                  <div className="right">
+                    <p dangerouslySetInnerHTML={{__html: indusLst.iliTechText}} />
+                  </div>
                 </li>
               ))
               }

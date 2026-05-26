@@ -4,10 +4,10 @@ const CtaSection = ({ ctaTitle, ctaText, whatsappUrl, callNumber, contactUsUrl }
   return (
     <section className="cta-wrapper">
       <div className="container">
-        {ctaTitle && <p className="cta-title stagger-li">{ctaTitle}</p>}
+        {ctaTitle && <p className="cta-title">{ctaTitle}</p>}
         {ctaText && (
           <p
-            className="cta-txt stagger-li"
+            className="cta-txt"
             dangerouslySetInnerHTML={{ __html: ctaText }}
           />
         )}
@@ -15,7 +15,7 @@ const CtaSection = ({ ctaTitle, ctaText, whatsappUrl, callNumber, contactUsUrl }
           <ul className="lets-talk-wrap">
 
             {/* WhatsApp */}
-            <li className="whatsapp stagger-li">
+            <li className="whatsapp">
               <a href={whatsappUrl || "#"} className="view-all pos-ab-aligh-right" target="_blank" rel="noopener noreferrer">
                 <span className="text">WhatsApp</span>
                 <span className="circle">
@@ -27,7 +27,7 @@ const CtaSection = ({ ctaTitle, ctaText, whatsappUrl, callNumber, contactUsUrl }
             </li>
 
             {/* Contact Us */}
-            <li className="contact-us stagger-li">
+            <li className="contact-us">
               <a href={contactUsUrl || "javascript:void(0);"} className="view-all">
                 <span className="text">Contact Us</span>
                 <span className="circle">
@@ -39,7 +39,7 @@ const CtaSection = ({ ctaTitle, ctaText, whatsappUrl, callNumber, contactUsUrl }
             </li>
 
             {/* Call Us */}
-            <li className="call-us stagger-li">
+            <li className="call-us">
               <a href={callNumber ? `tel:${callNumber}` : "#"} className="view-all pos-ab-aligh-right">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M22.6 24C19.8222 24 17.0778 23.3944 14.3667 22.1833C11.6556 20.9722 9.18889 19.2556 6.96667 17.0333C4.74444 14.8111 3.02778 12.3444 1.81667 9.63333C0.605556 6.92222 0 4.17778 0 1.4C0 1 0.133333 0.666667 0.4 0.4C0.666667 0.133333 1 0 1.4 0H6.8C7.11111 0 7.38889 0.105556 7.63333 0.316667C7.87778 0.527778 8.02222 0.777778 8.06667 1.06667L8.93333 5.73333C8.97778 6.08889 8.96667 6.38889 8.9 6.63333C8.83333 6.87778 8.71111 7.08889 8.53333 7.26667L5.3 10.5333C5.74444 11.3556 6.27222 12.15 6.88333 12.9167C7.49444 13.6833 8.16667 14.4222 8.9 15.1333C9.58889 15.8222 10.3111 16.4611 11.0667 17.05C11.8222 17.6389 12.6222 18.1778 13.4667 18.6667L16.6 15.5333C16.8 15.3333 17.0611 15.1833 17.3833 15.0833C17.7056 14.9833 18.0222 14.9556 18.3333 15L22.9333 15.9333C23.2444 16.0222 23.5 16.1833 23.7 16.4167C23.9 16.65 24 16.9111 24 17.2V22.6C24 23 23.8667 23.3333 23.6 23.6C23.3333 23.8667 23 24 22.6 24Z" fill="#242424"/>

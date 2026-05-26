@@ -12,6 +12,7 @@ import "../../../../src/assets/css/common.css";
 import "../../../../src/assets/css/inside.css";
 import "../../../../src/assets/css/inside-child.css";
 
+import Breadcrumb from "../../../components/Breadcrumbs";
 import Layout from "../../../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -368,13 +369,11 @@ export default function SoftwareSolChild({ data }) {
       {softSolChild && 
         <section className="inside-intro-wrapper inside-child-intro-wrapper">
           <div class="container">
-            <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
-              <span><a href="/">Home</a></span>
-              <span><span> / </span><a href="/website-development/">Website Development</a></span>
-              <span><span> / </span><span class="post post-page current-item">About Website Development</span></span>
+            <div className="breadcrumbs 123-test">
+              {<Breadcrumb postId={145} />}
             </div>
             <div className="title-wrapp">
-              <p className="parent-page-title">Software Development</p>
+              <p className="parent-page-title">Digital Content Studio</p>
               <h1 dangerouslySetInnerHTML={{__html: softSolChild.ssspPageTitle}} />
               <p className="sub-txt" dangerouslySetInnerHTML={{__html: softSolChild.sspSubText}} />
             </div>

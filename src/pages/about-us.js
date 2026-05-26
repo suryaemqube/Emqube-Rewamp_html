@@ -350,7 +350,7 @@ export default function About({ data }) {
                     </div>
                     <div className="team-mem-name">
                       <p dangerouslySetInnerHTML={{__html: member.memberName}} />
-                      <p className="mem-exp-year">{member.memberYearOfExperience} Years of <br />experience</p>
+                      <p className="mem-exp-year">{member.memberYearOfExperience}</p>
                     </div>
                   </a>
                 </li>

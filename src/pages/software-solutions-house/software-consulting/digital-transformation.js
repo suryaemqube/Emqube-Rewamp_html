@@ -547,24 +547,28 @@ export default function SoftwareSolChild({ data }) {
       {/* engagement model ends */}
 
       {/* partner with emqube section starts */}
-      <section className="inside-partner-wrapper">
-        <div className="container">
-          <h2 dangerouslySetInnerHTML={{__html: softSolChild?.wpTitle}} />
-          <ul className="partner-single">
-            <li className="stagger-li">
-              <div className="part-txt" dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
-              <div className="part-img">
-                {/* <img src={softProductChild?.zohoWhyPartnerSectionRightLogo?.mediaItemUrl} alt={softProductChild?.zohoWhyPartnerSectionTitle}></img> */}
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {softSolChild?.wpText &&
+        <section className="inside-partner-wrapper">
+          <div className="container">
+            <h2 dangerouslySetInnerHTML={{__html: softSolChild?.wpTitle}} />
+            <ul className="partner-single">
+              <li className="stagger-li">
+                <div className="part-txt" dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
+                {softSolChild?.whyPartnerImage && 
+                  <div className="part-img">
+                    <img src={softSolChild?.whyPartnerImage?.mediaItemUrl} alt={softSolChild?.wpTitle}></img>
+                  </div>
+                }
+              </li>
+            </ul>
+          </div>
+        </section>
+      }
       {/* partner with emqube section ends */}
 
       {/* industry section starts */}
       {softSolChild?.selectIndustries &&  
-        <section className="insudtry-list-wrapp">
+        <section className="insudtry-list-wrapp indus-flex-dir-btm bg-none">
           <h2 className="slide-up">Work Reference</h2>
           <div className="container">
             {softSolChild?.selectIndustries &&
@@ -803,6 +807,10 @@ export const data = graphql`
             altText
             mediaItemUrl
           }
+        }
+        whyPartnerImage {
+          altText
+          mediaItemUrl
         }
         selectIndustries
         selectApplications

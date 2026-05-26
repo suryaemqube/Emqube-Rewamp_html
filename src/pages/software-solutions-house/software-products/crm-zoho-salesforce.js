@@ -406,6 +406,8 @@ export default function SftProduct({ data }) {
 
     return text
       .replace(/<[^>]*>/g, "") // remove HTML tags (important for dangerouslySetInnerHTML)
+      .replace(/&amp;/g, "")       // remove HTML-encoded &
+      .replace(/&/g, "")           // remove raw &
       .toLowerCase()
       .trim()
       .replace(/\s+/g, "-"); // replace spaces with hyphen
@@ -549,15 +551,21 @@ export default function SftProduct({ data }) {
             </div>
             <div className="product-head-wrapper">
               <div className="left">
+                {/* {softProductChild?.productLogo || softProductChild.productTag && */}
                 <div className="zoho-left-top-wrapp">
+                  {softProductChild?.productLogo && 
                   <div className="zoho-logo">
                     <img src={softProductChild?.productLogo?.mediaItemUrl} alt={softProductChild?.zohoPageTitle}></img>
                   </div>
+                  }
+                  {softProductChild.productTag && 
                   <div className="partner-tag">
                     <img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/authorized-icon.svg" alt="Authorized Partner"></img>
                     <p dangerouslySetInnerHTML={{__html: softProductChild.productTag}} />
                   </div>
+                  }
                 </div>
+                {/* } */}
                 <h1 dangerouslySetInnerHTML={{__html: softProductChild?.zohoPageTitle}} />
                 <p className="sub-txt" dangerouslySetInnerHTML={{__html: softProductChild.zohoIntroText}} />
                 <div className="zoho-interlinks">

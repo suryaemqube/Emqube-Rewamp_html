@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { graphql, Link } from "gatsby";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectCoverflow  } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectCoverflow  } from "swiper/modules";
 import gsap from 'gsap';
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -831,8 +831,9 @@ export default function SoftwareSolMain({ data }) {
           >
             {softSolMainProjectAll.map((project, index) => (
               <SwiperSlide key={project.id || index}>
-                <a href={project?.digitalPortfolioLayout?.websiteLink}>
+                <a href={project?.digitalPortfolioLayout?.websiteLink ? project.digitalPortfolioLayout.websiteLink : "#"} target="_blank" rel="noopener noreferrer">
                   <div className="work-wrapp">
+                    {project?.digitalPortfolioLayout?.clientLogo && 
                     <div className="client-icon">
                       <img src={project?.digitalPortfolioLayout?.clientLogo?.mediaItemUrl} 
                       alt={
@@ -842,6 +843,7 @@ export default function SoftwareSolMain({ data }) {
                         }
                         ></img>
                     </div>
+                    }
                     <span className="arrow-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                         <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -862,7 +864,9 @@ export default function SoftwareSolMain({ data }) {
                         }
                       />
                     </div>
-                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    {project?.content && 
+                      <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    }
                   </div>
                 </a>
               </SwiperSlide>
@@ -878,9 +882,9 @@ export default function SoftwareSolMain({ data }) {
           <div className="container">
             <h2 className="slide-up" dangerouslySetInnerHTML={{__html: softSolMain?.dcsBrandSectionTitle}} />
             <Swiper className="techSwiper slide-up"
-              // modules={[Navigation, Pagination, Autoplay]}
+              modules={[Autoplay]}
               // slidesPerView={3.2}
-              // loop={true}
+              loop={true}
               navigation
               // pagination={{ clickable: true }}
               autoplay={{ delay: 3000 }}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { graphql, Link } from "gatsby";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectCoverflow  } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectCoverflow  } from "swiper/modules";
 import gsap from 'gsap';
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -902,9 +902,9 @@ export default function SoftwareSolMain({ data }) {
           <div className="container">
             <h2 className="slide-up">Technology Platforms</h2>
             <Swiper className="techSwiper slide-up"
-              // modules={[Navigation, Pagination, Autoplay]}
+              modules={[Autoplay]}
               // slidesPerView={3.2}
-              // loop={true}
+              loop={true}
               navigation
               // pagination={{ clickable: true }}
               autoplay={{ delay: 3000 }}

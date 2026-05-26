@@ -12,6 +12,7 @@ import "../../../../src/assets/css/common.css";
 import "../../../../src/assets/css/inside.css";
 import "../../../../src/assets/css/inside-child.css";
 
+import Breadcrumb from "../../../components/Breadcrumbs";
 import Layout from "../../../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -366,13 +367,11 @@ export default function SoftwareSolChild({ data }) {
       {softSolChild && 
         <section className="inside-intro-wrapper inside-child-intro-wrapper">
           <div class="container">
-            <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
-              <span><a href="/">Home</a></span>
-              <span><span> / </span><a href="/website-development/">Website Development</a></span>
-              <span><span> / </span><span class="post post-page current-item">About Website Development</span></span>
+            <div className="breadcrumbs 123-test">
+              {<Breadcrumb postId={170} />}
             </div>
             <div className="title-wrapp">
-              <p className="parent-page-title">Software Development</p>
+              <p className="parent-page-title">Digital Content Studio</p>
               <h1 dangerouslySetInnerHTML={{__html: softSolChild.ssspPageTitle}} />
               <p className="sub-txt" dangerouslySetInnerHTML={{__html: softSolChild.sspSubText}} />
             </div>
@@ -440,7 +439,7 @@ export default function SoftwareSolChild({ data }) {
 
       {/* core web development section starts */}
       {softSolChild?.websiteCwcp && 
-        <section className="core-web-deve-wrapper">
+        <section className="core-web-deve-wrapper core-web-inside">
           <div className="container">
             <h2 dangerouslySetInnerHTML={{__html: softSolChild.cwcpTitle}} />
             <ul>
@@ -497,6 +496,27 @@ export default function SoftwareSolChild({ data }) {
         <section className="inside-partner-wrapper">
           <div className="container">
             <h2 dangerouslySetInnerHTML={{__html: softSolChild?.wpTitle}} />
+            {softSolChild?.wpText && 
+            <ul className="partner-single">
+              <li className="stagger-li">
+                <div className="part-txt" dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
+                <div className="part-img">
+                  <img
+                    src={
+                      softSolChild?.wpRightImage?.mediaItemUrl
+                        ? softSolChild?.wpRightImage?.mediaItemUrl
+                        : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                    }
+                    alt={
+                      softSolChild?.wpRightImage?.altText
+                        ? softSolChild?.wpRightImage?.altText
+                        : softSolChild?.wpTitle
+                    }
+                  />
+                </div>
+              </li>
+            </ul>
+            }
             {softSolChild?.websiteWpwContent && 
             <ul>
               {softSolChild?.websiteWpwContent.map((partnerLst, index) => (
@@ -513,9 +533,6 @@ export default function SoftwareSolChild({ data }) {
               ))
               }
             </ul>
-            }
-            {softSolChild?.wpText &&
-              <div className="partner-txt" dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
             }
           </div>
         </section>
@@ -731,6 +748,10 @@ export const data = graphql`
         }
         wpText
         wpTitle
+        wpRightImage {
+          altText
+          mediaItemUrl
+        }
         websiteWpwContent {
           wpwDescription
           wpwTitle

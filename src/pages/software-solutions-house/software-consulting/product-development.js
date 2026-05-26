@@ -376,7 +376,7 @@ export default function SoftwareSolChild({ data }) {
             <div className="title-wrapp">
               <p className="parent-page-title">Software Development</p>
               <h1 dangerouslySetInnerHTML={{__html: softSolChild.ssspPageTitle}} />
-              <p className="sub-txt" dangerouslySetInnerHTML={{__html: softSolChild.sspSubText}} />
+              <p className="sub-txt w-1000" dangerouslySetInnerHTML={{__html: softSolChild.sspSubText}} />
             </div>
             <div className="scroll-down-arrow">
               <a href="#"

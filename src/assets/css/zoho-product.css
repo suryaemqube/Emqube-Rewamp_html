@@ -583,6 +583,9 @@
 .zoho-product .inside-child-intro-wrapper .container .product-head-wrapper .right .form-wrap form .form-wrapper ul li .submit-button-wrap .btn-wrap .view-all:hover .text {
   color: var(--white);
 }
+.zoho-product .intro-highlight-wrapper {
+  padding-top: 0;
+}
 @media (max-width: 1080px) {
   .zoho-product .intro-highlight-wrapper .container .right p {
     line-height: 1.5em;
@@ -596,6 +599,32 @@
 .zoho-product .strategic-choice-wrapper .container h2 {
   padding-bottom: 0;
   margin-bottom: clamp(2.5rem, -0.3571rem + 4.4643vw, 5rem);
+}
+.zoho-product .strategic-choice-wrapper .container .sub-txt {
+  color: var(--light_grey);
+  font-family: HelvNowDis-light;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem);
+}
+@media (max-width: 1500px) {
+  .zoho-product .strategic-choice-wrapper .container .sub-txt {
+    width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .zoho-product .strategic-choice-wrapper .container .sub-txt {
+    width: 100%;
+    padding-bottom: clamp(2.875rem, 2.0696rem + 4.0268vw, 4rem);
+  }
+}
+.zoho-product .strategic-choice-wrapper .container .sub-txt p {
+  color: var(--light_grey);
+  font-family: HelvNowDis-light;
+  margin-bottom: 15px;
+}
+.zoho-product .strategic-choice-wrapper .container .sub-txt p:last-child {
+  margin-bottom: 0;
 }
 @media (max-width: 767px) {
   .zoho-product .strategic-choice-wrapper .container ul li .left {
@@ -636,6 +665,22 @@
   .zoho-product .strategic-choice-wrapper .container ul li .right p {
     font-size: clamp(0.938rem, 0.7891rem + 0.7007vw, 1.125rem);
     line-height: 1.7em;
+  }
+}
+.zoho-product .strategic-choice-wrapper.only-content .container h2 {
+  margin-bottom: 40px;
+}
+@media (max-width: 1500px) {
+  .zoho-product .strategic-choice-wrapper.only-content .container h2 {
+    margin-bottom: 30px;
+  }
+}
+.zoho-product .strategic-choice-wrapper.only-content .container .sub-txt {
+  padding-bottom: 0;
+}
+@media (max-width: 767px) {
+  .zoho-product .strategic-choice-wrapper.only-content .container .sub-txt {
+    padding-bottom: 0;
   }
 }
 .zoho-product .zoho-crm-wrapper {
@@ -764,6 +809,7 @@
   font-family: HelvNowDis-reg;
   height: auto;
   font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
+  line-height: 1.5em;
 }
 @media (max-width: 1500px) {
   .zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
@@ -779,6 +825,9 @@
   .zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
     font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
   }
+}
+.zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title p {
+  width: 90%;
 }
 @media (max-width: 1080px) {
   .zoho-product .engagement-model-wrapp .container .eng-model-step ul li .eng-title p {

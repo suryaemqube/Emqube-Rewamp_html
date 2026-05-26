@@ -7,6 +7,72 @@
   --light_grey: #767676;
 }
 
+@font-face {
+  font-family: "Untitled";
+  src: url("../font/Untitled.woff2") format("woff2"), url("../font/Untitled.ttf") format("truetype"), url("../font/Untitled.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+@font-palette-values --palette0 {
+  font-family: "Untitled";
+  base-palette: 0;
+}
+.icon-insurance:before {
+  content: "\f006";
+  font-family: "Untitled";
+}
+
+.icon-fmcg:before {
+  content: "\f007";
+  font-family: "Untitled";
+}
+
+.icon-automotive:before {
+  content: "\f00b";
+  font-family: "Untitled";
+}
+
+.icon-logistics:before {
+  font-family: "Untitled";
+  content: "\f004";
+}
+
+.icon-facility-management:before {
+  font-family: "Untitled";
+  content: "\f008";
+}
+
+.icon-brokerage:before {
+  font-family: "Untitled";
+  content: "\f00a";
+}
+
+.icon-operations:before {
+  font-family: "Untitled";
+  content: "\f003";
+}
+
+.icon-accounting:before {
+  font-family: "Untitled";
+  content: "\f00c";
+}
+
+.icon-reporting:before {
+  font-family: "Untitled";
+  content: "\f002";
+}
+
+.icon-legacy-integration:before {
+  font-family: "Untitled";
+  content: "\f005";
+}
+
+.icon-crm:before {
+  font-family: "Untitled";
+  content: "\f009";
+}
+
 .inside-page {
   background: url(../img/inside-page-bg-1.webp);
   background-size: cover;
@@ -2259,6 +2325,9 @@
     gap: 0 50px;
   }
 }
+.inside-page .brand-wrapper.digital-plaform-wrapper {
+  margin-top: 0;
+}
 .inside-page .brand-wrapper.digital-plaform-wrapper .container > h2 {
   padding-bottom: 0;
   line-height: 1.3em;
@@ -2375,6 +2444,9 @@
   .inside-page .technology-wrapper .container {
     padding: 40px 10px 30px;
   }
+}
+.inside-page .technology-wrapper .container .swiper-wrapper {
+  align-items: center;
 }
 .inside-page .cta-wrapper {
   margin-top: 0;
