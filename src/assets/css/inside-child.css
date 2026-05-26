@@ -73,7 +73,6 @@
 }
 
 .inside-child {
-  background-size: contain;
   position: relative;
 }
 .inside-child:after {

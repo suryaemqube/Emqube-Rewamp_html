@@ -21,6 +21,7 @@ export default function SoftwareSolMain({ data }) {
 
   const softSolMain = data?.wpPage?.softwareSolutionsHouseLp || {};
   const softSolMainProject = data?.wpPage?.softwareSolutionsHouseLp?.selectProjects || [];
+  const softSolMainProjectAll = data?.allWpPortfolio?.nodes || {};
   const options = data?.wp?.acfOption?.common;
 
   const [menuActive, setMenuActive] = useState(false);
@@ -791,7 +792,7 @@ export default function SoftwareSolMain({ data }) {
       {/* engagement model ends */}
       
       {/* Work Reference Section Starts */}
-      {softSolMainProject && softSolMainProject.length > 0 &&
+      {softSolMainProjectAll && softSolMainProjectAll.length > 0 &&
         <section className="work-ref-wrapper">
           <div className="container">
             <h2 className="txt-center slide-up"><span className="txt-regular">Work</span> References</h2>
@@ -827,9 +828,9 @@ export default function SoftwareSolMain({ data }) {
               },
             }}
           >
-            {softSolMainProject.map((project, index) => (
+            {softSolMainProjectAll.map((project, index) => (
               <SwiperSlide key={project.id || index}>
-                <a href="/software-projects">
+                <a href={`/software-projects/${project.slug}`}>
                   <div className="work-wrapp">
                     {/* <div className="client-icon">
                       <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
@@ -1079,6 +1080,7 @@ export const data = graphql`
           ... on WpPortfolio {
             id
             content
+            slug
             featuredImage {
               node {
                 altText
@@ -1103,6 +1105,26 @@ export const data = graphql`
           callnumber
           contactusUrl
         }
+      }
+    }
+    allWpPortfolio(
+      filter: {
+        categories: {
+          nodes: { elemMatch: { slug: { eq: "software" } } }
+        }
+      }
+    ) {
+      nodes {
+        id
+        content
+        slug
+        featuredImage {
+          node {
+            altText
+            mediaItemUrl
+          }
+        }
+        title
       }
     }
   }

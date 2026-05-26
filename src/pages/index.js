@@ -22,6 +22,18 @@ export default function Home({ data }) {
 
   const [visibleCount, setVisibleCount] = useState(8);
 
+  // create collapsible footer menu - starts
+  const [isMobile, setIsMobile] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+  // create collapsible footer menu - ends
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile(); // run on mount to set initial value
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const loadMore = () => {
     setVisibleCount((prev) => prev + 9);
   };
@@ -30,7 +42,7 @@ export default function Home({ data }) {
   const logos = options?.brandLogos.map(item => ({
     src: item.mediaItemUrl, 
     alt: item.altText
-  }));
+  })) ?? [];
 
 
   // homepage video section animation - onscroll - starts
@@ -143,8 +155,9 @@ export default function Home({ data }) {
 
       scrollTrigger: {
         trigger: ".home-intro-wrapper",
-        start: "top 30%",
-        end: "bottom 60%",
+        // start: "top 30%",
+        start: "40% 50%",
+        end: "bottom 70%",
         scrub: 1.2,
         invalidateOnRefresh: true,
       }
@@ -261,8 +274,9 @@ export default function Home({ data }) {
 
       scrollTrigger: {
         trigger: ".home-intro-wrapper",
-        start: "top 30%",
-        end: "bottom 80%",
+        // start: "top 30%",
+         start: "40% 50%",
+        end: "bottom 70%",
         scrub: 1.2,
         invalidateOnRefresh: true,
       }
@@ -275,10 +289,7 @@ export default function Home({ data }) {
   // homepage video section animation - onscroll - ends
 
 
-  // create collapsible footer menu - starts
-  const [isMobile, setIsMobile] = useState(false);
-  const [openIndex, setOpenIndex] = useState(null);
-  // create collapsible footer menu - ends
+  
 
   return (
 
