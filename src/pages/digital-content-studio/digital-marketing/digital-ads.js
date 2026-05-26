@@ -641,11 +641,17 @@ export default function SoftwareSolChild({ data }) {
           >
             {softSolChildProject.map((project, index) => (
               <SwiperSlide key={project.id || index}>
-                <a href="/software-projects">
+                <a href={project?.digitalPortfolioLayout?.websiteLink}>
                   <div className="work-wrapp">
-                    {/* <div className="client-icon">
-                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                    </div> */}
+                    <div className="client-icon">
+                      <img src={project?.digitalPortfolioLayout?.clientLogo?.mediaItemUrl} 
+                      alt={
+                          project?.digitalPortfolioLayout?.clientLogo?.altText
+                            ? project?.digitalPortfolioLayout?.clientLogo?.altText
+                            : project?.title
+                        }
+                        ></img>
+                    </div>
                     <span className="arrow-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                         <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -654,13 +660,13 @@ export default function SoftwareSolChild({ data }) {
                     <div className="proj-img">
                       <img
                         src={
-                          project?.featuredImage?.node?.mediaItemUrl
-                            ? project.featuredImage.node.mediaItemUrl
+                          project?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl
+                            ? project.digitalPortfolioLayout.showcaseImageOnListingPage.mediaItemUrl
                             : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
-                          project?.featuredImage?.node?.altText
-                            ? project.featuredImage.node.altText
+                          project?.digitalPortfolioLayout?.showcaseImageOnListingPage?.altText
+                            ? project?.digitalPortfolioLayout?.showcaseImageOnListingPage?.altText
                             : project?.title
                         }
                       />

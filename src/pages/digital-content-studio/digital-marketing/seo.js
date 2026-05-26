@@ -573,8 +573,9 @@ export default function SoftwareSolChild({ data }) {
           <div className="centered-slides slide-up">
             {softSolChildProject.map((project, index) => (
               <div key={project.id || index} className="swiper-slide" style={{ flex: '0 0 auto' }}>
-                <a href={project?.digitalPortfolioLayout?.websiteLink}>
+                <a href={project?.digitalPortfolioLayout?.websiteLink ? project.digitalPortfolioLayout.websiteLink : "#"} target="_blank" rel="noopener noreferrer">
                   <div className="work-wrapp">
+                    {project?.digitalPortfolioLayout?.clientLogo && 
                     <div className="client-icon">
                       <img src={project?.digitalPortfolioLayout?.clientLogo?.mediaItemUrl} 
                       alt={
@@ -584,6 +585,7 @@ export default function SoftwareSolChild({ data }) {
                         }
                         ></img>
                     </div>
+                    }
                     <span className="arrow-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                         <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -603,7 +605,9 @@ export default function SoftwareSolChild({ data }) {
                         }
                       />
                     </div>
-                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    {project?.content && 
+                      <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    }
                   </div>
                 </a>
               </div>
@@ -641,11 +645,19 @@ export default function SoftwareSolChild({ data }) {
           >
             {softSolChildProject.map((project, index) => (
               <SwiperSlide key={project.id || index}>
-                <a href="/software-projects">
+                <a href={project?.digitalPortfolioLayout?.websiteLink}>
                   <div className="work-wrapp">
-                    {/* <div className="client-icon">
-                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                    </div> */}
+                    {project?.digitalPortfolioLayout?.clientLogo && 
+                      <div className="client-icon">
+                        <img src={project?.digitalPortfolioLayout?.clientLogo?.mediaItemUrl} 
+                        alt={
+                            project?.digitalPortfolioLayout?.clientLogo?.altText
+                              ? project?.digitalPortfolioLayout?.clientLogo?.altText
+                              : project?.title
+                          }
+                          ></img>
+                      </div>
+                    }
                     <span className="arrow-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                         <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -654,18 +666,20 @@ export default function SoftwareSolChild({ data }) {
                     <div className="proj-img">
                       <img
                         src={
-                          project?.featuredImage?.node?.mediaItemUrl
-                            ? project.featuredImage.node.mediaItemUrl
+                          project?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl
+                            ? project.digitalPortfolioLayout.showcaseImageOnListingPage.mediaItemUrl
                             : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
-                          project?.featuredImage?.node?.altText
-                            ? project.featuredImage.node.altText
+                          project?.digitalPortfolioLayout?.showcaseImageOnListingPage?.altText
+                            ? project?.digitalPortfolioLayout?.showcaseImageOnListingPage?.altText
                             : project?.title
                         }
                       />
                     </div>
-                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    {project?.content && 
+                      <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    }
                   </div>
                 </a>
               </SwiperSlide>
