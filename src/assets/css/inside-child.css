@@ -122,6 +122,11 @@
   content: "\f020";
 }
 
+.icon-trading:before {
+  font-family: "Untitled";
+  content: "\f013";
+}
+
 .icon-manufacturing-engineering:before {
   font-family: "Untitled";
   content: "\f021";
@@ -150,6 +155,41 @@
 .icon-business-professional-services:before {
   font-family: "Untitled";
   content: "\f025";
+}
+
+.icon-furniture:before {
+  font-family: "Untitled";
+  content: "\f017";
+}
+
+.icon-payment-reminder:before {
+  font-family: "Untitled";
+  content: "\f019";
+}
+
+.icon-project-update:before {
+  font-family: "Untitled";
+  content: "\f01a";
+}
+
+.icon-regional-reporting:before {
+  font-family: "Untitled";
+  content: "\f01b";
+}
+
+.icon-credit-cards-analysis:before {
+  font-family: "Untitled";
+  content: "\f014";
+}
+
+.icon-job-scheduler:before {
+  font-family: "Untitled";
+  content: "\f016";
+}
+
+.icon-recruitment-assistance:before {
+  font-family: "Untitled";
+  content: "\f015";
 }
 
 .inside-child {

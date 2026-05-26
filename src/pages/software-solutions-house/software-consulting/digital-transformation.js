@@ -355,6 +355,8 @@ export default function SoftwareSolChild({ data }) {
 
     return text
       .replace(/<[^>]*>/g, "") // remove HTML tags (important for dangerouslySetInnerHTML)
+      .replace(/&amp;/g, "")       // remove HTML-encoded &
+      .replace(/&/g, "")  
       .toLowerCase()
       .trim()
       .replace(/\s+/g, "-"); // replace spaces with hyphen
