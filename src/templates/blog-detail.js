@@ -170,38 +170,61 @@ export default function EmqonnectDetail({ data }) {
             <h2>Latest Posts</h2>
             <div className="emqonnect-list">
               <ul>
-                {latestPosts.map((latestPost) => (
-                  <li key={latestPost.id}>
-                    <Link to={`/emqonnect/${latestPost.slug}/`}>
+                {latestPosts.map((latestPost) => {
+                  const isNewsletter = latestPost.blogCategories?.nodes?.some(cat => cat.slug === "newsletter");
+                  const issueData = latestPost.issuesLayout;
 
-                      {/* newsletter tag */}
-                      {latestPost.blogCategories?.nodes?.some(cat => cat.slug === "emqonnect") && (
+                  const cardImage = isNewsletter
+                    ? issueData?.pastIssueImage?.mediaItemUrl
+                    : latestPost?.featuredImage?.node?.mediaItemUrl;
+
+                  const cardImageAlt = isNewsletter
+                    ? issueData?.pastIssueImage?.altText
+                    : latestPost?.featuredImage?.node?.altText || latestPost.title;
+
+                  const cardContent = (
+                    <>
+                      {isNewsletter && (
                         <span className="newsletter-tag">Newsletter</span>
                       )}
-
                       <div className="emq-img">
                         <span className="arrow-icon">
                           <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                            <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </span>
-                        <img
-                          src={latestPost?.featuredImage?.node?.mediaItemUrl}
-                          alt={latestPost?.featuredImage?.node?.altText || latestPost.title}
-                        />
+                        <img src={cardImage} alt={cardImageAlt} />
                       </div>
-
                       <div className="emq-blog-txt">
-                        <p className="date">{latestPost.date}</p>
-                        <h2 dangerouslySetInnerHTML={{ __html: latestPost.title }} />
+                        {isNewsletter ? (
+                          <p className="date">{latestPost.title}</p>
+                        ) : (
+                          <p className="date">{latestPost.date}</p>
+                        )}
+                        <h2 dangerouslySetInnerHTML={{
+                          __html: isNewsletter ? issueData?.pastIssueTitle : latestPost.title
+                        }} />
                         <div className="blog-txt">
                           <p>{trimContent(latestPost.content, 30)}</p>
                         </div>
                       </div>
+                    </>
+                  );
 
-                    </Link>
-                  </li>
-                ))}
+                  return (
+                    <li key={latestPost.id}>
+                      {isNewsletter ? (
+                        <a href={issueData?.newsletterLink} target="_blank" rel="noopener noreferrer">
+                          {cardContent}
+                        </a>
+                      ) : (
+                        <Link to={`/emqonnect/${latestPost.slug}/`}>
+                          {cardContent}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
 
               <div className="view-all-btn">
@@ -293,6 +316,14 @@ export const query = graphql`
         content
         featuredImage {
           node {
+            altText
+            mediaItemUrl
+          }
+        }
+        issuesLayout {
+          newsletterLink
+          pastIssueTitle
+          pastIssueImage {
             altText
             mediaItemUrl
           }

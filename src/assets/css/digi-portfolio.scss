@@ -184,6 +184,7 @@ main.digi-portfolio.inside-page{
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
+          justify-content: flex-start;
           flex-wrap: wrap;
           // 1024 - 1920 : 55 49 - 85 74
           gap: clamp(3.438rem, 1.2951rem + 3.3482vw, 5.313rem) clamp(3.063rem, 1.2779rem + 2.7893vw, 4.625rem);

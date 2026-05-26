@@ -167,6 +167,7 @@ main.digi-portfolio.inside-page .digi-portfolio-wrapper .container .digi-proj-li
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: clamp(3.438rem, 1.2951rem + 3.3482vw, 5.313rem) clamp(3.063rem, 1.2779rem + 2.7893vw, 4.625rem);
 }

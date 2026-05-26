@@ -259,29 +259,84 @@ export default function EmqonnectList({ data }) {
               <ul className={`items-wrapper ${view}`}>
                 {currentPosts.length > 0 ? (
                   currentPosts.map((emqLst, index) => (
+                  // <li key={emqLst.link || index}>
+                  //   {/* <a href={emqLst.link}> */}
+                  //   <Link to={`/emqonnect/${emqLst.slug}/`}>
+                  //     {emqLst.blogCategories?.nodes?.some(cat => cat.slug === "newsletter") && (
+                  //       <span className="newsletter-tag">Newsletter</span>
+                  //     )}
+                  //     <div className="emq-img">
+                  //       <span className="arrow-icon">
+                  //         <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                  //           <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  //         </svg>
+                  //       </span>
+                  //       <img src={emqLst?.featuredImage?.node?.mediaItemUrl} alt={emqLst.title}></img>
+                  //     </div>
+                  //     <div className="emq-blog-txt">
+                  //       <p className="date">December 26, 2024</p>
+                  //       <h2 dangerouslySetInnerHTML={{__html: emqLst.title}} />
+                  //       <div className="blog-txt">
+                  //         <p dangerouslySetInnerHTML={{ __html: trimContent(emqLst.content, 30) }} />
+                  //       </div>
+                  //     </div>
+                  //   {/* </a> */}
+                  //   </Link>
+                  // </li>
                   <li key={emqLst.link || index}>
-                    {/* <a href={emqLst.link}> */}
-                    <Link to={`/emqonnect/${emqLst.slug}/`}>
-                      {emqLst.blogCategories?.nodes?.some(cat => cat.slug === "emqonnect") && (
-                        <span className="newsletter-tag">Newsletter</span>
-                      )}
-                      <div className="emq-img">
-                        <span className="arrow-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                            <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </span>
-                        <img src={emqLst?.featuredImage?.node?.mediaItemUrl} alt={emqLst.title}></img>
-                      </div>
-                      <div className="emq-blog-txt">
-                        <p className="date">December 26, 2024</p>
-                        <h2 dangerouslySetInnerHTML={{__html: emqLst.title}} />
-                        <div className="blog-txt">
-                          <p dangerouslySetInnerHTML={{ __html: trimContent(emqLst.content, 30) }} />
-                        </div>
-                      </div>
-                    {/* </a> */}
-                    </Link>
+                    {(() => {
+                      const isNewsletter = emqLst.blogCategories?.nodes?.some(cat => cat.slug === "newsletter");
+                      const issueData = emqLst.issuesLayout;
+
+                      const cardImage = isNewsletter
+                        ? issueData?.pastIssueImage?.mediaItemUrl
+                        : emqLst?.featuredImage?.node?.mediaItemUrl;
+
+                      const cardImageAlt = isNewsletter
+                        ? issueData?.pastIssueImage?.altText
+                        : emqLst.title;
+
+                      const cardContent = (
+                        <>
+                          {isNewsletter && (
+                            <span className="newsletter-tag">Newsletter</span>
+                          )}
+                          <div className="emq-img">
+                            <span className="arrow-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                                <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </span>
+                            <img src={cardImage} alt={cardImageAlt} />
+                          </div>
+                          <div className="emq-blog-txt">
+                            {isNewsletter ? (
+                              <p className="date">{emqLst.title}</p>
+                            ) : (
+                              <p className="date">{emqLst.date}</p>
+                            )}
+                            <h2 dangerouslySetInnerHTML={{
+                              __html: isNewsletter ? issueData?.pastIssueTitle : emqLst.title
+                            }} />
+                            {/* {!isNewsletter && ( */}
+                              <div className="blog-txt">
+                                <p dangerouslySetInnerHTML={{ __html: trimContent(emqLst.content, 30) }} />
+                              </div>
+                            {/* // )} */}
+                          </div>
+                        </>
+                      );
+
+                      return isNewsletter ? (
+                        <a href={issueData?.newsletterLink} target="_blank" rel="noopener noreferrer">
+                          {cardContent}
+                        </a>
+                      ) : (
+                        <Link to={`/emqonnect/${emqLst.slug}/`}>
+                          {cardContent}
+                        </Link>
+                      );
+                    })()}
                   </li>
                 ))
                 ) : (
@@ -408,6 +463,14 @@ export const data = graphql`
           date(formatString: "MMMM DD, YYYY")
           featuredImage {
             node {
+              altText
+              mediaItemUrl
+            }
+          }
+          issuesLayout {
+            newsletterLink
+            pastIssueTitle
+            pastIssueImage {
               altText
               mediaItemUrl
             }

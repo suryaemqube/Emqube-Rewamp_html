@@ -283,18 +283,24 @@ const scrollToSection = (id) => {
             <ul>
               {digiProjList.map((digiProjItem,index) => (
                 <li>
-                  <a href={digiProjItem?.digitalPortfolioLayout?.websiteLink}>
+                  <a href={digiProjItem?.digitalPortfolioLayout?.websiteLink ? digiProjItem?.digitalPortfolioLayout?.websiteLink : "#"} target="_blank" rel="noopener noreferrer">
+                    {digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage && 
                     <div className="desk-view">
                       <img src={digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl} alt={digiProjItem?.title}></img>
                       <div className="hover-txt" dangerouslySetInnerHTML={{__html: digiProjItem?.content}} />
                     </div>
+                    }
+                    {digiProjItem?.digitalPortfolioLayout?.mobileViewImage && 
                     <div className="mob-view">
                       <img src={digiProjItem?.digitalPortfolioLayout?.mobileViewImage?.mediaItemUrl} className="hover-mob-view-hide" alt={digiProjItem?.title}></img>
                       <img src={digiProjItem?.digitalPortfolioLayout?.desktopViewImage?.mediaItemUrl} className="hover-desk-view-show" alt={digiProjItem?.title}></img>
                     </div>
+                    }
+                    {digiProjItem?.digitalPortfolioLayout?.clientLogo && 
                     <div className="client-icon">
                       <img src={digiProjItem?.digitalPortfolioLayout?.clientLogo?.mediaItemUrl} alt={digiProjItem?.title}></img>
                     </div>
+                    }
                     <span className="arrow-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                         <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

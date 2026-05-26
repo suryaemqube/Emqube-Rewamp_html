@@ -1265,6 +1265,9 @@
     margin: 5px 5px 0;
   }
 }
+.inside-child .inside-partner-wrapper .container ul li .part-img img {
+  width: 100%;
+}
 @media (max-width: 767px) {
   .inside-child .inside-partner-wrapper .container ul li .part-img img {
     width: 100%;
