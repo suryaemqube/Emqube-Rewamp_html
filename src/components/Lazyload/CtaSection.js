@@ -4,7 +4,9 @@ const CtaSection = ({ ctaTitle, ctaText, whatsappUrl, callNumber, contactUsUrl }
   return (
     <section className="cta-wrapper">
       <div className="container">
-        {ctaTitle && <p className="cta-title">{ctaTitle}</p>}
+        {ctaTitle && 
+        <p className="cta-title" dangerouslySetInnerHTML={{__html: ctaTitle}} />
+        }
         {ctaText && (
           <p
             className="cta-txt"
