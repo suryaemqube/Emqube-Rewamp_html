@@ -20,6 +20,7 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function SoftwareSolMain({ data }) {
 
   const softSolMain = data?.wpPage?.digitalContentStudioLp || {};
+   const softSolMainProject = data?.wpPage?.digitalContentStudioLp?.selectDigitalProjects || [];
   const softSolMainProjectAll = data?.allWpPortfolio?.nodes || {};
   const options = data?.wp?.acfOption?.common;
 
@@ -793,7 +794,7 @@ export default function SoftwareSolMain({ data }) {
       {/* engagement model ends */}
       
       {/* Work Reference Section Starts */}
-      {softSolMainProjectAll && softSolMainProjectAll.length > 0 &&
+      {softSolMainProject && softSolMainProject.length > 0 &&
         <section className="work-ref-wrapper">
           <div className="container">
             <h2 className="txt-center slide-up"><span className="txt-regular">Work</span> References</h2>
@@ -829,7 +830,7 @@ export default function SoftwareSolMain({ data }) {
               },
             }}
           >
-            {softSolMainProjectAll.map((project, index) => (
+            {softSolMainProject.map((project, index) => (
               <SwiperSlide key={project.id || index}>
                 <a href={project?.digitalPortfolioLayout?.websiteLink ? project.digitalPortfolioLayout.websiteLink : "#"} target="_blank" rel="noopener noreferrer">
                   <div className="work-wrapp">
@@ -1093,6 +1094,24 @@ export const data = graphql`
         dcsBrandsLogo {
           altText
           mediaItemUrl
+        }
+        selectDigitalProjects {
+          ... on WpPortfolio {
+            id
+            content
+            title
+            digitalPortfolioLayout {
+              clientLogo {
+                altText
+                mediaItemUrl
+              }
+              showcaseImageOnListingPage {
+                altText
+                mediaItemUrl
+              }
+              websiteLink
+            }
+          }
         }
       }
     }
