@@ -166,7 +166,26 @@ content: "\f009";
   font-family: "Untitled";
   content: "\f015";  
 }
-
+.icon-wellness:before,.icon-health-care:before{
+  font-family: "Untitled";
+  content: "\f00f";  
+}
+.icon-life-style:before{
+  font-family: "Untitled";
+  content: "\f00d";  
+}
+.icon-services:before{
+  font-family: "Untitled";
+  content: "\f001";  
+}
+.icon-entertainment:before{
+  font-family: "Untitled";
+  content: "\f00e";  
+}
+.icon-survey-alert:before{
+  font-family: "Untitled";
+  content: "\f018";  
+}
 .inside-child{
   // background-size: contain;
   position: relative;
