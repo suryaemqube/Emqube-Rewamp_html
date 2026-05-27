@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { graphql, Link } from "gatsby";
 import { navigate } from "gatsby";
 import { useFormik, Formik } from "formik";
 import axios from "axios";
+import LazyLoad from "react-lazy-load";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import gsap from 'gsap';
@@ -23,12 +24,23 @@ const WEBSITE_URL = process.env.GATSBY_BASE_URL;
 
 gsap.registerPlugin(ScrollToPlugin);
 
+const CtaSection = lazy(() => import("../../../components/Lazyload/CtaSection"));
+
 
 export default function SftProduct({ data }) {
+
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const softProductChild = data?.wpPage?.zohoProductPageLayout || {};
   const softSolChildProject = data?.wpPage?.zohoProductPageLayout?.selectProjectList || [];
   const options = data?.wp?.acfOption?.common;
+
+    // Falls back to options if page fields are empty
+  const ctaTitle = softProductChild?.zohoCtaTitle || options?.ctaTitle;
+  const ctaText = softProductChild?.zohoCtaText || options?.ctaSubtitle;
+  const whatsappUrl = options?.whatsappurl;
+  const callNumber = options?.callnumber;
+  const contactUsUrl = options?.contactusUrl;
 
   const pageTitle = data?.wpPage?.title;
 
