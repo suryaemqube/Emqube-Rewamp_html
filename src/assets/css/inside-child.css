@@ -3260,7 +3260,7 @@
   }
 }
 .strategic-choice-wrapper.only-content .container .txt-wrapper .left {
-  width: 70%;
+  width: 65%;
 }
 @media (max-width: 991px) {
   .strategic-choice-wrapper.only-content .container .txt-wrapper .left {
@@ -3268,7 +3268,7 @@
   }
 }
 .strategic-choice-wrapper.only-content .container .txt-wrapper .right {
-  width: 30%;
+  width: 35%;
 }
 @media (max-width: 991px) {
   .strategic-choice-wrapper.only-content .container .txt-wrapper .right {
