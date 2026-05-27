@@ -452,6 +452,7 @@ export const data = graphql`
           emqubeEdgeListTitle
         }
       }
+      uri 
       seo {
         canonical
         opengraphDescription

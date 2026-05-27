@@ -167,6 +167,15 @@ function Footer({ sliceContext }) {
       </div>
       {/* scroll to top */}
 			
+			<div class="ai-bot-btn animate-width">
+				<a href="/ai-chat/">
+					<div class="bot-icon-img">
+						
+						<img src="https://emqube.com/wp-content/themes/emqube_revamp/images/ai-bot-icon.svg" data-src="https://emqube.com/wp-content/themes/emqube_revamp/images/ai-bot-icon.svg" alt="Bot Icon" class="bot-icon lazyloaded lazy-loaded" />
+					</div>
+					<span class="btn-text">Return to AI Website</span>
+				</a>
+			</div>
 
 			<footer>
         <div className="inner-container">

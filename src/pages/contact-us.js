@@ -606,6 +606,7 @@ export const data = graphql`
         officeTime
         whatsappLink
       }
+      uri
       seo {
         canonical
         opengraphDescription

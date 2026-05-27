@@ -679,6 +679,7 @@ export const Head = ({ data }) => (
 export const data = graphql`
   query MyQuery {
     wpPage(databaseId: {eq: 7961}) {
+      uri
       seo {
         canonical
         opengraphDescription

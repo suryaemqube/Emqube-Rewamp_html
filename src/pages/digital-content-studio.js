@@ -1123,6 +1123,7 @@ export const data = graphql`
           }
         }
       }
+      uri
       seo {
         canonical
         opengraphDescription

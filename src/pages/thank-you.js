@@ -131,6 +131,7 @@ export const data = graphql`
       content
       title
       slug
+      uri
       seo {
         canonical
         opengraphDescription

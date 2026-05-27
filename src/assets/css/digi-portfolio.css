@@ -126,7 +126,7 @@ main.digi-portfolio.inside-page .top-digital-portfolio-head-list {
   position: sticky;
   top: 70px;
   padding-bottom: clamp(0.938rem, -0.4906rem + 2.2321vw, 2.188rem);
-  background-color: var(--white);
+  background-color: transparent;
 }
 @media (max-width: 767px) {
   main.digi-portfolio.inside-page .top-digital-portfolio-head-list {
@@ -162,6 +162,12 @@ main.digi-portfolio.inside-page .top-digital-portfolio-head-list .container ul l
 }
 main.digi-portfolio.inside-page .top-digital-portfolio-head-list .container ul li:last-child a:after {
   display: none;
+}
+main.digi-portfolio.inside-page .top-digital-portfolio-head-list.active {
+  background-color: var(--white);
+  box-shadow: 168px 132px 60px 0 rgba(0, 0, 0, 0), 107px 85px 55px 0 rgba(0, 0, 0, 0), 60px 48px 46px 0 rgba(0, 0, 0, 0.01), 27px 21px 34px 0 rgba(0, 0, 0, 0.02), 7px 5px 19px 0 rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(223, 223, 223, 0.1803921569);
+  z-index: 99 !important;
 }
 main.digi-portfolio.inside-page .digi-portfolio-wrapper .container .digi-proj-list ul {
   display: flex;
