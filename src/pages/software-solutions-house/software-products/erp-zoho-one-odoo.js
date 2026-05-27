@@ -515,7 +515,7 @@ export default function SftProduct({ data }) {
                 </div>
               </div>
               <div className="right">
-                <div className="form-wrap">
+                <div className="form-wrap zoho-form">
                   <div className="wpcf7 js">
                     <Formik>
                       <form
