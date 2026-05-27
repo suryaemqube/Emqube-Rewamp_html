@@ -510,6 +510,27 @@ main.digi-portfolio.inside-page .digi-portfolio-wrapper#reels .container .digi-p
 main.digi-portfolio.inside-page .digi-portfolio-wrapper#reels .container .digi-proj-list .digi-reels-swiper .swiper-button-next {
   right: -15px;
 }
+main.digi-portfolio.inside-page .digi-portfolio-wrapper#reels .container .digi-proj-list .video-control {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  background: transparent;
+  padding: 5px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+main.digi-portfolio.inside-page .digi-portfolio-wrapper#reels .container .digi-proj-list .video-control svg {
+  width: 50px;
+  height: auto;
+}
+main.digi-portfolio.inside-page .digi-portfolio-wrapper#reels .container .digi-proj-list .video-control svg path, main.digi-portfolio.inside-page .digi-portfolio-wrapper#reels .container .digi-proj-list .video-control svg rect {
+  fill: var(--white);
+}
 main.digi-portfolio.inside-page .digi-portfolio-wrapper#social-media .container .digi-proj-list .social-media-posts-swiper {
   padding: 0 30px;
 }

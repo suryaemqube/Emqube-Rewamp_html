@@ -948,7 +948,7 @@ export default function SftProduct({ data }) {
                   </div>
                   <div className="zoho-app-txt">
                     <div dangerouslySetInnerHTML={{__html: applst.zohoAppsListText}} />
-                    <a href={applst.zohoAppsListLink} className="fill-btn">Book a Free Strategy Session with our Zoho Experts</a>
+                    <a href={applst.zohoAppsListLink} target="_blank" className="fill-btn">Book a Free Strategy Session with our Zoho Experts</a>
                   </div>
                   <div className="zoho-app-img">
                     <img src={applst?.zohoAppListRightImage?.mediaItemUrl} alt={applst?.zohoAppsListTitle}></img>

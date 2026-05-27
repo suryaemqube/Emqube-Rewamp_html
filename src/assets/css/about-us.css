@@ -1164,7 +1164,7 @@ main.about-us.inside-page .abt-emqube-info {
   position: relative;
   z-index: 9;
   background-color: var(--light_green);
-  padding: 0;
+  padding: 5px 0;
 }
 @media (max-width: 1000px) {
   main.about-us.inside-page .abt-emqube-info {
@@ -1188,7 +1188,8 @@ main.about-us.inside-page .abt-emqube-info {
 }
 main.about-us.inside-page .abt-emqube-info .container ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0 clamp(5.625rem, -0.0893rem + 8.9286vw, 10.625rem);
 }
 @media (max-width: 1500px) {
@@ -1213,7 +1214,7 @@ main.about-us.inside-page .abt-emqube-info .container ul li {
   font-weight: 300;
   color: var(--white);
   line-height: 1.4em;
-  padding: 15px 0;
+  padding: 10px 0;
   font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
 }
 @media (max-width: 1500px) {

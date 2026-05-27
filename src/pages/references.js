@@ -22,6 +22,7 @@ export default function Reference({ data }) {
 
   const refMain = data?.wpPage?.referencesPageLayout || {};
   const digitalPortfolio = refMain?.digitalPortfolioList || [];
+  const softSolMainProjectAll = data?.allWpPortfolio?.nodes || {};
   const options = data?.wp?.acfOption?.common;
 
   // onload intro section animation - starts
@@ -174,7 +175,7 @@ export default function Reference({ data }) {
               <ul>
                 {refMain?.refSoftwareProjectList.map((refSft,index) => (
                   <li>
-                    <a href={`/${refSft?.refSoftwareProjectsCategoryLink?.slug}/`}>
+                    <a href={`/${refSft?.refSoftwareProjectsCategoryLink?.slug || "software-projects"}/`}>
                       <h3 dangerouslySetInnerHTML={{__html: refSft.refSoftwareProjectsCategoryName}} />
                       <div dangerouslySetInnerHTML={{__html: refSft.refSoftwareProjectsCategoryText}} />
                     </a>
@@ -288,6 +289,7 @@ export default function Reference({ data }) {
       {/* digital portfolio section ends */}
 
       {/* Work Reference Section Starts */}
+      {softSolMainProjectAll.length > 0 && 
       <section className="work-ref-wrapper">
         <div className="container">
           <h2 className="txt-center slide-up">Clients</h2>
@@ -317,98 +319,48 @@ export default function Reference({ data }) {
               slidesOffsetBefore: 145,
               spaceBetween: 20,
             },
-              1300: {
+            1300: {
               slidesPerView: 3.6,
               slidesOffsetBefore: 145,
               spaceBetween: 20,
             },
           }}
         >
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>The largest relocation company runs a paperless operation for quotes, jobs, invoices and payroll eclipsing other competitors.</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/bmw-logo.png" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/bmw-project-image.jpg" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>German luxury automobile company relies on emQube developed web application to manage sales in 11 countries in the region</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-            <a href="#">
-              <div className="work-wrapp">
-                <div className="client-icon">
-                  <img src="/assets/img/nestle-logo.png" alt="Emovers logo"></img>
-                </div>
-                <span className="arrow-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div className="proj-img">
-                  <img src="/assets/img/nestle-project-image.jpg" alt="Emovers"></img>
-                </div>
-                <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>Swiss multinational leader in FMCG leverages a custom-built application to monitor inventory and sales in the Middle East region.</p>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide>
-              <a href="#">
+          {softSolMainProjectAll.map((project, index) => (
+            <SwiperSlide key={project.id || index}>
+              <a href={`/software-projects/${project.slug}`}>
                 <div className="work-wrapp">
-                  <div className="client-icon">
-                  </div>
+                  {/* <div className="client-icon">
+                    <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                  </div> */}
                   <span className="arrow-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                       <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </span>
                   <div className="proj-img">
-                    <img src="/assets/img/insurance-policy-project-img.webp" alt="Insurance Policy"></img>
+                    {/* <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img> */}
+                    <img
+                      src={
+                        project?.featuredImage?.node?.mediaItemUrl
+                          ? project.featuredImage.node.mediaItemUrl
+                          : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                      }
+                      alt={
+                        project?.featuredImage?.node?.altText
+                          ? project.featuredImage.node.altText
+                          : project?.title
+                      }
+                    />
                   </div>
-                  <div className="proj-txt">
-                  {/* <p className="proj-name">E-Move</p> */}
-                  <p>Making online purchase of insurance easier, our web application for a leading broker in Dubai helped grow business rapidly.</p>
-                </div>
+                  <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
                 </div>
               </a>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </section>
+      }
       {/* Work Reference Section Ends */}
 
       {/* home cta section starts */}
@@ -500,6 +452,26 @@ export const data = graphql`
           callnumber
           contactusUrl
         }
+      }
+    }
+    allWpPortfolio(
+      filter: {
+        categories: {
+          nodes: { elemMatch: { slug: { eq: "software" } } }
+        }
+      }
+    ) {
+      nodes {
+        id
+        content
+        slug
+        featuredImage {
+          node {
+            altText
+            mediaItemUrl
+          }
+        }
+        title
       }
     }
   }
