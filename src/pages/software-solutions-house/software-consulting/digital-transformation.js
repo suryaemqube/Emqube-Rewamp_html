@@ -470,8 +470,8 @@ export default function SoftwareSolChild({ data }) {
                   <thead>
                     <tr>
                       <th>Feature</th>
-                      <th>Digital Transformation</th>
                       <th>Traditional Business Automation</th>
+                      <th>Digital Transformation</th>
                     </tr>
                   </thead>
 
@@ -483,6 +483,11 @@ export default function SoftwareSolChild({ data }) {
                             __html: item?.feature,
                           }}
                         />
+                        <td
+                          dangerouslySetInnerHTML={{
+                            __html: item?.traditionalBusinessAutomation,
+                          }}
+                        />
 
                         <td
                           dangerouslySetInnerHTML={{
@@ -490,11 +495,7 @@ export default function SoftwareSolChild({ data }) {
                           }}
                         />
 
-                        <td
-                          dangerouslySetInnerHTML={{
-                            __html: item?.traditionalBusinessAutomation,
-                          }}
-                        />
+                        
                       </tr>
                     ))}
                   </tbody>
@@ -522,7 +523,7 @@ export default function SoftwareSolChild({ data }) {
                   }
                 >
                   <div className="top">
-                    <span className="icon" dangerouslySetInnerHTML={{__html: crmLst.zohoCrmServiceListImage}} />
+                    <span className="icon" dangerouslySetInnerHTML={{__html: crmLst.pillarIcons}} />
                     <h3 dangerouslySetInnerHTML={{__html: crmLst.title}} />
                   </div>
                   <div className="bottom" dangerouslySetInnerHTML={{__html: crmLst.description}} />
@@ -539,7 +540,7 @@ export default function SoftwareSolChild({ data }) {
       {softSolChild?.emContent && 
         <section className="engagement-model-wrapp">
           <div className="container">
-            <h2 className="txt-center slide-up">Our Engagement Model</h2>
+            <h2 className="txt-center slide-up" dangerouslySetInnerHTML={{ __html: softSolChild?.engagementModelSectionTitle || "Our Engagement Model" }} />
             <div className="eng-model-step">
               <ul>
                 {softSolChild?.emContent.map((engModel,index) => (
@@ -583,11 +584,10 @@ export default function SoftwareSolChild({ data }) {
       {/* industry section starts */}
       {softSolChild?.selectIndustries &&  
         <section className="insudtry-list-wrapp indus-flex-dir-btm bg-none">
-          <h2 className="slide-up">Work Reference</h2>
           <div className="container">
             {softSolChild?.selectIndustries &&
               <div className="left">
-                <h3 className="slide-up">Industries</h3>
+                <h2 className="slide-up">Industries</h2>
                 <ul>
                   {softSolChild?.selectIndustries.map((indeslst,index) => {  
                     const iconName = formatIconClass(indeslst);
@@ -610,6 +610,7 @@ export default function SoftwareSolChild({ data }) {
       {/* industry section ends */}
 
       {/* Work Reference Section Starts */}
+      {softSolChildProject.length > 0 && 
       <section className="work-ref-wrapper">
         <div className="container">
           <h2 className="txt-center slide-up">Select Projects</h2>
@@ -712,6 +713,7 @@ export default function SoftwareSolChild({ data }) {
           </Swiper>
         )}
       </section>
+      }
       {/* Work Reference Section Ends */}
 
       {/* faq section starts */}
@@ -779,6 +781,7 @@ export const data = graphql`
           saImage
           saTitle
         }
+        engagementModelSectionTitle
         emContent {
           emDescription
           emImage
@@ -832,6 +835,7 @@ export const data = graphql`
         pillarsList {
           description
           title
+          pillarIcons
         }
       }
     }
