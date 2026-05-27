@@ -139,7 +139,7 @@ export default function SoftwareSolChild({ data }) {
   const accordionItems = softSolChild?.webisteFaqsContent.map((faqLst, index) => ({
     question: faqLst.faqsTitle,
     answer: faqLst.faqsContent,
-  }));
+  })) || [];
 
   const toggleAccordion = (index) => {
     setActiveAccordion(prev => (prev === index ? null : index));

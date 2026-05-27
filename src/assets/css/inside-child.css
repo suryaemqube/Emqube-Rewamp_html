@@ -2752,10 +2752,11 @@
      object-position: top center;
 }
 .inside-child .references-inside-wrapp .ref-content .video-control {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.5s ease-in-out;
   border: none;
   background: rgba(0, 0, 0, 0.5);
+  background: transparent;
   padding: 5px;
   border-radius: 100%;
   position: absolute;
@@ -2819,6 +2820,9 @@
 }
 .inside-child .references-inside-wrapp .ref-content .swiper .image-item, .inside-child .references-inside-wrapp .ref-content .swiper .video-item {
   width: auto;
+}
+.inside-child .references-inside-wrapp .ref-content .gallery-item {
+  cursor: pointer;
 }
 .inside-child .work-ref-wrapper {
   position: relative;

@@ -2590,10 +2590,11 @@ content: "\f009";
         }
       }
       .video-control{
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.5s ease-in-out;
         border: none;
         background: rgba(0, 0, 0, 0.5);
+        background: transparent;
         padding: 5px;
         border-radius: 100%;
         position: absolute;
@@ -2665,6 +2666,9 @@ content: "\f009";
         .image-item,.video-item{
           width: auto;
         }
+      }
+      .gallery-item{
+        cursor: pointer;
       }
     }
   }

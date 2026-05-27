@@ -794,35 +794,6 @@ export default function SftProduct({ data }) {
       }
       {/* Child page strategic choice section ends */}
 
-      {/* crm services section starts */}
-      {softProductChild?.zohoCrmServiceTitle && softProductChild?.zohoCrmServiceList &&
-        <section className="zoho-crm-wrapper" id="zoho-crm-service">
-          <div className="container">
-            <h2 dangerouslySetInnerHTML={{__html: softProductChild?.zohoCrmServiceTitle}} />
-            <ul className="crm-list">
-              {softProductChild?.zohoCrmServiceList.map((crmLst,index) => (
-                <li
-                  key={index}
-                  className={
-                    index === softProductChild?.zohoCrmServiceList.length - 1
-                      ? "w-100"
-                      : ""
-                  }
-                >
-                  <div className="top">
-                    <span className="icon" dangerouslySetInnerHTML={{__html: crmLst.zohoCrmServiceListImage}} />
-                    <h3 dangerouslySetInnerHTML={{__html: crmLst.zohoCrmServiceListTitle}} />
-                  </div>
-                  <div className="bottom" dangerouslySetInnerHTML={{__html: crmLst.zohoCrmServiceListText}} />
-                </li>
-              ))
-              }
-            </ul>
-          </div>
-        </section>
-      }
-      {/* crm services section ends */}
-
       {/* Child page strategic choice section starts */}
       {softProductChild?.zohoModuleSectionTitle && softProductChild?.zohoModuleList &&
         <section className="strategic-choice-wrapper" id="zoho-crm-module">

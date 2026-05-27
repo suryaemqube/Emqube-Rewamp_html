@@ -110,6 +110,11 @@ main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-title .
     left: -46px !important;
   }
 }
+@media (min-width: 1001px) {
+  main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-white {
+    top: -50px;
+  }
+}
 main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-txt {
   width: 865px;
 }

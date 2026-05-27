@@ -138,6 +138,10 @@ export default function SoftwareSolChild({ data }) {
     }));
   };
 
+  const accordionItems = softSolChild?.webisteFaqsContent.map((faqLst, index) => ({
+    question: faqLst.faqsTitle,
+    answer: faqLst.faqsContent,
+  })) || [];
 
   const toggleAccordion = (index) => {
     setActiveAccordion(prev => (prev === index ? null : index));
@@ -692,6 +696,35 @@ export default function SoftwareSolChild({ data }) {
         )}
       </section>
       {/* Work Reference Section Ends */}
+
+      {/* faq section starts */}
+      {softSolChild?.webisteFaqsContent &&
+        <section className="faq-accordion-wrapper">
+          <div className="container">
+            <div className="faq-accordion">
+              <h2 className="faq-heading slide-up">Frequently Asked Questions</h2>
+              <div className="accordion-list slide-up">
+                {accordionItems.map((item, index) => (
+                  <div className={`accordion-item ${activeAccordion === index ? 'active' : ''}`} key={index}>
+                    <button type="button" className="accordion-trigger" onClick={() => toggleAccordion(index)}>
+                      <span>{item.question}</span>
+                      <span className="accordion-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="20" viewBox="0 0 46 20" fill="none">
+                          <path d="M22.7883 18.5158C22.6016 18.5181 22.4163 18.4812 22.2446 18.4076C22.0729 18.334 21.9185 18.2253 21.7914 18.0885L8.97291 5.27006C8.4032 4.70035 8.4032 3.8173 8.97291 3.24759C9.54262 2.67789 10.4257 2.67789 10.9954 3.24759L22.8168 15.069L34.6098 3.27608C35.1795 2.70637 36.0626 2.70637 36.6323 3.27608C37.202 3.84579 37.202 4.72884 36.6323 5.29855L23.8138 18.117C23.529 18.4018 23.1587 18.5443 22.8168 18.5443L22.7883 18.5158Z" fill="#707070"/>
+                        </svg>
+                      </span>
+                    </button>
+                    <div className="accordion-panel" style={{ maxHeight: activeAccordion === index ? '260px' : '0px' }}>
+                      <p dangerouslySetInnerHTML={{__html: item.answer}} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      }
+      {/* faq section ends */}
 
 
       {/* home cta section starts */}

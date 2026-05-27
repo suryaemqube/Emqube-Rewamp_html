@@ -103,6 +103,11 @@ main.about-us.inside-page{
             left: -46px !important;
           }
         }
+        .bg-white{
+          @media(min-width: 1001px){
+            top: -50px;
+          }
+        }
       }
       .inside-intro-txt{
         width: 865px;
