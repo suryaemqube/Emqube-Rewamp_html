@@ -36,6 +36,8 @@ export default function SftProduct({ data }) {
   const softReal = data?.wpPage?.realWorldResults || {};
   const options = data?.wp?.acfOption?.common;
 
+  const itemCount = softProductChild?.zohoEngagementModelList?.length || 0;
+
   // Falls back to options if page fields are empty
   const ctaTitle = softProductChild?.zohoCtaTitle || options?.ctaTitle;
   const ctaText = softProductChild?.zohoCtaText || options?.ctaSubtitle;
@@ -508,8 +510,8 @@ export default function SftProduct({ data }) {
                 <p className="sub-txt" dangerouslySetInnerHTML={{__html: softProductChild.zohoIntroText}} />
                 <div className="zoho-interlinks">
                   <ul>
-                    <li><a onClick={() => scrollToSection("zoho-crm-service")}>CAFM Pro by emQube</a></li>
-                    <li><a onClick={() => scrollToSection("zoho-crm-module")}>Core Maintenance & Operations Modules</a></li>
+                    <li><a onClick={() => scrollToSection("zoho-crm-service")}>1-3-5 Tool</a></li>
+                    <li><a onClick={() => scrollToSection("zoho-crm-module")}>Key Features of the 135-Todo Tool</a></li>
                     <li><a onClick={() => scrollToSection("zoho-eng-model")}>Our Proven Engagement Model</a></li>
                   </ul>
                 </div>
@@ -792,6 +794,35 @@ export default function SftProduct({ data }) {
       }
       {/* Child page strategic choice section ends */}
 
+      {/* crm services section starts */}
+      {softProductChild?.zohoCrmServiceTitle && softProductChild?.zohoCrmServiceList &&
+        <section className="zoho-crm-wrapper" id="zoho-crm-service">
+          <div className="container">
+            <h2 dangerouslySetInnerHTML={{__html: softProductChild?.zohoCrmServiceTitle}} />
+            <ul className="crm-list">
+              {softProductChild?.zohoCrmServiceList.map((crmLst,index) => (
+                <li
+                  key={index}
+                  className={
+                    index === softProductChild?.zohoCrmServiceList.length - 1
+                      ? "w-100"
+                      : ""
+                  }
+                >
+                  <div className="top">
+                    <span className="icon" dangerouslySetInnerHTML={{__html: crmLst.zohoCrmServiceListImage}} />
+                    <h3 dangerouslySetInnerHTML={{__html: crmLst.zohoCrmServiceListTitle}} />
+                  </div>
+                  <div className="bottom" dangerouslySetInnerHTML={{__html: crmLst.zohoCrmServiceListText}} />
+                </li>
+              ))
+              }
+            </ul>
+          </div>
+        </section>
+      }
+      {/* crm services section ends */}
+
       {/* Child page strategic choice section starts */}
       {softProductChild?.zohoModuleSectionTitle && softProductChild?.zohoModuleList &&
         <section className="strategic-choice-wrapper" id="zoho-crm-module">
@@ -846,11 +877,11 @@ export default function SftProduct({ data }) {
 
       {/* engagement model starts */}
       {softProductChild?.zohoEngagementModelTitle && softProductChild?.zohoEngagementModelList && 
-        <section className="engagement-model-wrapp" id="zoho-eng-model">
+        <section className={`engagement-model-wrapp step-${itemCount}`} id="zoho-eng-model">
           <div className="container">
             <h2 className="txt-center slide-up" dangerouslySetInnerHTML={{__html: softProductChild?.zohoEngagementModelTitle}} />
             <div className="eng-model-step">
-              <ul>
+              <ul className={`count-${itemCount}`}>
                 {softProductChild?.zohoEngagementModelList.map((englst,index) => (
                   <li className="stagger-li">
                     <div className="step-count">{index+1}</div>
