@@ -14,6 +14,7 @@ import "/src/assets/css/common.css";
 import "/src/assets/css/inside.css";
 import "/src/assets/css/about-us.css";
 
+import Seo from "../components/SeoMeta";
 import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
@@ -400,6 +401,15 @@ export default function About({ data }) {
   );
 }
 
+export const Head = ({ data }) => (
+  <Seo
+    seoData={data?.wpPage?.seo || []}
+    pageUrl={data?.wpPage?.uri}
+  >
+
+  </Seo>
+);
+
 
 export const data = graphql`
   query MyQuery {
@@ -440,6 +450,29 @@ export const data = graphql`
         emqubeEdgeSectionTitle
         emqubeEdgeList {
           emqubeEdgeListTitle
+        }
+      }
+      seo {
+        canonical
+        opengraphDescription
+        opengraphImage {
+          altText
+          mediaItemUrl
+          height
+          width
+          mediaType
+        }
+        opengraphSiteName
+        opengraphTitle
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphUrl
+        opengraphModifiedTime
+        opengraphType
+        title
+        metaDesc
+        schema {
+          raw
         }
       }
     }

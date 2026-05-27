@@ -7,6 +7,7 @@ import "/src/assets/css/common.css";
 import "/src/assets/css/inside.css";
 import "/src/assets/css/case-study-detail.css";
 
+import Seo from "../components/SeoMeta";
 import Layout from "../components/Layout";
 
 const PortfolioDetail = ({ data }) => {
@@ -245,6 +246,15 @@ const PortfolioDetail = ({ data }) => {
   )
 }
 
+export const Head = ({ data }) => (
+  <Seo
+    seoData={data?.wpPortfolio?.seo || []}
+    pageUrl={data?.wpPortfolio?.uri}
+  >
+
+  </Seo>
+);
+
 export const query = graphql`
   query PortfolioDetailQuery($id: String!) {
     wpPortfolio(id: { eq: $id }) {
@@ -252,6 +262,30 @@ export const query = graphql`
       title
       slug
       content
+			uri
+			seo {
+        canonical
+        opengraphDescription
+        opengraphImage {
+          altText
+          mediaItemUrl
+          height
+          width
+          mediaType
+        }
+        opengraphSiteName
+        opengraphTitle
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphUrl
+        opengraphModifiedTime
+        opengraphType
+        title
+        metaDesc
+        schema {
+          raw
+        }
+      }
 			featuredImage {
 				node {
 					altText

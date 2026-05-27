@@ -13,6 +13,7 @@ import "/src/assets/css/inside.css";
 import "/src/assets/css/inside-child.css";
 import "/src/assets/css/emqonnect-detail.css";
 
+import Seo from "../components/SeoMeta";
 import Layout from "../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -284,12 +285,45 @@ export default function EmqonnectDetail({ data }) {
 }
 
 
+export const Head = ({ data }) => (
+  <Seo
+    seoData={data?.wpBlog?.seo || []}
+    pageUrl={data?.wpBlog?.uri}
+  >
+
+  </Seo>
+);
+
 export const query = graphql`
   query BlogDetailQuery($id: String!) {
     wpBlog(id: { eq: $id }) {
       id
       title
       content
+      uri
+			seo {
+        canonical
+        opengraphDescription
+        opengraphImage {
+          altText
+          mediaItemUrl
+          height
+          width
+          mediaType
+        }
+        opengraphSiteName
+        opengraphTitle
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphUrl
+        opengraphModifiedTime
+        opengraphType
+        title
+        metaDesc
+        schema {
+          raw
+        }
+      }
       date(formatString: "MMMM DD, YYYY")
       featuredImage {
         node {
