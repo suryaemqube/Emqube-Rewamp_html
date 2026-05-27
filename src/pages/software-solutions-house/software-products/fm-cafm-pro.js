@@ -391,7 +391,7 @@ export default function SftProduct({ data }) {
     }
 
     if (!values["mobile-number"]) errors["mobile-number"] = "Required";
-    if (!values["your-message"]) errors["your-message"] = "Required";
+    // if (!values["your-message"]) errors["your-message"] = "Required";
 
     if (!values.captcha) {
       errors.captcha = "Required";
@@ -458,7 +458,7 @@ export default function SftProduct({ data }) {
                 formName: "Zoho Contact Form",
               });
             }
-            navigate("/thankyou/");
+            navigate("/software-products-thank-you/");
           } else if (response.data.status === "validation_failed") {
             setFormMessage(response.data.message);
           }
@@ -667,11 +667,11 @@ export default function SftProduct({ data }) {
                                   value={formik.values["your-message"]}
                                   onChange={formik.handleChange}
                                 />
-                                {formik.errors["your-message"] && (
+                                {/* {formik.errors["your-message"] && (
                                   <span className="wpcf7-not-valid-tip">
                                     {formik.errors["your-message"]}
                                   </span>
-                                )}
+                                )} */}
                               </span>
                             </li>
 

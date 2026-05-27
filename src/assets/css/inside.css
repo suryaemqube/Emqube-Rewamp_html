@@ -2478,4 +2478,11 @@
 }
 .inside-page .cta-wrapper .container .cta-btn-wrapp {
   margin-top: clamp(1.25rem, 0.178rem + 1.675vw, 2.188rem);
+}
+
+.thank-you-page.inside-page:after {
+  background-image: none !important;
+}
+.thank-you-page.inside-page .inside-intro-wrapper {
+  padding-bottom: 100px;
 }/*# sourceMappingURL=inside.css.map */

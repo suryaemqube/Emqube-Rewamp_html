@@ -1982,3 +1982,11 @@ footer{
   transform: translateY(0);
 }
 // animation ends
+// for contact form  - starts
+.wpcf7-not-valid-tip{
+  display: none !important;
+}
+.wpcf7-not-valid{
+  border-color: red !important;
+}
+// for contact form  - ends

@@ -520,7 +520,7 @@ export default function SftProduct({ data }) {
                 formName: "Zoho Contact Form",
               });
             }
-            navigate("/thankyou/");
+            navigate("/software-products-thank-you/");
           } else if (response.data.status === "validation_failed") {
             setFormMessage(response.data.message);
           }
@@ -729,11 +729,11 @@ export default function SftProduct({ data }) {
                                   value={formik.values["your-message"]}
                                   onChange={formik.handleChange}
                                 />
-                                {formik.errors["your-message"] && (
+                                {/* {formik.errors["your-message"] && (
                                   <span className="wpcf7-not-valid-tip">
                                     {formik.errors["your-message"]}
                                   </span>
-                                )}
+                                )} */}
                               </span>
                             </li>
 

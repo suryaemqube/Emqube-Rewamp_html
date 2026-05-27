@@ -1846,4 +1846,12 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 .stagger-li.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.wpcf7-not-valid-tip {
+  display: none !important;
+}
+
+.wpcf7-not-valid {
+  border-color: red !important;
 }/*# sourceMappingURL=common.css.map */

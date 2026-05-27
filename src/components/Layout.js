@@ -13,7 +13,7 @@ import { PageStateContext } from "./context/PageStateContext";
 
 import Header from "./Header"
 
-const Layout = ({ children, isHome, isMainParent, isChild, isMobileAppChild, isAiDevChild, isWhatsappBusChild, isBusinessIntelChild, isECommerceChild, isZoho, about, isRef, isSftProj, isPortDetail, isEmqonnectList, isEmqonnectDetail, isDigiProj, isContact }) => {
+const Layout = ({ children, isHome, isMainParent, isChild, isMobileAppChild, isAiDevChild, isWhatsappBusChild, isBusinessIntelChild, isECommerceChild, isZoho, about, isRef, isSftProj, isPortDetail, isEmqonnectList, isEmqonnectDetail, isDigiProj, isContact, isThankyou }) => {
 
   const { pageState, setPageEntering, setPageActive, setPageExiting } = useContext(PageStateContext);
 
@@ -78,6 +78,7 @@ const Layout = ({ children, isHome, isMainParent, isChild, isMobileAppChild, isA
         ${isEmqonnectDetail ? "inside-page inside-child emqonnect-detail" : ""}
         ${isDigiProj ? "inside-page inside-child digi-portfolio" : ""}
         ${isContact ? "inside-page inside-child contact-main" : ""}
+        ${isThankyou ? "inside-page inside-child thank-you-page" : ""}
         `}>
         <Slice alias="navigation-bar" />
         {children}

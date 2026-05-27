@@ -2331,3 +2331,13 @@ content: "\f009";
 	// cta section ends
 }
 
+// for thank you page - starts
+.thank-you-page.inside-page{
+	&:after{
+		background-image: none !important;
+	}
+	.inside-intro-wrapper{
+		padding-bottom: 100px;
+	}
+}
+// for thank you page - ends

@@ -139,9 +139,13 @@ export default function ContactUs({ data }) {
       errors["mobile-number"] = "Required";
     }
 
-    if (!values["your-message"]) {
-      errors["your-message"] = "Required";
+    if (!values["select-371"]) {
+      errors["select-371"] = "Required";
     }
+
+    // if (!values["your-message"]) {
+    //   errors["your-message"] = "Required";
+    // }
 
     if (!values.captcha) {
       errors.captcha = "Required";
@@ -207,7 +211,7 @@ export default function ContactUs({ data }) {
                 formName: "Contact Us Form",
               });
             }
-            navigate("/thankyou/");
+            navigate("/thank-you/");
           } else if (response.data.status === "validation_failed") {
             setFormMessage(response.data.message);
           }
@@ -453,7 +457,11 @@ export default function ContactUs({ data }) {
                             <span className="wpcf7-form-control-wrap" data-name="select-371">
                               <select
                                 name="select-371"
-                                className="wpcf7-form-control wpcf7-select"
+                                className={
+                                  formik.errors["select-371"]
+                                    ? "wpcf7-form-control wpcf7-select wpcf7-not-valid"
+                                    : "wpcf7-form-control wpcf7-select"
+                                }
                                 value={formik.values["select-371"]}
                                 onChange={formik.handleChange}
                                 aria-invalid="false"
