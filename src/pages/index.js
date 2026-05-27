@@ -299,7 +299,9 @@ export default function Home({ data }) {
       { home &&
         <section className="hero-video-wrapper">
           <div className="container">
-            <video autoPlay muted loop playsInline preload="none">
+            <video autoPlay muted loop playsInline preload="none" 
+            poster={home?.heroVideoHolderImage?.mediaItemUrl} 
+            >
               {home?.heroVideoDesktop &&
                 <source src={home?.heroVideoDesktop?.mediaItemUrl} media="(min-width: 768px)" type="video/mp4" />
               }
@@ -457,6 +459,8 @@ export default function Home({ data }) {
       </section>
       {/* Home Page Brand section ends */}
 
+      
+
       {/* home cta section starts */}
       {options && 
         <section className="cta-wrapper">
@@ -528,6 +532,10 @@ export const data = graphql`
           mediaItemUrl
         }
         heroVideoMobile {
+          altText
+          mediaItemUrl
+        }
+        heroVideoHolderImage {
           altText
           mediaItemUrl
         }

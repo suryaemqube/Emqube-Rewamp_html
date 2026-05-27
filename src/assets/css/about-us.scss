@@ -773,9 +773,9 @@ main.about-us.inside-page{
           .mem-exp-year{
             position: absolute;
             background-color: var(--light_green);
-            padding: 13px 32px;
+            padding: 13px 35px;
             top: 20px;
-            right: -115px;
+            right: -150px;
             opacity: 0;
             transform: translateY(10px);
             z-index: 2;
@@ -895,7 +895,8 @@ main.about-us.inside-page{
               position: relative;
               width: 280px;
               height: 280px;
-              top: -10px;
+              top: 0px;
+              border-radius: 100%;
               // top: -50px;
               @media(max-width: 991px){
                 width: 240px;
@@ -904,7 +905,8 @@ main.about-us.inside-page{
               img{
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain;
+                border-radius: 100%;
                 object-position: center center;
               }
             }
@@ -950,7 +952,8 @@ main.about-us.inside-page{
               color: var(--white);
               border-radius: 33px;
               text-align: center;
-              line-height: 1.15em;
+              font-size: 17px;
+              line-height: 1.5em;
               @media(max-width: 991px){
                 font-size: 13px;
               }

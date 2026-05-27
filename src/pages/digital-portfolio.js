@@ -286,7 +286,14 @@ const scrollToSection = (id) => {
                   <a href={digiProjItem?.digitalPortfolioLayout?.websiteLink ? digiProjItem?.digitalPortfolioLayout?.websiteLink : "#"} target="_blank" rel="noopener noreferrer">
                     {digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage && 
                     <div className="desk-view">
-                      <img src={digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl} alt={digiProjItem?.title}></img>
+                      <img 
+                      // src={digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl} 
+                      src={
+                          digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl
+                            ? digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl
+                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                        }
+                      alt={digiProjItem?.title}></img>
                       <div className="hover-txt" dangerouslySetInnerHTML={{__html: digiProjItem?.content}} />
                     </div>
                     }
@@ -591,7 +598,8 @@ const scrollToSection = (id) => {
                       controls
                       playsInline
                       preload="metadata"
-                      src={corpVideo?.corporateVideo?.corporateVideoFile?.mediaItemUrl}
+                      poster={corpVideo?.corporateVideo?.corporateVideoFile?.[0]?.videoCoverImage?.mediaItemUrl}
+                      src={corpVideo?.corporateVideo?.corporateVideoFile?.[0]?.videoFile?.mediaItemUrl}
                     />
                   </div>
                 </SwiperSlide>
@@ -775,8 +783,14 @@ export const data = graphql`
           slug
           corporateVideo {
             corporateVideoFile {
-              altText
-              mediaItemUrl
+              videoCoverImage {
+                altText
+                mediaItemUrl
+              }
+              videoFile {
+                altText
+                mediaItemUrl
+              }
             }
           }
         }

@@ -184,10 +184,21 @@ function Footer({ sliceContext }) {
 									)}
 								</Link>
               </div>
+							<div className="footer-link">
+                <ul>
+									{footerOtherLink &&
+										footerOtherLink.map((menuItem, index) => (
+											<li className="main-link-name" key={`sdvsd` + index}>
+												<a href={menuItem.path}>{menuItem.label}</a>
+											</li>
+										))
+									}
+                </ul>
+              </div>
             </div>
             <div className="f-right">
               <div className="footer-link">
-                <p className="main-link-name">Software Solutions House</p>
+                <p className="main-link-name"><a href="/software-solutions-house/">Software Solutions House</a></p>
 								{footerSoftwareSolMenu &&
 									footerSoftwareSolMenu.map((menuItem, index) => (	
 										<ul
@@ -218,7 +229,7 @@ function Footer({ sliceContext }) {
 								}
               </div>
               <div className="footer-link">
-                <p className="main-link-name">Digital Content Studio</p>
+                <p className="main-link-name"><a href="/digital-content-studio/">Digital Content Studio</a></p>
                 {footerDigitalContStudio &&
 									footerDigitalContStudio.map((menuItem, index) => {	
 										const adjustedIndex = index + 3;
@@ -251,17 +262,7 @@ function Footer({ sliceContext }) {
 									})
 								}
               </div>
-              <div className="footer-link">
-                <ul>
-									{footerOtherLink &&
-										footerOtherLink.map((menuItem, index) => (
-											<li className="main-link-name" key={`sdvsd` + index}>
-												<a href={menuItem.path}>{menuItem.label}</a>
-											</li>
-										))
-									}
-                </ul>
-              </div>
+              
             </div>
           </div>
           <div className="f-btm">
