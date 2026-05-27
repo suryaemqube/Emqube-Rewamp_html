@@ -2126,6 +2126,7 @@ content: "\f009";
 		.centered-slides{
 			display: flex;
 			gap: 20px;
+			justify-content: center;
 		}
 		.swiper-button-next,.swiper-button-prev{
 			display: none;

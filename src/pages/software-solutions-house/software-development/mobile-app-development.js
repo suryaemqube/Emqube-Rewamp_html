@@ -445,7 +445,7 @@ export default function SoftwareSolChild({ data }) {
       {softSolChild?.emContent && 
         <section className={`engagement-model-wrapp step-${itemCount}`}>
           <div className="container">
-            <h2 className="txt-center slide-up">Our Engagement Model</h2>
+            <h2 className="txt-center slide-up" dangerouslySetInnerHTML={{ __html: softSolChild?.engagementModelSectionTitle || "Our Engagement Model" }} />
             <div className="eng-model-step">
               <ul className={`count-${itemCount}`}>
                 {softSolChild?.emContent.map((engModel,index) => (
@@ -492,14 +492,13 @@ export default function SoftwareSolChild({ data }) {
       {/* partner with emqube section ends */}
 
       {/* industry section starts */}
-      {softSolChild?.selectIndustries && softSolChild?.selectApplications && 
-        <section className="insudtry-list-wrapp">
+        <section className="insudtry-list-wrapp indus-flex-dir-btm">
           <h2 className="slide-up">Work Reference</h2>
           <div className="container">
             {softSolChild?.selectIndustries &&
               <div className="left">
                 <h3 className="slide-up">Industries</h3>
-                <ul>
+                <ul className="">
                   {softSolChild?.selectIndustries.map((indeslst,index) => {  
                     const iconName = formatIconClass(indeslst);
                     return (
@@ -537,7 +536,6 @@ export default function SoftwareSolChild({ data }) {
             }
           </div>
         </section>
-      }
       {/* industry section ends */}
 
       {/* Work Reference Section Starts */}
@@ -738,6 +736,7 @@ export const data = graphql`
           saImage
           saTitle
         }
+        engagementModelSectionTitle
         emContent {
           emDescription
           emImage

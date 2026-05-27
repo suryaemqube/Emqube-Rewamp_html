@@ -3248,4 +3248,30 @@
 .zoho-crm-wrapper.piller-wrapper .container .crm-list li:hover .top span.icon svg path {
   fill: var(--white);
   transition: 0.5s ease-in-out;
+}
+
+.strategic-choice-wrapper.only-content .container .txt-wrapper {
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .strategic-choice-wrapper.only-content .container .txt-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.strategic-choice-wrapper.only-content .container .txt-wrapper .left {
+  width: 70%;
+}
+@media (max-width: 991px) {
+  .strategic-choice-wrapper.only-content .container .txt-wrapper .left {
+    width: 100%;
+  }
+}
+.strategic-choice-wrapper.only-content .container .txt-wrapper .right {
+  width: 30%;
+}
+@media (max-width: 991px) {
+  .strategic-choice-wrapper.only-content .container .txt-wrapper .right {
+    width: 100%;
+  }
 }/*# sourceMappingURL=inside-child.css.map */

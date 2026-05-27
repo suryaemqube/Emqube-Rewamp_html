@@ -150,7 +150,7 @@ export default function SoftwareSolMain({ data }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-     if (typeof window !== "undefined") return;
+    //  if (typeof window !== "undefined") return;
     const checkScreen = () => {
       setIsMobile(window.innerWidth <= 767);
     };
@@ -770,7 +770,7 @@ export default function SoftwareSolMain({ data }) {
         <section className="engagement-model-wrapp parent-eng-model">
           <div className="container">
             <h2 className="txt-center slide-up" dangerouslySetInnerHTML={{__html: softSolMain.emTitle}} />
-            <p className="sub-txt slide-up" dangerouslySetInnerHTML={{__html: softSolMain.emContent}} />
+            <p className="sub-txt slide-up" dangerouslySetInnerHTML={{__html: softSolMain.emShortContent}} />
             <div className="eng-model-step">
               <ul>
                 {softSolMain?.sftEmSteps && softSolMain?.sftEmSteps.map((engStep, index) => (
@@ -792,7 +792,7 @@ export default function SoftwareSolMain({ data }) {
       {/* engagement model ends */}
       
       {/* Work Reference Section Starts */}
-      {softSolMainProjectAll && softSolMainProjectAll.length > 0 &&
+      {softSolMainProject && softSolMainProject.length > 0 &&
         <section className="work-ref-wrapper">
           <div className="container">
             <h2 className="txt-center slide-up"><span className="txt-regular">Work</span> References</h2>
@@ -828,7 +828,7 @@ export default function SoftwareSolMain({ data }) {
               },
             }}
           >
-            {softSolMainProjectAll.map((project, index) => (
+            {softSolMainProject.map((project, index) => (
               <SwiperSlide key={project.id || index}>
                 <a href={`/software-projects/${project.slug}`}>
                   <div className="work-wrapp">
@@ -1004,7 +1004,7 @@ export const data = graphql`
         }
         sftStatsLeftCopy {
           statContent
-        }
+        } 
         sdTitle
         sftSdPages {
           spDescription
@@ -1065,6 +1065,7 @@ export const data = graphql`
         }
         emTitle
         emContent
+        emShortContent
         sftEmSteps {
           emImage
           emText

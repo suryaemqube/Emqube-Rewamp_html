@@ -2257,6 +2257,7 @@
 .inside-page .work-ref-wrapper .centered-slides {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 .inside-page .work-ref-wrapper .swiper-button-next, .inside-page .work-ref-wrapper .swiper-button-prev {
   display: none;

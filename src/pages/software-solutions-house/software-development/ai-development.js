@@ -674,7 +674,7 @@ export default function SoftwareSolChild({ data }) {
       {/* faq section ends */}
 
       {/* startup innovation section starts */}
-      {startInno &&
+      {/* {startInno &&
         <section className="startup-inno-wrapper">
           <div className="container">
             <div className="left">
@@ -711,7 +711,7 @@ export default function SoftwareSolChild({ data }) {
             </span>
           </div>
         </section>
-      }
+      } */}
       {/* startup innovation section ends */}
 
 

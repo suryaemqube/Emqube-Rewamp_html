@@ -374,7 +374,7 @@ export default function SftProduct({ data }) {
 
   // onclick scroll to specific section - starts
   const getOffset = () => {
-     if (typeof window !== "undefined") return;
+    //  if (typeof window !== "undefined") return;
     if (window.matchMedia("(max-width: 767px)").matches) {
       return 130; // mobile
     } else if (window.matchMedia("(max-width: 1080px)").matches) {
@@ -391,7 +391,7 @@ export default function SftProduct({ data }) {
       const offset = getOffset();
       const position = element.offsetTop - offset;
 
-       if (typeof window !== "undefined") return;
+      //  if (typeof window !== "undefined") return;
       window.scrollTo({
         top: position,
         behavior: "smooth",
@@ -977,6 +977,7 @@ export default function SftProduct({ data }) {
       {/* industry section ends */}    
 
       {/* Work Reference Section Starts */}
+      {softSolChildProject.length > 0  && 
       <section className="work-ref-wrapper">
         <div className="container">
           <h2 className="txt-center slide-up">Select Projects</h2>
@@ -1079,6 +1080,7 @@ export default function SftProduct({ data }) {
           </Swiper>
         )}
       </section>
+      }
       {/* Work Reference Section Ends */}
 
       {/* faq section starts */}

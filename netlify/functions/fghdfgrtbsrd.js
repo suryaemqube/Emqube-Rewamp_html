@@ -4,8 +4,8 @@ exports.handler = async () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        username: process.env.WP_USERNAME,
-        password: process.env.WP_PASSWORD,
+        username: process.env.GATSBY_USERNAME,
+        password: process.env.GATSBY_PASSWORD,
       }),
     });
 

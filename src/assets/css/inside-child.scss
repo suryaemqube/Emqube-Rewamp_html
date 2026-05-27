@@ -3172,3 +3172,27 @@ content: "\f009";
 		}
 	}
 	// zoho crm section ends
+
+  .strategic-choice-wrapper.only-content{
+    .container{
+      .txt-wrapper{
+        align-items: center;
+        @media(max-width: 991px){
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .left{
+          width: 70%;
+          @media(max-width: 991px){
+            width: 100%;
+          }
+        }
+        .right{
+          width: 30%;
+          @media(max-width: 991px){
+            width: 100%;
+        }
+      }
+    }
+  }
+}
