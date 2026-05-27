@@ -391,7 +391,7 @@ export default function SftProduct({ data }) {
     }
 
     if (!values["mobile-number"]) errors["mobile-number"] = "Required";
-    if (!values["your-message"]) errors["your-message"] = "Required";
+    // if (!values["your-message"]) errors["your-message"] = "Required";
 
     if (!values.captcha) {
       errors.captcha = "Required";

@@ -122,15 +122,6 @@ export const data = graphql`
       content
       title
       slug
-      contactPageLayout {
-        address
-        contactPageRightSideSubtitle
-        contactPageRightSideTitle
-        email
-        googleMapLocation
-        officeTime
-        whatsappLink
-      }
     }
   }
 `;
