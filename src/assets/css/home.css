@@ -556,6 +556,7 @@
 .home-intro-wrapper .container .left .intro-txt p {
   font-family: HelvNowDis-light;
   max-width: 96%;
+  margin-bottom: 15px;
 }
 @media (max-width: 1500px) {
   .home-intro-wrapper .container .left .intro-txt p {
@@ -567,6 +568,9 @@
   display: inline-block;
   border-bottom: 1px solid var(--dark_grey);
   line-height: 1.2em;
+}
+.home-intro-wrapper .container .left .intro-txt p:last-child {
+  margin-bottom: 15px;
 }
 .home-intro-wrapper .container .right.anim-vid-wrapp {
   position: absolute;

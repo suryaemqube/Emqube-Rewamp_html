@@ -348,6 +348,12 @@ ul li a {
   text-decoration: none;
 }
 
+p {
+  margin-bottom: 15px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
 p a:hover {
   color: var(--light_green);
 }

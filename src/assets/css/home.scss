@@ -505,6 +505,7 @@
 				p{
 					font-family: HelvNowDis-light;
 					max-width: 96%;
+					margin-bottom: 15px;
 					@media(max-width: 1500px){
 						max-width: 100%;
 						line-height: 1.7em;
@@ -513,6 +514,9 @@
 						display: inline-block;
 						border-bottom: 1px solid var(--dark_grey);
 						line-height: 1.2em;
+					}
+					&:last-child{
+						margin-bottom: 15px;
 					}
 				}
 			}
