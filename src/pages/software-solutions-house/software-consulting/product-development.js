@@ -649,6 +649,7 @@ export default function SoftwareSolChild({ data }) {
 export const Head = ({ data }) => (
   <Seo
     seoData={data?.wpPage?.seo || []}
+    bodyClass={"prod-development-page"}
     pageUrl={data?.wpPage?.uri}
   >
   </Seo>
