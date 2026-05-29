@@ -1900,7 +1900,7 @@ footer{
 .backtotop {
   position: fixed;
   right: 10px;
-  bottom: 70px;
+  bottom: 60px;
   cursor: pointer;
   left: auto;
   width: 70px;
@@ -2005,7 +2005,7 @@ footer{
   /* css added by pradnya - for go to AI section ends - 10-04-2025 */
 .ai-bot-btn {
 	position: fixed;
-	bottom: 80px;
+	bottom: 95px;
 	left: 20px;
 	/* transform: translateY(-50%); */
 	background-color: #38C84E;
@@ -2020,6 +2020,13 @@ footer{
 	cursor: pointer;
 	transition: width 0.4s ease;
 	z-index: 999;
+  @media(max-width: 767px){
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    bottom: 5px;
+    z-index: 99999999;
+  }
   }
   .ai-bot-btn a{
     display: flex;
@@ -2039,11 +2046,19 @@ footer{
 	justify-content: center;
 	flex-shrink: 0;
     margin-right: 9px;
+    @media(max-width: 767px){
+      width: 28px;
+    height: 28px;
+    }
   }
   
   .bot-icon-img img.bot-icon {
 	width: 37px;
 	height: 37px;
+  @media(max-width: 767px){
+        width: 28px;
+    height: 28px
+  }
   }
   
   /* Text initially hidden */
@@ -2123,7 +2138,7 @@ footer{
 }
 @media(max-width: 767px){
   .ai-bot-btn:hover{
-    width: 60px;
+    width: 40px;
   }
 }
 .ai-chat-main{

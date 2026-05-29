@@ -375,7 +375,7 @@ export default function SoftwareSolMain({ data }) {
           <div className="container">
             <div className="tab-system">
               <div className="tab-buttons">
-                <h2 className={`tab-btn ${activeTab === 'custom' ? 'active' : ''}`} onClick={() => setActiveTab('custom')} dangerouslySetInnerHTML={{__html: softSolMain?.sdTitle}} />
+                <h2 className={`tab-btn  ${activeTab === 'custom' ? 'active' : ''}`} onClick={() => setActiveTab('custom')} dangerouslySetInnerHTML={{__html: softSolMain?.sdTitle}} />
               </div>
               <div className="tab-content">
                 {activeTab === 'custom' && (
@@ -479,7 +479,7 @@ export default function SoftwareSolMain({ data }) {
                         {webSlides.map((slide, index) => (
                           <p
                             key={slide.key + '-text'}
-                            className={`slide-title ${webActiveSlide === index ? 'active' : ''}`}
+                            className={`slide-title w-auto ${webActiveSlide === index ? 'active' : ''}`}
                             onClick={() => webSwiper?.slideToLoop(index)}
                           >
                             {slide.title}
@@ -595,7 +595,7 @@ export default function SoftwareSolMain({ data }) {
                         {webSlides1.map((slide1, index1) => (
                           <p
                             key={slide1.key + '-text'}
-                            className={`slide-title ${webActiveSlide1 === index1 ? 'active' : ''}`}
+                            className={`slide-title w-auto ${webActiveSlide1 === index1 ? 'active' : ''}`}
                             onClick={() => webSwiper1?.slideToLoop(index1)}
                           >
                             {slide1.title}
@@ -727,7 +727,7 @@ export default function SoftwareSolMain({ data }) {
                         {webSlides2.map((slide2, index2) => (
                           <p
                             key={slide2.key + '-text'}
-                            className={`slide-title ${webActiveSlide2 === index2 ? 'active' : ''}`}
+                            className={`slide-title w-auto ${webActiveSlide2 === index2 ? 'active' : ''}`}
                             onClick={() => webSwiper2?.slideToLoop(index2)}
                           >
                             {slide2.title}

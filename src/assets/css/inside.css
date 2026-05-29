@@ -1348,7 +1348,6 @@
   padding: 7px 16px;
   cursor: pointer;
   font-size: 18px;
-  width: 260px;
   text-align: center;
 }
 @media (max-width: 1500px) {
@@ -1359,14 +1358,13 @@
 @media (max-width: 1380px) {
   .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper-pagination-text .slide-title {
     font-size: 16px;
-    width: 220px;
   }
 }
 .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper-pagination-text .slide-title:after {
   content: "";
   position: absolute;
   width: 1px;
-  height: 70%;
+  height: 15px;
   right: 0;
   top: 50%;
   transform: translateY(-50%);

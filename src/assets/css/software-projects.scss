@@ -184,6 +184,7 @@ main.software-projects-page.inside-page{
         color: var(--black);
         font-family: HelvNowDis-light;
         font-weight: 300;
+        margin-bottom: 0;
       }
       select{
         margin-left: 18px;
@@ -225,6 +226,7 @@ main.software-projects-page.inside-page{
       display: flex;
       align-items: center;
       padding-right: 120px;
+      margin-bottom: 0;
       @media(max-width: 1500px){
         padding-right: 130px;
       }

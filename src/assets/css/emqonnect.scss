@@ -147,6 +147,7 @@ main.emqonnect-list.inside-page{
             color: var(--black);
             font-family: HelvNowDis-light;
             font-weight: 300;
+            margin-bottom: 0;
           }
           select{
             margin-left: 18px;
@@ -208,6 +209,7 @@ main.emqonnect-list.inside-page{
             color: var(--black);
             font-family: HelvNowDis-light;
             font-weight: 300;
+            margin-bottom: 0;
             @media(max-width: 1080px){
               font-size: 15px;
             }

@@ -196,6 +196,7 @@ main.software-projects-page.inside-page .software-top-filter .filter-left p {
   color: var(--black);
   font-family: HelvNowDis-light;
   font-weight: 300;
+  margin-bottom: 0;
 }
 main.software-projects-page.inside-page .software-top-filter .filter-left select {
   margin-left: 18px;
@@ -244,6 +245,7 @@ main.software-projects-page.inside-page .software-top-filter .filter-right {
   display: flex;
   align-items: center;
   padding-right: 120px;
+  margin-bottom: 0;
 }
 @media (max-width: 1500px) {
   main.software-projects-page.inside-page .software-top-filter .filter-right {

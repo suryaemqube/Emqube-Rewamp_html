@@ -222,7 +222,7 @@
 	}
 	&:after{
 		content: '';
-		background-image: url(../img/intro-bg-btm-graphic.svg);
+		// background-image: url(../img/intro-bg-btm-graphic.svg);
 		position: absolute;
 		// transform: rotate(-6deg);
 		// bottom: -1010px;
@@ -1275,3 +1275,33 @@
 		}
 	}
 }
+
+  .home{
+    // header{
+    //   @media(max-width: 767px){
+    //     background-color: rgba(0,0,0,0.3);
+    //   }
+    // }
+    // header.scrolled{
+    //   background-color: var(--white);
+    // }
+    header{
+      .inner-container{
+        .company-logo{
+          .logo-white{
+            @media(max-width: 767px){
+              display: none !important;
+            }
+          }
+          .logo-black{
+            @media(max-width: 767px){
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+	.mob-menu-click .ham .line{
+			stroke: var(--black) !important;
+		}
+  }

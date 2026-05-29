@@ -222,7 +222,6 @@
 }
 .home-intro-wrapper:after {
   content: "";
-  background-image: url(../img/intro-bg-btm-graphic.svg);
   position: absolute;
   z-index: -1;
   background-repeat: no-repeat;
@@ -1416,4 +1415,18 @@
 }
 .cta-wrapper .container ul.lets-talk-wrap li.call-us .view-all:hover svg path {
   fill: var(--white);
+}
+
+@media (max-width: 767px) {
+  .home header .inner-container .company-logo .logo-white {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .home header .inner-container .company-logo .logo-black {
+    display: block !important;
+  }
+}
+.home .mob-menu-click .ham .line {
+  stroke: var(--black) !important;
 }/*# sourceMappingURL=home.css.map */

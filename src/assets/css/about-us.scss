@@ -526,7 +526,7 @@ main.about-us.inside-page{
               }
               .count{
                 background-color: var(--light_green);
-                color: var(--white);
+                // color: var(--white);
                 transition: all 0.3s ease-in-out;
               }
             }
@@ -558,7 +558,7 @@ main.about-us.inside-page{
         display: flex;
         justify-content: center;
         li{
-          width: 48%;
+          width: 45%;
           @media(max-width: 1110px){
             width: 45%;
           }
@@ -566,15 +566,15 @@ main.about-us.inside-page{
             width: 100%;
             text-align: center;
           }
-          .count,.line-fill{
-            display: none;
-          }
+          // .count,.line-fill{
+          //   display: none;
+          // }
           .right{
             width: 100%;
             padding-left: 0;
-            &:after{
-              display: none;
-            }
+            // &:after{
+            //   display: none;
+            // }
             .title{
               background: linear-gradient(0deg, #313131 15.85%, #9C9C9C 121.74%);
               background-clip: text;
@@ -591,6 +591,14 @@ main.about-us.inside-page{
           &:nth-child(1){
             width: 100%;
             text-align: center;
+            .line-fill,.count{
+              display: none;
+            }
+            .right{
+              &:after{
+                display: none;
+              }
+            }
             @media(max-width: 1500px){
               max-width: 80%;
               margin-left: auto;
@@ -608,9 +616,62 @@ main.about-us.inside-page{
               font-size: 40px;
               margin-bottom: 25px;
             }
+            .count{
+              color: transparent;
+              width: 15px;
+              height: 15px;
+              left: -5px;
+              top: 20px;
+              background-color: var(--light_green);
+            }
+            .line-fill{
+              width: 5px;
+              top: 20px;
+              background-color: var(--light_green);
+              display: none;
+            }
+            .right{
+              padding-left: 40px;
+              @media(max-width: 767px){
+                padding-left: 0px;;
+              }
+              .title{
+                line-height: 1.5em;
+                margin-bottom: 20px;
+                // 1024 - 1920 : 20 - 36
+                font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+                @media(max-width: 1023px){
+                  // 320 - 1023 : 19 - 20
+                  font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
+                  line-height: 1.3em;
+                }
+              }
+              &:after{
+                left: 0;
+                width: 5px;
+                background-color: var(--light_green);
+                @media(max-width: 767px){
+                  display: none;
+                }
+              }
+              div{
+                p{
+                  width: 90%;
+                  @media(max-width: 767px){
+                    width: 100%;
+                  }
+                  
+                }
+              }
+            }
+            .count{
+              @media(max-width: 767px){
+                display: none;
+              }
+            }
           }
           &:last-child{
-            margin-left: 40px;
+            margin-left: 60px;
             @media(max-width: 1500px){
               margin-left: 40px;
             }
@@ -733,9 +794,9 @@ main.about-us.inside-page{
             -webkit-backdrop-filter: blur(3px);
             text-align: center;
             width: 295px;
-            height: 225px;
+            height: 206px;
             // 1024 - 1920 : 20 - 40
-            padding: clamp(1.25rem, -0.1786rem + 2.2321vw, 2.5rem);
+            padding: clamp(1.25rem, -0.1786rem + 2.2321vw, 2rem);
             @media(max-width: 1700px){
               width: 260px;
               height: 200px;
@@ -851,7 +912,7 @@ main.about-us.inside-page{
         }
         @media(max-width: 767px){
           flex-direction: column;
-          gap: 90px 20px;
+          gap: 120px 20px;
           padding-left: 20px;
           padding-left: 0;
         }
@@ -877,7 +938,8 @@ main.about-us.inside-page{
             background-color: var(--light_green);
             padding: 13px 35px;
             top: 20px;
-            top: 90px;
+            top: auto;
+            bottom: 0px;
             right: -150px;
             opacity: 0;
             transform: translateY(10px);
@@ -886,8 +948,8 @@ main.about-us.inside-page{
             @media(max-width: 1500px){
               right: -100px;
               padding: 13px 15px;
-              top: 75px;
-              top: 110px;
+              // top: 75px;
+              // top: 110px;
             }
             @media(max-width: 1300px){
               right: -80px;
@@ -907,11 +969,12 @@ main.about-us.inside-page{
             @media(max-width: 767px){
               opacity: 1;
               right: -85px;
-              top: 60px;
+              bottom: 6px;
+              // top: 60px;
             }
             @media(max-width: 360px){
               right: -60px;
-              top: 70px;
+              // top: 70px;
             }
           }
           a{
@@ -957,6 +1020,8 @@ main.about-us.inside-page{
             .circle-wrapp {
               width: 260px;
               height: 260px;
+              width: 250px;
+              height: 250px;
               position: absolute;
               z-index: -1;
               @media(max-width: 1080px){
@@ -964,8 +1029,8 @@ main.about-us.inside-page{
                 height: 225px;
               }
               @media(max-width: 767px){
-                width: 220px;
-                height: 220px;
+                width: 210px;
+                height: 210px;
               }
               svg{
                 position: absolute;
@@ -997,11 +1062,30 @@ main.about-us.inside-page{
             }
             .team-mem-name{
               padding-top: 35px;
+              padding-top: 45px;
               @media(max-width: 991px){
                 padding-top: 25px;
               }
               @media(max-width: 767px){
-                padding-top: 15px;
+                padding-top: 30px;
+              }
+              p{
+                margin-bottom: 8px;
+                @media(max-width: 767px){
+                  margin-bottom: 2px;
+                }
+                &:last-child{
+                  margin-bottom: 0;
+                }
+                &:nth-child(2){
+                  margin-bottom: 0;
+                }
+                &.desig{
+                  font-size: 16px;
+                  @media(max-width: 767px){
+                    font-size: 14px;
+                  }
+                }
               }
             }
             .team-mem-img{
@@ -1009,8 +1093,12 @@ main.about-us.inside-page{
               width: 280px;
               height: 280px;
               top: 0px;
+              top: 32px;
               border-radius: 100%;
               // top: -50px;
+              @media(max-width: 1500px){
+                top: 9px;
+              }
               @media(max-width: 991px){
                 width: 240px;
                 height: 240px;

@@ -1768,7 +1768,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 .backtotop {
   position: fixed;
   right: 10px;
-  bottom: 70px;
+  bottom: 60px;
   cursor: pointer;
   left: auto;
   width: 70px;
@@ -1875,7 +1875,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 /* css added by pradnya - for go to AI section ends - 10-04-2025 */
 .ai-bot-btn {
   position: fixed;
-  bottom: 80px;
+  bottom: 95px;
   left: 20px;
   /* transform: translateY(-50%); */
   background-color: #38C84E;
@@ -1890,6 +1890,15 @@ footer .inner-container .f-btm .f-social-list li a:hover {
   cursor: pointer;
   transition: width 0.4s ease;
   z-index: 999;
+}
+@media (max-width: 767px) {
+  .ai-bot-btn {
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    bottom: 5px;
+    z-index: 99999999;
+  }
 }
 
 .ai-bot-btn a {
@@ -1911,10 +1920,22 @@ footer .inner-container .f-btm .f-social-list li a:hover {
   flex-shrink: 0;
   margin-right: 9px;
 }
+@media (max-width: 767px) {
+  .bot-icon-img {
+    width: 28px;
+    height: 28px;
+  }
+}
 
 .bot-icon-img img.bot-icon {
   width: 37px;
   height: 37px;
+}
+@media (max-width: 767px) {
+  .bot-icon-img img.bot-icon {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 /* Text initially hidden */
@@ -2022,7 +2043,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 }
 @media (max-width: 767px) {
   .ai-bot-btn:hover {
-    width: 60px;
+    width: 40px;
   }
 }
 .ai-chat-main footer {

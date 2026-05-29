@@ -241,7 +241,7 @@ export default function Home({ data }) {
         if (w >= 1381) return baseY;
         if (w >= 1300) return 450;
         if (w >= 852) return 580;
-        if (w >= 768) return 550;
+        if (w >= 768) return 350;
         return baseY;
       },
 

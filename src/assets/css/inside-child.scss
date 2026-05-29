@@ -899,7 +899,7 @@ content: "\f009";
               }
             }
             .eng-title{
-              padding: 0 30px;
+              padding: 0 22px;
               @media(max-width: 500px){
                 width: 100%;
                 padding-left: 0px;
@@ -932,7 +932,7 @@ content: "\f009";
                 // 375 - 1920 : 14 - 16
                 font-size: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);
                 color: var(--light_grey);
-                line-height: 1.88em;
+                line-height: 1.6em;
                 width: 100%;
                 @media(max-width: 767px){
                   text-align: center;
@@ -1217,7 +1217,7 @@ content: "\f009";
               font-weight: 500;
               position: relative;
               line-height: 1.29em;
-              height: 175px;
+              // height: 175px;
               display: flex;
               align-items: center;
               justify-content: center;
@@ -1228,10 +1228,10 @@ content: "\f009";
               // 1024 - 1920 : 19 - 32
               font-size: clamp(1.188rem, 0.26rem + 1.45vw, 2rem);
               @media(max-width: 1500px){
-                height: 120px;
+                // height: 120px;
               }
               @media(max-width: 850px){
-                height: 90px;
+                // height: 90px;
               }
               @media(max-width: 1023px){
                 // 320 - 1023 : 17 - 18
