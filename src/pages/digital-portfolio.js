@@ -292,7 +292,7 @@ const scrollToSection = (id) => {
                       src={
                           digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl
                             ? digiProjItem?.digitalPortfolioLayout?.showcaseImageOnListingPage?.mediaItemUrl
-                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                            : "https://wp.emqube.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                       alt={digiProjItem?.title}></img>
                       <div className="hover-txt" dangerouslySetInnerHTML={{__html: digiProjItem?.content}} />

@@ -152,10 +152,10 @@ export default function EmqonnectDetail({ data }) {
             <div className="blog-detail-share">
               <p>Share this post: </p>
               <ul>
-                <li><a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/facebook-icon-1.svg" alt="facebook icon"></img></a></li>
-                <li><a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/twitter-icon.svg" alt="twitter icon"></img></a></li>
-                <li><a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/linkedin-icon.svg" alt="linkedin icon"></img></a></li>
-                <li><a href={shareLinks.instagram} target="_blank" rel="noopener noreferrer"><img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/instagram-icon.svg" alt="instagram icon"></img></a></li>
+                <li><a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer"><img src="https://wp.emqube.com/wp-content/uploads/2026/05/facebook-icon-1.svg" alt="facebook icon"></img></a></li>
+                <li><a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer"><img src="https://wp.emqube.com/wp-content/uploads/2026/05/twitter-icon.svg" alt="twitter icon"></img></a></li>
+                <li><a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer"><img src="https://wp.emqube.com/wp-content/uploads/2026/05/linkedin-icon.svg" alt="linkedin icon"></img></a></li>
+                <li><a href={shareLinks.instagram} target="_blank" rel="noopener noreferrer"><img src="https://wp.emqube.com/wp-content/uploads/2026/05/instagram-icon.svg" alt="instagram icon"></img></a></li>
               </ul>
             </div>
           </div>

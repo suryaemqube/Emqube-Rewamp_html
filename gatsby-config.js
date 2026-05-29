@@ -17,7 +17,7 @@ module.exports = {
     title: `Emqube`,
     description: `Emqube - Software Solutions House`,
     author: `@emqube`,
-    siteUrl: `https://emquberevamphtml.netlify.app/`,
+    siteUrl: `https://emqube.com/`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://mohammeds161.sg-host.com/graphql`,
+        url: `https://wp.emqube.com/graphql`,
         type: {
           MediaItem: {
             localFile: {

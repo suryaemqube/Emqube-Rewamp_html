@@ -847,7 +847,7 @@ export default function SoftwareSolMain({ data }) {
                         src={
                           project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
                             ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
-                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                            : "https://wp.emqube.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
                           project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText

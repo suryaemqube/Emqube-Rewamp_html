@@ -499,7 +499,7 @@ export default function SftProduct({ data }) {
                     }
                     {softProductChild.productTag && 
                     <div className="partner-tag">
-                      <img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/authorized-icon.svg" alt="Authorized Partner"></img>
+                      <img src="https://wp.emqube.com/wp-content/uploads/2026/05/authorized-icon.svg" alt="Authorized Partner"></img>
                       <p dangerouslySetInnerHTML={{__html: softProductChild.productTag}} />
                     </div>
                     }
@@ -967,7 +967,7 @@ export default function SftProduct({ data }) {
                         src={
                           project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
                             ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
-                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                            : "https://wp.emqube.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
                           project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
@@ -1029,7 +1029,7 @@ export default function SftProduct({ data }) {
                         src={
                           project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
                             ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
-                            : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                            : "https://wp.emqube.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
                           project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText

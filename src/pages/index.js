@@ -239,7 +239,7 @@ export default function Home({ data }) {
         const w = window.innerWidth
 
         if (w >= 1381) return baseY;
-        if (w >= 1300) return 645;
+        if (w >= 1300) return 450;
         if (w >= 852) return 580;
         if (w >= 768) return 550;
         return baseY;

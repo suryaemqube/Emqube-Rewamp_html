@@ -127,25 +127,25 @@ export default function Reference({ data }) {
                             {
                                 "text": "What is your expertise in software development?",
                                 "image": {
-                                    "rawUrl": "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/plus.svg"
+                                    "rawUrl": "https://wp.emqube.com/wp-content/uploads/2026/05/plus.svg"
                                 },
                             },
                             {
                                 "text": "Do you offer Digital Marketing services?",
                                 "image": {
-                                    "rawUrl": "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/plus.svg"
+                                    "rawUrl": "https://wp.emqube.com/wp-content/uploads/2026/05/plus.svg"
                                 },
                             },
                             {
                                 "text": "Tell me more about emQube?",
                                 "image": {
-                                    "rawUrl": "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/plus.svg"
+                                    "rawUrl": "https://wp.emqube.com/wp-content/uploads/2026/05/plus.svg"
                                 },
                             },
                             {
                                 "text": "Show me your projects portfolio.",
                                 "image": {
-                                    "rawUrl": "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/plus.svg"
+                                    "rawUrl": "https://wp.emqube.com/wp-content/uploads/2026/05/plus.svg"
                                 },
                             }
                         ]
@@ -963,9 +963,9 @@ export default function Reference({ data }) {
                 <div className="chat-bubble-wrapp">
                     <div className="chat-bubble">
                         <p>Let’s Start! <span className="icon"><noscript>
-                            <img src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/bot-icon.svg" alt="Lets Start" />
+                            <img src="https://wp.emqube.com/wp-content/uploads/2026/05/bot-icon.svg" alt="Lets Start" />
                         </noscript>
-                            <img src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E' className="lazyload" data-src="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/bot-icon.svg" alt="Lets Start" />
+                            <img src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E' className="lazyload" data-src="https://wp.emqube.com/wp-content/uploads/2026/05/bot-icon.svg" alt="Lets Start" />
                         </span>
                         </p>
                     </div>
@@ -984,7 +984,7 @@ export default function Reference({ data }) {
                                 language-code="en"
                                 max-query-length="-1">
                                 <df-messenger-chat
-                                    chat-title="" placeholder-text="Ask Anything..." bot-actor-image="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/user-agent-1.svg" user-actor-image="https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/user-actor-1.svg">
+                                    chat-title="" placeholder-text="Ask Anything..." bot-actor-image="https://wp.emqube.com/wp-content/uploads/2026/05/user-agent-1.svg" user-actor-image="https://wp.emqube.com/wp-content/uploads/2026/05/user-actor-1.svg">
                                 </df-messenger-chat>
                             </df-messenger>
                         </div>

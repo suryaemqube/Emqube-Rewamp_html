@@ -76,7 +76,7 @@ const Seo = ({ bodyClass, title, description, pageUrl = "/", seoData, children, 
 
       <meta property="og:site_name" content={seoData && seoData.opengraphSiteName ? seoData.opengraphSiteName : "Emqube"} />
 
-      <meta property="og:image" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.mediaItemUrl : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/emqube-logo-black.svg"} />
+      <meta property="og:image" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.mediaItemUrl : "https://wp.emqube.com/wp-content/uploads/2026/05/emqube-logo-black.svg"} />
       <meta property="og:image:width" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.width : 200} />
       <meta property="og:image:height" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.height : 200} />
       <meta property="og:image:type" content={seoData && seoData?.mediaType ? seoData.mediaType : "image/png"} />
