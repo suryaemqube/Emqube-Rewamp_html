@@ -85,8 +85,31 @@ const PortfolioDetail = ({ data }) => {
 				{/* Inside intro section starts */}
 				 <section className="detail-intro-section">
 						<div class="container">
-							<div className="breadcrumbs 123-test">
-								{<Breadcrumb postId={100} />}
+							<div className="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
+								<span property="itemListElement" typeof="ListItem">
+									<a property="item" typeof="WebPage" href="/">
+										<span property="name">Home</span>
+									</a>
+									<meta property="position" content="1" />
+								</span>
+
+								<span> / </span>
+
+								<span property="itemListElement" typeof="ListItem">
+									<a property="item" typeof="WebPage" href="/software-projects/">
+										<span property="name">Software Projects</span>
+									</a>
+									<meta property="position" content="2" />
+								</span>
+
+								<span> / </span>
+
+								<span property="itemListElement" typeof="ListItem">
+									<span property="name" className="current-item">
+										{post?.title}
+									</span>
+									<meta property="position" content="3" />
+								</span>
 							</div>
 							<div className="title-wrapp">
 								<p className="parent-page-title">Software Projects</p>
