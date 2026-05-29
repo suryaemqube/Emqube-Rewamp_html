@@ -285,14 +285,26 @@ export default function EmqonnectDetail({ data }) {
 }
 
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpBlog?.seo || []}
-    pageUrl={data?.wpBlog?.uri}
-  >
+export const Head = ({ data }) => {
+  const post = data?.wpBlog;
+  const seo = post?.seo;
 
-  </Seo>
-);
+  // strip HTML tags from content for fallback description
+  const plainContent = post?.content?.replace(/<[^>]*>/g, "") || "";
+
+  const seoWithFallbacks = {
+    ...seo,
+    title: seo?.title || post?.title || "",
+    metaDesc: seo?.metaDesc || plainContent.slice(0, 160).trim() || "",
+  };
+
+  return (
+    <Seo
+      seoData={seoWithFallbacks}
+      pageUrl={post?.uri}
+    />
+  );
+};
 
 export const query = graphql`
   query BlogDetailQuery($id: String!) {
