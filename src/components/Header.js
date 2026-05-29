@@ -137,10 +137,11 @@ const Header = ({ sliceContext }) => {
         } `}
       >
         
-        <a href="#"
+        <a href={hasChildren ? "javascript:void(0)" : item.path}
           className="menu-item-row"
-          onClick={() => {
+          onClick={(e) => {
             if (hasChildren) {
+              e.preventDefault();
               toggleMenuItem(parentKey, item.id);
             }
           }}

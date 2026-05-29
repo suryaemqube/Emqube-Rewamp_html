@@ -959,6 +959,7 @@
 @media (max-width: 850px) {
   .inside-child .engagement-model-wrapp .container .eng-model-step ul li .eng-icon {
     height: 60px;
+    height: auto;
   }
 }
 @media (max-width: 767px) {
@@ -3137,21 +3138,46 @@
 .inside-child.mobile-app-development:after {
   background-image: url(../img/mobile-app-development-inro-bg.svg) !important;
 }
+@media (max-width: 767px) {
+  .inside-child.mobile-app-development:after {
+    background-image: none !important;
+  }
+}
 
 .inside-child.ai-development:after {
   background-image: url(../img/ai-development-intro-bg-angle.svg) !important;
+}
+@media (max-width: 767px) {
+  .inside-child.ai-development:after {
+    background-image: none !important;
+  }
 }
 
 .inside-child.whatsapp-business:after {
   background-image: url(../img/whatsapp-for-business-intro-bg-angle.svg) !important;
 }
+@media (max-width: 767px) {
+  .inside-child.whatsapp-business:after {
+    background-image: none !important;
+  }
+}
 
 .inside-child.business-intelligence:after {
   background-image: url(../img/business-intelligence-intro-bg-angle.svg) !important;
 }
+@media (max-width: 767px) {
+  .inside-child.business-intelligence:after {
+    background-image: none !important;
+  }
+}
 
 .inside-child.E-Commerce:after {
   background-image: url(../img/ecommerce-intro-bg-angle.svg) !important;
+}
+@media (max-width: 767px) {
+  .inside-child.E-Commerce:after {
+    background-image: none !important;
+  }
 }
 .inside-child.E-Commerce .insudtry-list-wrapp:before {
   background-image: none;

@@ -727,9 +727,9 @@ video {
 
 .view-more-btn {
   border-radius: 41px;
-  background: rgba(217, 217, 217, 0.49);
+  background: var(--light_green);
   font-size: 14px;
-  color: #A0A0A0;
+  color: #fff;
   line-height: 1.2em;
   font-family: HelvNowDis-reg;
   font-weight: 400;
@@ -1989,6 +1989,11 @@ footer .inner-container .f-btm .f-social-list li a:hover {
   }
   .btn-text {
     animation: showText 6s ease-in-out infinite;
+  }
+}
+@media (max-width: 767px) {
+  .ai-bot-btn:hover {
+    width: 60px;
   }
 }
 /* css added by pradnya - for go to AI section ends - 10-04-2025 *//*# sourceMappingURL=common.css.map */
