@@ -866,6 +866,14 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-ex
 @media (max-width: 767px) {
   main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-exp-year {
     opacity: 1;
+    right: -85px;
+    top: 60px;
+  }
+}
+@media (max-width: 360px) {
+  main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-exp-year {
+    right: -60px;
+    top: 70px;
   }
 }
 main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li a {

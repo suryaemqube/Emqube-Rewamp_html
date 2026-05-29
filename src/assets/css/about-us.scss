@@ -804,6 +804,12 @@ main.about-us.inside-page{
             }
             @media(max-width: 767px){
               opacity: 1;
+              right: -85px;
+              top: 60px;
+            }
+            @media(max-width: 360px){
+              right: -60px;
+              top: 70px;
             }
           }
           a{
