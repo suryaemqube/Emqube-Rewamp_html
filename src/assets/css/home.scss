@@ -524,10 +524,12 @@
 		.right.anim-vid-wrapp{
 			position: absolute;
 			top: 137px;
+			top: 380px;
 			right: 50px;
 			width: 800px;
 			@media(max-width: 1530px){
 				top: 100px;
+				top: 300px;
 			}
 			@media(max-width: 950px){
 				width: auto;

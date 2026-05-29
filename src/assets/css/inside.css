@@ -386,6 +386,7 @@
 }
 .inside-page .inside-intro-wrapper .container .inside-intro-txt p a {
   color: #767676;
+  font-size: unset;
 }
 .inside-page .inside-intro-wrapper .container .inside-intro-txt:after {
   content: "";
@@ -1926,7 +1927,7 @@
 }
 @media (max-width: 1500px) {
   .inside-page .engagement-model-wrapp .container .eng-model-step ul li .eng-icon svg {
-    height: 100%;
+    height: 70px;
     width: auto;
   }
 }
@@ -2438,6 +2439,25 @@
     line-height: 1.3em;
     font-size: 14px;
   }
+}
+.inside-page .digi-brands {
+  margin-top: 50px;
+}
+@media (max-width: 767px) {
+  .inside-page .digi-brands {
+    margin-top: 30px;
+  }
+}
+.inside-page .digi-brands .container {
+  padding-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .inside-page .digi-brands .container {
+    padding-bottom: 30px;
+  }
+}
+.inside-page .digi-brands .container .brand-list {
+  justify-content: center;
 }
 .inside-page .technology-wrapper {
   padding-top: 0;

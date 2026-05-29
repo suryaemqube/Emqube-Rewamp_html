@@ -94,7 +94,7 @@
 
 .icon-coffee:before {
   font-family: "Untitled";
-  content: "\f009";
+  content: "\f01c";
 }
 
 .icon-packaging:before {
@@ -903,6 +903,12 @@
   padding: clamp(2.5rem, 1.0714rem + 2.2321vw, 3.75rem) 10px clamp(3.125rem, 0.2679rem + 4.4643vw, 5.625rem);
   padding-bottom: 50px;
 }
+@media (max-width: 1440px) {
+  .inside-child .engagement-model-wrapp .container .eng-model-step ul li {
+    width: 48%;
+    padding: clamp(2.5rem, 1.0714rem + 2.2321vw, 3.75rem) 10px 20px;
+  }
+}
 @media (max-width: 1280px) {
   .inside-child .engagement-model-wrapp .container .eng-model-step ul li {
     width: 48%;
@@ -992,6 +998,11 @@
 @media (max-width: 1700px) {
   .inside-child .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
     height: 95px;
+  }
+}
+@media (max-width: 1500px) {
+  .inside-child .engagement-model-wrapp .container .eng-model-step ul li .eng-title h5 {
+    height: 58px;
   }
 }
 @media (max-width: 1280px) {

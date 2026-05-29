@@ -86,9 +86,9 @@ content: "\f009";
   font-family: "Untitled";
   content: "\f009";  
 }
-.icon-coffee:before{
+.icon-coffee:before{  
   font-family: "Untitled";
-  content: "\f009";  
+  content: "\f01c";  
 }
 .icon-packaging:before{
   font-family: "Untitled";
@@ -838,6 +838,10 @@ content: "\f009";
             // 1024 - 1920 : 40 15 50 - 60 15 90
             padding: clamp(2.5rem, 1.0714rem + 2.2321vw, 3.75rem) 10px clamp(3.125rem, 0.2679rem + 4.4643vw, 5.625rem);
             padding-bottom: 50px;
+            @media(max-width: 1440px){
+              width: 48%;
+              padding: clamp(2.5rem,1.0714rem + 2.2321vw,3.75rem) 10px 20px;
+            }
             @media(max-width: 1280px){
               width: 48%;
               padding-bottom: 30px;
@@ -907,6 +911,9 @@ content: "\f009";
                 line-height: 1.54em;
                 @media(max-width: 1700px){
                   height: 95px;
+                }
+                @media(max-width: 1500px){
+                  height: 58px;
                 }
                 @media(max-width: 1280px){
                   height: 65px;

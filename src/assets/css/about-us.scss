@@ -877,7 +877,7 @@ main.about-us.inside-page{
             background-color: var(--light_green);
             padding: 13px 35px;
             top: 20px;
-            top: 60px;
+            top: 90px;
             right: -150px;
             opacity: 0;
             transform: translateY(10px);
@@ -885,8 +885,9 @@ main.about-us.inside-page{
             transition: all 0.5s ease-in-out;
             @media(max-width: 1500px){
               right: -100px;
-              padding: 13px 12px;
+              padding: 13px 15px;
               top: 75px;
+              top: 110px;
             }
             @media(max-width: 1300px){
               right: -80px;
@@ -1062,12 +1063,27 @@ main.about-us.inside-page{
               font-weight: 300;
               font-family: HelvNowDis-light;
               color: var(--white);
-              border-radius: 33px;
+              border-radius: 20px;
               text-align: center;
               font-size: 17px;
-              line-height: 1.5em;
+              line-height: 1.3em;
               @media(max-width: 991px){
                 font-size: 13px;
+              }
+            }
+          }
+          &:nth-child(5){
+            a{
+              .mem-exp-year{
+                @media(min-width: 1001px) {
+                  max-width: 300px;
+                  // top: 90px;
+                  right: -190px
+                }
+                @media(min-width: 768px) and (max-width: 1000px){
+                  max-width: 250px;
+                  right: -100px;
+                }
               }
             }
           }

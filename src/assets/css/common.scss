@@ -780,7 +780,7 @@ header{
     padding: 13px 0;
     position: fixed;
     // background: rgba(255, 255, 255, 0.1);
-    // background-color: var(--white);
+    background-color: var(--white);
   }
   .sub-menu{
     // display: flex;
@@ -1118,7 +1118,12 @@ header.scrolled{
   width: 100%;
   left: 0;
   z-index: 9999;
-  transition: all 0.5s ease-in-out;
+  animation: slideDown 0.3s ease;
+  // transition: all 0.5s ease-in-out;
+  @keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(0); }
+  }
   .inner-container{
     .company-logo{
       img{

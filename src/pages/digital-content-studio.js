@@ -185,6 +185,10 @@ export default function SoftwareSolMain({ data }) {
     alt: item.altText
   }));
 
+  const logosBrand = softSolMain?.dcsBrandsLogo.map(item => ({
+    src: item.mediaItemUrl, 
+    alt: item.altText
+  }));
 
   // onload intro section animation - starts
   useEffect(() => {
@@ -879,41 +883,31 @@ export default function SoftwareSolMain({ data }) {
       {/* Work Reference Section Ends */}
 
       {/* Technology Section Starts */}
-      {softSolMain?.dcsBrandSectionTitle && softSolMain?.dcsBrandsLogo && 
-        <section className="technology-wrapper digital-brand-wrapper">
+      {logosBrand &&
+        <section className="brand-wrapper digi-brands">
           <div className="container">
-            <h2 className="slide-up" dangerouslySetInnerHTML={{__html: softSolMain?.dcsBrandSectionTitle}} />
-            <Swiper className="techSwiper slide-up"
-              modules={[Autoplay]}
-              // slidesPerView={3.2}
-              loop={true}
-              navigation
-              // pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
-              breakpoints={{
-                0: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                768: {
-                  slidesPerView: 5,
-                },
-                1024: {
-                  slidesPerView: 7,
-                  spaceBetween: 20,
-                },
-              }}
-            >
-              {softSolMain?.dcsBrandsLogo && softSolMain?.dcsBrandsLogo.map(dcsLogo => (
-                <SwiperSlide>
-                  <div className="tech-wrapp">
-                    <div className="client-icon">
-                      <img src={dcsLogo.mediaItemUrl} alt={dcsLogo.altText}></img>
-                    </div>
-                  </div>
-                </SwiperSlide>
+            <h2 className="txt-center txt-gradient slide-up">Brands That Trust Us</h2>
+            <ul className="brand-list d-flex slide-up">
+              {(isMobile ? logosBrand.slice(0, visibleCount) : logosBrand).map((logo, index) => (
+                <li key={index}>
+                  <a href="#">
+                    <img src={logo.src} width="148" height="72" alt={logo.alt} />
+                  </a>
+                </li>
               ))}
-            </Swiper>
+            </ul>
+
+            {isMobile && (
+              <a href="javascript:void(0);"
+                onClick={loadMore}
+                className={`view-more-btn ${
+                  visibleCount >= logosBrand.length ? "disabled" : ""
+                }`}
+                disabled={visibleCount >= logosBrand.length}
+              >
+                {visibleCount >= logosBrand.length ? "No more brands" : "View more"}
+              </a>
+            )}
           </div>
         </section>
       }

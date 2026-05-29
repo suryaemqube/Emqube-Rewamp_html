@@ -400,7 +400,7 @@ export default function SoftwareSolChild({ data }) {
           {softSolChildOther?.featureTable &&
           softSolChildOther.featureTable.length > 0 && (
             <div className="feature-table-wrapper">
-              <div className="container">
+              <div>
 
                 <table className="feature-table">
                   <thead>

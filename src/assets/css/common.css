@@ -778,6 +778,7 @@ header {
   header {
     padding: 13px 0;
     position: fixed;
+    background-color: var(--white);
   }
 }
 header .sub-menu {
@@ -1029,7 +1030,15 @@ header.scrolled {
   width: 100%;
   left: 0;
   z-index: 9999;
-  transition: all 0.5s ease-in-out;
+  animation: slideDown 0.3s ease;
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 header.scrolled .inner-container .company-logo img {
   width: 150px;

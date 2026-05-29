@@ -23,20 +23,56 @@ const Header = ({ sliceContext }) => {
     level2: null,
   });
 
+  // add sticky header when scrolled up and remove sticky when scrolled down - starts
+  const [scrolledUp, setScrolledUp] = useState(false);
+
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      if (typeof window !== "undefined" && window.scrollY > 300) {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY) {
+        // user scrolling UP
+        setScrolledUp(true);
+      } else {
+        // user scrolling DOWN
+        setScrolledUp(false);
+      }
+
+      // update scrolled state (your existing logic)
+      if (currentScrollY > 300) {
         setScrolled(true);
       } else {
         setScrolled(false);
+        setScrolledUp(false); // at top of page, remove fixed too
       }
+
+      lastScrollY = currentScrollY;
     };
-    if(typeof window !== "undefined"){
-    window.addEventListener("scroll", handleScroll);
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
     }
 
     return () => typeof window !== "undefined" && window.removeEventListener("scroll", handleScroll);
   }, []);
+  // add sticky header when scrolled up and remove sticky when scrolled down - ends
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (typeof window !== "undefined" && window.scrollY > 300) {
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
+  //   };
+  //   if(typeof window !== "undefined"){
+  //   window.addEventListener("scroll", handleScroll);
+  //   }
+
+  //   return () => typeof window !== "undefined" && window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -221,7 +257,7 @@ const Header = ({ sliceContext }) => {
 
   return (
     <>
-      <header className={`${menuActive ? "active" : ""} ${scrolled ? "scrolled" : ""}`}>
+      <header className={`${menuActive ? "active" : ""} ${scrolledUp ? "scrolled" : ""}`}>
         <div className="inner-container d-flex">
           <div className="company-logo stagger-li">
             <Link to="/" className="logo-emqube pradnya"> 

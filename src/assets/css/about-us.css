@@ -920,7 +920,7 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-ex
   background-color: var(--light_green);
   padding: 13px 35px;
   top: 20px;
-  top: 60px;
+  top: 90px;
   right: -150px;
   opacity: 0;
   transform: translateY(10px);
@@ -930,8 +930,9 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-ex
 @media (max-width: 1500px) {
   main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-exp-year {
     right: -100px;
-    padding: 13px 12px;
+    padding: 13px 15px;
     top: 75px;
+    top: 110px;
   }
 }
 @media (max-width: 1300px) {
@@ -1130,14 +1131,26 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li p.mem-e
   font-weight: 300;
   font-family: HelvNowDis-light;
   color: var(--white);
-  border-radius: 33px;
+  border-radius: 20px;
   text-align: center;
   font-size: 17px;
-  line-height: 1.5em;
+  line-height: 1.3em;
 }
 @media (max-width: 991px) {
   main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li p.mem-exp-year {
     font-size: 13px;
+  }
+}
+@media (min-width: 1001px) {
+  main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li:nth-child(5) a .mem-exp-year {
+    max-width: 300px;
+    right: -190px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li:nth-child(5) a .mem-exp-year {
+    max-width: 250px;
+    right: -100px;
   }
 }
 main.about-us.inside-page .abt-btm-wrapper {

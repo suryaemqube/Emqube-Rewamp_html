@@ -365,6 +365,7 @@ content: "\f009";
 					}
 					a{
 						color: #767676;
+						font-size: unset;
 					}
 				}
 				&:after{
@@ -1801,7 +1802,7 @@ content: "\f009";
 							}
 							svg{
 								@media(max-width: 1500px){
-									height: 100%;
+									height: 70px;
 									width: auto;
 								}
 								@media(max-width: 767px){
@@ -2271,6 +2272,21 @@ content: "\f009";
 						}
 					}
 				}
+			}
+		}
+	}
+	.digi-brands{
+		margin-top: 50px;
+		@media(max-width: 767px){
+			margin-top: 30px;
+		}
+		.container{
+			padding-bottom: 50px;
+			@media(max-width: 767px){
+				padding-bottom: 30px;
+			}
+			.brand-list{
+				justify-content: center;
 			}
 		}
 	}
