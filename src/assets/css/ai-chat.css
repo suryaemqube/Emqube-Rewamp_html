@@ -2942,6 +2942,7 @@ header.inside-header.hide, header.main-header.hide {
   font-size: 27px;
   margin: 0;
   margin-bottom: 22px;
+  text-align: left;
 }
 
 @media (max-width: 1330px) {
@@ -3839,6 +3840,7 @@ header.inside-header.hide, header.main-header.hide {
   margin-bottom: 0;
   margin-top: 50px;
   border: 1px solid transparent;
+  text-decoration: none;
 }
 
 @media (min-width: 1024px) {
@@ -3869,7 +3871,7 @@ header.inside-header.hide, header.main-header.hide {
   }
 }
 .emqube-gpt-new .emqube-gpt-wrapp .emqube-details .ai-intro-txt .main-web-btn:hover {
-  background-color: #53a311;
+  background-color: #4e9c5a;
   color: #fff;
   border: 1px solid #fff;
 }

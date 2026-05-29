@@ -1199,10 +1199,11 @@ main.about-us.inside-page .abt-emqube-info .container ul {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0 clamp(5.625rem, -0.0893rem + 8.9286vw, 10.625rem);
+  gap: 0 50px;
 }
 @media (max-width: 1500px) {
   main.about-us.inside-page .abt-emqube-info .container ul {
-    gap: 0 50px;
+    gap: 0 40px;
   }
 }
 @media (max-width: 1000px) {

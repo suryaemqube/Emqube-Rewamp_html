@@ -2345,3 +2345,29 @@ content: "\f009";
 	}
 }
 // for thank you page - ends
+
+.common-page{
+	.inside-intro-wrapper{
+		.container{
+			.inside-intro-title{
+				filter: blur(0px);
+    		opacity: 1;
+			}
+		}
+	}
+	.page-content{
+		padding-bottom: 80px;
+		@media(max-width: 1500px){
+			padding-bottom: 50px;
+		}
+		.container{
+			max-width: 1400px;
+			@media(max-width: 1600px){
+				max-width: 80%;
+			}
+			@media(max-width: 767px){
+				max-width: 90%;
+			}
+		}
+	}
+}

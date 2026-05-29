@@ -2492,4 +2492,30 @@
 }
 .thank-you-page.inside-page .inside-intro-wrapper {
   padding-bottom: 100px;
+}
+
+.common-page .inside-intro-wrapper .container .inside-intro-title {
+  filter: blur(0px);
+  opacity: 1;
+}
+.common-page .page-content {
+  padding-bottom: 80px;
+}
+@media (max-width: 1500px) {
+  .common-page .page-content {
+    padding-bottom: 50px;
+  }
+}
+.common-page .page-content .container {
+  max-width: 1400px;
+}
+@media (max-width: 1600px) {
+  .common-page .page-content .container {
+    max-width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .common-page .page-content .container {
+    max-width: 90%;
+  }
 }/*# sourceMappingURL=inside.css.map */

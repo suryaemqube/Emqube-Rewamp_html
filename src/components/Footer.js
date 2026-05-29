@@ -275,7 +275,7 @@ function Footer({ sliceContext }) {
             </div>
           </div>
           <div className="f-btm">
-            <p><a href="#">Privacy Policy</a></p>
+            <p><a href="/privacy-policy/">Privacy Policy</a></p>
             <ul className="f-social-list">
 							{options?.socialLinks && options?.socialLinks.map((item, index) => (
 								<li key={index}><a href={item?.socialLinkUrl}><img src={item?.socialIcon?.mediaItemUrl} alt={item?.socialIcon?.altText}></img></a></li>

@@ -1104,8 +1104,9 @@ main.about-us.inside-page{
         flex-wrap: wrap;
         // 1024 - 1920 : 90 - 170
         gap: 0 clamp(5.625rem, -0.0893rem + 8.9286vw, 10.625rem);
+        gap: 0 50px;
         @media(max-width: 1500px){
-          gap: 0 50px;
+          gap: 0 40px;
         }
         @media(max-width: 1000px){
           flex-wrap: wrap;
