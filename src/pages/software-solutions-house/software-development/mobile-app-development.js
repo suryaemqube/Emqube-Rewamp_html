@@ -441,11 +441,18 @@ export default function SoftwareSolChild({ data }) {
 
       {/* industry section starts */}
         <section className="insudtry-list-wrapp indus-flex-dir-btm">
-          <h2 className="slide-up">Work Reference</h2>
+          {softSolChild?.selectIndustries && softSolChild?.selectApplications && 
+            <h2 className="slide-up">Work Reference</h2>
+          }
           <div className="container">
             {softSolChild?.selectIndustries &&
               <div className="left">
-                <h3 className="slide-up">Industries</h3>
+                {softSolChild?.selectIndustries && softSolChild?.selectApplications && 
+                  <h3 className="slide-up">Industries</h3>
+                }
+                {softSolChild?.selectIndustries &&  
+                  <h2 className="slide-up">Industries</h2>
+                }
                 <ul className="">
                   {softSolChild?.selectIndustries.map((indeslst,index) => {  
                     const iconName = formatIconClass(indeslst);
@@ -464,7 +471,12 @@ export default function SoftwareSolChild({ data }) {
             }
             {softSolChild?.selectApplications &&
               <div className="right">
-                <h3 className="slide-up">Applications</h3>
+                {softSolChild?.selectIndustries && softSolChild?.selectApplications && 
+                  <h3 className="slide-up">Applications</h3>
+                }
+                {softSolChild?.selectApplications &&  
+                  <h2 className="slide-up">Applications</h2>
+                }
                 <ul>
                   {softSolChild?.selectApplications.map((appllst,index1) => {
                     const iconName = formatIconClass(appllst);

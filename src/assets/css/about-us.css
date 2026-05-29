@@ -14,7 +14,6 @@ main.about-us.inside-page {
 }
 main.about-us.inside-page:after {
   content: "";
-  background-image: url(../img/about-bg-img.svg);
   background-size: contain;
   width: 100%;
   height: 100%;
@@ -43,11 +42,6 @@ main.about-us.inside-page:after {
 main.about-us.inside-page .inside-intro-wrapper {
   position: relative;
   z-index: 9;
-}
-@media (min-width: 1001px) {
-  main.about-us.inside-page .inside-intro-wrapper {
-    padding-top: clamp(12.5rem, -0.0006rem + 19.5321vw, 23.438rem);
-  }
 }
 @media (min-width: 1001px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.left {
@@ -86,17 +80,18 @@ main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-title .
     display: none;
   }
 }
-@media (min-width: 1001px) {
+main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right {
+  right: 0;
+  top: -65px;
+}
+@media (max-width: 1500px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right {
-    top: auto;
-    bottom: -150px;
-    right: 60px;
+    top: -55px;
   }
 }
-@media (min-width: 1365px) and (max-width: 1500px) {
+@media (max-width: 1000px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right {
-    bottom: -70px;
-    right: 55px;
+    top: 0;
   }
 }
 @media (max-width: 767px) {
@@ -104,16 +99,33 @@ main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-title .
     order: 4;
   }
 }
+main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-green {
+  top: -20px;
+}
 @media (min-width: 1365px) and (max-width: 1500px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-green {
-    top: -13px;
     left: -46px !important;
+  }
+}
+@media (min-width: 1001px) and (max-width: 1600px) {
+  main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-green {
+    width: auto;
+    height: auto;
+    top: -10px;
+  }
+}
+@media (max-width: 1000px) {
+  main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-green {
+    top: 0px;
   }
 }
 @media (min-width: 1001px) {
   main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-white {
-    top: -50px;
+    top: 0px;
   }
+}
+main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-count.right ul {
+  flex-direction: column-reverse;
 }
 main.about-us.inside-page .inside-intro-wrapper .container .inside-intro-txt {
   width: 865px;
@@ -261,11 +273,6 @@ main.about-us.inside-page .strategic-choice-wrapper {
   position: relative;
   z-index: 9;
   padding-bottom: clamp(3.125rem, -0.4464rem + 5.5804vw, 6.25rem);
-}
-@media (min-width: 1501px) {
-  main.about-us.inside-page .strategic-choice-wrapper {
-    padding-top: clamp(10rem, 0rem + 15.625vw, 18.75rem);
-  }
 }
 @media (max-width: 1500px) {
   main.about-us.inside-page .strategic-choice-wrapper {
@@ -525,6 +532,88 @@ main.about-us.inside-page .strategic-choice-wrapper .container ul li.active .lef
   fill: var(--light_green);
   transition: fill 0.5s ease-in-out;
 }
+main.about-us.inside-page .about-step-wrapper {
+  padding-bottom: 0;
+}
+main.about-us.inside-page .about-step-wrapper .container ul {
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+main.about-us.inside-page .about-step-wrapper .container ul li {
+  width: 48%;
+}
+@media (max-width: 1110px) {
+  main.about-us.inside-page .about-step-wrapper .container ul li {
+    width: 45%;
+  }
+}
+@media (max-width: 767px) {
+  main.about-us.inside-page .about-step-wrapper .container ul li {
+    width: 100%;
+    text-align: center;
+  }
+}
+main.about-us.inside-page .about-step-wrapper .container ul li .count, main.about-us.inside-page .about-step-wrapper .container ul li .line-fill {
+  display: none;
+}
+main.about-us.inside-page .about-step-wrapper .container ul li .right {
+  width: 100%;
+  padding-left: 0;
+}
+main.about-us.inside-page .about-step-wrapper .container ul li .right:after {
+  display: none;
+}
+main.about-us.inside-page .about-step-wrapper .container ul li .right .title {
+  background: linear-gradient(0deg, #313131 15.85%, #9C9C9C 121.74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.5s ease-in-out;
+}
+main.about-us.inside-page .about-step-wrapper .container ul li .right p a {
+  text-decoration: underline;
+}
+main.about-us.inside-page .about-step-wrapper .container ul li:nth-child(1) {
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 1500px) {
+  main.about-us.inside-page .about-step-wrapper .container ul li:nth-child(1) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 991px) {
+  main.about-us.inside-page .about-step-wrapper .container ul li:nth-child(1) {
+    max-width: 90%;
+  }
+}
+@media (max-width: 850px) {
+  main.about-us.inside-page .about-step-wrapper .container ul li:nth-child(1) {
+    max-width: 100%;
+  }
+}
+main.about-us.inside-page .about-step-wrapper .container ul li:nth-child(2) .title, main.about-us.inside-page .about-step-wrapper .container ul li:nth-child(3) .title {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+main.about-us.inside-page .about-step-wrapper .container ul li:last-child {
+  margin-left: 40px;
+}
+@media (max-width: 1500px) {
+  main.about-us.inside-page .about-step-wrapper .container ul li:last-child {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 767px) {
+  main.about-us.inside-page .about-step-wrapper .container ul li:last-child {
+    margin-left: 0px;
+  }
+}
 main.about-us.inside-page .abt-values-wrapper {
   background: rgba(253, 253, 253, 0.2);
   padding-top: clamp(2.313rem, -0.0436rem + 3.6821vw, 4.375rem);
@@ -543,8 +632,9 @@ main.about-us.inside-page .abt-values-wrapper {
 }
 main.about-us.inside-page .abt-values-wrapper .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 @media (max-width: 1500px) {
   main.about-us.inside-page .abt-values-wrapper .container {
@@ -562,7 +652,7 @@ main.about-us.inside-page .abt-values-wrapper .container {
   }
 }
 main.about-us.inside-page .abt-values-wrapper .container .values-left {
-  margin-right: clamp(2.313rem, -0.0436rem + 3.6821vw, 4.375rem);
+  margin-bottom: 20px;
 }
 @media (max-width: 1100px) {
   main.about-us.inside-page .abt-values-wrapper .container .values-left {
@@ -830,6 +920,7 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-ex
   background-color: var(--light_green);
   padding: 13px 35px;
   top: 20px;
+  top: 60px;
   right: -150px;
   opacity: 0;
   transform: translateY(10px);
@@ -839,6 +930,8 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-ex
 @media (max-width: 1500px) {
   main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-exp-year {
     right: -100px;
+    padding: 13px 12px;
+    top: 75px;
   }
 }
 @media (max-width: 1300px) {
@@ -861,6 +954,7 @@ main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-ex
 @media (max-width: 991px) {
   main.about-us.inside-page .abt-team-wrapper .container .team-mem-list li .mem-exp-year {
     right: -50px;
+    right: -30px;
   }
 }
 @media (max-width: 767px) {
@@ -1050,6 +1144,7 @@ main.about-us.inside-page .abt-btm-wrapper {
   position: relative;
   height: 600px;
   z-index: 9;
+  display: none;
   margin: clamp(6.25rem, -0.8929rem + 11.1607vw, 12.5rem) 0;
 }
 @media (max-width: 1500px) {
@@ -1173,10 +1268,17 @@ main.about-us.inside-page .abt-emqube-info {
   z-index: 9;
   background-color: var(--light_green);
   padding: 5px 0;
+  margin-top: 200px;
+}
+@media (max-width: 1500px) {
+  main.about-us.inside-page .abt-emqube-info {
+    margin-top: 150px;
+  }
 }
 @media (max-width: 1000px) {
   main.about-us.inside-page .abt-emqube-info {
     padding: 15px 0;
+    margin-top: 100px;
   }
 }
 @media (max-width: 1500px) {
@@ -1210,12 +1312,6 @@ main.about-us.inside-page .abt-emqube-info .container ul {
   main.about-us.inside-page .abt-emqube-info .container ul {
     flex-wrap: wrap;
     gap: 0 20px;
-    justify-content: flex-start;
-  }
-}
-@media (max-width: 991px) {
-  main.about-us.inside-page .abt-emqube-info .container ul {
-    justify-content: space-between;
   }
 }
 main.about-us.inside-page .abt-emqube-info .container ul li {

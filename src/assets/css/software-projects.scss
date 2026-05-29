@@ -417,6 +417,7 @@ main.software-projects-page.inside-page{
               }
               @media(max-width: 767px){
                 height: 200px;
+                height: auto;
               }
               // &:before{
               //   content: '';
@@ -436,6 +437,9 @@ main.software-projects-page.inside-page{
                 object-position: center center;
                 filter: brightness(1);
                 transition: filter 0.5s ease-in-out;
+                @media(max-width: 767px){
+                  object-fit: contain;
+                }
               }
               .proj-main-title,.proj-list-main-angle{
                 position: absolute;

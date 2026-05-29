@@ -1250,11 +1250,14 @@ content: "\f009";
 									padding: 7px 16px;
 									cursor: pointer;
 									font-size: 18px;
+									    width: 260px;
+										text-align: center;
 									@media(max-width: 1500px){
 										font-size: 17px;
 									}
 									@media(max-width: 1380px){
 										font-size: 16px;
+										width: 220px;
 									}
 									&:after{
 										content: '';
@@ -1275,6 +1278,7 @@ content: "\f009";
 										}
 									}
 									&:last-child{
+										margin-bottom: 15px;
 										&:after{
 											display: none;
 										}
@@ -2308,6 +2312,7 @@ content: "\f009";
 				background-clip: text;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
+				line-height: 1.2em; //by sj
 				@media(max-width: 767px){
 					line-height: 1.1em;
 					margin-bottom: 10px;
@@ -2318,6 +2323,7 @@ content: "\f009";
 				color: #5E5E5E;
 				// 1024 - 1920 : 20 - 36
 				font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+				line-height: 1.5em;  //by sj
 				@media(max-width: 1023px){
 					// 320 - 1023 : 19 - 20
 					font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);

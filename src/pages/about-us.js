@@ -334,7 +334,7 @@ export default function About({ data }) {
             <ul className="team-mem-list">
               {abtMain?.emqubeTeamMember.map((member,index) => (
                 <li>
-                  <a href="#">
+                  <a href="javascript:void(0);">
                     <div class="circle-wrapp">
                       <svg viewBox="0 0 280 280">
                         <circle class="dotted-ring" cx="140" cy="140" r="118"></circle>

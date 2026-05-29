@@ -435,8 +435,12 @@ export default function SoftwareSolChild({ data }) {
       {softSolChild?.websiteSaContent && 
         <section className="strategic-choice-wrapper">
           <div className="container">
-            <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
-            <p className="sub-txt txt-center" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
+            {softSolChild.strategicAdvanageTitle && 
+              <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
+            }
+            {softSolChild.strategicAdvanageSubtext && 
+              <p className="sub-txt txt-center" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
+            }
             <ul>
               {softSolChild?.websiteSaContent.map((strategList,index) => (
                 <li>
@@ -480,7 +484,7 @@ export default function SoftwareSolChild({ data }) {
       {/* core web development section ends */}
 
       {/* social media platform section starts */}
-      {socialMedia && 
+      {socialMedia?.smpList && 
         <section className="social-media-plat-wrapper">
           <div className="container">
             <h2 dangerouslySetInnerHTML={{__html: socialMedia.smpTitle}} />

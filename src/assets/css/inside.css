@@ -1347,6 +1347,8 @@
   padding: 7px 16px;
   cursor: pointer;
   font-size: 18px;
+  width: 260px;
+  text-align: center;
 }
 @media (max-width: 1500px) {
   .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper-pagination-text .slide-title {
@@ -1356,6 +1358,7 @@
 @media (max-width: 1380px) {
   .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper-pagination-text .slide-title {
     font-size: 16px;
+    width: 220px;
   }
 }
 .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper-pagination-text .slide-title:after {
@@ -1375,6 +1378,9 @@
 }
 .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper-pagination-text .slide-title.active:after {
   background-color: #323232;
+}
+.inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper-pagination-text .slide-title:last-child {
+  margin-bottom: 15px;
 }
 .inside-page .tab-system-wrapper .container .tab-system .tab-content .tab-pane .web-swiper-container .swiper-pagination-text .slide-title:last-child:after {
   display: none;
@@ -2465,6 +2471,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.2em;
 }
 @media (max-width: 767px) {
   .inside-page .cta-wrapper .container .cta-title {
@@ -2476,6 +2483,7 @@
   font-family: HelvNowDis-light;
   color: #5E5E5E;
   font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
+  line-height: 1.5em;
 }
 @media (max-width: 1023px) {
   .inside-page .cta-wrapper .container .cta-txt {

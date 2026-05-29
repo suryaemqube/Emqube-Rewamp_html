@@ -18,7 +18,7 @@ main.about-us.inside-page{
   position: relative;
   &:after{
     content: '';
-    background-image: url(../img/about-bg-img.svg);
+    // background-image: url(../img/about-bg-img.svg);
     background-size: contain;
     width: 100%;
     height: 100%;
@@ -45,7 +45,7 @@ main.about-us.inside-page{
     z-index: 9;
     @media(min-width: 1001px){
       // 1024 - 1920 : 200 - 375
-      padding-top: clamp(12.5rem, -0.0006rem + 19.5321vw, 23.438rem);
+      // padding-top: clamp(12.5rem, -0.0006rem + 19.5321vw, 23.438rem);
     }
     .container{
       .inside-intro-count.left{
@@ -85,28 +85,49 @@ main.about-us.inside-page{
         }
       }
       .inside-intro-count.right{
-        @media(min-width: 1001px){
-          top: auto;
-          bottom: -150px;
-          right: 60px;
+        right: 0;
+        top: -65px;
+        @media(max-width: 1500px){
+          top: -55px;
         }
-        @media(min-width: 1365px) and (max-width: 1500px){
-          bottom: -70px;
-          right: 55px;
+        @media(max-width: 1000px){
+          top: 0;
+          // order: 3;
         }
+        // @media(min-width: 1001px){
+        //   top: auto;
+        //   bottom: -150px;
+        //   right: 60px;
+        // }
+        // @media(min-width: 1365px) and (max-width: 1500px){
+        //   bottom: -70px;
+        //   right: 55px;
+        // }
         @media(max-width: 767px){
           order: 4;
         }
         .bg-green{
+          top: -20px;
           @media(min-width: 1365px) and (max-width: 1500px){
-            top: -13px;
+            // top: -13px;
             left: -46px !important;
+          }
+          @media(min-width: 1001px) and (max-width: 1600px){
+            width: auto;
+            height: auto;
+            top: -10px;
+          }
+          @media(max-width: 1000px){
+            top: 0px;
           }
         }
         .bg-white{
           @media(min-width: 1001px){
-            top: -50px;
+            top: 0px;
           }
+        }
+        ul{
+          flex-direction: column-reverse;
         }
       }
       .inside-intro-txt{
@@ -240,7 +261,7 @@ main.about-us.inside-page{
     padding-bottom: clamp(3.125rem, -0.4464rem + 5.5804vw, 6.25rem);
     @media(min-width: 1501px){
       // 1024 - 1920 : 160 - 300
-      padding-top: clamp(10rem, 0.0000rem + 15.6250vw, 18.75rem);
+      // padding-top: clamp(10rem, 0.0000rem + 15.6250vw, 18.75rem);
     }
     @media(max-width: 1500px){
       // 1024  - 1500 : 58 - 110
@@ -527,6 +548,80 @@ main.about-us.inside-page{
       }
     }
   }
+  .about-step-wrapper{
+    padding-bottom: 0;
+    .container{
+      ul{
+        flex-wrap: wrap;
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        li{
+          width: 48%;
+          @media(max-width: 1110px){
+            width: 45%;
+          }
+          @media(max-width: 767px){
+            width: 100%;
+            text-align: center;
+          }
+          .count,.line-fill{
+            display: none;
+          }
+          .right{
+            width: 100%;
+            padding-left: 0;
+            &:after{
+              display: none;
+            }
+            .title{
+              background: linear-gradient(0deg, #313131 15.85%, #9C9C9C 121.74%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              transition: color 0.5s ease-in-out;
+            }
+            p{
+              a{
+                text-decoration: underline;
+              }
+            }
+          }
+          &:nth-child(1){
+            width: 100%;
+            text-align: center;
+            @media(max-width: 1500px){
+              max-width: 80%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            @media(max-width: 991px){
+              max-width: 90%;
+            }
+            @media(max-width: 850px){
+              max-width: 100%;
+            }
+          }
+          &:nth-child(2), &:nth-child(3){
+            .title{
+              font-size: 40px;
+              margin-bottom: 25px;
+            }
+          }
+          &:last-child{
+            margin-left: 40px;
+            @media(max-width: 1500px){
+              margin-left: 40px;
+            }
+            @media(max-width: 767px){
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
   // strategic choice section ends
 
   // about values section starts
@@ -546,8 +641,9 @@ main.about-us.inside-page{
     }
     .container{
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       @media(max-width: 1500px){
         max-width: 80%;
       }
@@ -559,7 +655,8 @@ main.about-us.inside-page{
       }
       .values-left{
         // 1024 - 1920 : 37 - 70
-        margin-right: clamp(2.313rem, -0.0436rem + 3.6821vw, 4.375rem);
+        // margin-right: clamp(2.313rem, -0.0436rem + 3.6821vw, 4.375rem);
+        margin-bottom: 20px;
         @media(max-width: 1100px){
           margin-right: 0;
         }
@@ -780,6 +877,7 @@ main.about-us.inside-page{
             background-color: var(--light_green);
             padding: 13px 35px;
             top: 20px;
+            top: 60px;
             right: -150px;
             opacity: 0;
             transform: translateY(10px);
@@ -787,6 +885,8 @@ main.about-us.inside-page{
             transition: all 0.5s ease-in-out;
             @media(max-width: 1500px){
               right: -100px;
+              padding: 13px 12px;
+              top: 75px;
             }
             @media(max-width: 1300px){
               right: -80px;
@@ -801,6 +901,7 @@ main.about-us.inside-page{
             }
             @media(max-width: 991px){
               right: -50px;
+              right: -30px;
             }
             @media(max-width: 767px){
               opacity: 1;
@@ -981,6 +1082,7 @@ main.about-us.inside-page{
     position: relative;
     height: 600px;
     z-index: 9;
+    display: none;
     // 1024 - 1920 : 100 - 200
     margin: clamp(6.25rem, -0.8929rem + 11.1607vw, 12.5rem) 0;
     @media(max-width: 1500px){
@@ -1085,8 +1187,13 @@ main.about-us.inside-page{
     z-index: 9;
     background-color: var(--light_green);
     padding: 5px 0;
+    margin-top: 200px;
+    @media(max-width: 1500px){
+      margin-top: 150px;
+    }
     @media(max-width: 1000px){
       padding: 15px 0;
+      margin-top: 100px;
     }
     .container{
       @media(max-width: 1500px){
@@ -1111,10 +1218,10 @@ main.about-us.inside-page{
         @media(max-width: 1000px){
           flex-wrap: wrap;
           gap: 0 20px;
-          justify-content: flex-start;
+          // justify-content: flex-start;
         }
         @media(max-width: 991px){
-          justify-content: space-between;
+          // justify-content: space-between;
         }
         li{
           font-family: HelvNowDis-light;

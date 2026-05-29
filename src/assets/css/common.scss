@@ -721,6 +721,7 @@ section{
   padding-top: clamp(4.375rem, -2.0536rem + 10.0446vw, 10rem);
   @media(max-width: 767px){
     padding-top: 40px;
+    padding-top: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem);
   }
 }
 video{
