@@ -341,7 +341,7 @@ export default function Reference({ data }) {
                   </span>
                   <div className="proj-img">
                     {/* <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img> */}
-                    <img
+                    {/* <img
                       src={
                         project?.featuredImage?.node?.mediaItemUrl
                           ? project.featuredImage.node.mediaItemUrl
@@ -350,6 +350,18 @@ export default function Reference({ data }) {
                       alt={
                         project?.featuredImage?.node?.altText
                           ? project.featuredImage.node.altText
+                          : project?.title
+                      }
+                    /> */}
+                    <img
+                      src={
+                        project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
+                          ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
+                          : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                      }
+                      alt={
+                        project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
+                          ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
                           : project?.title
                       }
                     />
@@ -504,6 +516,12 @@ export const data = graphql`
             mediaItemUrl
           }
         }
+        softwarePortfolioLayout {
+          insidePageLisitngImage {
+            altText
+            mediaItemUrl
+          }
+        }  
         title
       }
     }
