@@ -159,84 +159,6 @@ export default function SftProduct({ data }) {
     setActiveAccordion(prev => (prev === index ? null : index));
   };
 
-  const slides = [
-    {
-      key: 1,
-      content: (
-        <a href="#">
-          <div className="work-wrapp">
-            <div className="client-icon">
-              {/* <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img> */}
-            </div>
-            <div className="proj-img">
-              <img src="/assets/img/real-estate-brokerages.webp" alt="Real Estate Brokerages"></img>
-            </div>
-            <div className="proj-txt">
-              <p className="proj-name">Real Estate Brokerages</p>
-              <p>Configured property-specific modules and lead rotation rules to prevent "lead leakage" and maintain agent confidentiality in the competitive Dubai property market.</p>
-            </div>
-          </div>
-        </a>
-      )
-    },
-    {
-      key: 2,
-      content: (
-        <a href="#">
-          <div className="work-wrapp">
-            <div className="client-icon">
-              {/* <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img> */}
-            </div>
-            <div className="proj-img">
-              <img src="/assets/img/citizenship-residency-services.webp" alt="Citizenship & Residency Services"></img>
-            </div>
-            <div className="proj-txt">
-              <p className="proj-name">Citizenship & Residency Services</p>
-              <p>Managed high-value pipelines with automated documentation tracking for complex international application processes.</p>
-            </div>
-          </div>
-        </a>
-      )
-    },
-    {
-      key: 3,
-      content: (
-        <a href="#">
-          <div className="work-wrapp">
-            <div className="client-icon">
-              {/* <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img> */}
-            </div>
-            <div className="proj-img">
-              <img src="/assets/img/trading-distribution.webp" alt="Trading & Distribution"></img>
-            </div>
-            <div className="proj-txt">
-              <p className="proj-name">Trading & Distribution</p>
-              <p>Unified customer data across multiple stakeholders with real-time sales leaderboards to drive territory performance in wholesale food distribution.</p>
-            </div>
-          </div>
-        </a>
-      )
-    },
-    {
-      key: 4,
-      content: (
-        <a href="#">
-          <div className="work-wrapp">
-            <div className="client-icon">
-              {/* <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img> */}
-            </div>
-            <div className="proj-img">
-              <img src="/assets/img/plants-accessories-retail.webp" alt="Plants & Accessories Retail"></img>
-            </div>
-            <div className="proj-txt">
-              <p className="proj-name">Plants & Accessories Retail</p>
-              <p>Replaced legacy accounting systems with a CRM-led dashboard showing customer history and payment status in one unified view.</p>
-            </div>
-          </div>
-        </a>
-      )
-    }
-  ];
 
   // common script for all animation - starts
   useEffect(() => {
@@ -1012,13 +934,13 @@ export default function SftProduct({ data }) {
                     <div className="proj-img">
                       <img
                         src={
-                          project?.featuredImage?.node?.mediaItemUrl
-                            ? project.featuredImage.node.mediaItemUrl
+                          project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
+                            ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
                             : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
-                          project?.featuredImage?.node?.altText
-                            ? project.featuredImage.node.altText
+                          project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
+                            ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
                             : project?.title
                         }
                       />
@@ -1074,13 +996,13 @@ export default function SftProduct({ data }) {
                     <div className="proj-img">
                       <img
                         src={
-                          project?.featuredImage?.node?.mediaItemUrl
-                            ? project.featuredImage.node.mediaItemUrl
+                          project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
+                            ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
                             : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
-                          project?.featuredImage?.node?.altText
-                            ? project.featuredImage.node.altText
+                          project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
+                            ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
                             : project?.title
                         }
                       />
@@ -1245,6 +1167,12 @@ export const data = graphql`
             title
             featuredImage {
               node {
+                altText
+                mediaItemUrl
+              }
+            }
+            softwarePortfolioLayout {
+              insidePageLisitngImage {
                 altText
                 mediaItemUrl
               }

@@ -964,13 +964,13 @@ export default function SftProduct({ data }) {
                     <div className="proj-img">
                       <img
                         src={
-                          project?.featuredImage?.node?.mediaItemUrl
-                            ? project.featuredImage.node.mediaItemUrl
+                          project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
+                            ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
                             : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
-                          project?.featuredImage?.node?.altText
-                            ? project.featuredImage.node.altText
+                          project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
+                            ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
                             : project?.title
                         }
                       />
@@ -1026,13 +1026,13 @@ export default function SftProduct({ data }) {
                     <div className="proj-img">
                       <img
                         src={
-                          project?.featuredImage?.node?.mediaItemUrl
-                            ? project.featuredImage.node.mediaItemUrl
+                          project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
+                            ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
                             : "https://mohammeds161.sg-host.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
                         }
                         alt={
-                          project?.featuredImage?.node?.altText
-                            ? project.featuredImage.node.altText
+                          project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
+                            ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
                             : project?.title
                         }
                       />
@@ -1173,6 +1173,12 @@ export const data = graphql`
             title
             featuredImage {
               node {
+                altText
+                mediaItemUrl
+              }
+            }
+            softwarePortfolioLayout {
+              insidePageLisitngImage {
                 altText
                 mediaItemUrl
               }

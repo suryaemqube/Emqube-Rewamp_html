@@ -92,19 +92,15 @@ const PortfolioDetail = ({ data }) => {
 									</a>
 									<meta property="position" content="1" />
 								</span>
-
-								<span> / </span>
-
 								<span property="itemListElement" typeof="ListItem">
+									<span class="seperate"> &gt; </span>
 									<a property="item" typeof="WebPage" href="/software-projects/">
 										<span property="name">Software Projects</span>
 									</a>
 									<meta property="position" content="2" />
 								</span>
-
-								<span> / </span>
-
 								<span property="itemListElement" typeof="ListItem">
+									<span class="seperate"> &gt; </span>
 									<span property="name" className="current-item">
 										{post?.title}
 									</span>
