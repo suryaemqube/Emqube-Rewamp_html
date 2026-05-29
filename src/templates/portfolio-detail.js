@@ -8,6 +8,7 @@ import "/src/assets/css/inside.css";
 import "/src/assets/css/case-study-detail.css";
 
 import Seo from "../components/SeoMeta";
+import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
 const PortfolioDetail = ({ data }) => {
@@ -81,6 +82,18 @@ const PortfolioDetail = ({ data }) => {
   return (
 		<Layout isPortDetail>
 			<>
+				{/* Inside intro section starts */}
+				 <section className="detail-intro-section">
+						<div class="container">
+							<div className="breadcrumbs 123-test">
+								{<Breadcrumb postId={100} />}
+							</div>
+							<div className="title-wrapp">
+								<p className="parent-page-title">Software Projects</p>
+							</div>
+						</div>
+					</section>
+				{/* Inside intro section ends */}
 				{/* Inside intro section starts */}
 				<section className="inside-intro-wrapper">
 					<div className="container">

@@ -1934,6 +1934,9 @@ content: "\f009";
             @media(max-width: 991px){
               width: 26%;
             }
+            @media(max-width: 767px){
+              display: none;
+            }
             img{
               height: 100%;
               @media(max-width: 1180px){
@@ -1968,8 +1971,12 @@ content: "\f009";
               padding: 15px 20px;
               width: 74%
             }
+            @media(max-width: 767px){
+              width: 100%;
+              border-bottom: 5px solid var(--light_green);
+            }
             @media(max-width: 600px){
-              padding: 15px 20px 15px 10px;
+              padding: 15px 20px;
             }
           }
           // &:before{
@@ -2144,6 +2151,9 @@ content: "\f009";
         li{
           .right-txt{
             width: 80%;
+            @media(max-width: 767px){
+              width: 100%;
+            }
           }
         }
       }

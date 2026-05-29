@@ -480,7 +480,7 @@ export default function SoftwareSolChild({ data }) {
       {/* core web development section ends */}
 
       {/* social media platform section starts */}
-      {socialMedia && 
+      {socialMedia?.smpList && 
         <section className="social-media-plat-wrapper">
           <div className="container">
             <h2 dangerouslySetInnerHTML={{__html: socialMedia.smpTitle}} />
