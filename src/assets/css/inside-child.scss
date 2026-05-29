@@ -1424,7 +1424,8 @@ content: "\f009";
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: stretch;
+
           }
           li{
             width: 100%;
@@ -1439,6 +1440,8 @@ content: "\f009";
             @media(max-width: 767px){
               width: 47%;
               padding: 15px 15px 15px 30px;
+              display: flex;
+              align-items: center;
             }
             p{
               background: linear-gradient(0deg, #313131 40.73%, #575656 79.71%);

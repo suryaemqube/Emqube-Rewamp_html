@@ -173,9 +173,223 @@ main.software-projects-page.inside-page .inside-intro-wrapper .scroll-down-arrow
     margin-top: 0;
   }
 }
+main.software-projects-page.inside-page .software-top-filter {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(1.875rem, 0.4464rem + 2.2321vw, 3.125rem);
+}
+main.software-projects-page.inside-page .software-top-filter .filter-left {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 356px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+main.software-projects-page.inside-page .software-top-filter .filter-left p {
+  font-size: 14px;
+  color: var(--black);
+  font-family: HelvNowDis-light;
+  font-weight: 300;
+}
+main.software-projects-page.inside-page .software-top-filter .filter-left select {
+  margin-left: 18px;
+  border: 1px solid #9D9C9C;
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--black);
+  font-family: HelvNowDis-light;
+  font-weight: 300;
+  padding: 5px 16px;
+  height: 45px;
+  -webkit-appearance: none;
+  background-image: url(../img/down-angle-filter.svg);
+  background-repeat: no-repeat;
+  background-size: 19px 9px;
+  background-position: 92% 50%;
+  width: 230px;
+}
+@media (max-width: 850px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-left select {
+    height: 40px;
+  }
+}
+@media (max-width: 767px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-left select {
+    margin-left: 10px;
+    height: 35px;
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 400px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-left select {
+    width: 200px;
+  }
+}
+@media (max-width: 356px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-left select {
+    margin-left: 0;
+    margin-top: 3px;
+  }
+}
+main.software-projects-page.inside-page .software-top-filter .filter-left select:focus-visible {
+  outline: none;
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right {
+  display: flex;
+  align-items: center;
+  padding-right: 120px;
+}
+@media (max-width: 1500px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right {
+    padding-right: 130px;
+  }
+}
+@media (max-width: 1200px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right {
+    padding-right: 120px;
+  }
+}
+@media (max-width: 1080px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right {
+    padding-right: 85px;
+  }
+}
+@media (max-width: 767px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 0;
+    display: none;
+  }
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right p {
+  font-size: 16px;
+  color: var(--black);
+  font-family: HelvNowDis-light;
+  font-weight: 300;
+}
+@media (max-width: 1080px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right p {
+    font-size: 14px;
+  }
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+@media (max-width: 767px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view {
+    margin-left: 0;
+  }
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li {
+  cursor: pointer;
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li a {
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  margin-right: 8px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1500px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li a {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (max-width: 767px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li a {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+}
+@media (max-width: 1500px) {
+  main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li a svg {
+    width: 80%;
+  }
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li:last-child a {
+  margin-right: 0;
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li.grid a svg rect {
+  stroke: var(--light_green);
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li.list a svg line {
+  stroke: var(--light_green);
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li.active a {
+  background-color: var(--light_green);
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li.grid.active a svg rect {
+  stroke: var(--white);
+}
+main.software-projects-page.inside-page .software-top-filter .filter-right .layout-view li.list.active a svg line {
+  stroke: var(--white);
+}
+main.software-projects-page.inside-page .software-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: clamp(1.875rem, 1.1607rem + 1.1161vw, 2.5rem);
+}
+main.software-projects-page.inside-page .software-pagination li a {
+  border: 1px solid var(--black);
+  border-radius: 2px;
+  color: var(--black);
+  background-color: var(--white);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1500px) {
+  main.software-projects-page.inside-page .software-pagination li a {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (max-width: 767px) {
+  main.software-projects-page.inside-page .software-pagination li a {
+    width: 30px;
+    height: 30px;
+  }
+}
+main.software-projects-page.inside-page .software-pagination li.active a {
+  background-color: var(--light_green);
+  color: var(--white);
+}
+main.software-projects-page.inside-page .software-pagination li:hover a {
+  background-color: var(--light_green);
+  color: var(--white);
+}
 main.software-projects-page.inside-page .sft-project-list-wrapper {
   position: relative;
   z-index: 9;
+  padding-bottom: 80px;
+}
+@media (max-width: 767px) {
+  main.software-projects-page.inside-page .sft-project-list-wrapper {
+    padding-bottom: 50px;
+  }
 }
 main.software-projects-page.inside-page .sft-project-list-wrapper .container .proj-mai-list {
   display: flex;

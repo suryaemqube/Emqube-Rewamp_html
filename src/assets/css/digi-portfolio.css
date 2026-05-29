@@ -683,6 +683,10 @@ main.digi-portfolio.inside-page .digi-portfolio-wrapper#corpVid .container .digi
 main.digi-portfolio.inside-page .digi-portfolio-wrapper#corpVid .container .digi-proj-list .corpVid-posts-swiper .swiper-slide .video-item iframe {
   border-radius: 10px;
 }
+main.digi-portfolio.inside-page .digi-portfolio-wrapper#corpVid .container .digi-proj-list .corpVid-posts-swiper .swiper-slide .video-item video {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 main.digi-portfolio.inside-page .design-gallery {
   list-style: none;
   padding: 0;

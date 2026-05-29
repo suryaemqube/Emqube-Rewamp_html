@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo, useRef } from "react";
 import { graphql, Link } from "gatsby";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectCoverflow  } from "swiper/modules";
@@ -19,11 +19,75 @@ import Layout from "../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
 
+const ITEMS_PER_PAGE = 9;
+
 export default function SoftareProj({ data }) {
 
   const softProjList =
   data?.allWpPortfolio?.edges?.map(edge => edge.node) || [];
   const options = data?.wp?.acfOption?.common;
+
+ const listingSectionRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedTag, setSelectedTag] = useState("all");
+
+  // extract unique tags from all posts
+  const tags = [
+    ...new Map(
+      softProjList
+        .flatMap(post => post?.tags?.nodes || [])
+        .map(tag => [tag.slug, tag])
+    ).values()
+  ];
+
+  // filter posts by selected tag
+  const filteredProjects = selectedTag === "all"
+    ? softProjList
+    : softProjList.filter(post =>
+        post?.tags?.nodes?.some(tag => tag.slug === selectedTag)
+      );
+
+  // pagination
+  const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
+
+  const currentPosts = filteredProjects.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  // same getPageNumbers as emqonnect
+  const getPageNumbers = (currentPage, totalPages) => {
+    const pages = [];
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+    pages.push(1);
+    if (currentPage > 3) pages.push("...");
+    const start = Math.max(2, currentPage - 1);
+    const end = Math.min(totalPages - 1, currentPage + 1);
+    for (let i = start; i <= end; i++) pages.push(i);
+    if (currentPage < totalPages - 2) pages.push("...");
+    pages.push(totalPages);
+    return pages;
+  };
+
+  const handlePageChange = (page) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setCurrentPage(page);
+      setIsLoading(false);
+      if (typeof window !== "undefined") {
+        const top = listingSectionRef.current?.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 300);
+  };
+
+  const handleTagChange = (e) => {
+    setSelectedTag(e.target.value);
+    setCurrentPage(1);
+  };
 
   // onload intro section animation - starts
   useEffect(() => {
@@ -132,10 +196,25 @@ export default function SoftareProj({ data }) {
 
       {/* software project list section starts */}
       {/* {softProjList &&  */}
-      <section className="sft-project-list-wrapper">
+      <section className={`sft-project-list-wrapper ${isLoading ? "is-loading" : ""}`} ref={listingSectionRef}>
         <div className="container">
+          {/* Filter dropdown — same as emqonnect */}
+          <div className="software-top-filter">
+            <div className="filter-left">
+              <p>Filter by Category :</p>
+              <select value={selectedTag} onChange={handleTagChange}>
+                <option value="all">All</option>
+                {tags.map((tag) => (
+                  <option key={tag.slug} value={tag.slug}>
+                    {tag.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
           <ul className="proj-mai-list">
-            {softProjList.map((project, index) => (
+            {currentPosts.length > 0 ? (
+              currentPosts.map((project, index) => (
               <li key={index}>
                 {/* <a href={project?.link}> */}
                 <a href={`/software-projects/${project.slug}/`}>
@@ -169,8 +248,49 @@ export default function SoftareProj({ data }) {
                   />
                 </a>
               </li>
-            ))}
+              ))
+            ) : (
+              <li className="no-posts">
+                <p>No projects found for this tag.</p>
+              </li>
+            )}
           </ul>
+          {/* Pagination — exact same as emqonnect */}
+          {totalPages > 1 && (
+            <ul className="software-pagination">
+
+              {currentPage > 1 && (
+                <li>
+                  <a href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }}>
+                    &laquo;
+                  </a>
+                </li>
+              )}
+
+              {getPageNumbers(currentPage, totalPages).map((page, index) =>
+                page === "..." ? (
+                  <li key={`ellipsis-${index}`} className="ellipsis">
+                    <span>...</span>
+                  </li>
+                ) : (
+                  <li key={page} className={currentPage === page ? "active" : ""}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); handlePageChange(page); }}>
+                      {page}
+                    </a>
+                  </li>
+                )
+              )}
+
+              {currentPage < totalPages && (
+                <li>
+                  <a href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }}>
+                    &raquo;
+                  </a>
+                </li>
+              )}
+
+            </ul>
+          )}
         </div>
       </section>
       {/* // } */}
@@ -284,6 +404,12 @@ export const data = graphql`
           title
           link
           slug
+          tags {
+            nodes {
+              name
+              slug
+            }
+          }
         }
       }
     }

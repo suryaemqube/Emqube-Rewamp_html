@@ -1592,7 +1592,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
   }
 }
 .inside-child .insudtry-list-wrapp .container .left ul li, .inside-child .insudtry-list-wrapp .container .right ul li {
@@ -1612,6 +1612,8 @@
   .inside-child .insudtry-list-wrapp .container .left ul li, .inside-child .insudtry-list-wrapp .container .right ul li {
     width: 47%;
     padding: 15px 15px 15px 30px;
+    display: flex;
+    align-items: center;
   }
 }
 .inside-child .insudtry-list-wrapp .container .left ul li p, .inside-child .insudtry-list-wrapp .container .right ul li p {

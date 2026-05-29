@@ -701,6 +701,9 @@ main.digi-portfolio.inside-page{
               iframe{ 
                 border-radius: 10px;
               }
+              video{
+                object-fit: cover;
+              }
             }
           }
         }

@@ -164,10 +164,226 @@ main.software-projects-page.inside-page{
   }
   // intro section ends
 
+  .software-top-filter{
+    position: relative;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // 1024 - 1920 : 30 - 50
+    margin-bottom: clamp(1.875rem, 0.4464rem + 2.2321vw, 3.125rem);
+    .filter-left{
+      display: flex;
+      align-items: center;
+      @media(max-width: 356px){
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      p{
+        font-size: 14px;
+        color: var(--black);
+        font-family: HelvNowDis-light;
+        font-weight: 300;
+      }
+      select{
+        margin-left: 18px;
+        border: 1px solid #9D9C9C;
+        border-radius: 5px;
+        font-size: 14px;
+        color: var(--black);
+        font-family: HelvNowDis-light;
+        font-weight: 300;
+        padding: 5px 16px;
+        height: 45px;
+        -webkit-appearance: none;
+        background-image: url(../img/down-angle-filter.svg);
+        background-repeat: no-repeat;
+        background-size: 19px 9px;
+        background-position: 92% 50%;
+        width: 230px;
+        @media(max-width: 850px){
+          height: 40px;
+        }
+        @media(max-width: 767px){
+          margin-left: 10px;
+          height: 35px;
+          padding: 5px 10px;
+        }
+        @media(max-width: 400px){
+          width: 200px;
+        }
+        @media(max-width: 356px){
+          margin-left: 0;
+          margin-top: 3px;
+        }
+        &:focus-visible{
+          outline: none;
+        }
+      }
+    }
+    .filter-right{
+      display: flex;
+      align-items: center;
+      padding-right: 120px;
+      @media(max-width: 1500px){
+        padding-right: 130px;
+      }
+      @media(max-width: 1200px){
+        padding-right: 120px;
+      }
+      @media(max-width: 1080px){
+        padding-right: 85px;
+      }
+      @media(max-width: 767px){
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 0;
+        display: none;
+      }
+      p{
+        font-size: 16px;
+        color: var(--black);
+        font-family: HelvNowDis-light;
+        font-weight: 300;
+        @media(max-width: 1080px){
+          font-size: 15px;
+        }
+        @media(max-width: 767px){
+          font-size: 14px;
+        }
+      }
+      .layout-view{
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        @media(max-width: 767px){
+          margin-left: 0;
+        }
+        li{
+          cursor: pointer;
+          a{
+            width: 40px;
+            height: 40px;
+            padding: 3px;
+            margin-right: 8px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media(max-width: 1500px){
+              width: 35px;
+              height: 35px;
+            }
+            @media(max-width: 767px){
+              width: 30px;
+              height: 30px;
+              margin-right: 5px;
+            }
+            svg{
+              @media(max-width: 1500px){
+                width: 80%;
+              }
+            }
+          }
+          &:last-child{
+            a{
+              margin-right: 0;
+            }
+          }
+          &.grid{
+            a{
+              svg{
+                rect{
+                  stroke: var(--light_green);
+                }
+              }
+            }
+          }
+          &.list{
+            a{
+              svg{
+                line{
+                  stroke: var(--light_green);
+                }
+              }
+            }
+          }
+          &.active{
+            a{
+              background-color: var(--light_green);
+            }
+          }
+          &.grid.active{
+            a{
+              svg{
+                rect{
+                  stroke: var(--white);
+                }
+              }
+            }
+          }
+          &.list.active{
+            a{
+              svg{
+                line{
+                  stroke: var(--white);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .software-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    // 1024 - 1920 : 30 - 40
+    margin-top: clamp(1.875rem, 1.1607rem + 1.1161vw, 2.5rem);
+    li{
+      a{
+        border: 1px solid var(--black);
+        border-radius: 2px;
+        color: var(--black);
+        background-color: var(--white);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media(max-width: 1500px){
+          width: 35px;
+          height: 35px;
+        }
+        @media(max-width: 767px){
+          width: 30px;
+          height: 30px;
+        }
+      }
+      &.active{
+        a{
+          background-color: var(--light_green);
+          color: var(--white);
+        }
+      }
+      &:hover{
+        a{
+          background-color: var(--light_green);
+          color: var(--white);
+        }
+      }
+    }
+  }
   // software projects main list section starts
   .sft-project-list-wrapper{
     position: relative;
     z-index: 9;
+    padding-bottom: 80px;
+    @media(max-width: 767px){
+      padding-bottom: 50px;
+    }
     .container{
       .proj-mai-list{
         display: flex;

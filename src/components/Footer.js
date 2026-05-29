@@ -173,7 +173,7 @@ function Footer({ sliceContext }) {
 						
 						<img src="https://emqube.com/wp-content/themes/emqube_revamp/images/ai-bot-icon.svg" data-src="https://emqube.com/wp-content/themes/emqube_revamp/images/ai-bot-icon.svg" alt="Bot Icon" class="bot-icon lazyloaded lazy-loaded" />
 					</div>
-					<span class="btn-text">Return to AI Website</span>
+					<span class="btn-text">Checkout our AI Website</span>
 				</a>
 			</div>
 
