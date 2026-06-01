@@ -431,20 +431,21 @@ export default function SoftwareSolMain({ data }) {
                         {webSlides.map((slide, index) => (
                           <SwiperSlide key={slide.key}>
                             <div className="swiper-slide-content">
-                              <a href={slide.link}>
-                                <div className="slide-image">
-                                  <img src={slide.img} alt={slide.title} />
-                                </div>
-                                <div className="slide-text">
-                                  <h3>{slide.title}</h3>
-                                  <p dangerouslySetInnerHTML={{__html: slide.text}} />
-                                </div>
-                                <span class="arrow-icon">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                                    <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  </svg>
-                                </span>
-                              </a>
+                              {/* <a href={slide.link}> */}
+                              <div className="slide-image">
+                                <img src={slide.img} alt={slide.title} />
+                              </div>
+                              <div className="slide-text">
+                                <h3>{slide.title}</h3>
+                                <p dangerouslySetInnerHTML={{__html: slide.text}} />
+                                <a href={slide.link} className="page-link">Read More</a>
+                              </div>
+                              <span class="arrow-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                                  <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                              </span>
+                              {/* </a> */}
                             </div>
                           </SwiperSlide>
                         ))}
@@ -547,20 +548,21 @@ export default function SoftwareSolMain({ data }) {
                         {webSlides1.map((slide1, index1) => (
                           <SwiperSlide key={slide1.key}>
                             <div className="swiper-slide-content">
-                              <a href={slide1.link}>
+                              {/* <a href={slide1.link}> */}
                                 <div className="slide-image">
                                   <img src={slide1.img} alt={slide1.title} />
                                 </div>
                                 <div className="slide-text">
                                   <h3>{slide1.title}</h3>
                                   <p dangerouslySetInnerHTML={{__html: slide1.text}} />
+                                  <a href={slide1.link} className="page-link">Read More</a>
                                 </div>
                                 <span class="arrow-icon">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                                     <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                   </svg>
                                 </span>
-                              </a>
+                              {/* </a> */}
                             </div>
                           </SwiperSlide>
                         ))}
@@ -679,20 +681,21 @@ export default function SoftwareSolMain({ data }) {
                         {webSlides2.map((slide2, index2) => (
                           <SwiperSlide key={slide2.key}>
                             <div className="swiper-slide-content">
-                              <a href={slide2.link}>
+                              {/* <a href={slide2.link}> */}
                                 <div className="slide-image">
                                   <img src={slide2.img} alt={slide2.title} />
                                 </div>
                                 <div className="slide-text">
                                   <h3>{slide2.title}</h3>
                                   <p dangerouslySetInnerHTML={{__html: slide2.text}} />
+                                  <a href={slide2.link} className="page-link">Read More</a>
                                 </div>
                                 <span class="arrow-icon">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
                                     <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                   </svg>
                                 </span>
-                              </a>
+                              {/* </a> */}
                             </div>
                           </SwiperSlide>
                         ))}

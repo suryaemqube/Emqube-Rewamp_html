@@ -354,7 +354,7 @@ export default function ContactUs({ data }) {
                         <ul>
 
                           {/* Your Name */}
-                          <li>
+                          <li className="w-50 mob-w-100">
                             <span className="wpcf7-form-control-wrap" data-name="first-name">
                               <input
                                 size="40" maxLength="400"
@@ -378,33 +378,8 @@ export default function ContactUs({ data }) {
                             </span>
                           </li>
 
-                          {/* Email */}
-                          <li>
-                            <span className="wpcf7-form-control-wrap" data-name="company-email">
-                              <input
-                                size="40" maxLength="400"
-                                className={
-                                  formik.errors["company-email"]
-                                    ? "wpcf7-form-control wpcf7-email wpcf7-not-valid"
-                                    : "wpcf7-form-control wpcf7-email wpcf7-validates-as-required"
-                                }
-                                aria-required="true"
-                                type="email"
-                                name="company-email"
-                                placeholder="Email"
-                                value={formik.values["company-email"]}
-                                onChange={formik.handleChange}
-                              />
-                              {formik.errors["company-email"] && (
-                                <span className="wpcf7-not-valid-tip">
-                                  {formik.errors["company-email"]}
-                                </span>
-                              )}
-                            </span>
-                          </li>
-
                           {/* Company Name */}
-                          <li>
+                          <li className="w-50 mob-w-100">
                             <span className="wpcf7-form-control-wrap" data-name="company-name">
                               <input
                                 size="40" maxLength="400"
@@ -423,6 +398,31 @@ export default function ContactUs({ data }) {
                               {formik.errors["company-name"] && (
                                 <span className="wpcf7-not-valid-tip">
                                   {formik.errors["company-name"]}
+                                </span>
+                              )}
+                            </span>
+                          </li>
+
+                          {/* Email */}
+                          <li className="w-50 mob-w-100">
+                            <span className="wpcf7-form-control-wrap" data-name="company-email">
+                              <input
+                                size="40" maxLength="400"
+                                className={
+                                  formik.errors["company-email"]
+                                    ? "wpcf7-form-control wpcf7-email wpcf7-not-valid"
+                                    : "wpcf7-form-control wpcf7-email wpcf7-validates-as-required"
+                                }
+                                aria-required="true"
+                                type="email"
+                                name="company-email"
+                                placeholder="Email"
+                                value={formik.values["company-email"]}
+                                onChange={formik.handleChange}
+                              />
+                              {formik.errors["company-email"] && (
+                                <span className="wpcf7-not-valid-tip">
+                                  {formik.errors["company-email"]}
                                 </span>
                               )}
                             </span>
@@ -454,7 +454,7 @@ export default function ContactUs({ data }) {
                           </li>
 
                           {/* How did you hear about us */}
-                          <li className="w-50 mob-w-100">
+                          <li className="w-100">
                             <span className="wpcf7-form-control-wrap" data-name="select-371">
                               <select
                                 name="select-371"
@@ -468,8 +468,9 @@ export default function ContactUs({ data }) {
                                 aria-invalid="false"
                               >
                                 <option value="">How did you hear about us?</option>
-                                <option value="Friends">Friends</option>
-                                <option value="Social Media">Social Media</option>
+                                <option value="Our Email to you">Our Email to you</option>
+                                <option value="Referred by our client">Referred by our client</option>
+                                <option value="Referred by friend">Referred by friend</option>
                                 <option value="Internet Search">Internet Search</option>
                               </select>
                             </span>

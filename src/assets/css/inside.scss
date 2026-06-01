@@ -1060,6 +1060,15 @@ content: "\f009";
 														padding-right: 0px;
 													}
 												}
+												a{
+													font-size: 14px !important;
+													text-decoration: none;
+													border-bottom: 1px solid var(--black);
+													&:hover{
+														border-color: var(--light_green);
+														color: var(--light_green);
+													}
+												}
 											}
 										}
 										&.swiper-slide-prev,&.swiper-slide-next{

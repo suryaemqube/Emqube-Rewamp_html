@@ -441,6 +441,7 @@ content: "\f009";
 											}
 											&::placeholder{
 												color: var(--light_grey);
+												line-height: 1.5em;
 											}
 											&:focus,&:focus-visible{
 												outline: none;
