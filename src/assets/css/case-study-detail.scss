@@ -31,22 +31,26 @@ main.case-study-detail.inside-page{
     bottom: auto;
     z-index: 0;
     @media(max-width: 1700px){
-      top: 112px;
+      // top: 112px;
     }
     @media(max-width: 1500px){
-      top: 96px;
+      // top: 96px;
     }
     @media(max-width: 1400px){
-      top: 90px;
+      top: 435px;
     }
     @media(max-width: 1300px){
-      top: 48px;
+      top: 388px;
+    }
+    @media(max-width: 1200px){
+      top: 438px;
     }
     @media(max-width: 1080px){
-      top: 70px;
+      top: 433px;
     }
     @media(max-width: 850px){
-      top: 106px;
+      top: 364px;
+      display: none;
     }
     @media(max-width: 767px){
       background-image: none
@@ -263,10 +267,10 @@ main.case-study-detail.inside-page{
       padding-top: clamp(4.313rem, -0.0436rem + 6.8071vw, 8.125rem);
     }
     @media(max-width: 1180px){
-      padding-top: 110px;
+      padding-top: 50px;
     }
     @media(max-width: 850px){
-      padding-top: 90px;
+      padding-top: 40px;
     }
     @media(max-width: 767px){
       padding-top: 30px;

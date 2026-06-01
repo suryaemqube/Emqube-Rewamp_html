@@ -314,7 +314,7 @@ export default function SoftwareSolMain({ data }) {
 
       {/* Inside intro section starts */}
       {softSolMain && 
-        <section className="inside-intro-wrapper">
+        <section className="inside-intro-wrapper main-page-intro-section">
           <div className="container">
             <div className="inside-intro-count left">
               <ul className="d-flex">

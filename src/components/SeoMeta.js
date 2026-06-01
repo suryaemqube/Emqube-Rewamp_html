@@ -28,7 +28,7 @@ const Seo = ({ bodyClass, title, description, pageUrl = "/", seoData, children, 
       if (typeof obj[key] === 'string') {
 
         if (obj[key].startsWith('/')) {
-          obj[key] = "emquberevamphtml.netlify.app" + obj[key];
+          obj[key] = "emqube.com" + obj[key];
         }
       } else if (typeof obj[key] === 'object') {
         replaceSlashWithUrl(obj[key]);

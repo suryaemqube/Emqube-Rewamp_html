@@ -342,7 +342,7 @@
   line-height: 1.15em;
   padding-bottom: clamp(1.25rem, 0.8556rem + 1.6828vw, 2.875rem);
   margin-bottom: clamp(1.125rem, 0.8519rem + 1.165vw, 2.25rem);
-  width: 75%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1027,6 +1027,7 @@
 }
 .inside-child .engagement-model-wrapp .container .eng-model-step ul.count-3 li .eng-title h5 {
   height: 60px;
+  height: auto;
   padding: 0 50px;
 }
 @media (max-width: 1380px) {
