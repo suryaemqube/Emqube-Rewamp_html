@@ -667,7 +667,7 @@ export default function SoftwareSolChild({ data }) {
           >
             {softSolChildProject.map((project, index) => (
               <SwiperSlide key={project.id || index}>
-                <a href={project?.digitalPortfolioLayout?.websiteLink}>
+                <a href={project?.digitalPortfolioLayout?.websiteLink} target="_blank" rel="noopener noreferrer">
                   <div className="work-wrapp">
                     {project?.digitalPortfolioLayout?.clientLogo && 
                       <div className="client-icon">

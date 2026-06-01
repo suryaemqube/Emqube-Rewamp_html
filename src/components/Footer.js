@@ -171,7 +171,7 @@ function Footer({ sliceContext }) {
 				<a href="/ai-chat/">
 					<div class="bot-icon-img">
 						
-						<img src="https://emqube.com/wp-content/themes/emqube_revamp/images/ai-bot-icon.svg" data-src="https://emqube.com/wp-content/themes/emqube_revamp/images/ai-bot-icon.svg" alt="Bot Icon" class="bot-icon lazyloaded lazy-loaded" />
+						<img src="https://wp.emqube.com/wp-content/uploads/2026/06/ai-bot-icon.svg" data-src="https://wp.emqube.com/wp-content/uploads/2026/06/ai-bot-icon.svg" alt="Bot Icon" class="bot-icon lazyloaded lazy-loaded" />
 					</div>
 					<span class="btn-text">Checkout our AI Website</span>
 				</a>

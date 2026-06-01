@@ -535,7 +535,7 @@ export default function SoftwareSolChild({ data }) {
           <div className="centered-slides slide-up">
             {softSolChildProject.map((project, index) => (
               <div key={project.id || index} className="swiper-slide" style={{ flex: '0 0 auto' }}>
-                <a href={project?.digitalPortfolioLayout?.websiteLink ? project.digitalPortfolioLayout.websiteLink : "#"} target="_blank" rel="noopener noreferrer">
+                <a href={project?.digitalPortfolioLayout?.websiteLink ? project.digitalPortfolioLayout.websiteLink : "javascript:void(0);"} target={project?.digitalPortfolioLayout?.websiteLink ? "_blank" : "_self"} rel="noopener noreferrer">
                   <div className="work-wrapp">
                     {project?.digitalPortfolioLayout?.clientLogo && 
                     <div className="client-icon">
@@ -607,7 +607,7 @@ export default function SoftwareSolChild({ data }) {
           >
             {softSolChildProject.map((project, index) => (
               <SwiperSlide key={project.id || index}>
-                <a href={project?.digitalPortfolioLayout?.websiteLink}>
+                <a href={project?.digitalPortfolioLayout?.websiteLink} target="_blank" rel="noopener noreferrer">
                   <div className="work-wrapp">
                     {project?.digitalPortfolioLayout?.clientLogo && 
                       <div className="client-icon">
