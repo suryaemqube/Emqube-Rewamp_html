@@ -600,11 +600,22 @@ main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-s
     width: 100%;
   }
 }
+main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left .proj-tech-logo ul li p {
+  display: flex;
+  align-items: center;
+}
 main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left .proj-tech-logo ul li p span {
   margin-left: 10px;
+  font-size: 16px;
+  line-height: 1.3em;
+}
+@media (max-width: 767px) {
+  main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left .proj-tech-logo ul li p span {
+    font-size: 15px;
+  }
 }
 main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left .proj-tech-logo ul li p img {
-  height: 60px;
+  height: 50px;
 }
 @media (max-width: 767px) {
   main.case-study-detail.inside-page .case-study-detail-wrapper .container .case-study-info-left > div {

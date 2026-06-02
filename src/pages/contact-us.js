@@ -15,12 +15,16 @@ import Seo from "../components/SeoMeta";
 import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
+
+
 const WEBSITE_URL = process.env.GATSBY_BASE_URL
 
 gsap.registerPlugin(ScrollToPlugin);
 
 
 export default function ContactUs({ data }) {
+
+  console.log('schema:-----', data.wpPage.seo.schema.raw);
 
   const contactPage = data?.wpPage || {};
 
@@ -586,6 +590,7 @@ export const Head = ({ data }) => (
   <Seo
     seoData={data?.wpPage?.seo || []}
     pageUrl={data?.wpPage?.uri}
+    isContactPage={true}
   >
 
   </Seo>

@@ -9,7 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 function Seo({ description, title, children }) {
-  const { site,seoData } = useStaticQuery(
+  const { site,seoData, isContactPage = false } = useStaticQuery(
     graphql`
       query {
         site {
@@ -26,10 +26,48 @@ function Seo({ description, title, children }) {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
 
+  const contactSchema = {
+    "@type": "ContactPage",
+    "@id": `${pageUrl}#contactpage`,
+    "url": pageUrl,
+    "name": "Contact emQube",
+    "description": "Contact emQube for software development, digital transformation and consulting services.",
+    "inLanguage": "en-US"
+  };
+
   var jsonSchema = seoData && seoData.schema ? seoData.schema.raw : "{}";
   var jsonObject = JSON.parse(jsonSchema);
   if (jsonObject && Object.keys(jsonObject).length !== 0) {
     jsonObject = replaceSlashWithUrl(jsonObject);
+  }
+  
+
+  if (
+  isContactPage &&
+  jsonObject["@graph"]
+  ) {
+    jsonObject["@graph"].push({
+      "@type": "ContactPage",
+      "@id": `${pageUrl}#contactpage`,
+      "url": pageUrl,
+      "name": "Contact emQube",
+      "description":
+        "Contact emQube for software development, digital transformation and consulting services.",
+      "inLanguage": "en-US"
+    });
+
+    jsonObject["@graph"].push({
+      "@type": "LocalBusiness",
+      "@id": "https://www.emqube.com/#localbusiness",
+      "name": "emQube",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#801 M Square, Sheikh Khalifa Bin Zayed Street.Dubai. UAE",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
+      "email": "info@emqube.com"
+    });
   }
 
   return (
