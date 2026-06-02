@@ -750,6 +750,7 @@ video{
   @media(max-width: 767px){
     display: inline-flex;
     margin-top: 15px;
+    margin-bottom: 0;
   }
 }
 .view-more-btn.active{
@@ -2008,7 +2009,7 @@ footer{
 	bottom: 95px;
 	left: 20px;
 	/* transform: translateY(-50%); */
-	background-color: #38C84E;
+	background-color: var(--light_green);
 	display: flex;
 	align-items: center;
 	gap: 10px;

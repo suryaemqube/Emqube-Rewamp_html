@@ -754,6 +754,7 @@ video {
   .view-more-btn {
     display: inline-flex;
     margin-top: 15px;
+    margin-bottom: 0;
   }
 }
 
@@ -1878,7 +1879,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
   bottom: 95px;
   left: 20px;
   /* transform: translateY(-50%); */
-  background-color: #38C84E;
+  background-color: var(--light_green);
   display: flex;
   align-items: center;
   gap: 10px;
