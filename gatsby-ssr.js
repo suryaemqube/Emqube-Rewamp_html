@@ -8,6 +8,14 @@ export const wrapRootElement = ({ element }) => (
 
 export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
   setHeadComponents([
+    // ✅ Favicon
+    // <link
+    //   key="favicon"
+    //   rel="icon"
+    //   type="image/png/webp"
+    //   href="/favicon.webp"
+    // />,
+
     <script
       key="gtm-script"
       dangerouslySetInnerHTML={{
