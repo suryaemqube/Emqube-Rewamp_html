@@ -258,40 +258,49 @@ exports.createPages = async ({ actions, graphql }) => {
   });
 
    // parent slug → first child slug
-  // const redirects = [
-  //   {
-  //     from: "/software-solutions-house/software-development/",
-  //     to: "/software-solutions-house/software-development/business-application-development/",
-  //   },
-  //   {
-  //     from: "/software-solutions-house/software-products/",
-  //     to: "/software-solutions-house/software-products/crm-zoho-salesforce/",
-  //   },
-  //   {
-  //     from: "/software-solutions-house/software-consulting/",
-  //     to: "/software-solutions-house/software-consulting/digital-transformation/",
-  //   },
-  //   {
-  //     from: "/digital-content-studio/website-development/",
-  //     to: "/digital-content-studio/website-development/corporate-website/",
-  //   },
-  //   {
-  //     from: "/digital-content-studio/digital-marketing/",
-  //     to: "/digital-content-studio/digital-marketing/email-marketing/",
-  //   },
-  //   {
-  //     from: "/digital-content-studio/content-production/",
-  //     to: "/digital-content-studio/content-production/corporate-films/",
-  //   },
-  // ];
+  const redirects = [
+    {
+      fromPath: "/software-solutions-house/software-development/",
+      toPath: "/software-solutions-house/software-development/business-application-development/",
+    },
+    {
+      fromPath: "/software-solutions-house/software-products/",
+      toPath: "/software-solutions-house/software-products/crm-zoho-salesforce/",
+    },
+    {
+      fromPath: "/software-solutions-house/software-consulting/",
+      toPath: "/software-solutions-house/software-consulting/digital-transformation/",
+    },
+    {
+      fromPath: "/digital-content-studio/website-development/",
+      toPath: "/digital-content-studio/website-development/corporate-website/",
+    },
+    {
+      fromPath: "/digital-content-studio/digital-marketing/",
+      toPath: "/digital-content-studio/digital-marketing/email-marketing/",
+    },
+    {
+      fromPath: "/digital-content-studio/content-production/",
+      toPath: "/digital-content-studio/content-production/corporate-films/",
+    },
+  ];
 
-  redirects.forEach(({ from, to }) => {
+  redirects.forEach(({ redirect }) => {
     createRedirect({
-      fromPath: from,
-      toPath: to,
-      isPermanent: false, // true = 301, false = 302
+      fromPath: redirect.fromPath,
+      toPath: redirect.toPath,
+      isPermanent: true, // true = 301, false = 302
       redirectInBrowser: true, // ✅ important for client-side redirect in dev
     });
   });
+
+  //  redirects.forEach((redirect) =>
+  //   createRedirect({
+  //     fromPath: redirect.fromPath,
+  //     toPath: redirect.toPath,
+  //     isPermanent: true,
+  //     redirectInBrowser: true,
+  //   })
+  // );
 
 }
