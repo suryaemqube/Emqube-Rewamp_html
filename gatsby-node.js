@@ -285,14 +285,14 @@ exports.createPages = async ({ actions, graphql }) => {
     },
   ];
 
-  redirects.forEach(({ redirect }) => {
+  redirects.forEach((redirect) =>
     createRedirect({
       fromPath: redirect.fromPath,
       toPath: redirect.toPath,
       isPermanent: true, // true = 301, false = 302
       redirectInBrowser: true, // ✅ important for client-side redirect in dev
-    });
-  });
+    })
+  );
 
   //  redirects.forEach((redirect) =>
   //   createRedirect({
