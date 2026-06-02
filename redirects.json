@@ -1,0 +1,154 @@
+[
+    {
+        "fromPath": "/classic-website/",
+        "toPath": "/"
+    },
+    {
+        "fromPath": "/about-us/company-profile/",
+        "toPath": "/about-us/"
+    },
+    {
+        "fromPath": "/about-us/team/",
+        "toPath": "/about-us/"
+    },
+    {
+        "fromPath": "/about-us/business-division/",
+        "toPath": "/references/"
+    },
+    {
+        "fromPath": "/about-us/clients/",
+        "toPath": "/references/"
+    },
+    {
+        "fromPath": "/services/software-development/",
+        "toPath": "/software-solutions-house/software-development/business-application-development/"
+    },
+    {
+        "fromPath": "/services/mobile-development/",
+        "toPath": "/software-solutions-house/software-development/mobile-app-development/"
+    },
+    {
+        "fromPath": "/services/ecommerce-development/",
+        "toPath": "/software-solutions-house/software-development/e-commerce-applications/"
+    },
+    {
+        "fromPath": "/services/chatbot-development/",
+        "toPath": "/software-solutions-house/software-development/ai-development/"
+    },
+    {
+        "fromPath": "/services/startup-innovation/",
+        "toPath": "/software-solutions-house/software-consulting/product-development/"
+    },
+    {
+        "fromPath": "/products/",
+        "toPath": "/software-solutions-house/software-products/crm-zoho-salesforce/"
+    },
+    {
+        "fromPath": "/products/cafm-pro/",
+        "toPath": "/software-solutions-house/software-products/fm-cafm-pro/"
+    },
+    {
+        "fromPath": "/expertise/digital-transformation/",
+        "toPath": "/software-solutions-house/software-consulting/digital-transformation/"
+    },
+    {
+        "fromPath": "/expertise/business-intelligence/",
+        "toPath": "/software-solutions-house/software-development/business-intelligence/"
+    },
+    {
+        "fromPath": "/expertise/innovation/",
+        "toPath": "/software-solutions-house/software-consulting/product-development/"
+    },
+    {
+        "fromPath": "/expertise/ux-ui/",
+        "toPath": "/digital-content-studio/"
+    },
+    {
+        "fromPath": "/technologies/android/",
+        "toPath": "/software-solutions-house/software-development/mobile-app-development/"
+    },
+    {
+        "fromPath": "/technologies/angular/",
+        "toPath": "/software-solutions-house/"
+    },
+    {
+        "fromPath": "/technologies/objective-c/",
+        "toPath": "/software-solutions-house/"
+    },
+    {
+        "fromPath": "/technologies/php/",
+        "toPath": "/software-solutions-house/"
+    },
+    {
+        "fromPath": "/technologies/microsoft/",
+        "toPath": "/software-solutions-house/"
+    },
+    {
+        "fromPath": "/technologies/ios/",
+        "toPath": "/software-solutions-house/software-development/mobile-app-development/"
+    },
+    {
+        "fromPath": "/technologies/lamp/",
+        "toPath": "/software-solutions-house/"
+    },
+    {
+        "fromPath": "/technologies/cross-platform/",
+        "toPath": "/software-solutions-house/"
+    },
+    {
+        "fromPath": "/projects/",
+        "toPath": "/software-projects/"
+    },
+    {
+        "fromPath": "/projects/wills-probate-registry-automation/",
+        "toPath": "/software-projects/judicial-performance-workload-dashboard/"
+    },
+    {
+        "fromPath": "/projects/stock-planning-the-smart-way/",
+        "toPath": "/software-projects/automotive-regional-sales-inventory-portal/"
+    },
+    {
+        "fromPath": "/projects/e-move/",
+        "toPath": "/software-projects/power-bi-operational-financial-reporting-suite/"
+    },
+    {
+        "fromPath": "/projects/reporting-mis/",
+        "toPath": "/software-projects/regional-sales-stock-consolidation-tool/"
+    },
+    {
+        "fromPath": "/projects/making-minds-meet/",
+        "toPath": "/software-projects/pharma-expert-engagement-platform/"
+    },
+    {
+        "fromPath": "/projects/travel-insurance-wholesale-made-easy/",
+        "toPath": "/software-projects/multi-provider-insurance-aggregator-portal/"
+    },
+    {
+        "fromPath": "/projects/e-commerce/",
+        "toPath": "/software-projects/integrated-b2b-b2c-e-commerce-portal/"
+    },
+    {
+        "fromPath": "/projects/marketing-collaboration-workflow/",
+        "toPath": "/software-projects/regional-sales-stock-consolidation-tool/"
+    },
+    {
+        "fromPath": "/contact-us/contact-detail/",
+        "toPath": "/contact-us/"
+    },
+    {
+        "fromPath": "/contact-us/careers/",
+        "toPath": "/contact-us/"
+    },
+    {
+        "fromPath": "/contact-us/customer-enquiry/",
+        "toPath": "/contact-us/"
+    },
+    {
+        "fromPath": "/blog/",
+        "toPath": "/emqonnect/"
+    },
+    {
+        "fromPath": "/news/",
+        "toPath": "/emqonnect/"
+    }
+]
