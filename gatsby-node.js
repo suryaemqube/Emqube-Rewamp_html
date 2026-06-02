@@ -9,7 +9,7 @@
  */
 
 const path = require("path");
-const redirects = require("./redirects.json");
+const redirectsJson = require("./redirects.json");
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect, createSlice  } = actions
@@ -258,7 +258,7 @@ exports.createPages = async ({ actions, graphql }) => {
   });
 
    // parent slug → first child slug
-  const redirects = [
+  const parentRedirects  = [
     {
       fromPath: "/software-solutions-house/software-development/",
       toPath: "/software-solutions-house/software-development/business-application-development/",
@@ -285,14 +285,14 @@ exports.createPages = async ({ actions, graphql }) => {
     },
   ];
 
-  redirects.forEach((redirect) =>
+  [...redirectsJson, ...parentRedirects].forEach((redirect) => {
     createRedirect({
       fromPath: redirect.fromPath,
       toPath: redirect.toPath,
-      isPermanent: true, // true = 301, false = 302
-      redirectInBrowser: true, // ✅ important for client-side redirect in dev
-    })
-  );
+      isPermanent: true,
+      redirectInBrowser: true,
+    });
+  });
 
   //  redirects.forEach((redirect) =>
   //   createRedirect({
