@@ -9,7 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 function Seo({ description, title, children }) {
-  const { site } = useStaticQuery(
+  const { site,seoData } = useStaticQuery(
     graphql`
       query {
         site {
@@ -26,6 +26,12 @@ function Seo({ description, title, children }) {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
 
+  var jsonSchema = seoData && seoData.schema ? seoData.schema.raw : "{}";
+  var jsonObject = JSON.parse(jsonSchema);
+  if (jsonObject && Object.keys(jsonObject).length !== 0) {
+    jsonObject = replaceSlashWithUrl(jsonObject);
+  }
+
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
@@ -37,6 +43,9 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+
+      <script type="application/ld+json">{Object.keys(jsonObject).length !== 0 ? JSON.stringify(jsonObject, null, 2) : "{}"}</script>
+      
       {children}
     </>
   )

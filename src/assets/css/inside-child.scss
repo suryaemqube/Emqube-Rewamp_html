@@ -2750,6 +2750,38 @@ content: "\f009";
       }
     }
   }
+  .work-ref-wrapper.prod-gallery-wrapper-cafm{
+    background: linear-gradient(90deg, #64C573 0%, #4E9C5A 100%);
+    // 1024 - 1920 : 60 - 100
+    margin-top: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem);
+    padding: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem) 0;
+    h2{
+      color: var(--white);
+      background: transparent;
+      -webkit-text-fill-color: var(--white);
+    }
+    .proj-img{
+      filter: grayscale(0) !important;
+    }
+    @media(max-width: 767px){
+      // 320 - 767 : 46 - 64
+      padding-top: clamp(2.875rem, 2.0696rem + 4.0268vw, 4rem);
+    }
+    .workSwiper .swiper-slide .work-wrapp .proj-txt,.centered-slides .swiper-slide .work-wrapp .proj-txt{
+      justify-content: flex-end;
+    }
+    .workSwiper .swiper-slide a,.centered-slides .swiper-slide a{
+      pointer-events: none;
+    }
+    .swiper-pagination .swiper-pagination-bullet{
+      background: var(--white) !important;
+      opacity: 0.6 !important;
+    }
+    .swiper-pagination .swiper-pagination-bullet-active{
+      background: var(--white) !important;
+      opacity: 1 !important;
+    }
+  }
   // project section ends
 
   // faq section starts

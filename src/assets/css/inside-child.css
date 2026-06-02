@@ -2891,6 +2891,38 @@
 .inside-child .work-ref-wrapper .centered-slides > div {
   width: 33.33%;
 }
+.inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm {
+  background: linear-gradient(90deg, #64C573 0%, #4E9C5A 100%);
+  margin-top: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem);
+  padding: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem) 0;
+}
+.inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm h2 {
+  color: var(--white);
+  background: transparent;
+  -webkit-text-fill-color: var(--white);
+}
+.inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm .proj-img {
+  filter: grayscale(0) !important;
+}
+@media (max-width: 767px) {
+  .inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm {
+    padding-top: clamp(2.875rem, 2.0696rem + 4.0268vw, 4rem);
+  }
+}
+.inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm .workSwiper .swiper-slide .work-wrapp .proj-txt, .inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm .centered-slides .swiper-slide .work-wrapp .proj-txt {
+  justify-content: flex-end;
+}
+.inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm .workSwiper .swiper-slide a, .inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm .centered-slides .swiper-slide a {
+  pointer-events: none;
+}
+.inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm .swiper-pagination .swiper-pagination-bullet {
+  background: var(--white) !important;
+  opacity: 0.6 !important;
+}
+.inside-child .work-ref-wrapper.prod-gallery-wrapper-cafm .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--white) !important;
+  opacity: 1 !important;
+}
 .inside-child .faq-accordion-wrapper {
   position: relative;
   z-index: 9;

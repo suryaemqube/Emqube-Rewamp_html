@@ -34,6 +34,7 @@ export default function SftProduct({ data }) {
 
   const softProductChild = data?.wpPage?.zohoProductPageLayout || {};
   const softSolChildProject = data?.wpPage?.zohoProductPageLayout?.selectProjectList || [];
+  const cafmProducts = data?.wpPage?.cafm || [];
   const softReal = data?.wpPage?.realWorldResults || {};
   const options = data?.wp?.acfOption?.common;
 
@@ -116,8 +117,6 @@ export default function SftProduct({ data }) {
       behavior: "smooth",
     });
   };
-
-  
   
 
   useEffect(() => {
@@ -845,6 +844,115 @@ export default function SftProduct({ data }) {
       }
       {/* crm services section ends */}
 
+      {/* Work Reference Section Starts */}
+      {cafmProducts?.cafmProductGalleryImages && cafmProducts?.cafmProductGalleryImages.length > 0  && 
+      <section className="work-ref-wrapper prod-gallery-wrapper-cafm">
+        <div className="container">
+          <h2 className="txt-center slide-up">Our Products</h2>
+        </div>
+        {windowWidth > 991 && cafmProducts?.cafmProductGalleryImages.length <= 3 ? (
+          <div className="centered-slides slide-up">
+            {cafmProducts?.cafmProductGalleryImages.map((prod, index) => (
+              <div key={prod.id || index} className="swiper-slide" style={{ flex: '0 0 auto' }}>
+                <a href="javascript:void(0);">
+                  <div className="work-wrapp">
+                    {/* <div className="client-icon">
+                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                    </div> */}
+                    {/* <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span> */}
+                    <div className="proj-img">
+                      <img
+                        src={
+                          prod?.cafmProductGalleryImage?.mediaItemUrl
+                            ? prod?.cafmProductGalleryImage?.mediaItemUrl
+                            : "https://wp.emqube.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                        }
+                        alt={
+                          prod?.cafmProductGalleryImage?.altText
+                            ? prod?.cafmProductGalleryImage?.altText
+                            : prod?.cafmProductGalleryImage?.title
+                        }
+                      />
+                    </div>
+                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: prod?.cafmProductText }} />
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Swiper
+            modules={[Navigation, Pagination]}
+            className="workSwiper slide-up"
+            navigation
+            pagination
+            autoplay={{ delay: 3000 }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.1,
+                spaceBetween: 10,
+                slidesOffsetBefore: 20,
+              },
+              768: {
+                slidesPerView: 1.9,
+                spaceBetween: 10,
+                slidesOffsetBefore: 20,
+              },
+              991: {
+                slidesPerView: 2.5,
+                slidesOffsetBefore: 145,
+                spaceBetween: 20,
+              },
+                1300: {
+                slidesPerView: 3.6,
+                slidesOffsetBefore: 145,
+                spaceBetween: 20,
+              },
+            }}
+          >
+            {cafmProducts?.cafmProductGalleryImages.map((prod, index) => (
+              <SwiperSlide key={prod.id || index}>
+                <a href="javascript:void(0);">
+                  <div className="work-wrapp">
+                    {/* <div className="client-icon">
+                      <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
+                    </div> */}
+                    {/* <span className="arrow-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
+                        <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span> */}
+                    <div className="proj-img">
+                      <img
+                        src={
+                          prod?.cafmProductGalleryImage?.mediaItemUrl
+                            ? prod?.cafmProductGalleryImage?.mediaItemUrl
+                            : "https://wp.emqube.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
+                        }
+                        alt={
+                          prod?.cafmProductGalleryImage?.altText
+                            ? prod?.cafmProductGalleryImage?.altText
+                            : prod?.title
+                        }
+                      />
+                    </div>
+                    <div className="proj-txt">
+                      <p dangerouslySetInnerHTML={{ __html: prod?.cafmProductText || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere provident recusandae explicabo aut repellat."}} />
+                    </div>
+                  </div>
+                </a>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+      </section>
+      }
+      {/* Work Reference Section Ends */}
+
       {/* engagement model starts */}
       {softProductChild?.zohoEngagementModelTitle && softProductChild?.zohoEngagementModelList && 
         <section className="engagement-model-wrapp" id="zoho-eng-model">
@@ -1108,6 +1216,15 @@ export const data = graphql`
   query MyQuery {
     wpPage(databaseId: {eq: 130}) {
       title
+      cafm {
+        cafmProductGalleryImages {
+          cafmProductText
+          cafmProductGalleryImage {
+            altText
+            mediaItemUrl
+          }
+        }
+      }
       zohoProductPageLayout {
         productLogo {
           altText
