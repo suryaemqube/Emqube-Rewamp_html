@@ -37,12 +37,7 @@ function Seo({ description, title, children }) {
 
   var jsonSchema = seoData && seoData.schema ? seoData.schema.raw : "{}";
   var jsonObject = JSON.parse(jsonSchema);
-  if (jsonObject && Object.keys(jsonObject).length !== 0) {
-    jsonObject = replaceSlashWithUrl(jsonObject);
-  }
-  
-
-  if (
+   if (
   isContactPage &&
   jsonObject["@graph"]
   ) {
@@ -69,6 +64,12 @@ function Seo({ description, title, children }) {
       "email": "info@emqube.com"
     });
   }
+  if (jsonObject && Object.keys(jsonObject).length !== 0) {
+    jsonObject = replaceSlashWithUrl(jsonObject);
+  }
+  
+
+ 
 
   return (
     <>
