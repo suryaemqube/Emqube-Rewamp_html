@@ -588,6 +588,7 @@ export default function ContactUs({ data }) {
 
 export const Head = ({ data }) => (
   <Seo
+    title={data?.wpPage?.title || "Contact Us"}
     seoData={data?.wpPage?.seo || []}
     pageUrl={data?.wpPage?.uri}
     isContactPage={true}
