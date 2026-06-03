@@ -719,6 +719,7 @@ p:last-child {
 
 section {
   padding-top: clamp(4.375rem, -2.0536rem + 10.0446vw, 10rem);
+  padding-top: clamp(4.375rem, 2.2321rem + 3.3482vw, 6.25rem);
 }
 @media (max-width: 767px) {
   section {
@@ -806,6 +807,7 @@ header .sub-menu {
 @media (min-width: 901px) {
   header .sub-menu {
     border-radius: 5px 0 0 5px;
+    border-radius: 5px;
   }
 }
 @media (max-width: 1500px) {
@@ -991,6 +993,16 @@ header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children:hover
   position: absolute;
   width: 0;
   z-index: 900000;
+}
+@media (min-width: 901px) {
+  header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children.level-1 > .sub-menu > li:first-child:hover a {
+    border-radius: 5px 5px 0 0;
+  }
+}
+@media (min-width: 901px) {
+  header .inner-container .main-nav .main-nav-ul > li.menu-item-has-children.level-1 > .sub-menu > li:last-child:hover a {
+    border-radius: 0 0 5px 5px;
+  }
 }
 header .inner-container .main-nav .main-nav-ul li a {
   letter-spacing: 0.04em;

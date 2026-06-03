@@ -2527,21 +2527,25 @@
 }
 .inside-child .social-media-plat-wrapper .container ul li .social-platgform-logo {
   width: 30%;
+  width: 20%;
 }
 @media (max-width: 1500px) {
   .inside-child .social-media-plat-wrapper .container ul li .social-platgform-logo {
     width: 18%;
+    width: 12%;
     margin-right: 90px;
   }
 }
 @media (max-width: 1400px) {
   .inside-child .social-media-plat-wrapper .container ul li .social-platgform-logo {
     width: 18%;
+    width: 12%;
   }
 }
 @media (max-width: 991px) {
   .inside-child .social-media-plat-wrapper .container ul li .social-platgform-logo {
     width: 35%;
+    width: 20%;
   }
 }
 @media (max-width: 767px) {
@@ -2577,6 +2581,8 @@
 @media (max-width: 991px) {
   .inside-child .social-media-plat-wrapper .container ul li .social-media-title {
     width: 40%;
+    width: 30%;
+    padding-left: 60px;
   }
 }
 @media (max-width: 767px) {
@@ -2632,6 +2638,11 @@
 @media (max-width: 1023px) {
   .inside-child .social-media-plat-wrapper .container ul .social-media-txt {
     margin-right: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .inside-child .social-media-plat-wrapper .container ul .social-media-txt {
+    width: 60%;
   }
 }
 @media (max-width: 767px) {

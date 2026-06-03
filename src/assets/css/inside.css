@@ -161,7 +161,7 @@
     margin-bottom: 0;
   }
 }
-.inside-page .inside-sub-txt {
+.inside-page .inside-sub-txt, .inside-page .abt-inside-sub-txt p {
   width: 790px;
   margin-left: auto;
   margin-right: auto;
@@ -172,43 +172,43 @@
   font-size: clamp(1.25rem, 0.1071rem + 1.7857vw, 2.25rem);
 }
 @media (max-width: 1590px) {
-  .inside-page .inside-sub-txt {
+  .inside-page .inside-sub-txt, .inside-page .abt-inside-sub-txt p {
     width: 700px;
   }
 }
 @media (resolution: 1.25dppx) {
-  .inside-page .inside-sub-txt {
+  .inside-page .inside-sub-txt, .inside-page .abt-inside-sub-txt p {
     width: 600px;
   }
 }
 @media (max-width: 1480px) {
-  .inside-page .inside-sub-txt {
+  .inside-page .inside-sub-txt, .inside-page .abt-inside-sub-txt p {
     width: 50%;
   }
 }
 @media (max-width: 1180px) {
-  .inside-page .inside-sub-txt {
+  .inside-page .inside-sub-txt, .inside-page .abt-inside-sub-txt p {
     width: 40%;
   }
 }
 @media (max-width: 1023px) {
-  .inside-page .inside-sub-txt {
+  .inside-page .inside-sub-txt, .inside-page .abt-inside-sub-txt p {
     font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
     line-height: 1.3em;
   }
 }
 @media (max-width: 1000px) {
-  .inside-page .inside-sub-txt {
+  .inside-page .inside-sub-txt, .inside-page .abt-inside-sub-txt p {
     width: 80%;
   }
 }
 @media (max-width: 767px) {
-  .inside-page .inside-sub-txt {
+  .inside-page .inside-sub-txt, .inside-page .abt-inside-sub-txt p {
     width: 100%;
     font-size: clamp(1.375rem, 1.2855rem + 0.4474vw, 1.5rem);
   }
 }
-.inside-page .inside-sub-txt:last-child {
+.inside-page .inside-sub-txt:last-child, .inside-page .abt-inside-sub-txt p:last-child {
   margin-bottom: 0;
 }
 .inside-page h1, .inside-page .inside-sub-txt {
@@ -471,10 +471,15 @@
   }
 }
 .inside-page .inside-intro-wrapper .container .inside-intro-count ul li p {
-  text-align: left;
+  text-align: center;
   font-family: HelvNowDis-reg;
   color: var(--white);
   line-height: 1.3em;
+}
+@media (max-width: 1000px) {
+  .inside-page .inside-intro-wrapper .container .inside-intro-count ul li p {
+    text-align: left;
+  }
 }
 .inside-page .inside-intro-wrapper .container .inside-intro-count ul li .count {
   font-size: clamp(3.125rem, 1.3387rem + 2.7911vw, 4.688rem);
@@ -756,7 +761,7 @@
   }
 }
 .inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-white .count {
-  text-align: right;
+  text-align: center;
 }
 @media (max-width: 1000px) {
   .inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-white .count {
@@ -764,7 +769,7 @@
   }
 }
 .inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-white .count-txt {
-  text-align: right;
+  text-align: center;
 }
 @media (max-width: 1000px) {
   .inside-page .inside-intro-wrapper .container .inside-intro-count.right .bg-white .count-txt {
@@ -836,7 +841,6 @@
 }
 .inside-page .tab-system-wrapper {
   padding-top: clamp(3.125rem, -0.8041rem + 6.1393vw, 6.563rem);
-  padding-bottom: 40px;
 }
 @media (max-width: 767px) {
   .inside-page .tab-system-wrapper {
@@ -1790,6 +1794,7 @@
 }
 .inside-page .engagement-model-wrapp {
   padding-top: clamp(4.375rem, -3.8399rem + 12.8357vw, 11.563rem);
+  padding-top: clamp(4.375rem, -1.3393rem + 8.9286vw, 9.375rem);
 }
 @media (max-width: 767px) {
   .inside-page .engagement-model-wrapp {
@@ -2294,6 +2299,7 @@
 }
 .inside-page .brand-wrapper {
   margin-top: clamp(3.75rem, -1.9643rem + 8.9286vw, 8.75rem);
+  margin-top: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem);
   padding-top: 0;
 }
 .inside-page .brand-wrapper .container {
@@ -2348,6 +2354,20 @@
 .inside-page .brand-wrapper.digital-plaform-wrapper {
   margin-top: 0;
 }
+.inside-page .brand-wrapper.digital-plaform-wrapper .container {
+  padding: clamp(2.5rem, -1.0006rem + 5.4696vw, 5.563rem) clamp(3.125rem, -4.7321rem + 12.2768vw, 10rem);
+}
+@media (max-width: 1080px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .inside-page .brand-wrapper.digital-plaform-wrapper .container {
+    padding-top: 0;
+  }
+}
 .inside-page .brand-wrapper.digital-plaform-wrapper .container > h2 {
   padding-bottom: 0;
   line-height: 1.3em;
@@ -2367,10 +2387,12 @@
 .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list {
   gap: 45px;
   padding-top: clamp(2rem, 0rem + 3.125vw, 3.75rem);
+  padding-bottom: clamp(2rem, 0rem + 3.125vw, 3.75rem);
 }
 @media (max-width: 767px) {
   .inside-page .brand-wrapper.digital-plaform-wrapper .container .brand-list {
     padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 @media (max-width: 650px) {
@@ -2473,6 +2495,7 @@
   border-radius: 0px 0px 4px 4px;
   background: #FFF;
   padding: clamp(6.25rem, -2.3214rem + 13.3929vw, 13.75rem) clamp(1.875rem, 0.4464rem + 2.2321vw, 3.125rem) clamp(2.5rem, -1.0006rem + 5.4696vw, 5.563rem);
+  padding-top: clamp(5rem, 0rem + 7.8125vw, 9.375rem);
 }
 @media (max-width: 1500px) {
   .inside-page .technology-wrapper .container {

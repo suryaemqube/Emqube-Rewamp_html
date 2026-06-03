@@ -236,7 +236,7 @@ export default function About({ data }) {
             </div>
             <div className="inside-intro-title">
               <h1 dangerouslySetInnerHTML={{__html: data?.wpPage?.title}} />
-              <p className="inside-sub-txt" dangerouslySetInnerHTML={{__html: abtMain?.introHighlightedText}} />
+              <p className="inside-sub-txt abt-inside-sub-txt" dangerouslySetInnerHTML={{__html: abtMain?.introHighlightedText}} />
             </div>
             <div className="inside-intro-txt" dangerouslySetInnerHTML={{__html: abtMain?.introSubtext}} />
             <div className="inside-intro-count right">

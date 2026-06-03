@@ -529,7 +529,7 @@ export default function SoftwareSolChild({ data }) {
             <h2 dangerouslySetInnerHTML={{__html: socialMedia.smpTitle}} />
             <ul>
               {socialMedia?.smpList && socialMedia?.smpList.map((socialLst,index) => (
-                <li className="linkedin">
+                <li className={socialLst.smpClassname}>
                   <div className="social-txt-wrapp">
                     <div className="social-media-title">
                       <h3 dangerouslySetInnerHTML={{__html: socialLst.smpListTitle}} />
@@ -909,6 +909,7 @@ export const data = graphql`
       socialMediaPlatform {
         smpTitle
         smpList {
+          smpClassname
           smpListTitle
           smpListText {
             smpHead

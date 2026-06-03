@@ -2407,15 +2407,19 @@ content: "\f009";
           }
           .social-platgform-logo{
             width: 30%;
+            width: 20%;
             @media(max-width: 1500px){
               width: 18%;
+              width: 12%;
               margin-right: 90px;
             }
             @media(max-width: 1400px){
               width: 18%;
+              width: 12%;
             }
             @media(max-width: 991px){
               width: 35%;
+              width: 20%;
             }
             @media(max-width: 767px){
               padding-right: 0;
@@ -2442,6 +2446,8 @@ content: "\f009";
             }
             @media(max-width: 991px){
               width: 40%;
+              width: 30%;
+              padding-left: 60px;
             }
             @media(max-width: 767px){
               padding-left: 0;
@@ -2491,6 +2497,9 @@ content: "\f009";
           }
           @media(max-width: 1023px){
             margin-right: 20px;
+          }
+          @media(max-width: 991px){
+            width: 60%;
           }
           @media(max-width: 767px){
             margin-right: 0;
