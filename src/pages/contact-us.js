@@ -590,7 +590,7 @@ export const Head = ({ data }) => (
   <Seo
     title={data?.wpPage?.title || "Contact Us"}
     seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
+    pageUrl={`https://www.emqube.com${data?.wpPage?.uri}`}
     isContactPage={true}
   >
 

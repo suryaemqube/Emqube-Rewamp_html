@@ -8,8 +8,8 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, children, isContactPage = false }) {
-  const { site, seoData } = useStaticQuery(
+function Seo({ description, title, children, isContactPage = false, seoData, pageUrl }) {
+  const { site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -27,7 +27,8 @@ function Seo({ description, title, children, isContactPage = false }) {
   const defaultTitle = site.siteMetadata?.title
 
   // ✅ Safe URL for contact schema
-  const pageUrl = typeof window !== "undefined" ? window.location.href : ""
+  // const pageUrl = typeof window !== "undefined" ? window.location.href : ""
+  const resolvedUrl = pageUrl || (typeof window !== "undefined" ? window.location.href : "")
 
   var jsonSchema = seoData && seoData.schema ? seoData.schema.raw : "{}";
   var jsonObject = JSON.parse(jsonSchema);
@@ -35,8 +36,8 @@ function Seo({ description, title, children, isContactPage = false }) {
   if (isContactPage && jsonObject["@graph"]) {
     jsonObject["@graph"].push({
       "@type": "ContactPage",
-      "@id": `${pageUrl}#contactpage`,
-      "url": pageUrl,
+      "@id": `${resolvedUrl}#contactpage`,
+      "url": resolvedUrl,
       "name": "Contact emQube",
       "description": "Contact emQube for software development, digital transformation and consulting services.",
       "inLanguage": "en-US"
