@@ -176,8 +176,6 @@ export default function About({ data }) {
   // common script for all animation - ends
 
   // onscroll straegic section aniamtion - starts
-    
-  
     useEffect(() => {
       gsap.registerPlugin(ScrollTrigger)
   
@@ -402,13 +400,17 @@ export default function About({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
+export const Head = ({ data }) => {
   // <Seo
   //   seoData={data?.wpPage?.seo || []}
   //   pageUrl={data?.wpPage?.uri}
   // >
 
   // </Seo>
+  console.log("seoData:", data?.wpPage?.seo)
+  console.log("pageUrl:", data?.wpPage?.uri)
+  console.log("schema raw:", data?.wpPage?.seo?.schema?.raw)
+  return (
   <Seo
     // title={data?.wpPage?.title || "About Us"}
     seoData={data?.wpPage?.seo || []}
@@ -416,7 +418,7 @@ export const Head = ({ data }) => (
     pageUrl={data?.wpPage?.uri}
   >
   </Seo>
-);
+)};
 
 
 export const data = graphql`
