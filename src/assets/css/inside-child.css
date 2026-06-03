@@ -3168,7 +3168,6 @@
 .inside-child .automation-diff-wrapper .feature-table-wrapper .feature-table tbody tr td:first-child {
   font-family: HelvNowDis-medium;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: var(--light_grey);
 }
 .inside-child .automation-diff-wrapper .feature-table-wrapper .feature-table tbody tr td:nth-child(2) {

@@ -340,7 +340,7 @@ export default function Home({ data }) {
                         <span className="num">{count.statTitle}</span>
                         <span className="icon">+</span>
                       </p>
-                      <p className="count-txt">{count.statInfo}</p>
+                      <p className="count-txt" dangerouslySetInnerHTML={{__html: count.statInfo}} />
                     </li>
                   ))
                 }
