@@ -23,6 +23,8 @@ function Seo({ description, title, children, isContactPage = false, seoData, pag
       }
     `
   )
+  
+  console.log("isContactPage--:", isContactPage)
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title

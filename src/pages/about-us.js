@@ -412,8 +412,8 @@ export const Head = ({ data }) => (
   <Seo
     title={data?.wpPage?.title || "About Us"}
     seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
     isContactPage={true}
+    pageUrl={data?.wpPage?.uri}
   >
   </Seo>
 );
