@@ -17,7 +17,7 @@ module.exports = {
     title: `Emqube`,
     description: `Emqube - Software Solutions House`,
     author: `@emqube`,
-    siteUrl: `https://emqube.com/`,
+    siteUrl: `https://emqube.com`,
   },
   plugins: [
     `gatsby-plugin-image`,

@@ -17,6 +17,7 @@ function Seo({ description, title, children, isContactPage = false, seoData, pag
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -29,7 +30,10 @@ function Seo({ description, title, children, isContactPage = false, seoData, pag
   // ✅ Safe URL for contact schema
   // const pageUrl = typeof window !== "undefined" ? window.location.href : ""
    // ✅ Avoid window during SSR — use pageUrl prop directly
-  const resolvedUrl = pageUrl ? `https://www.emqube.com${pageUrl}` : ""
+  // const resolvedUrl = pageUrl ? `https://www.emqube.com${pageUrl}` : ""
+  // ✅ No window — use siteUrl from config + pageUrl prop
+  const siteUrl = site.siteMetadata?.siteUrl || "https://www.emqube.com"
+  const resolvedUrl = pageUrl ? `${siteUrl}${pageUrl}` : siteUrl
 
   var jsonSchema = seoData && seoData.schema ? seoData.schema.raw : "{}";
   var jsonObject = JSON.parse(jsonSchema);
