@@ -585,16 +585,33 @@ export default function ContactUs({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    // title={data?.wpPage?.title || "Contact Us"}
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-    // isContactPage={true}
-  >
+// export const Head = ({ data }) => (
+//   <Seo
+//     // title={data?.wpPage?.title || "Contact Us"}
+//     seoData={data?.wpPage?.seo || []}
+//     pageUrl={data?.wpPage?.uri}
+//     // isContactPage={true}
+//   >
 
-  </Seo>
-);
+//   </Seo>
+// );
+
+export const Head = ({ data }) => {
+
+  console.log("seoData:", data?.wpPage?.seo)
+  console.log("pageUrl:", data?.wpPage?.uri)
+  console.log("schema raw:", data?.wpPage?.seo?.schema?.raw)
+
+  return (
+    <Seo
+      // title={data?.wpPage?.title || "About Us"}
+      seoData={data?.wpPage?.seo || []}
+      isContactPage={true}
+      pageUrl={data?.wpPage?.uri}
+    >
+    </Seo>
+  )
+};
 
 
 export const data = graphql`

@@ -8,7 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, children, isContactPage=false, seoData, pageUrl }) {
+function Seo({ description, title, children, isContactPage = false, seoData, pageUrl }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -68,9 +68,9 @@ function Seo({ description, title, children, isContactPage=false, seoData, pageU
     })
   }
 
-  // if (jsonObject && Object.keys(jsonObject).length !== 0) {
-  //   jsonObject = replaceSlashWithUrl(jsonObject);
-  // }
+  if (jsonObject && Object.keys(jsonObject).length !== 0) {
+    jsonObject = replaceSlashWithUrl(jsonObject);
+  }
   
 
  
