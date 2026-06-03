@@ -32,6 +32,11 @@ function Seo({ description, title, children, isContactPage = false, seoData, pag
 
   var jsonSchema = seoData && seoData.schema ? seoData.schema.raw : "{}";
   var jsonObject = JSON.parse(jsonSchema);
+
+  // 👇 Add this temporarily
+console.log("isContactPage:", isContactPage)
+console.log("@graph exists:", !!jsonObject["@graph"])
+console.log("jsonObject:", jsonObject)
   
   if (isContactPage && jsonObject["@graph"]) {
     jsonObject["@graph"].push({
