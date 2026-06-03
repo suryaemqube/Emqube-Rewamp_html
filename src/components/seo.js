@@ -24,6 +24,9 @@ function Seo({ description, title, children, isContactPage = false, seoData, pag
     `
   )
   
+   // ✅ No window — use siteUrl from config + pageUrl prop
+  const siteUrl = site.siteMetadata?.siteUrl || "https://www.emqube.com"
+  const resolvedUrl = pageUrl ? `${siteUrl}${pageUrl}` : siteUrl
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
@@ -32,9 +35,7 @@ function Seo({ description, title, children, isContactPage = false, seoData, pag
   // const pageUrl = typeof window !== "undefined" ? window.location.href : ""
    // ✅ Avoid window during SSR — use pageUrl prop directly
   // const resolvedUrl = pageUrl ? `https://www.emqube.com${pageUrl}` : ""
-  // ✅ No window — use siteUrl from config + pageUrl prop
-  const siteUrl = site.siteMetadata?.siteUrl || "https://www.emqube.com"
-  const resolvedUrl = pageUrl ? `${siteUrl}${pageUrl}` : siteUrl
+ 
 
   var jsonSchema = seoData && seoData.schema ? seoData.schema.raw : "{}";
   var jsonObject = JSON.parse(jsonSchema);
@@ -86,6 +87,11 @@ function Seo({ description, title, children, isContactPage = false, seoData, pag
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+
+      {/* ✅ Temporarily add this to see what's actually being rendered */}
+      <meta name="debug-isContactPage" content={String(isContactPage)} />
+      <meta name="debug-resolvedUrl" content={resolvedUrl} />
+      <meta name="debug-graphCount" content={String(jsonObject?.["@graph"]?.length)} />
 
       <script type="application/ld+json">{Object.keys(jsonObject).length !== 0 ? JSON.stringify(jsonObject, null, 2) : "{}"}</script>
       
