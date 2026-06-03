@@ -1940,6 +1940,9 @@ footer .inner-container .f-btm .f-social-list li a:hover {
     height: 28px;
   }
 }
+.bot-icon-img svg {
+  width: 75%;
+}
 
 .bot-icon-img img.bot-icon {
   width: 37px;
