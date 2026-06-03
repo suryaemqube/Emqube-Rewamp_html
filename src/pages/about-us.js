@@ -403,11 +403,18 @@ export default function About({ data }) {
 }
 
 export const Head = ({ data }) => (
+  // <Seo
+  //   seoData={data?.wpPage?.seo || []}
+  //   pageUrl={data?.wpPage?.uri}
+  // >
+
+  // </Seo>
   <Seo
+    title={data?.wpPage?.title || "About Us"}
     seoData={data?.wpPage?.seo || []}
     pageUrl={data?.wpPage?.uri}
+    isContactPage={true}
   >
-
   </Seo>
 );
 
