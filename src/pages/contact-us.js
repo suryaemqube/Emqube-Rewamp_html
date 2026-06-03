@@ -24,7 +24,6 @@ gsap.registerPlugin(ScrollToPlugin);
 
 export default function ContactUs({ data }) {
 
-  console.log('schema:-----', data.wpPage.seo.schema.raw);
 
   const contactPage = data?.wpPage || {};
 
@@ -590,7 +589,7 @@ export const Head = ({ data }) => (
   <Seo
     title={data?.wpPage?.title || "Contact Us"}
     seoData={data?.wpPage?.seo || []}
-    pageUrl={`https://www.emqube.com${data?.wpPage?.uri}`}
+    pageUrl={data?.wpPage?.uri}
     isContactPage={true}
   >
 

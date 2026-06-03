@@ -28,7 +28,8 @@ function Seo({ description, title, children, isContactPage = false, seoData, pag
 
   // ✅ Safe URL for contact schema
   // const pageUrl = typeof window !== "undefined" ? window.location.href : ""
-  const resolvedUrl = pageUrl || (typeof window !== "undefined" ? window.location.href : "")
+   // ✅ Avoid window during SSR — use pageUrl prop directly
+  const resolvedUrl = pageUrl ? `https://www.emqube.com${pageUrl}` : ""
 
   var jsonSchema = seoData && seoData.schema ? seoData.schema.raw : "{}";
   var jsonObject = JSON.parse(jsonSchema);
