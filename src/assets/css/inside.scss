@@ -2162,6 +2162,73 @@ content: "\f009";
 			}
 		}
 	}
+	.sft-work-ref-wrapper{
+		.workSwiper,.centered-slides{
+			.swiper-slide{
+				a{
+					&:before{
+						opacity: 1;
+					}
+					.work-wrapp{
+						.proj-txt{
+							@media(max-width: 767px){
+								height: 100%;
+							}
+							.proj-name{
+								width: 100%;
+								// 1024 - 1920 : 17 - 30
+								font-size: clamp(1.063rem, 0.1350rem + 1.4500vw, 1.875rem);
+								line-height: 1.3em;
+								text-align: center;
+								margin-bottom: 0px;
+								opacity: 1;
+								transform: translateX(-50%) translateY(-50px);
+								transition: all 0.5s ease-in-out;
+								position: absolute;
+								left: 50%;
+								bottom: 50px;
+								@media(max-width: 1023px){
+									// 320 - 1023 : 19 - 20
+									font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
+									font-size: 18px;
+								}
+								@media(max-width: 767px){
+									display: block;
+									transform: translateX(-50%) translateY(-20px);
+									bottom: 20px;
+								}
+							}
+							div{
+								p{
+									@media(max-width: 991px){
+										display: none;
+										opacity: 0;
+									}
+								}
+							}
+						}
+					}
+				}
+				&:hover{
+					.work-wrapp{
+						.proj-txt{
+							.proj-name{
+								@media(min-width: 992px){
+									opacity: 0;
+									bottom: -100px;
+									transform: translateX(-50%) translateY(-100px);
+									transition: all 0.5s ease-in-out;
+								}
+								@media(max-width: 767px){
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	// Work Reference Section Ends
 
 	// Brand section starts

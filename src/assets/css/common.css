@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --white: #ffffff;
   --black: #000000;
@@ -1969,7 +1970,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 /* On hover: expand and show text */
 @media (min-width: 1025px) {
   .ai-bot-btn:hover {
-    width: 240px;
+    width: 275px;
   }
   @keyframes pulseWidth {
     0%, 20% {
@@ -2002,7 +2003,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 }
 @media (max-width: 1500px) {
   .ai-bot-btn:hover {
-    width: 215px;
+    width: 250px;
   }
   @keyframes pulseWidth {
     0%, 20% {
@@ -2018,7 +2019,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 }
 @media (max-width: 1400px) {
   .ai-bot-btn:hover {
-    width: 205px;
+    width: 240px;
   }
   @keyframes pulseWidth {
     0%, 20% {
@@ -2048,10 +2049,10 @@ footer .inner-container .f-btm .f-social-list li a:hover {
 }
 @media (min-width: 1025px) {
   .ai-bot-btn.animate-width {
-    animation: pulseWidth 6s ease-in-out infinite;
+    animation: pulseWidth 6s ease-in-out; /* ✅ remove "infinite" */
   }
-  .btn-text {
-    animation: showText 6s ease-in-out infinite;
+  .ai-bot-btn.animate-width .btn-text {
+    animation: showText 6s ease-in-out; /* ✅ remove "infinite" */
   }
 }
 @media (max-width: 767px) {

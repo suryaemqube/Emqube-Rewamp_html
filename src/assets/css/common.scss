@@ -2105,7 +2105,7 @@ footer{
   /* On hover: expand and show text */
   @media(min-width: 1025px){
     .ai-bot-btn:hover {
-        width: 240px;
+        width: 275px;
       }
       @keyframes pulseWidth {
         0%, 20% { width: 60px; }
@@ -2126,7 +2126,7 @@ footer{
   }
   @media(max-width: 1500px){
     .ai-bot-btn:hover {
-        width: 215px;
+        width: 250px;
       }
       @keyframes pulseWidth {
         0%, 20% { width: 60px; }
@@ -2136,7 +2136,7 @@ footer{
   }
   @media(max-width: 1400px){
     .ai-bot-btn:hover {
-        width: 205px;
+        width: 240px;
       }
       @keyframes pulseWidth {
         0%, 20% { width: 60px; }
@@ -2154,13 +2154,23 @@ footer{
         transform: translateX(-10px); }
   }
 
+// @media(min-width: 1025px){
+//     .ai-bot-btn.animate-width {
+//         animation: pulseWidth 6s ease-in-out infinite;
+//         animation-delay: 10s;
+//       }
+//       .btn-text{
+//         animation: showText 6s ease-in-out infinite;
+//         animation-delay: 10s;
+//       }
+// }
 @media(min-width: 1025px){
-    .ai-bot-btn.animate-width {
-        animation: pulseWidth 6s ease-in-out infinite;
-      }
-      .btn-text{
-        animation: showText 6s ease-in-out infinite;
-      }
+  .ai-bot-btn.animate-width {
+    animation: pulseWidth 6s ease-in-out;        /* ✅ remove "infinite" */
+  }
+  .ai-bot-btn.animate-width .btn-text {
+    animation: showText 6s ease-in-out;          /* ✅ remove "infinite" */
+  }
 }
 @media(max-width: 767px){
   .ai-bot-btn:hover{

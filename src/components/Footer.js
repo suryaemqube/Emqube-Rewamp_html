@@ -125,6 +125,32 @@ function Footer({ sliceContext }) {
   }, []);
   // common script for all animation - ends
 
+//   animate ai bot button with some delay interval - starts
+  useEffect(() => {
+	const btn = document.querySelector('.ai-bot-btn');
+	// const btn1 = document.querySelector('.btn-text');
+	
+	const runAnimation = () => {
+		btn.classList.add('animate-width');        // start animation
+		
+		setTimeout(() => {
+		btn.classList.remove('animate-width');   // stop after 6s (one cycle)
+		}, 6000);
+	};
+
+	// First trigger after 10s of page load
+	const initialDelay = setTimeout(runAnimation, 10000);
+
+	// Then repeat every 5 minutes
+	const interval = setInterval(runAnimation, 1 * 60 * 1000);
+
+	return () => {
+		clearTimeout(initialDelay);
+		clearInterval(interval);
+	};
+	}, []);
+	//   animate ai bot button with some delay interval - ends
+
 
 	return (
     <>

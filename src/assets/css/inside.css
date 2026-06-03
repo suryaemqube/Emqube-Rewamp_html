@@ -2297,6 +2297,59 @@
     fill: var(--white);
   }
 }
+.inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a:before, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a:before {
+  opacity: 1;
+}
+@media (max-width: 767px) {
+  .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a .work-wrapp .proj-txt, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a .work-wrapp .proj-txt {
+    height: 100%;
+  }
+}
+.inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a .work-wrapp .proj-txt .proj-name, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a .work-wrapp .proj-txt .proj-name {
+  width: 100%;
+  font-size: clamp(1.063rem, 0.135rem + 1.45vw, 1.875rem);
+  line-height: 1.3em;
+  text-align: center;
+  margin-bottom: 0px;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50px);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+}
+@media (max-width: 1023px) {
+  .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a .work-wrapp .proj-txt .proj-name, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a .work-wrapp .proj-txt .proj-name {
+    font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a .work-wrapp .proj-txt .proj-name, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a .work-wrapp .proj-txt .proj-name {
+    display: block;
+    transform: translateX(-50%) translateY(-20px);
+    bottom: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a .work-wrapp .proj-txt div p, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a .work-wrapp .proj-txt div p {
+    display: none;
+    opacity: 0;
+  }
+}
+@media (min-width: 992px) {
+  .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide:hover .work-wrapp .proj-txt .proj-name, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide:hover .work-wrapp .proj-txt .proj-name {
+    opacity: 0;
+    bottom: -100px;
+    transform: translateX(-50%) translateY(-100px);
+    transition: all 0.5s ease-in-out;
+  }
+}
+@media (max-width: 767px) {
+  .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide:hover .work-wrapp .proj-txt .proj-name, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide:hover .work-wrapp .proj-txt .proj-name {
+    display: block;
+  }
+}
 .inside-page .brand-wrapper {
   margin-top: clamp(3.75rem, -1.9643rem + 8.9286vw, 8.75rem);
   margin-top: clamp(3.75rem, 0.8929rem + 4.4643vw, 6.25rem);

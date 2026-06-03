@@ -1051,7 +1051,7 @@ export default function SftProduct({ data }) {
 
       {/* Work Reference Section Starts */}
       {softSolChildProject.length > 0  && 
-      <section className="work-ref-wrapper">
+      <section className="work-ref-wrapper sft-work-ref-wrapper">
         <div className="container">
           <h2 className="txt-center slide-up">Select Projects</h2>
         </div>
@@ -1083,7 +1083,10 @@ export default function SftProduct({ data }) {
                         }
                       />
                     </div>
-                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    <div className="proj-txt">
+                      <p className="proj-name" dangerouslySetInnerHTML={{__html: project?.title}} />
+                      <div dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    </div>
                   </div>
                 </a>
               </div>
@@ -1145,7 +1148,10 @@ export default function SftProduct({ data }) {
                         }
                       />
                     </div>
-                    <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    <div className="proj-txt">
+                      <p className="proj-name" dangerouslySetInnerHTML={{__html: project?.title}} />
+                      <div dangerouslySetInnerHTML={{ __html: project?.content }} />
+                    </div>
                   </div>
                 </a>
               </SwiperSlide>
