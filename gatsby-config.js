@@ -87,7 +87,6 @@ module.exports = {
                       mediaItemUrl
                     }
                   }
-                  content
                   link
                   slug
                   uri
@@ -104,11 +103,13 @@ module.exports = {
           }
         `,
         resolveSiteUrl: () => "https://emqube.com",
-        resolvePages: ({ allWpPage, allWpPost }) => {
-          return [
-            ...allWpPage.nodes,
-            ...allWpPost.nodes,
-          ]
+        resolvePages: ({ allWpPage, allWpPortfolio, allWpBlog }) => {
+          // ✅ Match exactly what's in the query above
+          const pages     = allWpPage?.nodes      || []
+          const portfolio = allWpPortfolio?.nodes || []
+          const blogs     = allWpBlog?.nodes      || []
+
+          return [...pages, ...portfolio, ...blogs]
         },
         serialize: ({ uri, modifiedGmt }) => ({
           url: uri,                  // uri is like /contact-us/ — plugin prepends siteUrl
