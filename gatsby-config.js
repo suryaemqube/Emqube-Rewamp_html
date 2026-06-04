@@ -47,5 +47,74 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+          {
+            allWpPage {
+              nodes {
+                uri
+                modifiedGmt
+              }
+            }
+            allWpPortfolio{
+              edges {
+                node {
+                  content
+                  title
+                  link
+                  uri
+                  slug
+                  modifiedGmt
+                  tags {
+                    nodes {
+                      name
+                      slug
+                    }
+                  }
+                }
+              }
+            }
+            allWpBlog {
+              edges {
+                node {
+                  title
+                  date(formatString: "MMMM DD, YYYY")
+                  featuredImage {
+                    node {
+                      altText
+                      mediaItemUrl
+                    }
+                  }
+                  content
+                  link
+                  slug
+                  uri
+                  modifiedGmt
+                  blogCategories {
+                    nodes {
+                      slug
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => "https://emqube.com",
+        resolvePages: ({ allWpPage, allWpPost }) => {
+          return [
+            ...allWpPage.nodes,
+            ...allWpPost.nodes,
+          ]
+        },
+        serialize: ({ uri, modifiedGmt }) => ({
+          url: uri,                  // uri is like /contact-us/ — plugin prepends siteUrl
+          lastmod: modifiedGmt,
+        }),
+      },
+    }
   ],
 }
