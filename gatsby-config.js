@@ -106,8 +106,8 @@ module.exports = {
         resolvePages: ({ allWpPage, allWpPortfolio, allWpBlog }) => {
           // ✅ Match exactly what's in the query above
           const pages     = allWpPage?.nodes      || []
-          const portfolio = allWpPortfolio?.nodes || []
-          const blogs     = allWpBlog?.nodes      || []
+          const portfolio = allWpPortfolio?.edges?.node || []
+          const blogs     = allWpBlog?.edges?.node      || []
 
           return [...pages, ...portfolio, ...blogs]
         },
