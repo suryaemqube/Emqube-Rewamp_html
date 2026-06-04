@@ -138,6 +138,18 @@ export default function Reference({ data }) {
   }, []);
   // common script for all animation - ends  
 
+  const [isMobile, setIsMobile] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(8);
+
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 9);
+  };
+
+  
+  const logos = options?.brandLogos.map(item => ({
+    src: item.mediaItemUrl, 
+    alt: item.altText
+  })) ?? [];
 
   return (
     <Layout isRef>
@@ -303,87 +315,32 @@ export default function Reference({ data }) {
 
       {/* Work Reference Section Starts */}
       {softSolMainProjectAll.length > 0 && 
-      <section className="work-ref-wrapper">
+      <section className="work-ref-wrapper client-logo-wrapper">
         <div className="container">
           <h2 className="txt-center slide-up">Clients</h2>
           <p>An average relationship tenure with clients is 10+ years, and since 2003 we have been working with reputed companies in Dubai, UAE and USA.</p>
+          <ul className="brand-list d-flex slide-up">
+            {(isMobile ? logos.slice(0, visibleCount) : logos).map((logo, index) => (
+              <li key={index}>
+                <a href="#">
+                  <img src={logo.src} width="148" height="72" alt={logo.alt} />
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {isMobile && (
+            <a href="javascript:void(0);"
+              onClick={loadMore}
+              className={`view-more-btn ${
+                visibleCount >= logos.length ? "disabled" : ""
+              }`}
+              disabled={visibleCount >= logos.length}
+            >
+              {visibleCount >= logos.length ? "No more brands" : "View more"}
+            </a>
+          )}
         </div>
-        <Swiper className="workSwiper slide-up"
-          modules={[Navigation, Pagination]}
-          // slidesPerView={3.2}
-          // loop={true}
-          navigation
-          // pagination
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.1,
-              spaceBetween: 10,
-              slidesOffsetBefore: 20,
-            },
-            768: {
-              slidesPerView: 1.9,
-              spaceBetween: 10,
-              slidesOffsetBefore: 20,
-            },
-            991: {
-              slidesPerView: 2.5,
-              slidesOffsetBefore: 145,
-              spaceBetween: 20,
-            },
-            1300: {
-              slidesPerView: 3.6,
-              slidesOffsetBefore: 145,
-              spaceBetween: 20,
-            },
-          }}
-        >
-          {softSolMainProjectAll.map((project, index) => (
-            <SwiperSlide key={project.id || index}>
-              <a href={`/software-projects/${project.slug}`}>
-                <div className="work-wrapp">
-                  {/* <div className="client-icon">
-                    <img src="/assets/img/emovers-new-logo.webp" alt="Emovers logo"></img>
-                  </div> */}
-                  <span className="arrow-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59" fill="none">
-                      <path d="M21.1521 39.374L37.1533 18.9342M37.1533 18.9342L22.9769 20.1986M37.1533 18.9342L39.3288 32.9996" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                  <div className="proj-img">
-                    {/* <img src="/assets/img/emove-project-img.webp" alt="Emovers"></img> */}
-                    {/* <img
-                      src={
-                        project?.featuredImage?.node?.mediaItemUrl
-                          ? project.featuredImage.node.mediaItemUrl
-                          : "https://wp.emqube.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
-                      }
-                      alt={
-                        project?.featuredImage?.node?.altText
-                          ? project.featuredImage.node.altText
-                          : project?.title
-                      }
-                    /> */}
-                    <img
-                      src={
-                        project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
-                          ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.mediaItemUrl
-                          : "https://wp.emqube.com/wp-content/uploads/2026/05/software-project-placeholder.webp"  // fallback image
-                      }
-                      alt={
-                        project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
-                          ? project?.softwarePortfolioLayout?.insidePageLisitngImage?.altText
-                          : project?.title
-                      }
-                    />
-                  </div>
-                  <div className="proj-txt" dangerouslySetInnerHTML={{ __html: project?.content }} />
-                </div>
-              </a>
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </section>
       }
       {/* Work Reference Section Ends */}
@@ -485,6 +442,10 @@ export const data = graphql`
           whatsappurl
           callnumber
           contactusUrl
+          brandLogos {
+            altText
+            mediaItemUrl
+          }
         }
       }
     }
