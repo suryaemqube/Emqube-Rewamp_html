@@ -289,6 +289,37 @@ export default function Home({ data }) {
   // homepage video section animation - onscroll - ends
 
 
+  // homepage count animation - starts
+  useEffect(() => {
+    const itemsCount = document.querySelectorAll(".count-wrapper .count span.num");
+    if (!itemsCount.length) return;
+
+    itemsCount.forEach((item) => {
+      const endValue = parseFloat(item.dataset.percent) || 0;
+
+      gsap.fromTo(item,
+        { innerText: 0 },
+        {
+          innerText: endValue,
+          duration: 2,
+          ease: "power1.out",
+          snap: { innerText: 1 },
+          onUpdate: function () {
+            const target = this.targets()[0];
+            if (target) {
+              target.innerHTML = Math.ceil(parseFloat(target.innerText) || 0);
+            }
+          },
+          scrollTrigger: {
+            trigger: ".count-wrapper",
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+  }, []);
+  // homepage count animation - ends
   
 
   return (
@@ -337,7 +368,7 @@ export default function Home({ data }) {
                   home?.stats.map((count, index) => (
                     <li key={`count` + index}>
                       <p className="count">
-                        <span className="num">{count.statTitle}</span>
+                        <span className="num" id={`counter_` + index} data-percent={count.statTitle}>{count.statTitle}</span>
                         <span className="icon">+</span>
                       </p>
                       <p className="count-txt" dangerouslySetInnerHTML={{__html: count.statInfo}} />
