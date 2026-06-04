@@ -330,7 +330,7 @@ export default function SoftwareSolChild({ data }) {
               <a href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (typeof window !== "undefined") return;
+                  // if (typeof window !== "undefined") return;
                   gsap.to(window, {
                     duration: 1,
                     scrollTo: {
