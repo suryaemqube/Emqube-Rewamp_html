@@ -29,6 +29,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-wordpress`,
@@ -47,75 +48,75 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        query: `
-          {
-            allWpPage {
-              nodes {
-                uri
-                modifiedGmt
-              }
-            }
-            allWpPortfolio{
-              edges {
-                node {
-                  content
-                  title
-                  link
-                  uri
-                  slug
-                  modifiedGmt
-                  tags {
-                    nodes {
-                      name
-                      slug
-                    }
-                  }
-                }
-              }
-            }
-            allWpBlog {
-              edges {
-                node {
-                  title
-                  date(formatString: "MMMM DD, YYYY")
-                  featuredImage {
-                    node {
-                      altText
-                      mediaItemUrl
-                    }
-                  }
-                  link
-                  slug
-                  uri
-                  modifiedGmt
-                  blogCategories {
-                    nodes {
-                      slug
-                      name
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `,
-        resolveSiteUrl: () => "https://emqube.com",
-        resolvePages: ({ allWpPage, allWpPortfolio, allWpBlog }) => {
-          // ✅ Match exactly what's in the query above
-          const pages     = allWpPage?.nodes      || []
-          const portfolio = allWpPortfolio?.edges?.node || []
-          const blogs     = allWpBlog?.edges?.node      || []
+    // {
+    //   resolve: `gatsby-plugin-sitemap`,
+    //   options: {
+    //     query: `
+    //       {
+    //         allWpPage {
+    //           nodes {
+    //             uri
+    //             modifiedGmt
+    //           }
+    //         }
+    //         allWpPortfolio{
+    //           edges {
+    //             node {
+    //               content
+    //               title
+    //               link
+    //               uri
+    //               slug
+    //               modifiedGmt
+    //               tags {
+    //                 nodes {
+    //                   name
+    //                   slug
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         }
+    //         allWpBlog {
+    //           edges {
+    //             node {
+    //               title
+    //               date(formatString: "MMMM DD, YYYY")
+    //               featuredImage {
+    //                 node {
+    //                   altText
+    //                   mediaItemUrl
+    //                 }
+    //               }
+    //               link
+    //               slug
+    //               uri
+    //               modifiedGmt
+    //               blogCategories {
+    //                 nodes {
+    //                   slug
+    //                   name
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     resolveSiteUrl: () => "https://emqube.com",
+    //     resolvePages: ({ allWpPage, allWpPortfolio, allWpBlog }) => {
+    //       // ✅ Match exactly what's in the query above
+    //       const pages     = allWpPage?.nodes      || []
+    //       const portfolio = allWpPortfolio?.edges?.node || []
+    //       const blogs     = allWpBlog?.edges?.node      || []
 
-          return [...pages, ...portfolio, ...blogs]
-        },
-        serialize: ({ uri, modifiedGmt }) => ({
-          url: uri,                  // uri is like /contact-us/ — plugin prepends siteUrl
-          lastmod: modifiedGmt,
-        }),
-      },
-    }
+    //       return [...pages, ...portfolio, ...blogs]
+    //     },
+    //     serialize: ({ uri, modifiedGmt }) => ({
+    //       url: uri,                  // uri is like /contact-us/ — plugin prepends siteUrl
+    //       lastmod: modifiedGmt,
+    //     }),
+    //   },
+    // }
   ],
 }
