@@ -202,7 +202,7 @@ export default function Reference({ data }) {
 
         const generateGuestId = async () => {
             try {
-                const response = await fetch("https://wp.emqube.com/wp-json/custom/v1/ai-response", {
+                const response = await fetch("https://wp.emqube.com/wp-json/custom/v1/ai-guest-user", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
