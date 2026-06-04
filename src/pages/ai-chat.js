@@ -202,7 +202,7 @@ export default function Reference({ data }) {
 
         const generateGuestId = async () => {
             try {
-                const response = await fetch("https://emqube.com/wp-json/custom/v1/ai-guest-user", {
+                const response = await fetch("https://wp.emqube.com/wp-json/custom/v1/ai-response", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -247,7 +247,7 @@ export default function Reference({ data }) {
                 }
                 if (!guestId || !question || !answer) return
 
-                const res = await fetch("https://emqube.com/wp-json/custom/v1/ai-response", {
+                const res = await fetch("https://wp.emqube.com/wp-json/custom/v1/ai-response", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

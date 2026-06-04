@@ -1,6 +1,6 @@
 exports.handler = async () => {
   try {
-    const response = await fetch(`${process.env.WP_URL}/wp-json/jwt-auth/v1/token`, {
+    const response = await fetch(`${process.env.GATSBY_BASE_URL}/wp-json/jwt-auth/v1/token`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
