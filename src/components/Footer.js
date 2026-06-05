@@ -142,7 +142,8 @@ function Footer({ sliceContext }) {
 	const initialDelay = setTimeout(runAnimation, 10000);
 
 	// Then repeat every 5 minutes
-	const interval = setInterval(runAnimation, 1 * 60 * 1000);
+	// const interval = setInterval(runAnimation, 1 * 60 * 1000);
+	const interval = setInterval(runAnimation, 15000);
 
 	return () => {
 		clearTimeout(initialDelay);
