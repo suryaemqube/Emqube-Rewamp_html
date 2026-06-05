@@ -174,5 +174,13 @@
     {
         "fromPath": "/emqube-contact-form/",
         "toPath": "/contact-us/"
+    },
+    {
+        "fromPath": "/industries/",
+        "toPath": "/software-solutions-house/"
+    },
+    {
+        "fromPath": "/135-thank-you/",
+        "toPath": "/"
     }
 ]

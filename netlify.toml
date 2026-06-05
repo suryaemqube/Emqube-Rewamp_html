@@ -3,3 +3,9 @@
   to = "/emqonnect/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/industries/*"
+  to = "/software-solutions-house/"
+  status = 301
+  force = true

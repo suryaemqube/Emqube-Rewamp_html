@@ -125,9 +125,18 @@ export default function EmqonnectDetail({ data }) {
       {/* Inside intro section starts */}
       <section className="inside-intro-wrapper inside-child-intro-wrapper">
         <div class="container">
-          <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
+          {/* <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
             <span><a href="/">Home</a></span>
             <span><span> / </span><span class="post post-page current-item">The Rejuvenating Effect of Shinrin-Yoku</span></span>
+          </div> */}
+          <div className="breadcrumbs">
+            <span><a href="/">Home</a></span>
+            <span className="seperate"> / </span>
+            <span><a href="/emqonnect/">emQonnect</a></span>
+            <span className="seperate"> / </span>
+            <span className="post post-page current-item"
+              dangerouslySetInnerHTML={{__html: emqoPost?.title}}
+            />
           </div>
           <div className="title-wrapp">
             <h1 dangerouslySetInnerHTML={{__html: emqoPost.title}} />
@@ -288,6 +297,7 @@ export default function EmqonnectDetail({ data }) {
 export const Head = ({ data }) => {
   const post = data?.wpBlog;
   const seo = post?.seo;
+  const siteUrl = "https://www.emqube.com"
 
   // strip HTML tags from content for fallback description
   const plainContent = post?.content?.replace(/<[^>]*>/g, "") || "";
@@ -297,12 +307,42 @@ export const Head = ({ data }) => {
     title: seo?.title || post?.title || "",
     metaDesc: seo?.metaDesc || plainContent.slice(0, 160).trim() || "",
   };
+  // ✅ JSON-LD breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": `${siteUrl}/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "emQonnect",
+        "item": `${siteUrl}/emqonnect/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post?.title || "",
+        "item": `${siteUrl}/emqonnect/${post?.slug}/`
+      }
+    ]
+  }
 
   return (
     <Seo
       seoData={seoWithFallbacks}
       pageUrl={post?.uri}
-    />
+    >
+      {/* ✅ Breadcrumb JSON-LD */}
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
+    </Seo>
   );
 };
 
@@ -313,6 +353,7 @@ export const query = graphql`
       title
       content
       uri
+      slug
 			seo {
         canonical
         opengraphDescription
