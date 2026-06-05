@@ -1,3 +1,5 @@
+import axios from "axios";
+
 exports.handler = async () => {
   try {
     const response = await fetch(`${process.env.GATSBY_BASE_URL}/wp-json/jwt-auth/v1/token`, {
@@ -9,11 +11,12 @@ exports.handler = async () => {
       }),
     });
 
-    const data = await response.json();
+    // const data = await response.json();
 
     return {
       statusCode: 200,
       body: JSON.stringify({ token: data.token }),
+      body: JSON.stringify({ token: response.data.token })
     };
   } catch (error) {
     return {
