@@ -860,7 +860,7 @@ export default function SftProduct({ data }) {
                 {softProductChild?.zohoWpwContent.map((partnerLst, index) => (
                   <li className="stagger-li">
                     <div className="part-img">
-                      <img src={partnerLst?.wpwImage?.mediaItemUrl} alt={partnerLst?.zohoWpwImage?.altText}></img>
+                      <img src={partnerLst?.zohoWpwImage?.mediaItemUrl} alt={partnerLst?.zohoWpwImage?.altText}></img>
                       <div className="img-angle"><img src="https://wp.emqube.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
                     </div>
                     <div className="part-txt">
