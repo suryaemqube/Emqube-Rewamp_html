@@ -151,6 +151,26 @@ export default function Reference({ data }) {
     alt: item.altText
   })) ?? [];
 
+  const getPortfolioLink = (liClass, categorySlug) => {
+    const hashMap = {
+      'website'   : '#website',
+      'social': '#social-media',
+      'email' : '#emailer',
+      'digital'  : '#digitalMedia',
+      'videos'   : '#corpVid',
+    }
+
+    // ✅ Split by space and find first class that matches hashMap
+    const classes = liClass?.split(' ') || []
+    const matchedClass = classes.find(cls => hashMap[cls])
+
+    return `/digital-portfolio${hashMap[matchedClass] || ''}`
+
+    // if no category slug, just go to page
+    if (!categorySlug) return '/software-projects/'
+    return `/software-projects/?category=${categorySlug}`
+  }
+
   return (
     <Layout isRef>
     <>
@@ -200,7 +220,14 @@ export default function Reference({ data }) {
               <ul>
                 {refMain?.refSoftwareProjectList.map((refSft,index) => (
                   <li>
-                    <a href={`/${refSft?.refSoftwareProjectsCategoryLink?.slug || "software-projects"}/`}>
+                    {/* <a href={`/${refSft?.refSoftwareProjectsCategoryLink?.slug || "software-projects"}/`}> */}
+                    <a href={
+                      refSft?.refSoftwareProjectsCategoryLink?.slug
+                        ? `/software-projects/?category=${refSft.refSoftwareProjectsCategoryLink.slug}#project-list`
+                        : '/software-projects/#project-list'
+                    }>
+
+                    {/* </a> */}
                       <h3 dangerouslySetInnerHTML={{__html: refSft.refSoftwareProjectsCategoryName}} />
                       <div dangerouslySetInnerHTML={{__html: refSft.refSoftwareProjectsCategoryText}} />
                     </a>
@@ -229,7 +256,7 @@ export default function Reference({ data }) {
                     className={item?.liClass}
                   >
                     <Link
-                      to="/digital-portfolio"
+                      to={getPortfolioLink(item?.liClass)}
                       // to={`/${item?.digitalPortfolioLink?.slug}/`}
                     >
                       <div className="digi-proj-txt">
@@ -258,7 +285,7 @@ export default function Reference({ data }) {
                     className={item?.liClass}
                   >
                     <Link
-                      to="/digital-portfolio"
+                      to={getPortfolioLink(item?.liClass)}
                       // to={`/${item?.digitalPortfolioLink?.slug}/`}
                     >
                       <div className="digi-proj-txt">
@@ -287,7 +314,7 @@ export default function Reference({ data }) {
                     className={item?.liClass}
                   >
                     <Link
-                     to="/digital-portfolio"
+                     to={getPortfolioLink(item?.liClass)}
                       // to={`/${item?.digitalPortfolioLink?.slug}/`}
                     >
                       <div className="digi-proj-txt">
@@ -411,10 +438,8 @@ export const data = graphql`
         refSoftwareProjectSectionTitle
         refSoftwareProjectList {
           refSoftwareProjectsCategoryLink {
-            ... on WpPage {
-              id
-              slug
-            }
+            link
+            slug
           }
           refSoftwareProjectsCategoryName
           refSoftwareProjectsCategoryText

@@ -32,6 +32,16 @@ export default function SoftareProj({ data }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedTag, setSelectedTag] = useState("all");
 
+  // ✅ Add this — read ?category= from URL on page load
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const params = new URLSearchParams(window.location.search)
+    const category = params.get("category")
+    if (category) {
+      setSelectedTag(category)
+    }
+  }, [])
+
   // extract unique tags from all posts
   const tags = [
     ...new Map(
@@ -196,7 +206,7 @@ export default function SoftareProj({ data }) {
 
       {/* software project list section starts */}
       {/* {softProjList &&  */}
-      <section className={`sft-project-list-wrapper ${isLoading ? "is-loading" : ""}`} ref={listingSectionRef}>
+      <section className={`sft-project-list-wrapper ${isLoading ? "is-loading" : ""}`} id="project-list" ref={listingSectionRef}>
         <div className="container">
           {/* Filter dropdown — same as emqonnect */}
           <div className="software-top-filter">
