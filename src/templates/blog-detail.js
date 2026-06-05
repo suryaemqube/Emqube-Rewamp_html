@@ -131,10 +131,8 @@ export default function EmqonnectDetail({ data }) {
           </div> */}
           <div className="breadcrumbs">
             <span><a href="/">Home</a></span>
-            <span className="seperate"> &gt; </span>
-            <span><a href="/emqonnect/">emQonnect</a></span>
-            <span className="seperate"> &gt; </span>
-            <span><span className="post post-page current-item"
+            <span><span className="seperate"> &gt; </span><a href="/emqonnect/">emQonnect</a></span>
+            <span><span className="seperate"> &gt; </span><span className="post post-page current-item"
               dangerouslySetInnerHTML={{__html: emqoPost?.title}}
             /></span>
           </div>
