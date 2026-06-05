@@ -255,6 +255,15 @@ exports.createPages = async ({ actions, graphql }) => {
         id: post.id,                       // ← passed as $id to template query
       },
     });
+    
+    // ✅ Redirect old /blog/slug/ → /emqonnect/
+    createRedirect({
+      fromPath: `/blog/${post.slug}/`,
+      toPath: `/emqonnect/`,
+      isPermanent: true,
+      redirectInBrowser: true,
+    });
+    
   });
 
    // parent slug → first child slug

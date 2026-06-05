@@ -40,6 +40,19 @@ export default function SoftareProj({ data }) {
     if (category) {
       setSelectedTag(category)
     }
+    // ✅ Scroll to listing section if hash is present
+    if (window.location.hash === "#project-list") {
+      setTimeout(() => {
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: {
+            y: "#project-list",
+            offsetY: 100,
+          },
+          ease: "power2.out",
+        })
+      }, 500) // small delay to let page render first
+    }
   }, [])
 
   // extract unique tags from all posts

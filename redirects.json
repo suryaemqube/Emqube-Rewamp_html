@@ -150,5 +150,29 @@
     {
         "fromPath": "/news/",
         "toPath": "/emqonnect/"
+    },
+    {
+        "fromPath": "/salespro/",
+        "toPath": "/software-projects/"
+    },
+    {
+        "fromPath": "/contact-us/enquiry_biz/",
+        "toPath": "/contact-us/"
+    },
+    {
+        "fromPath": "/ducab-ipad-application.asp",
+        "toPath": "/"
+    },
+    {
+        "fromPath": "/software-development/mobile-application-development/sales-pro-application",
+        "toPath": "/software-solutions-house/software-development/mobile-app-development/"
+    },
+    {
+        "fromPath": "/zoho-crm-plus/",
+        "toPath": "/software-solutions-house/software-products/crm-zoho-salesforce/"
+    },
+    {
+        "fromPath": "/emqube-contact-form/",
+        "toPath": "/contact-us/"
     }
 ]
