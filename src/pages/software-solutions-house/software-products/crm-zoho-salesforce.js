@@ -841,21 +841,40 @@ export default function SftProduct({ data }) {
       {/* engagement model ends */}
 
       {/* partner with emqube section starts */}
-      {softProductChild?.zohoWhyPartnerSectionTitle && softProductChild?.zohoWhyPartnerSectionText && softProductChild?.zohoWhyPartnerSectionRightLogo &&
+      {/* {softProductChild?.zohoWhyPartnerSectionTitle && softProductChild?.zohoWhyPartnerSectionText && softProductChild?.zohoWhyPartnerSectionRightLogo && */}
         <section className="inside-partner-wrapper">
           <div className="container">
             <h2 dangerouslySetInnerHTML={{__html: softProductChild?.zohoWhyPartnerSectionTitle}} />
-            <ul className="partner-single">
-              <li className="stagger-li">
-                <div className="part-txt" dangerouslySetInnerHTML={{__html: softProductChild?.zohoWhyPartnerSectionText}} />
-                <div className="part-img">
-                  <img src={softProductChild?.zohoWhyPartnerSectionRightLogo?.mediaItemUrl} alt={softProductChild?.zohoWhyPartnerSectionTitle}></img>
-                </div>
-              </li>
-            </ul>
+            {softProductChild?.zohoWhyPartnerSectionText && 
+              <ul className="partner-single">
+                <li className="stagger-li">
+                  <div className="part-txt" dangerouslySetInnerHTML={{__html: softProductChild?.zohoWhyPartnerSectionText}} />
+                  <div className="part-img">
+                    <img src={softProductChild?.zohoWhyPartnerSectionRightLogo?.mediaItemUrl} alt={softProductChild?.zohoWhyPartnerSectionTitle}></img>
+                  </div>
+                </li>
+              </ul>
+            }
+            {softProductChild?.zohoWpwContent.length > 0 && 
+              <ul>
+                {softProductChild?.zohoWpwContent.map((partnerLst, index) => (
+                  <li className="stagger-li">
+                    <div className="part-img">
+                      <img src={partnerLst?.wpwImage?.mediaItemUrl} alt={partnerLst?.zohoWpwImage?.altText}></img>
+                      <div className="img-angle"><img src="https://wp.emqube.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
+                    </div>
+                    <div className="part-txt">
+                      <h3 dangerouslySetInnerHTML={{__html: partnerLst.zohoWpwTitle}} />
+                      <div dangerouslySetInnerHTML={{__html: partnerLst.zohoWpwDescription}} />
+                    </div>
+                  </li>
+                ))
+                }
+              </ul>
+            }
           </div>
         </section>
-      }
+      {/* } */}
       {/* partner with emqube section ends */}
 
       {/* zoho app section starts */}
@@ -1140,6 +1159,14 @@ export const data = graphql`
         zohoFaqList {
           zohoFaqAnswer
           zohoFaqQuestion
+        }
+        zohoWpwContent {
+          zohoWpwDescription
+          zohoWpwTitle
+          zohoWpwImage {
+            altText
+            mediaItemUrl
+          }
         }
         zohoCtaText
         zohoCtaTitle

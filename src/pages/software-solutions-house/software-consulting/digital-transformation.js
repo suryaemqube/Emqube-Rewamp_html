@@ -498,23 +498,42 @@ export default function SoftwareSolChild({ data }) {
       {/* engagement model ends */}
 
       {/* partner with emqube section starts */}
-      {softSolChild?.wpText &&
+      {/* {softSolChild?.wpText && */}
         <section className="inside-partner-wrapper">
           <div className="container">
             <h2 dangerouslySetInnerHTML={{__html: softSolChild?.wpTitle}} />
-            <ul className="partner-single">
-              <li className="stagger-li">
-                <div className="part-txt" dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
-                {softSolChild?.whyPartnerImage && 
-                  <div className="part-img">
-                    <img src={softSolChild?.whyPartnerImage?.mediaItemUrl} alt={softSolChild?.wpTitle}></img>
-                  </div>
+            {softSolChild?.wpText &&
+              <ul className="partner-single">
+                <li className="stagger-li">
+                  <div className="part-txt" dangerouslySetInnerHTML={{__html: softSolChild?.wpText}} />
+                  {softSolChild?.whyPartnerImage && 
+                    <div className="part-img">
+                      <img src={softSolChild?.whyPartnerImage?.mediaItemUrl} alt={softSolChild?.wpTitle}></img>
+                    </div>
+                  }
+                </li>
+              </ul>
+            }
+            {softSolChild?.wpwContent.length > 0 && 
+              <ul>
+                {softSolChild?.wpwContent.map((partnerLst, index) => (
+                  <li className="stagger-li">
+                    <div className="part-img">
+                      <img src={partnerLst?.wpwImage?.mediaItemUrl} alt={partnerLst?.wpwImage?.altText}></img>
+                      <div className="img-angle"><img src="https://wp.emqube.com/wp-content/uploads/2026/05/partner-shape-circle.png"></img></div>
+                    </div>
+                    <div className="part-txt">
+                      <h3 dangerouslySetInnerHTML={{__html: partnerLst.wpwTitle}} />
+                      <div dangerouslySetInnerHTML={{__html: partnerLst.wpwDescription}} />
+                    </div>
+                  </li>
+                ))
                 }
-              </li>
-            </ul>
+              </ul>
+            }
           </div>
         </section>
-      }
+      {/* } */}
       {/* partner with emqube section ends */}
 
       {/* industry section starts */}
