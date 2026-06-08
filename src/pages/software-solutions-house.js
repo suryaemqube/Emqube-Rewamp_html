@@ -998,14 +998,133 @@ export default function SoftwareSolMain({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
+export const Head = ({ data }) => {
 
-  </Seo>
-);
+  const softwareServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Software Solutions House",
+    "alternateName": "Custom Software Development Services Dubai",
+    "description": "Fulfill your digital transformation goals with custom software development and SaaS integration services from emQube in Dubai.",
+    "url": "https://emqube.com/software-solutions-house/",
+    "provider": {
+      "@type": "Organization",
+      "name": "emQube",
+      "url": "https://emqube.com",
+      "telephone": "+971507155381",
+      "email": "info@emqube.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#801 M Square, Sheikh Khalifa Bin Zayed Street",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    },
+    "serviceType": "Software Development",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Software Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Business Application Development",
+            "url": "https://emqube.com/software-solutions-house/software-development/business-application-development/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Enterprise Mobile App Development",
+            "url": "https://emqube.com/software-solutions-house/software-development/mobile-app-development/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI & Generative AI Development",
+            "url": "https://emqube.com/software-solutions-house/software-development/ai-development/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "WhatsApp for Business & AI Chatbots",
+            "url": "https://emqube.com/software-solutions-house/software-development/whatsapp-for-business/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business Intelligence & Analytics",
+            "url": "https://emqube.com/software-solutions-house/software-development/business-intelligence/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Scalable E-Commerce Solutions",
+            "url": "https://emqube.com/software-solutions-house/software-development/e-commerce-applications/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "CRM Implementation (Zoho & Salesforce)",
+            "url": "https://emqube.com/software-solutions-house/software-products/crm-zoho-salesforce/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "ERP Transformation (Zoho One & Odoo)",
+            "url": "https://emqube.com/software-solutions-house/software-products/erp-zoho-one-odoo/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Digital Transformation Consulting",
+            "url": "https://emqube.com/software-solutions-house/software-consulting/digital-transformation/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MVP & Software Product Development",
+            "url": "https://emqube.com/software-solutions-house/software-consulting/product-development/"
+          }
+        }
+      ]
+    }
+  };
+
+  return (
+    <>
+      <Seo
+        seoData={data?.wpPage?.seo || []}
+        pageUrl={data?.wpPage?.uri}
+      />
+      <script type="application/ld+json">
+        {JSON.stringify(softwareServiceSchema)}
+      </script>
+    </>
+  );
+};
 
 export const data = graphql`
   query MyQuery {
