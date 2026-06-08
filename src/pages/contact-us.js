@@ -603,6 +603,9 @@ export const Head = ({ data }) => {
   console.log("pageUrl:", data?.wpPage?.uri)
   console.log("schema raw:", data?.wpPage?.seo?.schema?.raw)
 
+  const rawAddress = data?.wpPage?.contactPageLayout?.address || "";
+  const cleanAddress = rawAddress.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -619,9 +622,11 @@ export const Head = ({ data }) => {
     "email": data?.wpPage?.contactPageLayout?.email || "",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": data?.wpPage?.contactPageLayout?.address || "",
+      "streetAddress": cleanAddress,
+      "addressLocality": "Dubai", 
       "addressCountry": "AE"
     },
+    "image": "https://wp.emqube.com/wp-content/uploads/2026/05/emqube-logo-black.svg",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
