@@ -26,6 +26,7 @@ export default function ContactUs({ data }) {
 
 
   const contactPage = data?.wpPage || {};
+  const options = data?.wp?.acfOption?.common;
 
   const [token, setToken] = useState("");
   const [captchaExpression, setCaptchaExpression] = useState("");
@@ -606,20 +607,20 @@ export const Head = ({ data }) => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Us",
-    "url": "https://yoursite.com/contact",
+    "url": "https://emqube.com/contact-us/",
     "description": "Get in touch with us",
   };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Your Business Name",
-    "telephone": data?.wpPage?.contactPageLayout?.whatsappLink || "",
+    "name": "emQube",
+    "telephone": data?.wp?.acfOption?.common?.callnumber || "",
     "email": data?.wpPage?.contactPageLayout?.email || "",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": data?.wpPage?.contactPageLayout?.address || "",
-      "addressCountry": "IN"
+      "addressCountry": "AE"
     },
     "openingHoursSpecification": [
       {
@@ -686,6 +687,21 @@ export const data = graphql`
         metaDesc
         schema {
           raw
+        }
+      }
+    }
+    wp {
+      acfOption {
+        common {
+          brandLogos {
+            altText
+            mediaItemUrl
+          }
+          ctaSubtitle
+          ctaTitle
+          whatsappurl
+          callnumber
+          contactusUrl
         }
       }
     }
