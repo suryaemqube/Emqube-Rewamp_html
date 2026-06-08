@@ -682,13 +682,25 @@ export default function SoftwareSolChild({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
+export const Head = ({ data }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Digital Advertising & PPC Campaigns Dubai",
+    "description": "Generate hot leads instantly with targeted digital advertising campaigns across Google Ads, Meta Ads, and premium networks.",
+    "url": "https://emqube.com/digital-content-studio/digital-marketing/digital-ads/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "Digital Advertising & PPC Management",
+    "serviceOutput": "Google Ads, Meta Ads & Click-to-WhatsApp Campaigns"
+  };
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </>
+  );
+};
 
 export const data = graphql`
   query MyQuery {
