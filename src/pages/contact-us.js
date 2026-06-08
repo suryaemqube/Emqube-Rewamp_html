@@ -602,6 +602,35 @@ export const Head = ({ data }) => {
   console.log("pageUrl:", data?.wpPage?.uri)
   console.log("schema raw:", data?.wpPage?.seo?.schema?.raw)
 
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Us",
+    "url": "https://yoursite.com/contact",
+    "description": "Get in touch with us",
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Your Business Name",
+    "telephone": data?.wpPage?.contactPageLayout?.whatsappLink || "",
+    "email": data?.wpPage?.contactPageLayout?.email || "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": data?.wpPage?.contactPageLayout?.address || "",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ]
+  };
+
   return (
     <Seo
       // title={data?.wpPage?.title || "About Us"}
@@ -609,6 +638,12 @@ export const Head = ({ data }) => {
       isContactPage={true}
       pageUrl={data?.wpPage?.uri}
     >
+       <script type="application/ld+json">
+        {JSON.stringify(contactSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(localBusinessSchema)}
+      </script>
     </Seo>
   )
 };
