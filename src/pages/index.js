@@ -544,15 +544,55 @@ export default function Home({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    bodyClass={"new-home-page"}
-    pageUrl={data?.wpPage?.uri}
-  >
+export const Head = ({ data }) => {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "emQube",
+    "url": "https://emqube.com",
+    "logo": "https://wp.emqube.com/wp-content/uploads/2026/05/emqube-logo-black.svg",
+    "foundingDate": "2003",
+    "description": "Since 2003, emQube has been a trusted partner for Dubai businesses, delivering software, websites, and marketing that accelerates growth.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "#801 M Square, Sheikh Khalifa Bin Zayed Street",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    "telephone": "+971507155381",
+    "email": "info@emqube.com",
+    "sameAs": [
+      "https://twitter.com/emQube",
+      "https://www.linkedin.com/company/emqube-llc",
+      "https://www.instagram.com/emqube/",
+      "https://www.facebook.com/emqubellc/"
+    ]
+  };
 
-  </Seo>
-);
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "emQube",
+    "url": "https://emqube.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://emqube.com/?s={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} bodyClass={"new-home-page"} />
+      <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+    </>
+  );
+};
+
 
 export const data = graphql`
   query MyQuery {

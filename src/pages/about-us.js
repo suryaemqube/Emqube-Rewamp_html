@@ -401,24 +401,66 @@ export default function About({ data }) {
 }
 
 export const Head = ({ data }) => {
-  // <Seo
-  //   seoData={data?.wpPage?.seo || []}
-  //   pageUrl={data?.wpPage?.uri}
-  // >
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About emQube | 20+ Years of Digital Excellence in Dubai",
+    "description": "Since 2003, emQube has been a trusted partner for Dubai businesses, delivering software, websites, and marketing that accelerates growth.",
+    "url": "https://emqube.com/about-us/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "emQube",
+      "url": "https://emqube.com",
+      "foundingDate": "2003",
+      "logo": "https://wp.emqube.com/wp-content/uploads/2026/05/emqube-logo-black.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#801 M Square, Sheikh Khalifa Bin Zayed Street",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "Mohammed Sutarwala",
+          "jobTitle": "Director",
+          "description": "35+ years in software development and creative engineering."
+        },
+        {
+          "@type": "Person",
+          "name": "Pooja Shah",
+          "jobTitle": "Director - Design",
+          "description": "25+ years in visual design and content development."
+        },
+        {
+          "@type": "Person",
+          "name": "Sundaram Murugan",
+          "jobTitle": "Head - Software Development",
+          "description": "20+ years in software engineering, development and support."
+        },
+        {
+          "@type": "Person",
+          "name": "Suryakant Mayekar",
+          "jobTitle": "Head - Web Development",
+          "description": "15+ years in web development and support."
+        },
+        {
+          "@type": "Person",
+          "name": "Vishnu Das",
+          "jobTitle": "Head - Business",
+          "description": "8+ years experience in Enterprise Solutions Consulting and automating complex business workflows."
+        }
+      ]
+    }
+  };
 
-  // </Seo>
-  console.log("seoData:", data?.wpPage?.seo)
-  console.log("pageUrl:", data?.wpPage?.uri)
-  console.log("schema raw:", data?.wpPage?.seo?.schema?.raw)
   return (
-  <Seo
-    // title={data?.wpPage?.title || "About Us"}
-    seoData={data?.wpPage?.seo || []}
-    isContactPage={true}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-)};
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(aboutPageSchema)}</script>
+    </>
+  );
+};
 
 
 export const data = graphql`
