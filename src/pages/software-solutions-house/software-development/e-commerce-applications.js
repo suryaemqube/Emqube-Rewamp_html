@@ -658,13 +658,25 @@ export default function SoftwareSolChild({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
+export const Head = ({ data }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "E-Commerce Development & Strategy Services Dubai",
+    "description": "Take your retail business online smoothly and securely with comprehensive e-commerce strategy and development services.",
+    "url": "https://emqube.com/software-solutions-house/software-development/e-commerce-applications/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "E-Commerce Development",
+    "serviceOutput": "Shopify, Magento & WooCommerce Stores"
+  };
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </>
+  );
+};
 
 export const data = graphql`
   query MyQuery {

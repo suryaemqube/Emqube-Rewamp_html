@@ -645,11 +645,24 @@ export default function SoftwareSolChild({data }) {
 export const Head = ({ data }) => {
 
   const faqs = data?.wpPage?.businessApplicationDevelopment?.faqsContent || [];
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Business Application Development Dubai",
+    "description": "Build bespoke software applications tailored to your unique operational requirements with zero licensing costs in Dubai.",
+    "url": "https://emqube.com/software-solutions-house/software-development/business-application-development/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "Custom Software Development",
+    "serviceOutput": "Bespoke Business Application",
+    "termsOfService": "https://emqube.com/contact-us/"
+  };
   return (
     <Seo
       seoData={data?.wpPage?.seo || []}
       pageUrl={data?.wpPage?.uri}
     >
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
       <FaqSchema faqs={faqs} />
     </Seo>
   );

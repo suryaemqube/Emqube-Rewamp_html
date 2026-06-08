@@ -649,13 +649,25 @@ export default function SoftwareSolChild({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
+export const Head = ({ data }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "WhatsApp for Business API Solutions Dubai",
+    "description": "Automate your customer journey with WhatsApp Business API solutions and AI chatbots in Dubai. Integrate with ERP & CRM.",
+    "url": "https://emqube.com/software-solutions-house/software-development/whatsapp-for-business/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "WhatsApp Business API Integration",
+    "serviceOutput": "Automated WhatsApp Chatbots & CRM Integration"
+  };
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </>
+  );
+};
 
 export const data = graphql`
   query MyQuery {
