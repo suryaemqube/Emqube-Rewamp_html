@@ -1001,14 +1001,125 @@ export default function SoftwareSolMain({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
+export const Head = ({ data }) => {
 
-  </Seo>
-);
+  const digitalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Digital Content Studio",
+    "alternateName": "Web Design & Digital Marketing Services Dubai",
+    "description": "Achieve your digital marketing goals with emQube. We build websites, run social media, and create multimedia content to acquire leads.",
+    "url": "https://emqube.com/digital-content-studio/",
+    "provider": {
+      "@type": "Organization",
+      "name": "emQube",
+      "url": "https://emqube.com",
+      "telephone": "+971507155381",
+      "email": "info@emqube.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#801 M Square, Sheikh Khalifa Bin Zayed Street",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    },
+    "serviceType": "Digital Marketing & Web Development",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Corporate Website Development",
+            "description": "Convert your business plan into an impactful website that generates leads and enhances brand credibility.",
+            "url": "https://emqube.com/digital-content-studio/website-development/corporate-website/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Personality Website Development",
+            "description": "Represent yourself with a personal website that communicates an authentic and emphatic message to your audience.",
+            "url": "https://emqube.com/digital-content-studio/website-development/personality-website/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Social Media Marketing",
+            "description": "Leverage Instagram, LinkedIn, TikTok and other social media channels to drive leads and enhance brand value.",
+            "url": "https://emqube.com/digital-content-studio/digital-marketing/social-media/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO & Generative Engine Optimization",
+            "description": "Increase conversion by driving quality traffic through search engine optimization and generative engine optimization.",
+            "url": "https://emqube.com/digital-content-studio/digital-marketing/seo/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Email Marketing",
+            "description": "Promote services and offers with targeted email campaigns and drip-marketing strategies.",
+            "url": "https://emqube.com/digital-content-studio/digital-marketing/email-marketing/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Digital Ads (Google & Meta)",
+            "description": "Generate hot leads with campaigns on Google Ads, Meta Ads, and targeted websites.",
+            "url": "https://emqube.com/digital-content-studio/digital-marketing/digital-ads/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Corporate Films & Video Production",
+            "description": "Showcase your company profile with corporate videos for presentations, exhibitions, and social media.",
+            "url": "https://emqube.com/digital-content-studio/content-production/corporate-films/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Digital Assets Creation",
+            "description": "Create digital assets like reels, brochures, and tutorials to share valuable and impactful content online.",
+            "url": "https://emqube.com/digital-content-studio/content-production/digital-assets/"
+          }
+        }
+      ]
+    }
+  };
+
+  return (
+    <>
+      <Seo
+        seoData={data?.wpPage?.seo || []}
+        pageUrl={data?.wpPage?.uri}
+      />
+      <script type="application/ld+json">
+        {JSON.stringify(digitalServiceSchema)}
+      </script>
+    </>
+  );
+};
 
 export const data = graphql`
   query MyQuery {
