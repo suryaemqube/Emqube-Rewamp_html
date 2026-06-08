@@ -683,13 +683,25 @@ export default function SoftwareSolChild({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
+export const Head = ({ data }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Digital Assets Development Dubai",
+    "description": "Creation of impactful digital brochures, product catalogues, multimedia graphics, and animations for your enterprise.",
+    "url": "https://emqube.com/digital-content-studio/content-production/digital-assets/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "Digital Asset Creation",
+    "serviceOutput": "Brochures, Presentations, Animations & Corporate Photography"
+  };
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </>
+  );
+};
 
 export const data = graphql`
   query MyQuery {

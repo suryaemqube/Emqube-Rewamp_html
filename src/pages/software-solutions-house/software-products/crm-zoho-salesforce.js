@@ -1092,14 +1092,25 @@ export default function SftProduct({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
-
+export const Head = ({ data }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Zoho CRM & Salesforce Implementation Partners Dubai",
+    "description": "Maximize the value of your customer lifecycle with expert Zoho CRM and Salesforce implementation services in Dubai.",
+    "url": "https://emqube.com/software-solutions-house/software-products/crm-zoho-salesforce/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "CRM Implementation & Customization",
+    "serviceOutput": "Configured Zoho CRM, Salesforce & Custom Sales Pipelines"
+  };
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </>
+  );
+};
 export const data = graphql`
   query MyQuery {
     wpPage(databaseId: {eq: 124}) {

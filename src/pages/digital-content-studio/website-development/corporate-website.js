@@ -700,13 +700,25 @@ export default function SoftwareSolChild({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
+export const Head = ({ data }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Corporate Website Development Services Dubai",
+    "description": "Build a visually attractive, high-performance corporate website that generates leads and solidifies brand credibility.",
+    "url": "https://emqube.com/digital-content-studio/website-development/corporate-website/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "Corporate Website Development",
+    "serviceOutput": "Custom Corporate Websites on WordPress, Gatsby & Headless CMS"
+  };
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </>
+  );
+};
 
 export const data = graphql`
   query MyQuery {

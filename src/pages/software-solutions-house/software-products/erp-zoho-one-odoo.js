@@ -1103,13 +1103,25 @@ export default function SftProduct({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
+export const Head = ({ data }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "ERP Solutions Dubai | Zoho One, Odoo & MS Dynamics",
+    "description": "Streamline your business operations with powerful ERP solutions, including Zoho One, Odoo, and Microsoft Dynamics.",
+    "url": "https://emqube.com/software-solutions-house/software-products/erp-zoho-one-odoo/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "ERP Implementation & Integration",
+    "serviceOutput": "Configured Zoho One, Odoo & Microsoft Dynamics 365 Systems"
+  };
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </>
+  );
+};
 
 export const data = graphql`
   query MyQuery {

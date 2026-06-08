@@ -671,14 +671,25 @@ export default function SoftwareSolChild({ data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    bodyClass={"prod-development-page"}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
+export const Head = ({ data }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Software Product Development Consulting Dubai",
+    "description": "Launch your Minimum Viable Product (MVP) with expert UI/UX services supplemented by decades of technical expertise.",
+    "url": "https://emqube.com/software-solutions-house/software-consulting/product-development/",
+    "provider": { "@type": "Organization", "name": "emQube", "url": "https://emqube.com" },
+    "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+    "serviceType": "Software Product Development Consulting",
+    "serviceOutput": "MVP, Scalable Software Products & UI/UX Design"
+  };
+  return (
+    <>
+      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </>
+  );
+};
 
 
 export const data = graphql`
