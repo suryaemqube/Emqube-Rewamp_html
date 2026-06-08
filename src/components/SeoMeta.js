@@ -65,14 +65,14 @@ const Seo = ({ bodyClass, title, description, pageUrl = "/", seoData, children, 
         <meta name="robots" content="noindex,nofollow" />
       )}
 
-      <link rel="canonical" href={"https://emquberevamphtml.netlify.app" + shortUrl(pageUrl)}></link>
+      <link rel="canonical" href={"https://emqube.com" + shortUrl(pageUrl)}></link>
 
       <meta property="og:locale" content={"en_US"} />
       <meta property="og:type" content={"Website"} />
       <meta property="og:title" content={seoData && seoData.title ? seoData.title : title} />
       <meta property="og:description" content={seoData && seoData.metaDesc ? seoData.metaDesc : description} />
 
-      <meta property="og:url" content={"https://emquberevamphtml.netlify.app" + shortUrl(pageUrl)} />
+      <meta property="og:url" content={"https://emqube.com" + shortUrl(pageUrl)} />
 
       <meta property="og:site_name" content={seoData && seoData.opengraphSiteName ? seoData.opengraphSiteName : "Emqube"} />
 
