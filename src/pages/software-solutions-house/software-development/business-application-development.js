@@ -14,6 +14,7 @@ import "../../../../src/assets/css/inside.css";
 import "../../../../src/assets/css/inside-child.css";
 
 import Seo from "../../../components/SeoMeta";
+import FaqSchema from "../../../components/FaqSchema";
 import Breadcrumb from "../../../components/Breadcrumbs";
 import Layout from "../../../components/Layout";
 
@@ -641,13 +642,18 @@ export default function SoftwareSolChild({data }) {
   );
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    seoData={data?.wpPage?.seo || []}
-    pageUrl={data?.wpPage?.uri}
-  >
-  </Seo>
-);
+export const Head = ({ data }) => {
+
+  const faqs = data?.wpPage?.businessApplicationDevelopment?.faqsContent || [];
+  return (
+    <Seo
+      seoData={data?.wpPage?.seo || []}
+      pageUrl={data?.wpPage?.uri}
+    >
+      <FaqSchema faqs={faqs} />
+    </Seo>
+  );
+};
 
 export const data = graphql`
   query MyQuery {
