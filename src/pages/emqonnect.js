@@ -189,20 +189,39 @@ export default function EmqonnectList({ data }) {
     <Layout isEmqonnectList>
       <>
       {/* Inside intro section starts */}
-      <section className="inside-intro-wrapper inside-child-intro-wrapper">
-        <div class="container">
-          <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
-            <span><a href="/">Home</a></span>
-            <span><span> / </span><span class="post post-page current-item">emQonnect</span></span>
+        <section className="inside-intro-wrapper inside-child-intro-wrapper">
+          <div class="container">
+            {/* Breadcrumb with JSON-LD schema */}
+            <div className="breadcrumbs">
+              <span><a href="/">Home</a></span>
+              <span><span> / </span><span className="post post-page current-item">emQonnect</span></span>
+            </div>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://emqube.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "emQonnect",
+                  "item": "https://emqube.com/emqonnect/"
+                }
+              ]
+            })}} />
+            <div className="title-wrapp">
+              <h1 dangerouslySetInnerHTML={{__html: emqoPage.title}} />
+              {emqoPage.content && 
+                <div dangerouslySetInnerHTML={{__html: emqoPage.content}} />
+              }
+            </div>
           </div>
-          <div className="title-wrapp">
-            <h1 dangerouslySetInnerHTML={{__html: emqoPage.title}} />
-            {emqoPage.content && 
-              <div dangerouslySetInnerHTML={{__html: emqoPage.content}} />
-            }
-          </div>
-        </div>
-      </section>
+        </section>
       {/* Inside intro section ends */}
 
       {/* emqonnect listing section starts */}
