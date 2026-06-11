@@ -15,20 +15,24 @@ $light_grey: var(--light_grey);
   font-family: HelvNowDis-Bold;
   src: url(../font/helveticanowdisplay-bold.ttf);
   font-weight: 700;
+  font-display: swap;
 }
 @font-face {
   font-family: HelvNowDis-light;
   src: url(../font/helveticanowdisplay-light.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: HelvNowDis-medium;
   src: url(../font/helveticanowdisplay-medium.ttf);
+  font-display: swap;
   font-weight: 500;
 }
 @font-face {
   font-family: HelvNowDis-reg;
   src: url(../font/helveticanowdisplay-regular.ttf);
   font-weight: 400;
+  font-display: swap;
 }
 // @font-face {
 //     font-family:'Helvetica-Now-Display-Bold';
