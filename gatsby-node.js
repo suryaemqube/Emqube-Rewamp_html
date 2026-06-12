@@ -254,6 +254,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: blogTemplate,
       context: {
         id: post.id,                       // ← passed as $id to template query
+        gatsbyPath: `/emqonnect/${post.slug}/`,  // ← add this
       },
     });
     

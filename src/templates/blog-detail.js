@@ -292,7 +292,7 @@ export default function EmqonnectDetail({ data }) {
 }
 
 
-export const Head = ({ data }) => {
+export const Head = ({ data, pageContext }) => {
   const post = data?.wpBlog;
   const seo = post?.seo;
   const siteUrl = "https://www.emqube.com"
@@ -334,7 +334,8 @@ export const Head = ({ data }) => {
   return (
     <Seo
       seoData={seoWithFallbacks}
-      pageUrl={post?.uri}
+      // pageUrl={post?.uri}
+      pageUrl={pageContext.gatsbyPath}  // ← use Gatsby path, not WP uri
     >
       {/* ✅ Breadcrumb JSON-LD */}
       <script type="application/ld+json">
@@ -343,6 +344,7 @@ export const Head = ({ data }) => {
     </Seo>
   );
 };
+
 
 export const query = graphql`
   query BlogDetailQuery($id: String!) {
