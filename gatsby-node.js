@@ -243,6 +243,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: portfolioTemplate,
       context: {
         id: post.id,   // ← passed as $id to the template query
+        gatsbyPath: `/software-projects/${post.slug}/`,  // ← add this
       },
     })
   });

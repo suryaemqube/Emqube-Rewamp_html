@@ -278,7 +278,7 @@ const PortfolioDetail = ({ data }) => {
   )
 }
 
-export const Head = ({ data }) => {
+export const Head = ({ data, pageContext }) => {
   const post = data?.wpPortfolio;
   const seo = post?.seo;
 
@@ -294,7 +294,8 @@ export const Head = ({ data }) => {
   return (
     <Seo
       seoData={seoWithFallbacks}
-      pageUrl={post?.uri}
+			pageUrl={pageContext.gatsbyPath}  // ← use Gatsby path, not WP uri
+      // pageUrl={post?.uri}
     />
   );
 };
