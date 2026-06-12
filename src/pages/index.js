@@ -586,7 +586,12 @@ export const Head = ({ data }) => {
 
   return (
     <>
-      <Seo seoData={data?.wpPage?.seo || []} pageUrl={data?.wpPage?.uri} bodyClass={"new-home-page"} />
+      <Seo seoData={
+        data?.wpPage?.seo || []} 
+        // pageUrl={data?.wpPage?.uri} 
+        pageUrl="/" 
+        bodyClass={"new-home-page"} 
+      />
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
     </>
