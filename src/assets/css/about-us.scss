@@ -797,6 +797,10 @@ main.about-us.inside-page{
             height: 206px;
             // 1024 - 1920 : 20 - 40
             padding: clamp(1.25rem, -0.1786rem + 2.2321vw, 2rem);
+            /* Firefox only */
+            @-moz-document url-prefix() {
+              right: -90px;
+            }
             @media(max-width: 1700px){
               width: 260px;
               height: 200px;
@@ -804,6 +808,11 @@ main.about-us.inside-page{
             }
             @media(max-width: 1600px){
               right: 0;
+            }
+            @-moz-document url-prefix() {
+              @media(max-width: 1600px){
+                right: -80px;
+              }
             }
             @media(max-width: 1550px){
               width: 240px;
@@ -822,8 +831,19 @@ main.about-us.inside-page{
               top: -60px;
               right: 20px;
             }
+            @-moz-document url-prefix() {
+              @media(max-width: 1380px){
+                right: -80px;
+              }
+            }
             @media(max-width: 1200px){
               right: 0;
+            }
+            @-moz-document url-prefix() {
+              @media(max-width: 1200px){
+                right: -20px;
+                top: -30px;
+              }
             }
             @media(max-width: 1100px){
               right: 20px;

@@ -368,23 +368,29 @@ export default function SoftwareSolChild({ data }) {
       {softSolChild?.saContent && 
         <section className="strategic-choice-wrapper">
           <div className="container">
-            <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
-            <div className="sub-txt" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
-            <div className="module-list">
-              <ul>
-                {softSolChild?.saContent.map((strategList,index) => (
-                  <li>
-                    <div className="left" dangerouslySetInnerHTML={{__html: strategList.saImage}} />
-                    <div className="right">
-                      <span className="line-fill"></span>
-                      <p className="title" dangerouslySetInnerHTML={{__html: strategList.saTitle}} />
-                      <p dangerouslySetInnerHTML={{__html: strategList.saDescription}} />
-                    </div>
-                  </li>
-                ))
-                }
-              </ul>
-            </div>
+            {softSolChild.strategicAdvanageTitle && 
+              <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
+            }
+            {softSolChild.strategicAdvanageSubtext && 
+              <div className="sub-txt" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
+            }
+            {softSolChild?.saContent && 
+              <div className="module-list">
+                <ul>
+                  {softSolChild?.saContent.map((strategList,index) => (
+                    <li>
+                      <div className="left" dangerouslySetInnerHTML={{__html: strategList.saImage}} />
+                      <div className="right">
+                        <span className="line-fill"></span>
+                        <p className="title" dangerouslySetInnerHTML={{__html: strategList.saTitle}} />
+                        <p dangerouslySetInnerHTML={{__html: strategList.saDescription}} />
+                      </div>
+                    </li>
+                  ))
+                  }
+                </ul>
+              </div>
+            }
           </div>
         </section>
       }

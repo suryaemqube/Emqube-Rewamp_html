@@ -805,6 +805,12 @@ main.about-us.inside-page .abt-values-wrapper .container .values-right .value-li
   width: 295px;
   height: 206px;
   padding: clamp(1.25rem, -0.1786rem + 2.2321vw, 2rem);
+  /* Firefox only */
+}
+@-moz-document url-prefix() {
+  main.about-us.inside-page .abt-values-wrapper .container .values-right .value-list .white-box {
+    right: -90px;
+  }
 }
 @media (max-width: 1700px) {
   main.about-us.inside-page .abt-values-wrapper .container .values-right .value-list .white-box {
@@ -816,6 +822,13 @@ main.about-us.inside-page .abt-values-wrapper .container .values-right .value-li
 @media (max-width: 1600px) {
   main.about-us.inside-page .abt-values-wrapper .container .values-right .value-list .white-box {
     right: 0;
+  }
+}
+@-moz-document url-prefix() {
+  @media (max-width: 1600px) {
+    main.about-us.inside-page .abt-values-wrapper .container .values-right .value-list .white-box {
+      right: -80px;
+    }
   }
 }
 @media (max-width: 1550px) {
@@ -841,9 +854,24 @@ main.about-us.inside-page .abt-values-wrapper .container .values-right .value-li
     right: 20px;
   }
 }
+@-moz-document url-prefix() {
+  @media (max-width: 1380px) {
+    main.about-us.inside-page .abt-values-wrapper .container .values-right .value-list .white-box {
+      right: -80px;
+    }
+  }
+}
 @media (max-width: 1200px) {
   main.about-us.inside-page .abt-values-wrapper .container .values-right .value-list .white-box {
     right: 0;
+  }
+}
+@-moz-document url-prefix() {
+  @media (max-width: 1200px) {
+    main.about-us.inside-page .abt-values-wrapper .container .values-right .value-list .white-box {
+      right: -20px;
+      top: -30px;
+    }
   }
 }
 @media (max-width: 1100px) {

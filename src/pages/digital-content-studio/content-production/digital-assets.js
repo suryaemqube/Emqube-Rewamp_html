@@ -370,8 +370,12 @@ export default function SoftwareSolChild({ data }) {
       {softSolChild?.websiteSaContent && 
         <section className="strategic-choice-wrapper">
           <div className="container">
-            <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
-            <p className="sub-txt txt-center" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
+            {softSolChild.strategicAdvanageTitle && 
+              <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
+            }
+            {softSolChild.strategicAdvanageSubtext && 
+              <p className="sub-txt txt-center" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
+            }
             <ul>
               {softSolChild?.websiteSaContent.map((strategList,index) => (
                 <li>

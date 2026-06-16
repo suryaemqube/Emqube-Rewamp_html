@@ -125,9 +125,9 @@ main.digi-portfolio.inside-page{
     transition: top 0.5s ease-in-out;
     padding-bottom: clamp(0.938rem, -0.4906rem + 2.2321vw, 2.188rem);
     background-color: transparent;
-    // @media(max-width: 767px){
-    //   top: 60px;
-    // }
+    @media(max-width: 767px){
+      top: 60px;
+    }
     .container{
       ul{
         display: flex;
@@ -142,6 +142,9 @@ main.digi-portfolio.inside-page{
             padding: 2px 19px;
             position: relative;
             cursor: pointer;
+            @media(max-width: 767px){
+              padding: 7px 19px;
+            }
             &:after{
               content: '';
               position: absolute;

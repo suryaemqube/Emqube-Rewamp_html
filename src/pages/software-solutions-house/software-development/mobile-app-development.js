@@ -369,21 +369,27 @@ export default function SoftwareSolChild({ data }) {
       {softSolChild?.saContent && 
         <section className="strategic-choice-wrapper">
           <div className="container">
-            <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
-            <p className="sub-txt txt-center" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
-            <ul>
-              {softSolChild?.saContent.map((strategList,index) => (
-                <li>
-                  <div className="left" dangerouslySetInnerHTML={{__html: strategList.saImage}} />
-                  <div className="right">
-                    <span className="line-fill"></span>
-                    <p className="title" dangerouslySetInnerHTML={{__html: strategList.saTitle}} />
-                    <p dangerouslySetInnerHTML={{__html: strategList.saDescription}} />
-                  </div>
-                </li>
-              ))
-              }
-            </ul>
+            {softSolChild.strategicAdvanageTitle && 
+              <h2 dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageTitle}} />
+            }
+            {softSolChild.strategicAdvanageSubtext && 
+              <p className="sub-txt txt-center" dangerouslySetInnerHTML={{__html: softSolChild.strategicAdvanageSubtext}} />
+            }
+            {softSolChild?.saContent && 
+              <ul>
+                {softSolChild?.saContent.map((strategList,index) => (
+                  <li>
+                    <div className="left" dangerouslySetInnerHTML={{__html: strategList.saImage}} />
+                    <div className="right">
+                      <span className="line-fill"></span>
+                      <p className="title" dangerouslySetInnerHTML={{__html: strategList.saTitle}} />
+                      <p dangerouslySetInnerHTML={{__html: strategList.saDescription}} />
+                    </div>
+                  </li>
+                ))
+                }
+              </ul>
+            }
           </div>
         </section>
       }

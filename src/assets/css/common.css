@@ -610,7 +610,6 @@ p:last-child {
 @media (max-width: 767px) {
   .view-all {
     background-color: var(--white);
-    border: none;
   }
 }
 .view-all .text {
@@ -1916,6 +1915,7 @@ footer .inner-container .f-btm .f-social-list li a:hover {
     height: 40px;
     bottom: 5px;
     z-index: 99999999;
+    padding: 7px 6px;
   }
 }
 

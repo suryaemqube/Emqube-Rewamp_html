@@ -129,6 +129,11 @@ main.digi-portfolio.inside-page .top-digital-portfolio-head-list {
   padding-bottom: clamp(0.938rem, -0.4906rem + 2.2321vw, 2.188rem);
   background-color: transparent;
 }
+@media (max-width: 767px) {
+  main.digi-portfolio.inside-page .top-digital-portfolio-head-list {
+    top: 60px;
+  }
+}
 main.digi-portfolio.inside-page .top-digital-portfolio-head-list .container ul {
   display: flex;
   align-items: center;
@@ -142,6 +147,11 @@ main.digi-portfolio.inside-page .top-digital-portfolio-head-list .container ul l
   padding: 2px 19px;
   position: relative;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  main.digi-portfolio.inside-page .top-digital-portfolio-head-list .container ul li a {
+    padding: 7px 19px;
+  }
 }
 main.digi-portfolio.inside-page .top-digital-portfolio-head-list .container ul li a:after {
   content: "";

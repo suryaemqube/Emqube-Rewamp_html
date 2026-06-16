@@ -627,7 +627,7 @@ p{
   }
   @media(max-width: 767px){
     background-color: var(--white);
-    border: none;
+    // border: none;
   }
 	.text{
 		transition: all 0.3s;
@@ -2056,6 +2056,7 @@ footer{
     height: 40px;
     bottom: 5px;
     z-index: 99999999;
+    padding: 7px 6px;
   }
   }
   .ai-bot-btn a{
