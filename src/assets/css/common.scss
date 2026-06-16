@@ -2189,4 +2189,20 @@ footer{
     display: none;
   }
 }
-  /* css added by pradnya - for go to AI section ends - 10-04-2025 */
+/* css added by pradnya - for go to AI section ends - 10-04-2025 */
+// css for 404 page - starts
+.not-found{
+  .not-found-wrapper{
+    padding: 250px 0;
+    text-align: center;
+    @media(max-width: 1500px){
+      padding: 150px 0;
+    }
+    .square-fill-btn-wrapp{
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+}
+// css for 404 page - ends

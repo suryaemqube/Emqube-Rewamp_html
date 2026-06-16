@@ -2071,4 +2071,16 @@ footer .inner-container .f-btm .f-social-list li a:hover {
   display: none;
 }
 
-/* css added by pradnya - for go to AI section ends - 10-04-2025 *//*# sourceMappingURL=common.css.map */
+/* css added by pradnya - for go to AI section ends - 10-04-2025 */
+.not-found .not-found-wrapper {
+  padding: 250px 0;
+  text-align: center;
+}
+@media (max-width: 1500px) {
+  .not-found .not-found-wrapper {
+    padding: 150px 0;
+  }
+}
+.not-found .not-found-wrapper .square-fill-btn-wrapp a {
+  text-decoration: none;
+}/*# sourceMappingURL=common.css.map */
