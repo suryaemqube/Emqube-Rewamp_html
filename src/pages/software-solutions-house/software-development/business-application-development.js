@@ -435,7 +435,7 @@ export default function SoftwareSolChild({data }) {
       {/* partner with emqube section ends */}
 
       {/* industry section starts */}
-      {softSolChild?.selectIndustries || softSolChild?.selectApplications && 
+      {(softSolChild?.selectIndustries || softSolChild?.selectApplications) && 
         <section className="insudtry-list-wrapp">
           <h2 className="slide-up">Work Reference</h2>
           <div className="container">
