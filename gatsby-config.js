@@ -48,6 +48,20 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://emqube.com",
+        sitemap: "https://emqube.com/sitemap-0.xml",
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: ["/wp-admin/", "/*.js$", "/*.css$", "/*.pdf$"]
+          }
+        ]
+      }
+    }
     // {
     //   resolve: `gatsby-plugin-sitemap`,
     //   options: {

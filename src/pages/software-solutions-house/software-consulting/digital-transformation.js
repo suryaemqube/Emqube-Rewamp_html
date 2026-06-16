@@ -537,7 +537,7 @@ export default function SoftwareSolChild({ data }) {
       {/* partner with emqube section ends */}
 
       {/* industry section starts */}
-      {softSolChild?.selectIndustries &&  
+      {(softSolChild?.selectIndustries || softSolChild?.selectApplications) &&
         <section className="insudtry-list-wrapp indus-flex-dir-btm bg-none">
           <div className="container">
             {softSolChild?.selectIndustries &&
@@ -554,6 +554,26 @@ export default function SoftwareSolChild({ data }) {
                         <p dangerouslySetInnerHTML={{__html: indeslst}} />
                       </li>
                     );
+                  })
+                  }
+                </ul>
+              </div>
+            }
+            {softSolChild?.selectApplications &&
+              <div className="right">
+                <h3 className="slide-up">Applications</h3>
+                <ul>
+                  {softSolChild?.selectApplications.map((appllst,index1) => {
+                    const iconName = formatIconClass(appllst);
+
+                    return (
+                      <li className="stagger-li">
+                        <span className="icon">
+                          <i className={`icon icon-${iconName}`}></i>
+                        </span>
+                        <p dangerouslySetInnerHTML={{__html: appllst}} />
+                      </li>
+                    )
                   })
                   }
                 </ul>

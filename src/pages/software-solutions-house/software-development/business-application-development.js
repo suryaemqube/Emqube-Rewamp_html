@@ -482,6 +482,7 @@ export default function SoftwareSolChild({data }) {
         </section>
       }
       {/* industry section ends */}
+      
 
       {/* Work Reference Section Starts */}
       <section className="work-ref-wrapper sft-work-ref-wrapper">
