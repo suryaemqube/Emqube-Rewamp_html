@@ -4155,10 +4155,10 @@ header.inside-header.hide, header.main-header.hide {
 }
 @keyframes bgFade {
   0% {
-    background: #000000 url("https://emqube.com/wp-content/themes/emqube_revamp/images/ai-bg-dark.svg") no-repeat;
+    background: #000000 url("../img/ai-bg-dark.svg") no-repeat;
   }
   100% {
-    background: #000000 url("https://emqube.com/wp-content/themes/emqube_revamp/images/ai-bg1.svg") no-repeat;
+    background: #000000 url("../img/ai-bg1.svg") no-repeat;
   }
 }
 .home.page-template-tp-emqube-ai-new .black-nav .nav-burger__line:nth-child(1), .home.page-template-tp-emqube-ai-new .black-nav .nav-burger__line:nth-child(2), .home.page-template-tp-emqube-ai-microphone .black-nav .nav-burger__line:nth-child(1), .home.page-template-tp-emqube-ai-microphone .black-nav .nav-burger__line:nth-child(2) {
@@ -4729,6 +4729,6 @@ header.inside-header.hide, header.main-header.hide {
   top: 58px;
 }
 
-.ai-chat-main .ai-bot-btn.animate-width {
+.ai-chat-main .ai-bot-btn.animate-width, .ai-chat-main .ai-bot-btn {
   display: none !important;
 }/*# sourceMappingURL=ai-chat.css.map */

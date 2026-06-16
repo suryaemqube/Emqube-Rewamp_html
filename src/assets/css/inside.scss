@@ -1959,7 +1959,7 @@ content: "\f009";
 						}
 						@media(max-width: 1480px){
 							left: 25px;
-							width: 90px;
+							width: 110px;
 						}
 						@media(max-width: 767px){
 							left: 10px;
@@ -2175,7 +2175,7 @@ content: "\f009";
 								height: 100%;
 							}
 							.proj-name{
-								width: 100%;
+								width: 90%;
 								// 1024 - 1920 : 17 - 30
 								font-size: clamp(1.063rem, 0.1350rem + 1.4500vw, 1.875rem);
 								line-height: 1.3em;
@@ -2187,6 +2187,10 @@ content: "\f009";
 								position: absolute;
 								left: 50%;
 								bottom: 50px;
+								bottom: 30px;
+								@media(max-width: 1500px){
+									bottom: 0;
+								}
 								@media(max-width: 1023px){
 									// 320 - 1023 : 19 - 20
 									font-size: clamp(1.188rem, 1.1598rem + 0.1411vw, 1.25rem);

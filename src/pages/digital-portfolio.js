@@ -152,6 +152,43 @@ export default function DigitalProj({ data }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeIndex1, setActiveIndex1] = useState(null);
 
+  // add sticky header when scrolled up and remove sticky when scrolled down - starts
+  const [scrolled, setScrolled] = useState(false);
+  const [scrolledUp, setScrolledUp] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show/hide the filter bar after 500px
+      setShowTopFilter(currentScrollY > 500);
+
+      if (currentScrollY > 300) {
+        if (currentScrollY < lastScrollY) {
+          // Scrolling UP → add "scrolled" class
+          setScrolledUp(true);
+        } else {
+          // Scrolling DOWN → remove "scrolled" class
+          setScrolledUp(false);
+        }
+      } else {
+        // Near top of page → remove both
+        setScrolledUp(false);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => typeof window !== "undefined" && window.removeEventListener("scroll", handleScroll);
+  }, []);
+    // add sticky header when scrolled up and remove sticky when scrolled down - ends
+
 
   const handleToggle = (index) => {
     const currentVideo = videoRefs.current[index];
@@ -194,22 +231,22 @@ export default function DigitalProj({ data }) {
   };
 
   // onscroll fixed top filter section - starts
-  useEffect(() => {
+  // useEffect(() => {
     
-    const handleScroll1 = () => {
-      if (typeof window !== "undefined" && window.scrollY > 500) {
-        setShowTopFilter(true);
-      } else {
-        setShowTopFilter(false);
-      }
-    };
+  //   const handleScroll1 = () => {
+  //     if (typeof window !== "undefined" && window.scrollY > 500) {
+  //       setShowTopFilter(true);
+  //     } else {
+  //       setShowTopFilter(false);
+  //     }
+  //   };
 
-    if(typeof window !== "undefined"){
-    window.addEventListener("scroll", handleScroll1);
-    }
+  //   if(typeof window !== "undefined"){
+  //   window.addEventListener("scroll", handleScroll1);
+  //   }
 
-    return () => typeof window !== "undefined" && window.removeEventListener("scroll", handleScroll1);
-  }, []);
+  //   return () => typeof window !== "undefined" && window.removeEventListener("scroll", handleScroll1);
+  // }, []);
   // onscroll fixed top filter section - ends 
 
   // onclick scroll to specific section - starts
@@ -261,7 +298,7 @@ const scrollToSection = (id) => {
       {/* Inside intro section ends */}
 
       {/* top section starts */}
-      <section className={`top-digital-portfolio-head-list ${showTopFilter ? "active" : ""}`}>
+      <section className={`top-digital-portfolio-head-list ${showTopFilter ? "active" : ""} ${scrolledUp ? "scrolled" : ""}`}>
         <div className="container">
           <ul>
             <li><a onClick={() => scrollToSection("website")}>Websites</a></li>

@@ -2081,7 +2081,7 @@
 @media (max-width: 1480px) {
   .inside-page .work-ref-wrapper .workSwiper .swiper-slide .work-wrapp .client-icon, .inside-page .work-ref-wrapper .centered-slides .swiper-slide .work-wrapp .client-icon {
     left: 25px;
-    width: 90px;
+    width: 110px;
   }
 }
 @media (max-width: 767px) {
@@ -2306,7 +2306,7 @@
   }
 }
 .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a .work-wrapp .proj-txt .proj-name, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a .work-wrapp .proj-txt .proj-name {
-  width: 100%;
+  width: 90%;
   font-size: clamp(1.063rem, 0.135rem + 1.45vw, 1.875rem);
   line-height: 1.3em;
   text-align: center;
@@ -2317,6 +2317,12 @@
   position: absolute;
   left: 50%;
   bottom: 50px;
+  bottom: 30px;
+}
+@media (max-width: 1500px) {
+  .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a .work-wrapp .proj-txt .proj-name, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a .work-wrapp .proj-txt .proj-name {
+    bottom: 0;
+  }
 }
 @media (max-width: 1023px) {
   .inside-page .sft-work-ref-wrapper .workSwiper .swiper-slide a .work-wrapp .proj-txt .proj-name, .inside-page .sft-work-ref-wrapper .centered-slides .swiper-slide a .work-wrapp .proj-txt .proj-name {
