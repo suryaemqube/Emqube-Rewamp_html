@@ -158,7 +158,7 @@ function Footer({ sliceContext }) {
 
 			{/* Sticky buttons starts */}
       <div class={`sticky-buttons ${showTop ? "active" : ""}`}>
-        <a href={options?.whatsappurl}>
+        <a href={options?.whatsappurl} target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
             <circle cx="36" cy="36" r="36" fill="#4E9C5A"/>
               <g clip-path="url(#clip0_1325_7512)">
