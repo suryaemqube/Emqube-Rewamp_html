@@ -10,7 +10,7 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
   setPreBodyComponents([
     <noscript key="gtm-noscript">
       <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-54SH2H3"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KFWMDJVQ"
         height="0"
         width="0"
         style={{ display: "none", visibility: "hidden" }}
