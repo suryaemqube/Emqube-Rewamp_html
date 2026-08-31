@@ -32,6 +32,22 @@ export const onClientEntry = () => {
     // `;
     // document.head.appendChild(gaInline);
 
+    // Load Google Analytics - given by abdullah - 31-08-2026 - starts
+    const gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6DME89FC29";
+    document.head.appendChild(gaScript);
+
+    const gaInline = document.createElement("script");
+    gaInline.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6DME89FC29');
+    `;
+    document.head.appendChild(gaInline);
+    // Load Google Analytics - given by abdullah - 31-08-2026 - ends
+
     // Load GTM
     const gtmInline = document.createElement("script");
     gtmInline.innerHTML = `
