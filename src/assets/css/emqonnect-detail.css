@@ -400,13 +400,14 @@ main.emqonnect-detail.inside-child .inside-child-intro-wrapper .container .title
 	main.emqonnect-detail.inside-child .inside-child-intro-wrapper .blog-detail-img{
 		width: 500px;
 		height: 500px;
+		margin-right: 50px;
 	}
 	main.emqonnect-detail.inside-child .inside-child-intro-wrapper .blog-detail-img img{
 		object-fit: contain;
 		width: 100%;
 		height: 100%;
 	}
-	main.emqonnect-detail.inside-page .emqonnect-detail-wrapper{
+	main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .blog-detail-img{
 		display: none !important;
 	}
 }
