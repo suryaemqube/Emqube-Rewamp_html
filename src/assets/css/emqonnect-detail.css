@@ -419,6 +419,9 @@ main.emqonnect-detail .inside-child .inside-child-intro-wrapper .container .titl
 	main.emqonnect-detail .inside-child .inside-child-intro-wrapper .container .title-wrapp{
 		flex-direction: column-reverse;
 	}
+	main.emqonnect-detail .inside-child .inside-child-intro-wrapper .blog-detail-img{
+		display: none;
+	}
 }
 /* css added by pradnya - for emqonnect detail page - 21-09-2026 - ends */
 /*# sourceMappingURL=emqonnect-detail.css.map */
