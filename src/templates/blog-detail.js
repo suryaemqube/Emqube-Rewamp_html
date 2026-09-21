@@ -137,6 +137,11 @@ export default function EmqonnectDetail({ data }) {
             /></span>
           </div>
           <div className="title-wrapp">
+				 {emqoPost?.featuredImage?.node &&
+              <div className="blog-detail-img">
+                <img src={emqoPost?.featuredImage?.node?.mediaItemUrl} alt={emqoPost.title}></img>
+              </div>
+            }
             <h1 dangerouslySetInnerHTML={{__html: emqoPost.title}} />
           </div>
         </div>
