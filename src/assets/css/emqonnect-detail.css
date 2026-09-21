@@ -399,7 +399,7 @@ main.emqonnect-detail.inside-child .inside-child-intro-wrapper .container .title
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p{
 	margin-bottom: 20px;
 }
-main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt h4,main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt h5{
+main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt h4,main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt h5,main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt h3{
 	margin-bottom: 10px;
 }
 @media(min-width: 1001px){
