@@ -27,6 +27,7 @@ main.emqonnect-detail.inside-page:after {
   background-repeat: no-repeat;
   bottom: auto;
   z-index: 0;
+  background-image: none !important;
 }
 @media (max-width: 1500px) {
   main.emqonnect-detail.inside-page:after {
@@ -386,4 +387,38 @@ main.emqonnect-detail.inside-page .cta-wrapper .container ul.lets-talk-wrap li.c
 }
 main.emqonnect-detail.inside-page .cta-wrapper .container ul.lets-talk-wrap li.call-us .view-all {
   border: 1px solid var(--black);
-}/*# sourceMappingURL=emqonnect-detail.css.map */
+}
+/* css added by pradnya - for emqonnect detail page - 21-09-2026 - starts */
+main.emqonnect-detail.inside-page .inside-intro-wrapper .container{
+	max-width: 1620px;
+}
+main.emqonnect-detail .inside-child .inside-child-intro-wrapper .container .title-wrapp{
+	display: flex;
+	align-items: center;
+}
+@media(min-width: 1001px){
+	main.emqonnect-detail .inside-child .inside-child-intro-wrapper .blog-detail-img{
+		width: 500px;
+		height: 500px;
+	}
+	main.emqonnect-detail .inside-child .inside-child-intro-wrapper .blog-detail-img img{
+		object-fit: contain;
+		width: 100%;
+		height: 100%;
+	}
+	main.emqonnect-detail.inside-page .emqonnect-detail-wrapper{
+		display: none !important;
+	}
+}
+@media (max-width: 1700px) {
+	main.emqonnect-detail.inside-page .inside-intro-wrapper .container {
+		max-width:90%
+	}
+}
+@media(max-width: 1000px){
+	main.emqonnect-detail .inside-child .inside-child-intro-wrapper .container .title-wrapp{
+		flex-direction: column-reverse;
+	}
+}
+/* css added by pradnya - for emqonnect detail page - 21-09-2026 - ends */
+/*# sourceMappingURL=emqonnect-detail.css.map */
