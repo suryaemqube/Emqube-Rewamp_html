@@ -93,6 +93,7 @@ main.emqonnect-detail.inside-page .inside-intro-wrapper {
 @media (min-width: 1001px) {
   main.emqonnect-detail.inside-page .inside-intro-wrapper {
     padding-top: clamp(12.5rem, -0.0006rem + 19.5321vw, 23.438rem);
+	padding-top: clamp(12.5rem, -.0006rem + 19.5321vw, 11.438rem);
   }
 }
 main.emqonnect-detail.inside-page .inside-intro-wrapper .container .title-wrapp p {
