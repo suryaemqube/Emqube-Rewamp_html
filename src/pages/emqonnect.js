@@ -226,7 +226,7 @@ export default function EmqonnectList({ data }) {
 
       {/* emqonnect listing section starts */}
       {emqoList && 
-        <section className={`emqonnect-list-wrapper${view}`}>
+        <section className="emqonnect-list-wrapper" >
           <div className="container">
             <div className="emqonnect-top-filter">
               <div className="filter-left">
