@@ -136,6 +136,12 @@ main.emqonnect-list.inside-page .emqonnect-list-wrapper {
 main.emqonnect-list.inside-page .emqonnect-list-wrapper .container {
   border-bottom: 1px solid rgba(18, 26, 33, 0.5);
   padding-bottom: clamp(5rem, 0rem + 7.8125vw, 9.375rem);
+  max-width: 1400px;
+}
+@media(max-width: 1500px){
+  main.emqonnect-list.inside-page .emqonnect-list-wrapper .container{
+    max-width: 90%;
+  }
 }
 main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-top-filter {
   display: flex;
@@ -369,7 +375,7 @@ main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-li
   font-weight: 500;
 }
 main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list ul li a .emq-img {
-  height: 240px;
+  height: 260px;
   position: relative;
   z-index: 1;
   border-radius: 5px 5px 0 0;
@@ -386,7 +392,7 @@ main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-li
 }
 @media (max-width: 850px) {
   main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list ul li a .emq-img {
-    height: 180px;
+    height: 200px;
   }
 }
 main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list ul li a .emq-img .arrow-icon {
@@ -499,7 +505,7 @@ main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-li
 }
 @media (min-width: 768px) and (max-width: 1080px) {
   main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list ul.list li a .emq-img {
-    width: 30%;
+    width: 40%;
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
@@ -521,7 +527,7 @@ main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-li
 @media (min-width: 768px) {
   main.emqonnect-list.inside-page .emqonnect-list-wrapper .container .emqonnect-list ul.list li a .emq-blog-txt {
     width: 67%;
-    padding: 5px clamp(0.938rem, -0.4906rem + 2.2321vw, 2.188rem) clamp(0.938rem, -0.1329rem + 1.6732vw, 1.875rem) clamp(1.563rem, -0.2221rem + 2.7893vw, 3.125rem);
+    padding: clamp(0.938rem, -0.1329rem + 1.6732vw, 1.875rem) clamp(0.938rem, -0.4906rem + 2.2321vw, 2.188rem) clamp(0.938rem, -0.1329rem + 1.6732vw, 1.875rem) clamp(1.563rem, -0.2221rem + 2.7893vw, 3.125rem);
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
