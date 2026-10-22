@@ -144,26 +144,24 @@ main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-det
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p {
   margin-bottom: 40px;
 }
-main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul li{margin-bottom: 30px !important;}
+main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul li{margin-bottom: 15px !important;}
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul{margin-bottom: 30px !important;}
 @media (max-width: 1500px) {
   main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p {
     margin-bottom: 30px;
   }
-	main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul li{margin-bottom: 25px !important;}
 }
 @media (max-width: 1380px) {
   main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p {
     margin-bottom: 25px;
   }
-	main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul li{margin-bottom: 20px !important;}
 	main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul{margin-bottom: 25px !important;}
 }
 @media (max-width: 1200px) {
   main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p {
     margin-bottom: 20px;
   }
-	main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul li{margin-bottom: 15px !important;}
+	main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul li{margin-bottom: 12px !important;}
 }
 @media (max-width: 767px) {
   main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p {
