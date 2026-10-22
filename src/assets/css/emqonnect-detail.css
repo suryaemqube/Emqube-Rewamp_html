@@ -1,4 +1,4 @@
-:root {
+*:root {
   --white: #ffffff;
   --black: #000000;
   --light_green: #4e9c5a;
@@ -144,6 +144,7 @@ main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-det
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p {
   margin-bottom: 40px;
 }
+main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p a{font-size: clamp(.875rem, .775rem + .5vw, 1.375rem);}
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul li{margin-bottom: 15px !important;}
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul{margin-bottom: 30px !important;}
 @media (max-width: 1500px) {
