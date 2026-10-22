@@ -145,6 +145,10 @@ main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-det
   margin-bottom: 40px;
 }
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt p a{font-size: clamp(.875rem, .775rem + .5vw, 1.25rem);}
+main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt table tr th,main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt table tr td{
+padding: 15px;
+font-size: clamp(.875rem, .775rem + .5vw, 1.125rem);
+}
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul li{margin-bottom: 15px !important;}
 main.emqonnect-detail.inside-page .emqonnect-detail-wrapper .container .blog-detail-content .blog-detail-txt ul{margin-bottom: 30px !important;}
 @media (max-width: 1500px) {
