@@ -49,19 +49,25 @@ main.emqonnect-detail.inside-page:after {
     top: 0px;
   }
 }
-main.emqonnect-detail.inside-page p {
+main.emqonnect-detail.inside-page p, main.emqonnect-detail.inside-page .blog-detail-txt ul li{
   font-family: HelvNowDis-light;
   font-weight: 300;
   color: #767676;
   font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem);
 }
+main.emqonnect-detail.inside-page .blog-detail-txt ul li{
+  line-height: 1.35em;
+}
+main.emqonnect-detail.inside-page .blog-detail-txt ul li strong{
+  font-weight: 700;
+}
 @media (max-width: 1500px) {
-  main.emqonnect-detail.inside-page p {
+  main.emqonnect-detail.inside-page p, main.emqonnect-detail.inside-page .blog-detail-txt ul li {
     font-size: clamp(0.875rem, 0.775rem + 0.35vw, 1.375rem);
   }
 }
 @media (max-width: 767px) {
-  main.emqonnect-detail.inside-page p {
+  main.emqonnect-detail.inside-page p, main.emqonnect-detail.inside-page .blog-detail-txt ul li {
     font-size: clamp(1.063rem, 0.9141rem + 0.7007vw, 1.25rem);
   }
 }
