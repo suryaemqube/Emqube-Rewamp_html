@@ -2640,7 +2640,7 @@
 .main-page-intro-section .container .inside-intro-title {
   text-align: center;
 }
-.main-page-intro-section .container .inside-intro-title h1 {
+.main-page-intro-section .container .inside-intro-title h1,.inside-page .inside-intro-wrapper .container .inside-intro-title p.inside-page-title {
   font-size: clamp(1.563rem, -0.0793rem + 2.5661vw, 3rem);
   position: relative;
   display: inline-flex;
@@ -2659,11 +2659,11 @@
   margin-bottom: clamp(1.563rem, 1.2596rem + 1.2945vw, 2.813rem);
 }
 @media (max-width: 767px) {
-  .main-page-intro-section .container .inside-intro-title h1 {
+  .main-page-intro-section .container .inside-intro-title h1,.inside-page .inside-intro-wrapper .container .inside-intro-title p.inside-page-title {
     font-size: clamp(1.25rem, 1.18rem + 0.8949vw, 1.5rem);
   }
 }
-.main-page-intro-section .container .inside-intro-title h1:before {
+.main-page-intro-section .container .inside-intro-title h1:before,.inside-page .inside-intro-wrapper .container .inside-intro-title p.inside-page-title:before {
   content: "";
   width: 100% !important;
   height: auto !important;
