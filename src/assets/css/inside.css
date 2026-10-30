@@ -300,6 +300,7 @@
   -webkit-text-fill-color: transparent;
   font-family: HelvNowDis-medium;
   letter-spacing: 0;
+  position: relative;
 }
 .inside-page .inside-intro-wrapper .container .inside-intro-title:after {
   content: "";
@@ -2668,6 +2669,7 @@
   width: 100% !important;
   height: auto !important;
   left: 50% !important;
+  transform: translateX(-50%) !important;
   position: absolute;
   inset: 0;
   padding: 1px;
