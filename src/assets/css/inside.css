@@ -2681,8 +2681,8 @@
 .main-page-intro-section .container .inside-intro-title .inside-sub-txt p:nth-child(1),.main-page-intro-section .container .inside-intro-title .inside-sub-txt h1.main-page-title {
   font-family: HelvNowDis-medium;
   font-weight: 500;
-  background: linear-gradient(180deg, #C4C4C4 -71.43%, #3D3D3D 100%);
-  background-clip: text;
+  background: linear-gradient(180deg, #C4C4C4 -71.43%, #3D3D3D 100%) !important;;
+  background-clip: text !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0;
@@ -2715,6 +2715,9 @@
   height: 3px;
   width: 100px;
   background-color: var(--light_green);
+}
+.main-page-intro-section .container .inside-intro-title .inside-sub-txt h1.main-page-title:before{
+  display: none !important;
 }
 @media (max-width: 600px) {
   .main-page-intro-section .container .inside-intro-title .inside-sub-txt p:nth-child(1):before,.main-page-intro-section .container .inside-intro-title .inside-sub-txt h1.main-page-title:before {
