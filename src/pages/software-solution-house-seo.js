@@ -322,7 +322,7 @@ export default function SoftwareSolMain({ data }) {
               </ul>
             </div>
             <div className="inside-intro-title">
-              <h1 dangerouslySetInnerHTML={{__html: data?.wpPage?.title}} />
+              <p className="inside-page-title" dangerouslySetInnerHTML={{__html: data?.wpPage?.title}} />
               <div className="inside-sub-txt" dangerouslySetInnerHTML={{__html: softSolMain?.heroTitle}} />
             </div>
             <div className="inside-intro-txt" dangerouslySetInnerHTML={{__html: softSolMain?.heroSubText}} />
