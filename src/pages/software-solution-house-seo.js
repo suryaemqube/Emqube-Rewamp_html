@@ -1003,9 +1003,9 @@ export const Head = ({ data }) => {
   const softwareServiceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Software Solutions House",
+    "name": "Custom Software Development Dubai | Software Solutions House | emQube",
     "alternateName": "Custom Software Development Services Dubai",
-    "description": "Fulfill your digital transformation goals with custom software development and SaaS integration services from emQube in Dubai.",
+    "description": "Custom software development, SaaS integration and digital transformation in Dubai. 20+ years serving UAE businesses. Get a free consultation.",
     "url": "https://emqube.com/software-solutions-house/",
     "provider": {
       "@type": "Organization",
