@@ -1206,6 +1206,9 @@
 .brand-wrapper .container .brand-list li {
   height: 87px;
   width: 147px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 1580px) {
   .brand-wrapper .container .brand-list li {
@@ -1252,16 +1255,16 @@
   justify-content: center;
 }
 @media (max-width: 1500px) {
-  .brand-wrapper .container .brand-list li a {
+  .brand-wrapper .container .brand-list li a,.brand-wrapper .container .brand-list li {
     min-height: 100px;
   }
 }
 @media (max-width: 767px) {
-  .brand-wrapper .container .brand-list li a {
+  .brand-wrapper .container .brand-list li a,.brand-wrapper .container .brand-list li {
     min-height: 90px;
   }
 }
-.brand-wrapper .container .brand-list li a img {
+.brand-wrapper .container .brand-list li a img,.brand-wrapper .container .brand-list li img {
   height: auto;
   width: auto;
   -o-object-fit: contain;
@@ -1270,12 +1273,12 @@
      object-position: center center;
 }
 @media (max-width: 1500px) {
-  .brand-wrapper .container .brand-list li a img {
+  .brand-wrapper .container .brand-list li a img,.brand-wrapper .container .brand-list li img {
     width: 120px;
   }
 }
 @media (max-width: 767px) {
-  .brand-wrapper .container .brand-list li a img {
+  .brand-wrapper .container .brand-list li a img,.brand-wrapper .container .brand-list li img {
     height: auto;
     width: 80px;
   }
