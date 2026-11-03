@@ -13,7 +13,6 @@ import "/src/assets/css/common.css";
 import "/src/assets/css/inside.css";
 
 import Seo from "../components/SeoMeta";
-import Breadcrumb from "../components/Breadcrumbs";
 import Layout from "../components/Layout";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -1006,7 +1005,7 @@ export const Head = ({ data }) => {
     "name": "Custom Software Development Dubai | Software Solutions House | emQube",
     "alternateName": "Custom Software Development Services Dubai",
     "description": "Custom software development, SaaS integration and digital transformation in Dubai. 20+ years serving UAE businesses. Get a free consultation.",
-    "url": "https://emqube.com/software-solutions-house/",
+    "url": "https://emqube.com/software-solution-house-seo/",
     "provider": {
       "@type": "Organization",
       "name": "emQube",
