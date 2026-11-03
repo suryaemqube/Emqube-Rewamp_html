@@ -880,9 +880,9 @@ export default function SoftwareSolMain({ data }) {
             <ul className="brand-list d-flex slide-up">
               {(isMobile ? logos.slice(0, visibleCount) : logos).map((logo, index) => (
                 <li key={index}>
-                  <a href="javascript:void(0);">
+                {/* <a href="javascript:void(0);"> */}
                     <img src={logo.src} width="148" height="72" alt={logo.alt} />
-                  </a>
+                {/* </a> */}
                 </li>
               ))}
             </ul>
